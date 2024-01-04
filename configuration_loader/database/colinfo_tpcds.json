@@ -1,0 +1,7540 @@
+{
+  "w_warehouse_sk": {
+    "table": "warehouse",
+    "type": "integer",
+    "value": [
+      3,
+      5,
+      2
+    ]
+  },
+  "w_warehouse_id": {
+    "table": "warehouse",
+    "type": "character",
+    "value": [
+      "AAAAAAAAEAAAAAAA",
+      "AAAAAAAABAAAAAAA",
+      "AAAAAAAAFAAAAAAA"
+    ]
+  },
+  "w_warehouse_name": {
+    "table": "warehouse",
+    "type": "character varying",
+    "value": [
+      "Yet executive",
+      "Highly smooth clien",
+      "Political, only m"
+    ]
+  },
+  "w_warehouse_sq_ft": {
+    "table": "warehouse",
+    "type": "integer",
+    "value": [
+      213065,
+      83472,
+      213141
+    ]
+  },
+  "w_street_number": {
+    "table": "warehouse",
+    "type": "character",
+    "value": [
+      "972",
+      "450",
+      "325"
+    ]
+  },
+  "w_street_name": {
+    "table": "warehouse",
+    "type": "character varying",
+    "value": [
+      "Wilson Oak",
+      "Elm Ridge",
+      "Park 3rd"
+    ]
+  },
+  "w_street_type": {
+    "table": "warehouse",
+    "type": "character",
+    "value": [
+      "Ct.",
+      "Court",
+      "Drive"
+    ]
+  },
+  "w_suite_number": {
+    "table": "warehouse",
+    "type": "character",
+    "value": [
+      "Suite B",
+      "Suite 450",
+      "Suite I"
+    ]
+  },
+  "w_city": {
+    "table": "warehouse",
+    "type": "character varying",
+    "value": [
+      "Fairview",
+      "Midway"
+    ]
+  },
+  "w_county": {
+    "table": "warehouse",
+    "type": "character varying",
+    "value": [
+      "Williamson County"
+    ]
+  },
+  "w_state": {
+    "table": "warehouse",
+    "type": "character",
+    "value": [
+      "TN"
+    ]
+  },
+  "w_zip": {
+    "table": "warehouse",
+    "type": "character",
+    "value": [
+      "31904",
+      "35709"
+    ]
+  },
+  "w_country": {
+    "table": "warehouse",
+    "type": "character varying",
+    "value": [
+      "United States"
+    ]
+  },
+  "w_gmt_offset": {
+    "table": "warehouse",
+    "type": "numeric",
+    "value": [
+      "-5.0"
+    ]
+  },
+  "p_promo_sk": {
+    "table": "promotion",
+    "type": "integer",
+    "value": [
+      34,
+      70,
+      100,
+      201,
+      158,
+      165,
+      8,
+      225,
+      291,
+      189,
+      99
+    ]
+  },
+  "p_promo_id": {
+    "table": "promotion",
+    "type": "character",
+    "value": [
+      "AAAAAAAACHAAAAAA",
+      "AAAAAAAAHFAAAAAA",
+      "AAAAAAAAEBAAAAAA",
+      "AAAAAAAAHLAAAAAA",
+      "AAAAAAAABPAAAAAA",
+      "AAAAAAAAOIAAAAAA",
+      "AAAAAAAANDAAAAAA",
+      "AAAAAAAALBBAAAAA",
+      "AAAAAAAAICAAAAAA",
+      "AAAAAAAAOPAAAAAA",
+      "AAAAAAAADOAAAAAA"
+    ]
+  },
+  "p_start_date_sk": {
+    "table": "promotion",
+    "type": "integer",
+    "value": [
+      2450614,
+      2450825,
+      2450355,
+      2450569,
+      2450578,
+      2450217,
+      2450829,
+      2450255,
+      2450371,
+      2450881,
+      2450845
+    ]
+  },
+  "p_end_date_sk": {
+    "table": "promotion",
+    "type": "integer",
+    "value": [
+      2450593,
+      2450820,
+      2450347,
+      2450734,
+      2450200,
+      2450470,
+      2450455,
+      2450551,
+      2450749
+    ]
+  },
+  "p_item_sk": {
+    "table": "promotion",
+    "type": "integer",
+    "value": [
+      16750,
+      3304,
+      6796,
+      4246,
+      12745,
+      13616,
+      10120,
+      17239,
+      17989,
+      16582,
+      778
+    ]
+  },
+  "p_cost": {
+    "table": "promotion",
+    "type": "numeric",
+    "value": [
+      "1000.0"
+    ]
+  },
+  "p_response_target": {
+    "table": "promotion",
+    "type": "integer",
+    "value": [
+      1
+    ]
+  },
+  "p_promo_name": {
+    "table": "promotion",
+    "type": "character",
+    "value": [
+      "pri",
+      "able",
+      "ese"
+    ]
+  },
+  "p_channel_dmail": {
+    "table": "promotion",
+    "type": "character",
+    "value": [
+      "N",
+      "Y"
+    ]
+  },
+  "p_channel_email": {
+    "table": "promotion",
+    "type": "character",
+    "value": [
+      "N"
+    ]
+  },
+  "p_channel_catalog": {
+    "table": "promotion",
+    "type": "character",
+    "value": [
+      "N"
+    ]
+  },
+  "p_channel_tv": {
+    "table": "promotion",
+    "type": "character",
+    "value": [
+      "N"
+    ]
+  },
+  "p_channel_radio": {
+    "table": "promotion",
+    "type": "character",
+    "value": [
+      "N"
+    ]
+  },
+  "p_channel_press": {
+    "table": "promotion",
+    "type": "character",
+    "value": [
+      "N"
+    ]
+  },
+  "p_channel_event": {
+    "table": "promotion",
+    "type": "character",
+    "value": [
+      "N"
+    ]
+  },
+  "p_channel_demo": {
+    "table": "promotion",
+    "type": "character",
+    "value": [
+      "N"
+    ]
+  },
+  "p_channel_details": {
+    "table": "promotion",
+    "type": "character varying",
+    "value": [
+      "Private, remaining rooms progr",
+      "Diverse, wide goals expect d",
+      "Enough high jobs meet to a languages",
+      "Excellent, bitter flames shall help to a pha",
+      "Highly standard guests respond in order actions; visit",
+      "However available parti",
+      "Ranks escape royal, religious e",
+      "Basic parties would feel alway",
+      "Whole, interior children find also from a job",
+      "Twice positive nations allow generally r",
+      "Acceptable examinations will not search here german terms."
+    ]
+  },
+  "p_purpose": {
+    "table": "promotion",
+    "type": "character",
+    "value": [
+      "Unknown"
+    ]
+  },
+  "p_discount_active": {
+    "table": "promotion",
+    "type": "character",
+    "value": [
+      "N"
+    ]
+  },
+  "wp_web_page_sk": {
+    "table": "web_page",
+    "type": "integer",
+    "value": [
+      19,
+      36,
+      27,
+      52,
+      40,
+      55,
+      38,
+      56,
+      45,
+      18,
+      53
+    ]
+  },
+  "wp_web_page_id": {
+    "table": "web_page",
+    "type": "character",
+    "value": [
+      "AAAAAAAAEAAAAAAA",
+      "AAAAAAAAHAAAAAAA",
+      "AAAAAAAACAAAAAAA",
+      "AAAAAAAAIAAAAAAA",
+      "AAAAAAAABDAAAAAA",
+      "AAAAAAAACCAAAAAA"
+    ]
+  },
+  "wp_rec_start_date": {
+    "table": "web_page",
+    "type": "date",
+    "value": [
+      "2001-09-03",
+      "1997-09-03",
+      "2000-09-03"
+    ]
+  },
+  "wp_rec_end_date": {
+    "table": "web_page",
+    "type": "date",
+    "value": [
+      "2001-09-02",
+      "2000-09-02",
+      "1999-09-03"
+    ]
+  },
+  "wp_creation_date_sk": {
+    "table": "web_page",
+    "type": "integer",
+    "value": [
+      2450807,
+      2450813,
+      2450812
+    ]
+  },
+  "wp_access_date_sk": {
+    "table": "web_page",
+    "type": "integer",
+    "value": [
+      2452589,
+      2452594,
+      2452642,
+      2452568,
+      2452638
+    ]
+  },
+  "wp_autogen_flag": {
+    "table": "web_page",
+    "type": "character",
+    "value": [
+      "Y",
+      "N"
+    ]
+  },
+  "wp_customer_sk": {
+    "table": "web_page",
+    "type": "integer",
+    "value": [
+      80695,
+      51807,
+      68301
+    ]
+  },
+  "wp_url": {
+    "table": "web_page",
+    "type": "character varying",
+    "value": [
+      "http://www.foo.com"
+    ]
+  },
+  "wp_type": {
+    "table": "web_page",
+    "type": "character",
+    "value": [
+      "ad",
+      "general",
+      "welcome"
+    ]
+  },
+  "wp_char_count": {
+    "table": "web_page",
+    "type": "integer",
+    "value": [
+      1584,
+      2635,
+      4463,
+      2279,
+      4915,
+      4438,
+      3520,
+      3211,
+      4693
+    ]
+  },
+  "wp_link_count": {
+    "table": "web_page",
+    "type": "integer",
+    "value": [
+      12,
+      9,
+      10,
+      7
+    ]
+  },
+  "wp_image_count": {
+    "table": "web_page",
+    "type": "integer",
+    "value": [
+      7,
+      4,
+      1
+    ]
+  },
+  "wp_max_ad_count": {
+    "table": "web_page",
+    "type": "integer",
+    "value": [
+      2,
+      4,
+      3
+    ]
+  },
+  "i_item_sk": {
+    "table": "item",
+    "type": "integer",
+    "value": [
+      17246,
+      13887,
+      6773,
+      3883,
+      14092,
+      12443,
+      10938,
+      12921,
+      3307,
+      9673,
+      3649
+    ]
+  },
+  "i_item_id": {
+    "table": "item",
+    "type": "character",
+    "value": [
+      "AAAAAAAAFMJCAAAA",
+      "AAAAAAAAKCIDAAAA",
+      "AAAAAAAAGOCAAAAA",
+      "AAAAAAAAEKGCAAAA",
+      "AAAAAAAAKINDAAAA",
+      "AAAAAAAACLAEAAAA",
+      "AAAAAAAAAFACAAAA",
+      "AAAAAAAAIAEBAAAA",
+      "AAAAAAAAIPACAAAA",
+      "AAAAAAAAECDEAAAA",
+      "AAAAAAAAKABCAAAA"
+    ]
+  },
+  "i_rec_start_date": {
+    "table": "item",
+    "type": "date",
+    "value": [
+      "2000-10-27",
+      "1999-10-28",
+      "1997-10-27"
+    ]
+  },
+  "i_rec_end_date": {
+    "table": "item",
+    "type": "date",
+    "value": [
+      "2000-10-26",
+      "1999-10-27",
+      "2001-10-26"
+    ]
+  },
+  "i_item_desc": {
+    "table": "item",
+    "type": "character varying",
+    "value": [
+      "Awards shall believe often accessible",
+      "Arms try in an affairs. Months cannot rebuild mutual, free standards. Representative commitments will search still from the aspects.",
+      "Parents visit now stones; low developing others will not worry soon just large laboratories. Later great scholars appreciate later imaginative bonds. Other parents can fight ho",
+      "Here quiet workers might remember with the shoulders. Privileges would guess typical, social sales. Already total concepts will not point fur",
+      "Critics used to become still findings. Minutes will not see so international, certain standards. Major,",
+      "Scenes meet. Overall birds could work ahead military, clear reports; sure, possible terms appeal yet. Types enable so however royal instructions; peaceful, likely patients compete single,",
+      "Economic, ethical powers get actually small weeks; agen",
+      "Quite alternative games like blue, similar strings. Electoral directions win at once after the tasks. Careful",
+      "Ethnic, russian days would want nearly large authorities. More massive goals swim late; important moments will slow glad products. Characters shall not blame m",
+      "Fair vital actions should see regardless cultural, na",
+      "Yet high bodies invest. Social tasks shall not read very measures. Post-war strengths give a"
+    ]
+  },
+  "i_current_price": {
+    "table": "item",
+    "type": "numeric",
+    "value": [
+      "69.8",
+      "0.62",
+      "2.89",
+      "5.82",
+      "2.22",
+      "8.16",
+      "4.16",
+      "80.63",
+      "9.97",
+      "3.85"
+    ]
+  },
+  "i_wholesale_cost": {
+    "table": "item",
+    "type": "numeric",
+    "value": [
+      "0.73",
+      "2.99",
+      "0.85",
+      "3.78",
+      "1.51",
+      "0.32",
+      "3.75",
+      "2.04",
+      "0.19",
+      "6.6"
+    ]
+  },
+  "i_brand_id": {
+    "table": "item",
+    "type": "integer",
+    "value": [
+      4003001,
+      6001005,
+      2003002,
+      9002005,
+      6013006,
+      9016010,
+      5002002,
+      8004001,
+      1001002
+    ]
+  },
+  "i_brand": {
+    "table": "item",
+    "type": "character",
+    "value": [
+      "scholaramalgamalg #5",
+      "namelessmaxi #6",
+      "importoimporto #1",
+      "edu packexporti #1",
+      "amalgimporto #1",
+      "edu packexporti #2",
+      "edu packmaxi #8",
+      "exportiamalg #1",
+      "importoamalgamalg #14"
+    ]
+  },
+  "i_class_id": {
+    "table": "item",
+    "type": "integer",
+    "value": [
+      2,
+      8,
+      6
+    ]
+  },
+  "i_class": {
+    "table": "item",
+    "type": "character",
+    "value": [
+      "bathroom",
+      "fragrances",
+      "musical",
+      "sports-apparel",
+      "science",
+      "audio",
+      "monitors"
+    ]
+  },
+  "i_category_id": {
+    "table": "item",
+    "type": "integer",
+    "value": [
+      10,
+      2,
+      4
+    ]
+  },
+  "i_category": {
+    "table": "item",
+    "type": "character",
+    "value": [
+      "Sports",
+      "Children",
+      "Books"
+    ]
+  },
+  "i_manufact_id": {
+    "table": "item",
+    "type": "integer",
+    "value": [
+      459,
+      145,
+      707,
+      99,
+      183,
+      559,
+      324,
+      649,
+      156,
+      288,
+      542
+    ]
+  },
+  "i_manufact": {
+    "table": "item",
+    "type": "character",
+    "value": [
+      "ableation",
+      "ableableought",
+      "n stablecally",
+      "prin stanti",
+      "n stn stable",
+      "oughtn stese",
+      "antiought",
+      "ableeseese",
+      "eingeseeing",
+      "ationable"
+    ]
+  },
+  "i_size": {
+    "table": "item",
+    "type": "character",
+    "value": [
+      "medium",
+      "economy",
+      "small"
+    ]
+  },
+  "i_formulation": {
+    "table": "item",
+    "type": "character",
+    "value": [
+      "88163900857peru21617",
+      "219118592white105341",
+      "71peach7110268278977",
+      "929870084635bisque23",
+      "031971sienna32594729",
+      "73snow57915313154346",
+      "sandy016672319388815",
+      "650580696428sandy611",
+      "273steel368593502029",
+      "96828ivory1446226094"
+    ]
+  },
+  "i_color": {
+    "table": "item",
+    "type": "character",
+    "value": [
+      "pink",
+      "olive",
+      "white",
+      "cornsilk",
+      "cornflower",
+      "light",
+      "navy"
+    ]
+  },
+  "i_units": {
+    "table": "item",
+    "type": "character",
+    "value": [
+      "Pound",
+      "Unknown",
+      "Bundle",
+      "Each"
+    ]
+  },
+  "i_container": {
+    "table": "item",
+    "type": "character",
+    "value": [
+      "Unknown"
+    ]
+  },
+  "i_manager_id": {
+    "table": "item",
+    "type": "integer",
+    "value": [
+      82,
+      49,
+      16,
+      63,
+      7,
+      37,
+      4,
+      17
+    ]
+  },
+  "i_product_name": {
+    "table": "item",
+    "type": "character",
+    "value": [
+      "callybareingeing",
+      "ableantieingcallyought",
+      "callyeingableese",
+      "priprieingpriought",
+      "n steingation",
+      "ablecallyantioughtought",
+      "pribaroughtanti",
+      "callyantiantipriought",
+      "eingbaroughtable",
+      "oughtn stoughtationought",
+      "ablecallyationeseought"
+    ]
+  },
+  "ib_income_band_sk": {
+    "table": "income_band",
+    "type": "integer",
+    "value": [
+      17,
+      8,
+      13,
+      15
+    ]
+  },
+  "ib_lower_bound": {
+    "table": "income_band",
+    "type": "integer",
+    "value": [
+      60001,
+      80001,
+      150001,
+      20001
+    ]
+  },
+  "ib_upper_bound": {
+    "table": "income_band",
+    "type": "integer",
+    "value": [
+      110000,
+      50000,
+      150000,
+      10000
+    ]
+  },
+  "t_time_sk": {
+    "table": "time_dim",
+    "type": "integer",
+    "value": [
+      28183,
+      78359,
+      33852,
+      73332,
+      38105,
+      52367,
+      52918,
+      76906,
+      55717,
+      66497
+    ]
+  },
+  "t_time_id": {
+    "table": "time_dim",
+    "type": "character",
+    "value": [
+      "AAAAAAAAHEKAAAAA",
+      "AAAAAAAAACJBBAAA",
+      "AAAAAAAAIDLHAAAA",
+      "AAAAAAAANGMEAAAA",
+      "AAAAAAAAIJNGAAAA",
+      "AAAAAAAALFMFAAAA",
+      "AAAAAAAAIKMJAAAA",
+      "AAAAAAAAIGOLAAAA",
+      "AAAAAAAABIBMAAAA",
+      "AAAAAAAALDMDAAAA",
+      "AAAAAAAACJCJAAAA"
+    ]
+  },
+  "t_time": {
+    "table": "time_dim",
+    "type": "integer",
+    "value": [
+      8767,
+      39401,
+      41801,
+      76800,
+      24257,
+      43867,
+      65686,
+      72449,
+      76288,
+      8307,
+      9646
+    ]
+  },
+  "t_hour": {
+    "table": "time_dim",
+    "type": "integer",
+    "value": [
+      2,
+      11,
+      12,
+      8
+    ]
+  },
+  "t_minute": {
+    "table": "time_dim",
+    "type": "integer",
+    "value": [
+      53,
+      18,
+      34,
+      30,
+      33,
+      13,
+      54
+    ]
+  },
+  "t_second": {
+    "table": "time_dim",
+    "type": "integer",
+    "value": [
+      50,
+      24,
+      3,
+      47,
+      5,
+      15,
+      9,
+      34
+    ]
+  },
+  "t_am_pm": {
+    "table": "time_dim",
+    "type": "character",
+    "value": [
+      "PM",
+      "AM"
+    ]
+  },
+  "t_shift": {
+    "table": "time_dim",
+    "type": "character",
+    "value": [
+      "first",
+      "second",
+      "third"
+    ]
+  },
+  "t_sub_shift": {
+    "table": "time_dim",
+    "type": "character",
+    "value": [
+      "night",
+      "morning",
+      "evening"
+    ]
+  },
+  "t_meal_time": {
+    "table": "time_dim",
+    "type": "character",
+    "value": [
+      "lunch",
+      "breakfast",
+      "dinner"
+    ]
+  },
+  "cp_catalog_page_sk": {
+    "table": "catalog_page",
+    "type": "integer",
+    "value": [
+      1520,
+      1478,
+      455,
+      7163,
+      6131,
+      3197,
+      1869,
+      8743,
+      2753,
+      7914,
+      3344
+    ]
+  },
+  "cp_catalog_page_id": {
+    "table": "catalog_page",
+    "type": "character",
+    "value": [
+      "AAAAAAAAFLCCAAAA",
+      "AAAAAAAANKJAAAAA",
+      "AAAAAAAAGHJCAAAA",
+      "AAAAAAAAFDDAAAAA",
+      "AAAAAAAAINPAAAAA",
+      "AAAAAAAAKLOAAAAA",
+      "AAAAAAAAKNOAAAAA",
+      "AAAAAAAAKCFBAAAA",
+      "AAAAAAAAOKNBAAAA",
+      "AAAAAAAADKACAAAA"
+    ]
+  },
+  "cp_start_date_sk": {
+    "table": "catalog_page",
+    "type": "integer",
+    "value": [
+      2452335,
+      2450905,
+      2452395,
+      2452365,
+      2451360,
+      2452790,
+      2451115,
+      2452548,
+      2452760
+    ]
+  },
+  "cp_end_date_sk": {
+    "table": "catalog_page",
+    "type": "integer",
+    "value": [
+      2451844,
+      2450996,
+      2450994,
+      2450964,
+      2452638,
+      2450874,
+      2451329,
+      2451270
+    ]
+  },
+  "cp_department": {
+    "table": "catalog_page",
+    "type": "character varying",
+    "value": [
+      "DEPARTMENT"
+    ]
+  },
+  "cp_catalog_number": {
+    "table": "catalog_page",
+    "type": "integer",
+    "value": [
+      99,
+      39,
+      82,
+      62,
+      71,
+      44,
+      88,
+      45
+    ]
+  },
+  "cp_catalog_page_number": {
+    "table": "catalog_page",
+    "type": "integer",
+    "value": [
+      95,
+      28,
+      80,
+      93,
+      1,
+      90,
+      10,
+      49,
+      24
+    ]
+  },
+  "cp_description": {
+    "table": "catalog_page",
+    "type": "character varying",
+    "value": [
+      "Fascinating, other things would score clearly strong in",
+      "Methods may not work quickly free goods; relative, narrow organisatio",
+      "Students get about essential, new fruits; often free years like also on a opportuni",
+      "Details might occur most inside following women. Cheap, assistant shops believe refu",
+      "Far, powerful projects used to sing low initially social conflicts. So",
+      "Other, separate weapons exist only resources. Still remaining operators express little legs; produ",
+      "Annual, particular children could impose never bri",
+      "Actually sure results catch relative, above organizations. Over mental ministers accep",
+      "Hands create of course weak things. More human parents suggest sure, social",
+      "Other parents should build just everyday, sophisticated opportunities; still ot"
+    ]
+  },
+  "cp_type": {
+    "table": "catalog_page",
+    "type": "character varying",
+    "value": [
+      "quarterly",
+      "bi-annual",
+      "monthly"
+    ]
+  },
+  "web_site_sk": {
+    "table": "web_site",
+    "type": "integer",
+    "value": [
+      7,
+      15,
+      9,
+      27,
+      29,
+      13
+    ]
+  },
+  "web_site_id": {
+    "table": "web_site",
+    "type": "character",
+    "value": [
+      "AAAAAAAAEAAAAAAA",
+      "AAAAAAAAHAAAAAAA",
+      "AAAAAAAADBAAAAAA"
+    ]
+  },
+  "web_rec_start_date": {
+    "table": "web_site",
+    "type": "date",
+    "value": [
+      "1999-08-17",
+      "2000-08-16",
+      "1997-08-16"
+    ]
+  },
+  "web_rec_end_date": {
+    "table": "web_site",
+    "type": "date",
+    "value": [
+      "2001-08-15",
+      "1999-08-16",
+      "2000-08-15"
+    ]
+  },
+  "web_name": {
+    "table": "web_site",
+    "type": "character varying",
+    "value": [
+      "site_4",
+      "site_1",
+      "site_0"
+    ]
+  },
+  "web_open_date_sk": {
+    "table": "web_site",
+    "type": "integer",
+    "value": [
+      2450603,
+      2450705,
+      2450654
+    ]
+  },
+  "web_close_date_sk": {
+    "table": "web_site",
+    "type": "integer",
+    "value": [
+      2448854,
+      2446978,
+      2447148
+    ]
+  },
+  "web_class": {
+    "table": "web_site",
+    "type": "character varying",
+    "value": [
+      "Unknown"
+    ]
+  },
+  "web_manager": {
+    "table": "web_site",
+    "type": "character varying",
+    "value": [
+      "Joseph Schultz",
+      "Joe Mcarthur",
+      "Richard Crump",
+      "Jonathan Young",
+      "Everett Regan",
+      "James Estrada"
+    ]
+  },
+  "web_mkt_id": {
+    "table": "web_site",
+    "type": "integer",
+    "value": [
+      5,
+      2,
+      4
+    ]
+  },
+  "web_mkt_class": {
+    "table": "web_site",
+    "type": "character varying",
+    "value": [
+      "Busy, welsh needs choose all",
+      "American, part-time feelings might",
+      "Delicate, serious subjects can swear dead,",
+      "Effective, average products give d",
+      "Indeed main files reduce once again"
+    ]
+  },
+  "web_mkt_desc": {
+    "table": "web_site",
+    "type": "character varying",
+    "value": [
+      "Lawyers avoid certai",
+      "Normally new difficulties may not improve well rural points. Sharp, ex",
+      "As forward criteria list too only comi",
+      "All real years make now a"
+    ]
+  },
+  "web_market_manager": {
+    "table": "web_site",
+    "type": "character varying",
+    "value": [
+      "Jeff Howerton",
+      "Donald Rodriguez",
+      "Dale Klinger",
+      "William Carr"
+    ]
+  },
+  "web_company_id": {
+    "table": "web_site",
+    "type": "integer",
+    "value": [
+      1,
+      4,
+      5
+    ]
+  },
+  "web_company_name": {
+    "table": "web_site",
+    "type": "character",
+    "value": [
+      "able",
+      "pri",
+      "anti"
+    ]
+  },
+  "web_street_number": {
+    "table": "web_site",
+    "type": "character",
+    "value": [
+      "227",
+      "31",
+      "91",
+      "349"
+    ]
+  },
+  "web_street_name": {
+    "table": "web_site",
+    "type": "character varying",
+    "value": [
+      "Sunset Church",
+      "First Railroad",
+      "Cherry",
+      "5th",
+      "Third",
+      "Hill Cedar"
+    ]
+  },
+  "web_street_type": {
+    "table": "web_site",
+    "type": "character",
+    "value": [
+      "Street",
+      "Dr.",
+      "Ct."
+    ]
+  },
+  "web_suite_number": {
+    "table": "web_site",
+    "type": "character",
+    "value": [
+      "Suite G",
+      "Suite 170",
+      "Suite 110",
+      "Suite 200"
+    ]
+  },
+  "web_city": {
+    "table": "web_site",
+    "type": "character varying",
+    "value": [
+      "Fairview",
+      "Midway"
+    ]
+  },
+  "web_county": {
+    "table": "web_site",
+    "type": "character varying",
+    "value": [
+      "Williamson County"
+    ]
+  },
+  "web_state": {
+    "table": "web_site",
+    "type": "character",
+    "value": [
+      "TN"
+    ]
+  },
+  "web_zip": {
+    "table": "web_site",
+    "type": "character",
+    "value": [
+      "31904",
+      "35709"
+    ]
+  },
+  "web_country": {
+    "table": "web_site",
+    "type": "character varying",
+    "value": [
+      "United States"
+    ]
+  },
+  "web_gmt_offset": {
+    "table": "web_site",
+    "type": "numeric",
+    "value": [
+      "-5.0"
+    ]
+  },
+  "web_tax_percentage": {
+    "table": "web_site",
+    "type": "numeric",
+    "value": [
+      "0.02",
+      "0.07",
+      "0.08"
+    ]
+  },
+  "sm_ship_mode_sk": {
+    "table": "ship_mode",
+    "type": "integer",
+    "value": [
+      3,
+      20,
+      9,
+      12
+    ]
+  },
+  "sm_ship_mode_id": {
+    "table": "ship_mode",
+    "type": "character",
+    "value": [
+      "AAAAAAAALAAAAAAA",
+      "AAAAAAAABAAAAAAA",
+      "AAAAAAAAOAAAAAAA",
+      "AAAAAAAAMAAAAAAA"
+    ]
+  },
+  "sm_type": {
+    "table": "ship_mode",
+    "type": "character",
+    "value": [
+      "LIBRARY",
+      "EXPRESS",
+      "NEXT DAY"
+    ]
+  },
+  "sm_code": {
+    "table": "ship_mode",
+    "type": "character",
+    "value": [
+      "BIKE",
+      "SURFACE",
+      "SEA"
+    ]
+  },
+  "sm_carrier": {
+    "table": "ship_mode",
+    "type": "character",
+    "value": [
+      "AIRBORNE",
+      "DIAMOND",
+      "PRIVATECARRIER",
+      "BOXBUNDLES"
+    ]
+  },
+  "sm_contract": {
+    "table": "ship_mode",
+    "type": "character",
+    "value": [
+      "oABmCxiSDXc",
+      "IPEM3yx8XfYa",
+      "vvvr2CbRZhuS9y4ha4gP",
+      "PC64Dmcne"
+    ]
+  },
+  "ca_address_sk": {
+    "table": "customer_address",
+    "type": "integer",
+    "value": [
+      25039,
+      2882,
+      23436,
+      20295,
+      35368,
+      23702,
+      20089,
+      36168,
+      18471,
+      27561
+    ]
+  },
+  "ca_address_id": {
+    "table": "customer_address",
+    "type": "character",
+    "value": [
+      "AAAAAAAAEGAEAAAA",
+      "AAAAAAAAGLPDAAAA",
+      "AAAAAAAAEGLBAAAA",
+      "AAAAAAAAILJAAAAA",
+      "AAAAAAAAAIGCAAAA",
+      "AAAAAAAADJLLAAAA",
+      "AAAAAAAABKFKAAAA",
+      "AAAAAAAALAMFAAAA",
+      "AAAAAAAADPJIAAAA",
+      "AAAAAAAABPGHAAAA",
+      "AAAAAAAACOIKAAAA"
+    ]
+  },
+  "ca_street_number": {
+    "table": "customer_address",
+    "type": "character",
+    "value": [
+      "789",
+      "797",
+      "621",
+      "126",
+      "607",
+      "130",
+      "158",
+      "573",
+      "100",
+      "648"
+    ]
+  },
+  "ca_street_name": {
+    "table": "customer_address",
+    "type": "character varying",
+    "value": [
+      "Spring Walnut",
+      "Willow 12th",
+      "Spruce River",
+      "Oak Oak",
+      "Cedar Sunset",
+      "5th Park",
+      "9th 8th",
+      "Locust",
+      "Second Fifth",
+      "Meadow"
+    ]
+  },
+  "ca_street_type": {
+    "table": "customer_address",
+    "type": "character",
+    "value": [
+      "Ave",
+      "Way",
+      "Blvd"
+    ]
+  },
+  "ca_suite_number": {
+    "table": "customer_address",
+    "type": "character",
+    "value": [
+      "Suite F",
+      "Suite I",
+      "Suite 130",
+      "Suite D",
+      "Suite P",
+      "Suite 90",
+      "Suite Q",
+      "Suite G"
+    ]
+  },
+  "ca_city": {
+    "table": "customer_address",
+    "type": "character varying",
+    "value": [
+      "Oakwood",
+      "Shiloh",
+      "Lincoln",
+      "Brookwood",
+      "Newtown",
+      "Oak Grove",
+      "Harmony"
+    ]
+  },
+  "ca_county": {
+    "table": "customer_address",
+    "type": "character varying",
+    "value": [
+      "Roanoke County",
+      "Griggs County",
+      "Sioux County",
+      "Beaufort County",
+      "Bosque County",
+      "Socorro County",
+      "Esmeralda County",
+      "Monroe County",
+      "Northampton County",
+      "Caldwell County"
+    ]
+  },
+  "ca_state": {
+    "table": "customer_address",
+    "type": "character",
+    "value": [
+      "NE",
+      "GA",
+      "MO",
+      "MT",
+      "NY"
+    ]
+  },
+  "ca_zip": {
+    "table": "customer_address",
+    "type": "character",
+    "value": [
+      "26955",
+      "70399",
+      "20587",
+      "46787",
+      "50059",
+      "55804",
+      "38721",
+      "71854",
+      "63511",
+      "21143",
+      "84593"
+    ]
+  },
+  "ca_country": {
+    "table": "customer_address",
+    "type": "character varying",
+    "value": [
+      "United States"
+    ]
+  },
+  "ca_gmt_offset": {
+    "table": "customer_address",
+    "type": "numeric",
+    "value": [
+      "-8.0",
+      "-6.0",
+      "-9.0"
+    ]
+  },
+  "ca_location_type": {
+    "table": "customer_address",
+    "type": "character",
+    "value": [
+      "condo",
+      "single family",
+      "apartment"
+    ]
+  },
+  "r_reason_sk": {
+    "table": "reason",
+    "type": "integer",
+    "value": [
+      34,
+      1,
+      24,
+      11,
+      21,
+      8,
+      7,
+      23
+    ]
+  },
+  "r_reason_id": {
+    "table": "reason",
+    "type": "character",
+    "value": [
+      "AAAAAAAAOAAAAAAA",
+      "AAAAAAAAJBAAAAAA",
+      "AAAAAAAAIBAAAAAA",
+      "AAAAAAAAFAAAAAAA",
+      "AAAAAAAAEAAAAAAA",
+      "AAAAAAAABCAAAAAA"
+    ]
+  },
+  "r_reason_desc": {
+    "table": "reason",
+    "type": "character",
+    "value": [
+      "Found a better extended warranty in a store",
+      "reason 27",
+      "reason 24",
+      "No service location in my area",
+      "Did not like the model",
+      "reason 28"
+    ]
+  },
+  "s_store_sk": {
+    "table": "store",
+    "type": "integer",
+    "value": [
+      3,
+      12,
+      5
+    ]
+  },
+  "s_store_id": {
+    "table": "store",
+    "type": "character",
+    "value": [
+      "AAAAAAAAIAAAAAAA",
+      "AAAAAAAAHAAAAAAA",
+      "AAAAAAAABAAAAAAA"
+    ]
+  },
+  "s_rec_start_date": {
+    "table": "store",
+    "type": "date",
+    "value": [
+      "1999-03-14",
+      "2000-03-13",
+      "2001-03-13"
+    ]
+  },
+  "s_rec_end_date": {
+    "table": "store",
+    "type": "date",
+    "value": [
+      "2001-03-12",
+      "1999-03-13",
+      "2000-03-12"
+    ]
+  },
+  "s_closed_date_sk": {
+    "table": "store",
+    "type": "integer",
+    "value": [
+      2451193,
+      2450980
+    ]
+  },
+  "s_store_name": {
+    "table": "store",
+    "type": "character varying",
+    "value": [
+      "anti",
+      "ation",
+      "ese"
+    ]
+  },
+  "s_number_employees": {
+    "table": "store",
+    "type": "integer",
+    "value": [
+      281,
+      272,
+      262
+    ]
+  },
+  "s_floor_space": {
+    "table": "store",
+    "type": "integer",
+    "value": [
+      7104553,
+      9697290,
+      8129162
+    ]
+  },
+  "s_hours": {
+    "table": "store",
+    "type": "character",
+    "value": [
+      "8AM-4PM",
+      "8AM-12AM"
+    ]
+  },
+  "s_manager": {
+    "table": "store",
+    "type": "character varying",
+    "value": [
+      "Barry Fleck",
+      "David Castaneda",
+      "David Edwards"
+    ]
+  },
+  "s_market_id": {
+    "table": "store",
+    "type": "integer",
+    "value": [
+      9,
+      1,
+      3
+    ]
+  },
+  "s_geography_class": {
+    "table": "store",
+    "type": "character varying",
+    "value": [
+      "Unknown"
+    ]
+  },
+  "s_market_desc": {
+    "table": "store",
+    "type": "character varying",
+    "value": [
+      "Existing men precede rather available grou",
+      "Ancient, assistant colonies tell good, new streets. Better blue pati",
+      "Central shoes should keep today almost star cultures. Children create very sorry pages. Alive, cu"
+    ]
+  },
+  "s_market_manager": {
+    "table": "store",
+    "type": "character varying",
+    "value": [
+      "Josef Henry",
+      "Jefferson Lowry",
+      "Joseph Roberts"
+    ]
+  },
+  "s_division_id": {
+    "table": "store",
+    "type": "integer",
+    "value": [
+      1
+    ]
+  },
+  "s_division_name": {
+    "table": "store",
+    "type": "character varying",
+    "value": [
+      "Unknown"
+    ]
+  },
+  "s_company_id": {
+    "table": "store",
+    "type": "integer",
+    "value": [
+      1
+    ]
+  },
+  "s_company_name": {
+    "table": "store",
+    "type": "character varying",
+    "value": [
+      "Unknown"
+    ]
+  },
+  "s_street_number": {
+    "table": "store",
+    "type": "character varying",
+    "value": [
+      "548",
+      "738",
+      "127"
+    ]
+  },
+  "s_street_name": {
+    "table": "store",
+    "type": "character varying",
+    "value": [
+      "Cedar",
+      "Center Madison",
+      "Adams"
+    ]
+  },
+  "s_street_type": {
+    "table": "store",
+    "type": "character",
+    "value": [
+      "Ln",
+      "Parkway",
+      "Way"
+    ]
+  },
+  "s_suite_number": {
+    "table": "store",
+    "type": "character",
+    "value": [
+      "Suite U",
+      "Suite H",
+      "Suite 10"
+    ]
+  },
+  "s_city": {
+    "table": "store",
+    "type": "character varying",
+    "value": [
+      "Fairview",
+      "Midway"
+    ]
+  },
+  "s_county": {
+    "table": "store",
+    "type": "character varying",
+    "value": [
+      "Williamson County"
+    ]
+  },
+  "s_state": {
+    "table": "store",
+    "type": "character",
+    "value": [
+      "TN"
+    ]
+  },
+  "s_zip": {
+    "table": "store",
+    "type": "character",
+    "value": [
+      "31904",
+      "35709"
+    ]
+  },
+  "s_country": {
+    "table": "store",
+    "type": "character varying",
+    "value": [
+      "United States"
+    ]
+  },
+  "s_gmt_offset": {
+    "table": "store",
+    "type": "numeric",
+    "value": [
+      "-5.0"
+    ]
+  },
+  "s_tax_precentage": {
+    "table": "store",
+    "type": "numeric",
+    "value": [
+      "0.07",
+      "0.03",
+      "0.0"
+    ]
+  },
+  "cd_demo_sk": {
+    "table": "customer_demographics",
+    "type": "integer",
+    "value": [
+      838509,
+      901317,
+      643832,
+      692592,
+      1037095,
+      77856,
+      400816,
+      1112781,
+      1431002,
+      814338,
+      869243,
+      1735316,
+      664775,
+      225874,
+      277394,
+      1002945,
+      1743514,
+      1517738,
+      1749320,
+      39911,
+      1900162,
+      1536478,
+      31772,
+      49162,
+      353526,
+      97770,
+      1573095,
+      187291,
+      1281116,
+      597169,
+      158552,
+      404125,
+      603595,
+      30836,
+      1033572,
+      613396,
+      788348,
+      534438,
+      426155,
+      599629,
+      1424421,
+      1323045,
+      1285118
+    ]
+  },
+  "cd_gender": {
+    "table": "customer_demographics",
+    "type": "character",
+    "value": [
+      "M",
+      "F"
+    ]
+  },
+  "cd_marital_status": {
+    "table": "customer_demographics",
+    "type": "character",
+    "value": [
+      "W",
+      "M",
+      "U"
+    ]
+  },
+  "cd_education_status": {
+    "table": "customer_demographics",
+    "type": "character",
+    "value": [
+      "Advanced Degree",
+      "4 yr Degree",
+      "Primary"
+    ]
+  },
+  "cd_purchase_estimate": {
+    "table": "customer_demographics",
+    "type": "integer",
+    "value": [
+      4500,
+      2500,
+      6500,
+      1500
+    ]
+  },
+  "cd_credit_rating": {
+    "table": "customer_demographics",
+    "type": "character",
+    "value": [
+      "Good",
+      "High Risk",
+      "Unknown"
+    ]
+  },
+  "cd_dep_count": {
+    "table": "customer_demographics",
+    "type": "integer",
+    "value": [
+      4,
+      3,
+      2
+    ]
+  },
+  "cd_dep_employed_count": {
+    "table": "customer_demographics",
+    "type": "integer",
+    "value": [
+      0,
+      1,
+      4
+    ]
+  },
+  "cd_dep_college_count": {
+    "table": "customer_demographics",
+    "type": "integer",
+    "value": [
+      5,
+      3,
+      2
+    ]
+  },
+  "sr_returned_date_sk": {
+    "table": "store_returns",
+    "type": "integer",
+    "value": [
+      2451052,
+      2451107,
+      2451609,
+      2451714,
+      2451592,
+      2451860,
+      2452272,
+      2452032,
+      2452311,
+      2452266
+    ]
+  },
+  "sr_return_time_sk": {
+    "table": "store_returns",
+    "type": "integer",
+    "value": [
+      50760,
+      39082,
+      37939,
+      29759,
+      53396,
+      54825,
+      38110,
+      44757,
+      59921,
+      49764
+    ]
+  },
+  "sr_item_sk": {
+    "table": "store_returns",
+    "type": "integer",
+    "value": [
+      1118,
+      11000,
+      16908,
+      16502,
+      12081,
+      3803,
+      7435,
+      13915,
+      13271,
+      13460,
+      16696
+    ]
+  },
+  "sr_customer_sk": {
+    "table": "store_returns",
+    "type": "integer",
+    "value": [
+      59171,
+      97031,
+      11836,
+      82409,
+      59154,
+      16751,
+      73440,
+      20774,
+      71112,
+      49996
+    ]
+  },
+  "sr_cdemo_sk": {
+    "table": "store_returns",
+    "type": "integer",
+    "value": [
+      1849097,
+      65719,
+      980639,
+      1801995,
+      105122,
+      1348305,
+      1160978,
+      190444,
+      743012,
+      639119,
+      1851670
+    ]
+  },
+  "sr_hdemo_sk": {
+    "table": "store_returns",
+    "type": "integer",
+    "value": [
+      2308,
+      5407,
+      3622,
+      1324,
+      2320,
+      2722,
+      3581,
+      5742,
+      999,
+      4321,
+      4265
+    ]
+  },
+  "sr_addr_sk": {
+    "table": "store_returns",
+    "type": "integer",
+    "value": [
+      28363,
+      19586,
+      38553,
+      11718,
+      44399,
+      42564,
+      5539,
+      31563,
+      36075,
+      31913,
+      19448
+    ]
+  },
+  "sr_store_sk": {
+    "table": "store_returns",
+    "type": "integer",
+    "value": [
+      8,
+      10,
+      2
+    ]
+  },
+  "sr_reason_sk": {
+    "table": "store_returns",
+    "type": "integer",
+    "value": [
+      24,
+      23,
+      35,
+      29
+    ]
+  },
+  "sr_ticket_number": {
+    "table": "store_returns",
+    "type": "integer",
+    "value": [
+      165465,
+      91059,
+      24809,
+      96407,
+      39834,
+      8780,
+      194573,
+      184426,
+      172542,
+      190533,
+      99880
+    ]
+  },
+  "sr_return_quantity": {
+    "table": "store_returns",
+    "type": "integer",
+    "value": [
+      20,
+      69,
+      32,
+      6,
+      5
+    ]
+  },
+  "sr_return_amt": {
+    "table": "store_returns",
+    "type": "numeric",
+    "value": [
+      "2273.1",
+      "1090.4",
+      "70.81",
+      "906.48",
+      "399.52",
+      "25.75",
+      "986.88",
+      "3476.0",
+      "2129.96"
+    ]
+  },
+  "sr_return_tax": {
+    "table": "store_returns",
+    "type": "numeric",
+    "value": [
+      "42.09",
+      "42.37",
+      "3.62",
+      "2.5",
+      "18.85",
+      "43.57",
+      "1.21",
+      "98.11",
+      "31.49",
+      "69.68"
+    ]
+  },
+  "sr_return_amt_inc_tax": {
+    "table": "store_returns",
+    "type": "numeric",
+    "value": [
+      "6402.56",
+      "200.59",
+      "3708.45",
+      "2038.97",
+      "2527.72",
+      "74.84",
+      "617.76",
+      "3303.46",
+      "5826.16",
+      "154.7"
+    ]
+  },
+  "sr_fee": {
+    "table": "store_returns",
+    "type": "numeric",
+    "value": [
+      "53.73",
+      "29.92",
+      "53.9",
+      "31.18",
+      "85.97",
+      "59.23",
+      "35.09",
+      "86.95",
+      "7.15",
+      "41.59"
+    ]
+  },
+  "sr_return_ship_cost": {
+    "table": "store_returns",
+    "type": "numeric",
+    "value": [
+      "755.32",
+      "350.61",
+      "408.4",
+      "2110.09",
+      "40.4",
+      "0.0",
+      "172.44",
+      "67.92",
+      "15.08",
+      "7.69",
+      "32.79"
+    ]
+  },
+  "sr_refunded_cash": {
+    "table": "store_returns",
+    "type": "numeric",
+    "value": [
+      "1.65",
+      "719.18",
+      "1578.42",
+      "754.11",
+      "254.13",
+      "78.91",
+      "1834.19",
+      "77.61",
+      "234.32",
+      "1121.31"
+    ]
+  },
+  "sr_reversed_charge": {
+    "table": "store_returns",
+    "type": "numeric",
+    "value": [
+      "149.95",
+      "62.19",
+      "0.62",
+      "107.17",
+      "4744.85",
+      "224.08",
+      "6.38",
+      "1.82",
+      "26.56"
+    ]
+  },
+  "sr_store_credit": {
+    "table": "store_returns",
+    "type": "numeric",
+    "value": [
+      "13.05",
+      "59.53",
+      "0.0",
+      "9.09",
+      "10.31",
+      "29.98",
+      "3.29",
+      "11.55",
+      "326.49",
+      "1.38"
+    ]
+  },
+  "sr_net_loss": {
+    "table": "store_returns",
+    "type": "numeric",
+    "value": [
+      "370.69",
+      "85.5",
+      "384.9",
+      "255.13",
+      "214.7",
+      "407.73",
+      "1145.15",
+      "84.12",
+      "662.64",
+      "640.89",
+      "99.01"
+    ]
+  },
+  "cs_sold_date_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      2450980,
+      2451207,
+      2451089,
+      2451661,
+      2452599,
+      2451348,
+      2451909,
+      2452152,
+      2450970,
+      2452380,
+      2451694,
+      2451831,
+      2451151,
+      2451419,
+      2451863,
+      2451042,
+      2452470,
+      2452275,
+      2451928,
+      2452535,
+      2451064,
+      2451286,
+      2451509,
+      2451148,
+      2451826,
+      2451479,
+      2451828
+    ]
+  },
+  "cs_sold_time_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      44974,
+      61886,
+      73139,
+      61402,
+      43330,
+      15952,
+      73335,
+      65883,
+      57607,
+      32252,
+      63229,
+      69311,
+      71922,
+      68791,
+      19138,
+      42061,
+      17114,
+      34038,
+      70924,
+      30715,
+      63102,
+      4646,
+      61492,
+      80859,
+      61705,
+      57496,
+      51998,
+      28742,
+      35576,
+      73867,
+      68251,
+      3153,
+      69514,
+      10182
+    ]
+  },
+  "cs_ship_date_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      2452225,
+      2452032,
+      2452691,
+      2451137,
+      2452254,
+      2451372,
+      2452237,
+      2451196,
+      2451883,
+      2452192,
+      2450923,
+      2451431,
+      2451548,
+      2451962,
+      2452700,
+      2451258,
+      2451773,
+      2451884,
+      2451564,
+      2452272,
+      2451684,
+      2452214,
+      2452624,
+      2451639,
+      2451187,
+      2451977,
+      2452310,
+      2451926,
+      2450917,
+      2452568,
+      2451190,
+      2452263
+    ]
+  },
+  "cs_bill_customer_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      36267,
+      15747,
+      87014,
+      81584,
+      89067,
+      73390,
+      23599,
+      41998,
+      34469,
+      53671,
+      30731,
+      52152,
+      37798,
+      93211,
+      46730,
+      51893,
+      21538,
+      97135,
+      88966,
+      15876,
+      56588,
+      51271,
+      12766,
+      68429,
+      30034,
+      49840,
+      42531,
+      98622,
+      22530,
+      53780,
+      40557,
+      65037,
+      86799
+    ]
+  },
+  "cs_bill_cdemo_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      531300,
+      1514635,
+      999657,
+      582465,
+      320406,
+      1208775,
+      1669719,
+      1645015,
+      222000,
+      1666210,
+      1354796,
+      904443,
+      1128352,
+      477110,
+      288638,
+      1578286,
+      1201871,
+      830022,
+      565552,
+      617182,
+      1512834,
+      483711,
+      1143237,
+      652105,
+      1159785,
+      1079465,
+      537435,
+      1234132,
+      26261
+    ]
+  },
+  "cs_bill_hdemo_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      1249,
+      4317,
+      3925,
+      5110,
+      4984,
+      6012,
+      3980,
+      3910,
+      6883,
+      1644,
+      1376,
+      983,
+      357,
+      2554,
+      4653,
+      701,
+      4818,
+      2703,
+      1995,
+      7074,
+      1123,
+      3915,
+      125,
+      4658,
+      5375,
+      2252,
+      2374,
+      4794,
+      946,
+      7149,
+      3434,
+      1559,
+      788,
+      5557,
+      6636,
+      4300,
+      253,
+      2155
+    ]
+  },
+  "cs_bill_addr_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      5035,
+      30032,
+      15804,
+      1610,
+      44578,
+      41366,
+      41624,
+      17370,
+      3446,
+      26690,
+      25909,
+      37782,
+      39576,
+      48435,
+      30297,
+      36863,
+      34706,
+      39811,
+      2401,
+      30134,
+      17336,
+      24124,
+      19611,
+      22963,
+      6285,
+      24196,
+      6413,
+      14528,
+      21124,
+      37414,
+      18354,
+      34003,
+      15837
+    ]
+  },
+  "cs_ship_customer_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      88010,
+      74806,
+      98644,
+      58825,
+      78968,
+      41032,
+      28830,
+      622,
+      79917,
+      20793,
+      5529,
+      36201,
+      16501,
+      72507,
+      80604,
+      36876,
+      84115,
+      22183,
+      67805,
+      59182,
+      43225,
+      22853,
+      412,
+      87024,
+      68793,
+      91047,
+      97070,
+      99756,
+      31312,
+      32544,
+      63515,
+      33637,
+      75945,
+      28595,
+      27705,
+      53080
+    ]
+  },
+  "cs_ship_cdemo_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      399690,
+      1091543,
+      762472,
+      1107127,
+      1134190,
+      1911791,
+      259057,
+      1423897,
+      156760,
+      1672978,
+      1424497,
+      1597277,
+      875454,
+      1561498,
+      1494525,
+      1528161,
+      1156276,
+      1206562,
+      1613964,
+      1775514,
+      1044691,
+      998775,
+      6005,
+      1116831,
+      682938,
+      1532787,
+      631427,
+      106466,
+      1484510,
+      88409,
+      392696
+    ]
+  },
+  "cs_ship_hdemo_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      4859,
+      4057,
+      6620,
+      5378,
+      6111,
+      3394,
+      720,
+      6259,
+      3939,
+      2118,
+      1792,
+      328,
+      3854,
+      5698,
+      6055,
+      5181,
+      2959,
+      4188,
+      6546,
+      5284,
+      4224,
+      4216,
+      6873,
+      29,
+      6665,
+      2049,
+      448,
+      5823,
+      6230
+    ]
+  },
+  "cs_ship_addr_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      21550,
+      5040,
+      41157,
+      2892,
+      4716,
+      8061,
+      16858,
+      41039,
+      17140,
+      30668,
+      38928,
+      30357,
+      32801,
+      28336,
+      42321,
+      34757,
+      731,
+      16676,
+      3969,
+      5133,
+      31827,
+      28456,
+      49286,
+      22080,
+      43636,
+      3883,
+      48319,
+      15031,
+      8300,
+      33126,
+      24954,
+      45980,
+      5026,
+      31880
+    ]
+  },
+  "cs_call_center_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      2,
+      4,
+      6
+    ]
+  },
+  "cs_catalog_page_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      6673,
+      6944,
+      6807,
+      4060,
+      2338,
+      1053,
+      2529,
+      9061,
+      5979,
+      7932,
+      4781,
+      8204,
+      136,
+      3233,
+      7905,
+      2807,
+      2365,
+      5989,
+      2011,
+      2408,
+      8148,
+      147,
+      8102,
+      4094,
+      2157,
+      7927,
+      124,
+      2158,
+      174,
+      6572,
+      7913
+    ]
+  },
+  "cs_ship_mode_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      14,
+      9,
+      15
+    ]
+  },
+  "cs_warehouse_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      1,
+      5,
+      2
+    ]
+  },
+  "cs_item_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      5341,
+      12554,
+      9589,
+      2137,
+      2698,
+      6373,
+      14919,
+      17912,
+      17560,
+      16204,
+      17318,
+      8870,
+      218,
+      15495,
+      15157,
+      16259,
+      8350,
+      6734,
+      14091,
+      9931,
+      10876,
+      12956,
+      13975,
+      6470,
+      15516,
+      6841,
+      14929,
+      14719,
+      8384
+    ]
+  },
+  "cs_promo_sk": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      270,
+      256,
+      92,
+      21,
+      274,
+      107,
+      136,
+      176,
+      59,
+      42,
+      237,
+      249,
+      182,
+      64,
+      77,
+      299,
+      113,
+      259,
+      73,
+      31,
+      60,
+      158,
+      127,
+      177,
+      195
+    ]
+  },
+  "cs_order_number": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      312,
+      107493,
+      51008,
+      59583,
+      103376,
+      34866,
+      4975,
+      5924,
+      153090,
+      43994,
+      105096,
+      127855,
+      69392,
+      54275,
+      40617,
+      118943,
+      62130,
+      133542,
+      74314,
+      34730,
+      134347,
+      39515,
+      25635,
+      136905,
+      111524,
+      36798,
+      144243,
+      88162,
+      70277,
+      90132,
+      111750
+    ]
+  },
+  "cs_quantity": {
+    "table": "catalog_sales",
+    "type": "integer",
+    "value": [
+      20,
+      39,
+      38,
+      76,
+      49,
+      91,
+      62,
+      5,
+      10,
+      40,
+      66,
+      92,
+      51,
+      93,
+      79
+    ]
+  },
+  "cs_wholesale_cost": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "5.0",
+      "18.41",
+      "79.03",
+      "18.17",
+      "25.45",
+      "18.55",
+      "86.16",
+      "16.03",
+      "53.74",
+      "13.04",
+      "18.39",
+      "16.3",
+      "82.68",
+      "62.76",
+      "63.8",
+      "78.98",
+      "35.08",
+      "4.57",
+      "33.05",
+      "21.46",
+      "45.85",
+      "3.92",
+      "27.45",
+      "26.77",
+      "39.42",
+      "39.56",
+      "76.63",
+      "43.37",
+      "66.13",
+      "60.81"
+    ]
+  },
+  "cs_list_price": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "55.97",
+      "128.98",
+      "284.19",
+      "255.78",
+      "141.08",
+      "60.0",
+      "165.87",
+      "60.72",
+      "165.35",
+      "57.68",
+      "10.71",
+      "84.4",
+      "92.75",
+      "180.33",
+      "92.74",
+      "11.35",
+      "71.16",
+      "113.43",
+      "67.5",
+      "150.0",
+      "81.95",
+      "114.06",
+      "55.12",
+      "205.2",
+      "130.59",
+      "165.93",
+      "126.8",
+      "176.83",
+      "23.14",
+      "3.44",
+      "165.2",
+      "30.44",
+      "10.5",
+      "173.52",
+      "84.32",
+      "67.28"
+    ]
+  },
+  "cs_sales_price": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "4.38",
+      "21.57",
+      "4.05",
+      "0.58",
+      "23.51",
+      "60.72",
+      "96.65",
+      "54.56",
+      "13.74",
+      "138.47",
+      "87.19",
+      "88.85",
+      "62.46",
+      "27.27",
+      "41.78",
+      "16.1",
+      "44.97",
+      "100.82",
+      "223.55",
+      "13.09",
+      "245.72",
+      "45.41",
+      "34.73",
+      "49.17",
+      "65.3",
+      "13.57",
+      "24.47",
+      "95.35",
+      "102.58",
+      "21.65",
+      "0.0"
+    ]
+  },
+  "cs_ext_discount_amt": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "119.7",
+      "1818.97",
+      "698.25",
+      "2526.48",
+      "3.84",
+      "39.75",
+      "12.16",
+      "1390.6",
+      "300.96",
+      "254.49",
+      "0.0",
+      "1144.2",
+      "388.85",
+      "4906.69",
+      "1768.26",
+      "5276.82",
+      "143.04",
+      "12930.52",
+      "4512.96",
+      "514.01",
+      "5549.58",
+      "2663.26",
+      "1114.88",
+      "7425.0",
+      "12484.48",
+      "8900.71",
+      "11728.08",
+      "2769.92",
+      "2462.8",
+      "41.28"
+    ]
+  },
+  "cs_ext_sales_price": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "662.72",
+      "4855.62",
+      "517.12",
+      "629.34",
+      "232.98",
+      "5421.6",
+      "934.04",
+      "536.5",
+      "827.41",
+      "735.38",
+      "442.08",
+      "763.6",
+      "2735.86",
+      "115.52",
+      "42.0",
+      "1446.49",
+      "2384.78",
+      "1320.96",
+      "1116.0",
+      "1335.6",
+      "361.9",
+      "749.65",
+      "5081.13",
+      "4013.46",
+      "291.72",
+      "398.11",
+      "212.42",
+      "117.67",
+      "5111.68"
+    ]
+  },
+  "cs_ext_wholesale_cost": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "1167.92",
+      "6910.2",
+      "3041.03",
+      "986.68",
+      "7334.82",
+      "736.16",
+      "1188.42",
+      "2648.1",
+      "6278.0",
+      "1980.15",
+      "2458.26",
+      "3577.13",
+      "4668.35",
+      "3048.24",
+      "1554.28",
+      "112.89",
+      "247.9",
+      "3352.98",
+      "350.06",
+      "1400.96",
+      "5111.64",
+      "1204.28",
+      "117.36",
+      "971.5",
+      "113.01",
+      "2110.5",
+      "1307.2",
+      "6237.1",
+      "671.52",
+      "414.33",
+      "1595.4",
+      "2142.06",
+      "5035.95",
+      "2707.77",
+      "3008.64"
+    ]
+  },
+  "cs_ext_list_price": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "2632.58",
+      "3329.1",
+      "287.91",
+      "988.35",
+      "77.01",
+      "5676.48",
+      "2481.6",
+      "193.8",
+      "6716.62",
+      "4880.4",
+      "6679.8",
+      "536.36",
+      "6931.98",
+      "2272.86",
+      "1092.55",
+      "16247.68",
+      "1295.61",
+      "413.76",
+      "5162.4",
+      "1086.14",
+      "851.52",
+      "49.92",
+      "998.13",
+      "208.95",
+      "6209.28",
+      "5758.92",
+      "4532.4",
+      "5405.92",
+      "3375.5"
+    ]
+  },
+  "cs_ext_tax": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "15.78",
+      "20.49",
+      "0.0",
+      "49.9",
+      "26.38",
+      "117.28",
+      "18.9",
+      "33.09",
+      "180.13",
+      "1.35",
+      "2.05",
+      "88.28",
+      "15.16",
+      "61.91",
+      "48.22",
+      "136.29",
+      "26.4",
+      "31.27",
+      "35.9",
+      "9.34",
+      "0.04",
+      "21.83",
+      "60.73",
+      "15.26",
+      "48.36",
+      "3.74",
+      "10.26"
+    ]
+  },
+  "cs_coupon_amt": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "8653.7",
+      "55.86",
+      "183.22",
+      "280.35",
+      "594.0"
+    ]
+  },
+  "cs_ext_ship_cost": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "880.75",
+      "134.28",
+      "6707.16",
+      "33.0",
+      "474.24",
+      "1296.75",
+      "260.12",
+      "26.3",
+      "179.96",
+      "511.56",
+      "2139.98",
+      "1087.92",
+      "602.7",
+      "689.52",
+      "1264.45",
+      "1722.44",
+      "4415.39",
+      "570.14",
+      "615.16",
+      "1691.36",
+      "1608.4",
+      "475.02",
+      "344.4",
+      "2375.46",
+      "490.28",
+      "221.0",
+      "669.6",
+      "44.95",
+      "170.64",
+      "1249.6",
+      "2618.58",
+      "409.0",
+      "1037.92",
+      "284.7"
+    ]
+  },
+  "cs_net_paid": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "6956.72",
+      "3495.04",
+      "2489.29",
+      "29.45",
+      "3182.73",
+      "73.9",
+      "722.72",
+      "236.48",
+      "321.0",
+      "3748.5",
+      "3287.62",
+      "338.55",
+      "13573.66",
+      "2739.96",
+      "3376.12",
+      "8.5",
+      "5858.8",
+      "205.6",
+      "3736.12",
+      "6811.2",
+      "3416.7",
+      "17369.63",
+      "442.0",
+      "136.8",
+      "8774.96",
+      "20.7",
+      "3463.18",
+      "1260.55",
+      "2084.22",
+      "953.16",
+      "7978.22",
+      "2695.84"
+    ]
+  },
+  "cs_net_paid_inc_tax": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "6474.52",
+      "1743.47",
+      "10.01",
+      "777.94",
+      "2231.77",
+      "3779.49",
+      "12612.71",
+      "1070.95",
+      "4457.6",
+      "57.87",
+      "9546.01",
+      "5509.85",
+      "39.72",
+      "1643.91",
+      "715.33",
+      "1599.18",
+      "252.65",
+      "1024.27",
+      "5022.0",
+      "19.1",
+      "4640.32",
+      "1702.57",
+      "437.97",
+      "802.31",
+      "426.13",
+      "2832.29",
+      "2790.72",
+      "5658.78",
+      "960.94",
+      "6625.54",
+      "50.67",
+      "10105.88",
+      "789.53"
+    ]
+  },
+  "cs_net_paid_inc_ship": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "4057.28",
+      "3067.65",
+      "527.86",
+      "5106.01",
+      "104.04",
+      "2120.24",
+      "6095.92",
+      "131.88",
+      "7289.6",
+      "8157.0",
+      "6991.32",
+      "695.06",
+      "480.12",
+      "1810.7",
+      "1010.96",
+      "5154.84",
+      "2489.24",
+      "3519.45",
+      "9559.44",
+      "139.12",
+      "3457.28",
+      "5135.0",
+      "4157.01",
+      "463.65",
+      "946.5",
+      "3635.6",
+      "4760.5",
+      "2521.3",
+      "1266.1",
+      "1548.8",
+      "2709.84"
+    ]
+  },
+  "cs_net_paid_inc_ship_tax": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "163.4",
+      "2649.02",
+      "8239.2",
+      "8542.48",
+      "1586.46",
+      "2135.06",
+      "8019.08",
+      "257.36",
+      "3709.47",
+      "2437.5",
+      "1165.85",
+      "1384.41",
+      "2373.0",
+      "3675.95",
+      "2287.06",
+      "2158.59",
+      "2187.6",
+      "3212.06",
+      "158.09",
+      "600.84",
+      "3961.43",
+      "1453.22",
+      "188.63",
+      "19.4",
+      "2124.21",
+      "171.68",
+      "1280.34",
+      "2757.37",
+      "277.72",
+      "3451.57",
+      "743.02",
+      "664.31"
+    ]
+  },
+  "cs_net_profit": {
+    "table": "catalog_sales",
+    "type": "numeric",
+    "value": [
+      "-358.4",
+      "-976.26",
+      "-800.45",
+      "1815.88",
+      "-7.72",
+      "676.16",
+      "-2235.11",
+      "-1080.08",
+      "-180.6",
+      "-565.81",
+      "-1453.86",
+      "471.58",
+      "6890.28",
+      "593.1",
+      "-126.72",
+      "-13.14",
+      "-1075.08",
+      "-31.45",
+      "-125.75",
+      "-368.94",
+      "-405.12",
+      "-2438.1",
+      "-148.8",
+      "-680.32",
+      "159.6",
+      "45.54",
+      "-267.0",
+      "-252.0",
+      "-1409.64",
+      "1083.76",
+      "-3937.56",
+      "-438.5",
+      "-16.81",
+      "-95.9"
+    ]
+  },
+  "inv_date_sk": {
+    "table": "inventory",
+    "type": "integer",
+    "value": [
+      2451571,
+      2451991,
+      2452439,
+      2451844,
+      2451025,
+      2451704,
+      2450913,
+      2451060,
+      2452117,
+      2451683,
+      2452425,
+      2451424,
+      2450948,
+      2451830,
+      2452383,
+      2451263,
+      2450815,
+      2451235,
+      2451718,
+      2451613,
+      2452523,
+      2451172,
+      2451851,
+      2450871,
+      2451697,
+      2452593,
+      2452131,
+      2451543,
+      2451256,
+      2450976,
+      2452229,
+      2451662,
+      2451893,
+      2451501,
+      2451606,
+      2452152,
+      2451375,
+      2451942,
+      2452054,
+      2452082,
+      2451529,
+      2452292,
+      2452551,
+      2452306,
+      2451760,
+      2452502,
+      2451970,
+      2451277,
+      2451403,
+      2450920,
+      2451270,
+      2451312,
+      2452026,
+      2452257,
+      2451669,
+      2451522,
+      2451984,
+      2451634,
+      2452376
+    ]
+  },
+  "inv_item_sk": {
+    "table": "inventory",
+    "type": "integer",
+    "value": [
+      15733,
+      6127,
+      10303,
+      5987,
+      4370,
+      15400,
+      1833,
+      6151,
+      33,
+      12809,
+      14356,
+      889,
+      6866,
+      17035,
+      2399,
+      5230,
+      9719,
+      12868,
+      3649,
+      17408,
+      9565,
+      14186,
+      13943,
+      7911,
+      12067,
+      5543,
+      16785,
+      10984,
+      14425,
+      1031,
+      2599,
+      17683,
+      14282,
+      16220,
+      15606,
+      17684,
+      7082,
+      3833,
+      4381,
+      2895,
+      11313,
+      16257,
+      15361,
+      14109,
+      3482,
+      7823,
+      17835,
+      4311,
+      9223,
+      4,
+      2301,
+      2823,
+      5491,
+      4929,
+      6321,
+      10306,
+      2593,
+      14957,
+      2023,
+      3711,
+      9081,
+      4582,
+      11245,
+      2249,
+      17107,
+      5623,
+      15061,
+      11785,
+      12771,
+      5809,
+      10545,
+      6681,
+      3878,
+      12223,
+      13867,
+      2951,
+      12370,
+      13231,
+      2677,
+      5256,
+      10555,
+      11913,
+      5689,
+      9163,
+      17416,
+      14192,
+      17026,
+      5791,
+      15428,
+      17581,
+      12864,
+      2517,
+      13465,
+      2795,
+      11355,
+      12686,
+      6234,
+      9320,
+      210,
+      15097,
+      5634,
+      1892,
+      13099,
+      925,
+      11078,
+      12607,
+      1003,
+      17947,
+      17833,
+      5935,
+      9619,
+      3276,
+      4300,
+      279,
+      12340,
+      10405,
+      2278,
+      4736,
+      12094,
+      3098,
+      15095,
+      6076,
+      4522,
+      16765,
+      4933,
+      2783,
+      7,
+      7592,
+      4017,
+      14103,
+      1855,
+      14373,
+      4379,
+      9133,
+      6849,
+      9208,
+      5984,
+      5779,
+      12724,
+      17444,
+      11086,
+      17407,
+      4507,
+      2918,
+      14047,
+      5719,
+      1096,
+      4849,
+      5420,
+      11582,
+      2081,
+      1333,
+      12831,
+      12303,
+      17737,
+      7390,
+      16538,
+      17690,
+      1954,
+      16382,
+      5900,
+      12335,
+      11862,
+      7070,
+      17933,
+      15025,
+      12883,
+      17257,
+      4051,
+      1580,
+      5787,
+      9129,
+      13459,
+      12938,
+      3535,
+      6266,
+      11727,
+      5426,
+      10861,
+      8341,
+      14287,
+      15436,
+      4337,
+      6067,
+      12343,
+      14845,
+      10367,
+      12779,
+      12008,
+      1417,
+      2571,
+      11538,
+      15488,
+      13454,
+      5755,
+      12169,
+      284,
+      4434,
+      13670,
+      3914,
+      11749,
+      12021,
+      17497,
+      3561,
+      10552,
+      5350,
+      7060,
+      16762,
+      9525,
+      7744,
+      9106,
+      15376,
+      15867,
+      11876,
+      10663,
+      9553,
+      2738,
+      13612,
+      8401,
+      9059,
+      8289,
+      8767,
+      17024,
+      8941,
+      16733,
+      7796,
+      4747,
+      7175,
+      12862,
+      13561,
+      8061,
+      14608,
+      7882,
+      17180,
+      10422,
+      4954,
+      16992,
+      13608,
+      3555,
+      9973,
+      6733,
+      11290,
+      11529,
+      17118,
+      14403,
+      5782,
+      3938,
+      7789,
+      7021,
+      4123,
+      14546,
+      17307,
+      12162,
+      3030,
+      638,
+      7670,
+      9925
+    ]
+  },
+  "inv_warehouse_sk": {
+    "table": "inventory",
+    "type": "integer",
+    "value": [
+      1,
+      3,
+      2
+    ]
+  },
+  "inv_quantity_on_hand": {
+    "table": "inventory",
+    "type": "integer",
+    "value": [
+      884,
+      658,
+      307,
+      38,
+      372,
+      371,
+      120,
+      220,
+      347,
+      152,
+      697,
+      432,
+      699,
+      362,
+      91,
+      869,
+      920,
+      7,
+      354,
+      804,
+      908,
+      292,
+      949,
+      175,
+      62,
+      785,
+      228,
+      289,
+      605,
+      809,
+      745,
+      608,
+      22,
+      68,
+      800,
+      55,
+      727,
+      53,
+      675,
+      180,
+      453,
+      305,
+      127,
+      569,
+      417,
+      144,
+      754,
+      747,
+      660,
+      210,
+      620,
+      192,
+      419,
+      474,
+      485,
+      756,
+      398,
+      692,
+      716,
+      801,
+      42,
+      231,
+      783,
+      855,
+      547,
+      134,
+      840,
+      767,
+      214,
+      416,
+      205,
+      99,
+      227,
+      269,
+      421,
+      530,
+      923,
+      471,
+      514,
+      788,
+      860,
+      784,
+      463,
+      301,
+      879,
+      352,
+      596,
+      838,
+      852,
+      735,
+      409,
+      871,
+      864,
+      171,
+      43,
+      349,
+      946,
+      550,
+      230,
+      578,
+      118,
+      952,
+      238,
+      945,
+      129,
+      725,
+      882,
+      272,
+      374,
+      324,
+      689,
+      385,
+      132,
+      995,
+      950,
+      646,
+      168,
+      375,
+      218,
+      100,
+      503,
+      242,
+      260,
+      899,
+      938,
+      221,
+      630,
+      914,
+      681,
+      763,
+      947,
+      286,
+      609,
+      831,
+      827,
+      379,
+      37,
+      777,
+      108,
+      179,
+      141,
+      883,
+      770,
+      4,
+      322,
+      600,
+      167,
+      676,
+      104,
+      713,
+      119,
+      63,
+      434,
+      746,
+      229,
+      564,
+      283
+    ]
+  },
+  "ss_sold_date_sk": {
+    "table": "store_sales",
+    "type": "integer",
+    "value": [
+      2452445,
+      2452609,
+      2451350,
+      2450858,
+      2452496,
+      2451403,
+      2452555,
+      2452076,
+      2451163,
+      2451123,
+      2451157,
+      2452437,
+      2451527,
+      2452003,
+      2451534,
+      2452084,
+      2452160,
+      2451881,
+      2452138,
+      2450936,
+      2452592,
+      2452258,
+      2451854,
+      2451900,
+      2451482,
+      2451612,
+      2451030,
+      2451175,
+      2452146,
+      2451173,
+      2452413,
+      2452514,
+      2452223,
+      2451075,
+      2450949,
+      2452426,
+      2452313,
+      2451180,
+      2451174,
+      2451688,
+      2451642,
+      2451652,
+      2451372,
+      2452635,
+      2452046,
+      2452282,
+      2451890,
+      2452142,
+      2452268,
+      2452315,
+      2452535
+    ]
+  },
+  "ss_sold_time_sk": {
+    "table": "store_sales",
+    "type": "integer",
+    "value": [
+      52893,
+      37129,
+      40306,
+      64655,
+      61989,
+      49732,
+      73267,
+      66777,
+      40049,
+      63380,
+      66832,
+      63194,
+      48888,
+      65590,
+      39210,
+      64330,
+      35949,
+      48122,
+      54144,
+      62266,
+      64930,
+      71429,
+      47950,
+      38956,
+      75223,
+      45903,
+      51590,
+      60504,
+      61628,
+      66389,
+      36424,
+      36952,
+      63751,
+      32732,
+      64646,
+      39344,
+      61624,
+      38207,
+      63558,
+      30237,
+      35881,
+      31267,
+      44455,
+      75305,
+      33769,
+      53618,
+      72070,
+      39831,
+      35997,
+      39114,
+      36074,
+      37074,
+      59728,
+      70307,
+      48795,
+      46797,
+      40970,
+      63920,
+      43402,
+      73652,
+      39011,
+      39032,
+      44179,
+      40097,
+      52998,
+      69869,
+      65134,
+      63537,
+      37238
+    ]
+  },
+  "ss_item_sk": {
+    "table": "store_sales",
+    "type": "integer",
+    "value": [
+      7603,
+      9884,
+      6727,
+      10988,
+      11074,
+      4259,
+      17119,
+      9686,
+      13327,
+      6583,
+      1271,
+      8349,
+      17931,
+      5233,
+      15115,
+      2647,
+      5215,
+      16729,
+      14420,
+      13405,
+      4051,
+      11893,
+      2309,
+      8471,
+      9014,
+      9835,
+      6229,
+      14199,
+      9271,
+      1526,
+      10632,
+      4120,
+      15784,
+      4930,
+      8618,
+      10671,
+      17950,
+      14407,
+      2861,
+      17427,
+      16184,
+      4192,
+      8965,
+      10715,
+      8539,
+      7501,
+      5239,
+      9992,
+      10693,
+      9999,
+      5205,
+      8728,
+      3350,
+      11629,
+      10525,
+      15310,
+      3021,
+      13051,
+      5708,
+      410,
+      307,
+      10406,
+      14054,
+      9998
+    ]
+  },
+  "ss_customer_sk": {
+    "table": "store_sales",
+    "type": "integer",
+    "value": [
+      53013,
+      36144,
+      16237,
+      19970,
+      84505,
+      91400,
+      7984,
+      16874,
+      78125,
+      45984,
+      34774,
+      81268,
+      39981,
+      15016,
+      76264,
+      10420,
+      86176,
+      86862,
+      3315,
+      26101,
+      93971,
+      94112,
+      85271,
+      15907,
+      89868,
+      99160,
+      50252,
+      61145,
+      66022,
+      71424,
+      60911,
+      66388,
+      38914,
+      92772,
+      15604,
+      89052,
+      90575,
+      590,
+      69129,
+      13774,
+      78205,
+      83408,
+      59351,
+      7892,
+      11111,
+      74440,
+      67075,
+      1893,
+      49845,
+      10900,
+      89188,
+      2227,
+      86778,
+      8000,
+      7194,
+      4754,
+      49492,
+      80804,
+      92789,
+      82664,
+      32159,
+      98948,
+      911,
+      15586,
+      70882
+    ]
+  },
+  "ss_cdemo_sk": {
+    "table": "store_sales",
+    "type": "integer",
+    "value": [
+      1115763,
+      1897663,
+      385397,
+      1460237,
+      66505,
+      1099608,
+      1781291,
+      1870012,
+      819929,
+      1465384,
+      1177329,
+      1864095,
+      161334,
+      1331676,
+      427712,
+      1492242,
+      213178,
+      564248,
+      1561750,
+      574736,
+      555993,
+      1481337,
+      1515516,
+      1441000,
+      1550978,
+      833994,
+      899051,
+      979233,
+      1514813,
+      54813,
+      1898339,
+      1288548,
+      582647,
+      637238,
+      1478927,
+      1806920,
+      535409,
+      1031775,
+      1722018,
+      1850262,
+      1762543,
+      920662,
+      1055996,
+      822097,
+      344772,
+      1739737,
+      1374550,
+      1526270,
+      714781,
+      95425,
+      1065928,
+      584117,
+      1483739,
+      175628,
+      192806,
+      622862,
+      1163767,
+      1576336,
+      1686483,
+      954222,
+      1676171,
+      1367443,
+      827530,
+      1215510,
+      1451118,
+      1624858,
+      1115323
+    ]
+  },
+  "ss_hdemo_sk": {
+    "table": "store_sales",
+    "type": "integer",
+    "value": [
+      2068,
+      1441,
+      6084,
+      4929,
+      1886,
+      5260,
+      6175,
+      2501,
+      5518,
+      1561,
+      1413,
+      1616,
+      6504,
+      3738,
+      5222,
+      360,
+      711,
+      1818,
+      2690,
+      3482,
+      2851,
+      3467,
+      1974,
+      4083,
+      6541,
+      500,
+      819,
+      4721,
+      2118,
+      2429,
+      4465,
+      738,
+      5083,
+      6205,
+      3096,
+      3746,
+      4689,
+      2109,
+      1430,
+      1685,
+      5213,
+      1760,
+      5237,
+      3851,
+      3310,
+      6224,
+      3630,
+      3859,
+      434,
+      5775,
+      3107,
+      5172,
+      5724,
+      5114,
+      5223,
+      214,
+      3253
+    ]
+  },
+  "ss_addr_sk": {
+    "table": "store_sales",
+    "type": "integer",
+    "value": [
+      31476,
+      15738,
+      25515,
+      37841,
+      49069,
+      34581,
+      13651,
+      4757,
+      43529,
+      16070,
+      36908,
+      23042,
+      30152,
+      13174,
+      39268,
+      10005,
+      30594,
+      27799,
+      43095,
+      41603,
+      22896,
+      30226,
+      6378,
+      13308,
+      45825,
+      34664,
+      49404,
+      42355,
+      33769,
+      25724,
+      11156,
+      21710,
+      47814,
+      3990,
+      17005,
+      10427,
+      22898,
+      32490,
+      18529,
+      43997,
+      38127,
+      11500,
+      37926,
+      47124,
+      22367,
+      29945,
+      38425,
+      12924,
+      44709,
+      48893,
+      7800,
+      17711,
+      43031,
+      37144,
+      38239,
+      6499,
+      30057,
+      27984,
+      2416,
+      41940,
+      32918,
+      35360,
+      20181,
+      42898,
+      39665,
+      37276,
+      36074
+    ]
+  },
+  "ss_store_sk": {
+    "table": "store_sales",
+    "type": "integer",
+    "value": [
+      7,
+      8,
+      4
+    ]
+  },
+  "ss_promo_sk": {
+    "table": "store_sales",
+    "type": "integer",
+    "value": [
+      49,
+      55,
+      149,
+      226,
+      19,
+      110,
+      214,
+      228,
+      191,
+      220,
+      201,
+      140,
+      297,
+      285,
+      162,
+      38,
+      42,
+      146,
+      182,
+      155,
+      138,
+      265,
+      127,
+      283,
+      60,
+      105,
+      251,
+      91,
+      16,
+      202,
+      72,
+      152,
+      84,
+      29,
+      69,
+      185,
+      159
+    ]
+  },
+  "ss_ticket_number": {
+    "table": "store_sales",
+    "type": "integer",
+    "value": [
+      5519,
+      203856,
+      81901,
+      49280,
+      150276,
+      159980,
+      154853,
+      107928,
+      123227,
+      62057,
+      84586,
+      141078,
+      13663,
+      121266,
+      154202,
+      7444,
+      46700,
+      233408,
+      191674,
+      62349,
+      192065,
+      58363,
+      227064,
+      220012,
+      101479,
+      103935,
+      168238,
+      127637,
+      103248,
+      12148,
+      195253,
+      149687,
+      17595,
+      52245,
+      174035,
+      191246,
+      30593,
+      111415,
+      74742,
+      55183,
+      54180,
+      123889,
+      156591,
+      164,
+      146404,
+      14404,
+      147831,
+      117924,
+      140876,
+      159133,
+      54543,
+      135697,
+      132089,
+      8951,
+      10116,
+      140503,
+      208561,
+      111177,
+      116631,
+      30606,
+      123821,
+      203016,
+      182871,
+      98162,
+      6198,
+      52336,
+      192063
+    ]
+  },
+  "ss_quantity": {
+    "table": "store_sales",
+    "type": "integer",
+    "value": [
+      43,
+      91,
+      77,
+      71,
+      33,
+      50,
+      65,
+      76,
+      53,
+      67,
+      46,
+      80,
+      75,
+      45,
+      95,
+      4,
+      85,
+      52,
+      38,
+      86,
+      7,
+      3
+    ]
+  },
+  "ss_wholesale_cost": {
+    "table": "store_sales",
+    "type": "numeric",
+    "value": [
+      "41.62",
+      "20.1",
+      "54.9",
+      "94.66",
+      "6.25",
+      "58.16",
+      "72.3",
+      "14.07",
+      "6.48",
+      "35.65",
+      "7.2",
+      "64.28",
+      "66.31",
+      "1.08",
+      "4.96",
+      "38.82",
+      "66.04",
+      "73.15",
+      "60.52",
+      "13.67",
+      "56.57",
+      "1.9",
+      "7.96",
+      "32.48",
+      "25.3",
+      "26.18",
+      "61.04",
+      "62.44",
+      "45.45",
+      "93.06",
+      "93.18",
+      "23.93",
+      "62.79",
+      "67.37",
+      "12.92",
+      "47.54",
+      "66.62",
+      "94.07",
+      "38.74",
+      "43.48",
+      "41.6",
+      "39.05",
+      "53.89",
+      "50.1",
+      "79.7",
+      "71.57",
+      "16.04",
+      "95.66",
+      "94.44",
+      "30.16",
+      "66.74",
+      "99.91",
+      "37.78",
+      "77.18",
+      "94.18",
+      "29.89",
+      "53.1",
+      "26.78",
+      "90.75",
+      "86.12",
+      "23.32"
+    ]
+  },
+  "ss_list_price": {
+    "table": "store_sales",
+    "type": "numeric",
+    "value": [
+      "8.73",
+      "28.44",
+      "160.34",
+      "41.05",
+      "67.62",
+      "9.77",
+      "116.52",
+      "67.41",
+      "90.41",
+      "135.55",
+      "139.93",
+      "58.65",
+      "111.33",
+      "14.02",
+      "128.78",
+      "83.44",
+      "60.59",
+      "22.97",
+      "6.85",
+      "159.06",
+      "54.78",
+      "85.24",
+      "51.85",
+      "106.65",
+      "131.53",
+      "168.7",
+      "6.46",
+      "89.67",
+      "118.28",
+      "35.49",
+      "53.54",
+      "35.62",
+      "63.0",
+      "24.99",
+      "69.48",
+      "113.4",
+      "60.1",
+      "135.19",
+      "100.34",
+      "22.71",
+      "154.96",
+      "84.02",
+      "101.99",
+      "59.1",
+      "141.54",
+      "5.62",
+      "64.98",
+      "124.3",
+      "3.2",
+      "27.8",
+      "89.36",
+      "5.29",
+      "86.9",
+      "5.49",
+      "149.65",
+      "42.79",
+      "114.74",
+      "110.16",
+      "21.73",
+      "75.17",
+      "40.14",
+      "32.87"
+    ]
+  },
+  "ss_sales_price": {
+    "table": "store_sales",
+    "type": "numeric",
+    "value": [
+      "0.0",
+      "67.92",
+      "90.29",
+      "3.67",
+      "5.92",
+      "0.72",
+      "11.45",
+      "92.92",
+      "42.85",
+      "16.39",
+      "60.69",
+      "2.63",
+      "4.8",
+      "1.58",
+      "73.78",
+      "29.35",
+      "34.81",
+      "2.35",
+      "73.67",
+      "13.8",
+      "6.33",
+      "17.58",
+      "35.67",
+      "85.12",
+      "103.49",
+      "27.74",
+      "7.87",
+      "3.82",
+      "0.87",
+      "77.97",
+      "41.23",
+      "67.75",
+      "49.42",
+      "7.68",
+      "29.13",
+      "2.29",
+      "124.44",
+      "21.46",
+      "43.11",
+      "3.72",
+      "9.33",
+      "48.8",
+      "71.72",
+      "54.25",
+      "5.99",
+      "8.33",
+      "0.76",
+      "54.98",
+      "95.55",
+      "7.66",
+      "4.02",
+      "34.66",
+      "66.52"
+    ]
+  },
+  "ss_ext_discount_amt": {
+    "table": "store_sales",
+    "type": "numeric",
+    "value": [
+      "429.29",
+      "300.44",
+      "2132.1",
+      "194.15",
+      "1918.69",
+      "289.4",
+      "120.69",
+      "1454.74",
+      "618.53",
+      "528.08"
+    ]
+  },
+  "ss_ext_sales_price": {
+    "table": "store_sales",
+    "type": "numeric",
+    "value": [
+      "335.12",
+      "71.92",
+      "1.96",
+      "57.57",
+      "567.28",
+      "4680.48",
+      "139.46",
+      "6813.84",
+      "1064.23",
+      "2351.04",
+      "6244.4",
+      "594.16",
+      "184.6",
+      "148.78",
+      "251.18",
+      "1547.04",
+      "203.78",
+      "1138.8",
+      "55.5",
+      "1234.64",
+      "448.8",
+      "3461.4",
+      "53.36",
+      "4726.44",
+      "279.5",
+      "4507.65",
+      "96.75",
+      "247.75",
+      "3781.25",
+      "3620.3",
+      "373.38",
+      "536.12",
+      "1167.05",
+      "5117.4",
+      "679.44",
+      "7242.2",
+      "9327.15",
+      "817.6",
+      "3889.86",
+      "373.24",
+      "1539.95",
+      "2436.74",
+      "565.65",
+      "67.06",
+      "248.85",
+      "276.48",
+      "975.81",
+      "2339.26",
+      "3270.4",
+      "27.17",
+      "138.6",
+      "2105.28",
+      "284.85",
+      "801.29",
+      "1533.0",
+      "1806.4",
+      "252.45",
+      "8.37"
+    ]
+  },
+  "ss_ext_wholesale_cost": {
+    "table": "store_sales",
+    "type": "numeric",
+    "value": [
+      "4139.46",
+      "5807.54",
+      "1597.36",
+      "2013.75",
+      "6100.98",
+      "562.4",
+      "5211.36",
+      "66.2",
+      "517.5",
+      "451.2",
+      "6132.75",
+      "449.92",
+      "4401.33",
+      "657.9",
+      "1695.06",
+      "2147.86",
+      "2715.24",
+      "4667.67",
+      "2821.65",
+      "246.09",
+      "3888.64",
+      "1390.84",
+      "229.09",
+      "2272.22",
+      "3487.98",
+      "1038.45",
+      "4933.48",
+      "418.56",
+      "55.37",
+      "2326.05",
+      "3616.5",
+      "2898.72",
+      "8532.09",
+      "3819.69",
+      "2956.32",
+      "985.8",
+      "107.1",
+      "2401.38",
+      "235.44",
+      "774.38",
+      "1596.21",
+      "4789.6",
+      "69.44",
+      "128.37",
+      "7542.75",
+      "3892.2",
+      "1100.0",
+      "5109.2",
+      "242.1",
+      "6580.0",
+      "3326.08",
+      "1982.8",
+      "2823.38",
+      "4230.77",
+      "1584.27",
+      "478.3",
+      "1906.93",
+      "3443.22",
+      "4567.5",
+      "434.75",
+      "277.84",
+      "1715.4",
+      "1024.86"
+    ]
+  },
+  "ss_ext_list_price": {
+    "table": "store_sales",
+    "type": "numeric",
+    "value": [
+      "466.92",
+      "12324.6",
+      "2078.76",
+      "4067.4",
+      "7809.0",
+      "5508.4",
+      "634.27",
+      "4172.52",
+      "5923.53",
+      "5877.12",
+      "3560.4",
+      "411.74",
+      "549.22",
+      "551.6",
+      "800.91",
+      "2170.05",
+      "110.94",
+      "796.95",
+      "6143.4",
+      "4948.93",
+      "3411.87",
+      "2102.9",
+      "124.82",
+      "77.83",
+      "2857.68",
+      "3265.2",
+      "922.05",
+      "4153.1",
+      "870.24",
+      "3764.2",
+      "2729.58",
+      "7215.1",
+      "1211.31",
+      "4900.72",
+      "653.84",
+      "611.04",
+      "3914.19",
+      "7603.2",
+      "2711.34",
+      "1838.7",
+      "6087.76",
+      "592.83",
+      "54.6",
+      "1927.8",
+      "6161.7",
+      "7129.2",
+      "4942.09",
+      "230.4",
+      "2961.2",
+      "10307.5",
+      "1726.8",
+      "41.36",
+      "4442.22",
+      "1206.12",
+      "276.9",
+      "1030.32",
+      "7369.2",
+      "501.27",
+      "2157.87",
+      "404.16",
+      "3887.36",
+      "9285.42",
+      "2504.75",
+      "4206.3",
+      "1866.08",
+      "2517.62",
+      "98.24",
+      "11973.0"
+    ]
+  },
+  "ss_ext_tax": {
+    "table": "store_sales",
+    "type": "numeric",
+    "value": [
+      "68.36",
+      "2.35",
+      "35.21",
+      "71.53",
+      "191.31",
+      "374.96",
+      "5.11",
+      "33.11",
+      "2.56",
+      "168.53",
+      "78.6",
+      "3.09",
+      "33.71",
+      "42.95",
+      "28.78",
+      "21.41",
+      "7.04",
+      "0.38",
+      "217.29",
+      "112.16",
+      "169.36",
+      "13.59",
+      "111.74",
+      "22.85",
+      "0.09",
+      "125.73",
+      "84.38",
+      "0.4",
+      "47.53",
+      "0.07",
+      "30.6",
+      "80.46",
+      "19.83",
+      "188.55",
+      "77.44",
+      "3.91",
+      "16.65",
+      "7.02",
+      "487.34",
+      "447.17",
+      "366.62",
+      "5.87",
+      "12.5",
+      "11.42",
+      "28.83",
+      "24.35",
+      "14.31",
+      "0.49",
+      "3.84",
+      "283.06",
+      "62.74",
+      "11.34",
+      "40.48",
+      "116.88"
+    ]
+  },
+  "ss_coupon_amt": {
+    "table": "store_sales",
+    "type": "numeric",
+    "value": [
+      "1806.8",
+      "173.43",
+      "288.03",
+      "68.33",
+      "960.83",
+      "717.71",
+      "292.23",
+      "76.12",
+      "451.85",
+      "246.62",
+      "770.26"
+    ]
+  },
+  "ss_net_paid": {
+    "table": "store_sales",
+    "type": "numeric",
+    "value": [
+      "609.99",
+      "1424.61",
+      "216.58",
+      "1.84",
+      "1782.24",
+      "2184.48",
+      "638.48",
+      "2341.22",
+      "1353.92",
+      "5487.0",
+      "187.4",
+      "216.55",
+      "1009.28",
+      "101.18",
+      "1434.18",
+      "2014.98",
+      "1339.29",
+      "259.36",
+      "451.0",
+      "152.26",
+      "41.74",
+      "3215.0",
+      "610.42",
+      "1012.8",
+      "316.8",
+      "331.54",
+      "934.65",
+      "867.88",
+      "394.29",
+      "319.7",
+      "197.6",
+      "1130.22",
+      "347.7",
+      "71.48",
+      "1161.3",
+      "607.35",
+      "864.28",
+      "3850.5",
+      "2020.9",
+      "3858.4",
+      "2028.37",
+      "7762.26",
+      "531.0",
+      "1247.4",
+      "1854.36",
+      "90.09",
+      "245.31",
+      "38.39",
+      "1465.44",
+      "1464.48",
+      "3181.36",
+      "224.01",
+      "334.15",
+      "325.5",
+      "2977.21",
+      "9843.57"
+    ]
+  },
+  "ss_net_paid_inc_tax": {
+    "table": "store_sales",
+    "type": "numeric",
+    "value": [
+      "734.16",
+      "3266.59",
+      "201.43",
+      "3163.61",
+      "1307.88",
+      "1571.55",
+      "1994.03",
+      "120.93",
+      "484.47",
+      "289.58",
+      "1257.17",
+      "2999.23",
+      "3574.95",
+      "1661.68",
+      "2812.55",
+      "2484.77",
+      "152.5",
+      "3904.24",
+      "1680.21",
+      "1422.68",
+      "711.48",
+      "3783.18",
+      "33.78",
+      "1859.29",
+      "3991.4",
+      "35.38",
+      "2882.93",
+      "3012.77",
+      "5945.3",
+      "756.34",
+      "298.24",
+      "22.73",
+      "10111.12",
+      "5066.66",
+      "797.68",
+      "9276.8",
+      "1230.88",
+      "108.1",
+      "1388.26",
+      "287.04",
+      "519.49",
+      "1063.08",
+      "3380.58",
+      "2073.1",
+      "507.91",
+      "1005.68",
+      "1739.55",
+      "387.48",
+      "567.73",
+      "383.59",
+      "4054.91",
+      "858.5",
+      "617.59",
+      "196.75",
+      "950.52",
+      "703.95",
+      "361.9",
+      "1403.04",
+      "4691.43",
+      "867.51",
+      "341.23",
+      "183.18",
+      "139.05"
+    ]
+  },
+  "ss_net_profit": {
+    "table": "store_sales",
+    "type": "numeric",
+    "value": [
+      "320.4",
+      "-37.68",
+      "-1757.2",
+      "-43.52",
+      "-141.96",
+      "-382.13",
+      "764.32",
+      "-1783.6",
+      "-337.12",
+      "568.71",
+      "1167.72",
+      "-578.34",
+      "-547.95",
+      "-39.72",
+      "-579.53",
+      "-3733.54",
+      "-280.8",
+      "103.4",
+      "2721.92",
+      "-38.28",
+      "-1762.96",
+      "-718.41",
+      "-2244.47",
+      "-1600.64",
+      "-134.47",
+      "-2.88",
+      "129.0",
+      "-1762.56",
+      "596.16",
+      "-215.6",
+      "-454.06",
+      "-41.58",
+      "-2550.0",
+      "459.0",
+      "695.64",
+      "-4626.72",
+      "-3633.43",
+      "-1257.39",
+      "57.42",
+      "936.51",
+      "-1.17",
+      "-210.54",
+      "157.08",
+      "-486.72",
+      "-2160.22",
+      "-479.18",
+      "1447.39",
+      "35.65",
+      "155.33",
+      "-1097.44",
+      "-741.62",
+      "-163.2",
+      "104.5",
+      "-339.48",
+      "-356.26",
+      "972.44",
+      "-1152.06",
+      "1.14",
+      "-333.45",
+      "1563.1",
+      "-1337.6",
+      "-413.92",
+      "-2387.0",
+      "-856.72",
+      "-1328.2",
+      "-7178.51",
+      "-421.85",
+      "3981.4",
+      "-615.89"
+    ]
+  },
+  "wr_returned_date_sk": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      2452015,
+      2451179,
+      2451102,
+      2452747,
+      2452758,
+      2451532,
+      2451045,
+      2452486,
+      2452570
+    ]
+  },
+  "wr_returned_time_sk": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      62480,
+      67136,
+      28227,
+      11557,
+      7855,
+      60194,
+      66786,
+      61266,
+      47852,
+      66939,
+      27411
+    ]
+  },
+  "wr_item_sk": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      16283,
+      12211,
+      8848,
+      3100,
+      6101,
+      12181,
+      11016,
+      16302,
+      951,
+      15799,
+      8669
+    ]
+  },
+  "wr_refunded_customer_sk": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      55752,
+      45830,
+      55493,
+      70399,
+      19069,
+      56291,
+      11214,
+      89672,
+      7068,
+      75902
+    ]
+  },
+  "wr_refunded_cdemo_sk": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      1298911,
+      1727152,
+      1834801,
+      1711406,
+      1210201,
+      652969,
+      1113715,
+      592002,
+      318165,
+      438653,
+      1589604
+    ]
+  },
+  "wr_refunded_hdemo_sk": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      6645,
+      5199,
+      4640,
+      6662,
+      2614,
+      4480,
+      3211,
+      1632,
+      4311,
+      5556
+    ]
+  },
+  "wr_refunded_addr_sk": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      41009,
+      46417,
+      31843,
+      3395,
+      29009,
+      457,
+      46154,
+      863,
+      7244
+    ]
+  },
+  "wr_returning_customer_sk": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      93023,
+      44356,
+      42891,
+      64230,
+      58399,
+      79168,
+      33635,
+      24352,
+      15449,
+      61243
+    ]
+  },
+  "wr_returning_cdemo_sk": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      674842,
+      1015888,
+      1242818,
+      907073,
+      983197,
+      717315,
+      932944,
+      1491192,
+      400228,
+      458544,
+      1160678
+    ]
+  },
+  "wr_returning_hdemo_sk": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      3842,
+      3681,
+      1982,
+      1096,
+      3104,
+      2711,
+      3519,
+      4200,
+      5539,
+      5384,
+      4258
+    ]
+  },
+  "wr_returning_addr_sk": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      43591,
+      5562,
+      33901,
+      1839,
+      48008,
+      4400,
+      15538,
+      20282,
+      21349,
+      20185
+    ]
+  },
+  "wr_web_page_sk": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      54,
+      49,
+      10,
+      20,
+      44,
+      55
+    ]
+  },
+  "wr_reason_sk": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      35,
+      15,
+      28,
+      3,
+      9
+    ]
+  },
+  "wr_order_number": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      38249,
+      55471,
+      8134,
+      33427,
+      2285,
+      13331,
+      58995,
+      3918,
+      54790,
+      33144,
+      24939
+    ]
+  },
+  "wr_return_quantity": {
+    "table": "web_returns",
+    "type": "integer",
+    "value": [
+      3,
+      38,
+      32,
+      35,
+      9,
+      2
+    ]
+  },
+  "wr_return_amt": {
+    "table": "web_returns",
+    "type": "numeric",
+    "value": [
+      "456.6",
+      "1621.62",
+      "885.6",
+      "782.92",
+      "150.5",
+      "617.34",
+      "1038.53",
+      "35.1",
+      "6.52",
+      "603.2",
+      "811.8"
+    ]
+  },
+  "wr_return_tax": {
+    "table": "web_returns",
+    "type": "numeric",
+    "value": [
+      "1.12",
+      "1.04",
+      "16.44",
+      "129.82",
+      "144.29",
+      "70.71",
+      "0.0",
+      "22.63",
+      "10.7"
+    ]
+  },
+  "wr_return_amt_inc_tax": {
+    "table": "web_returns",
+    "type": "numeric",
+    "value": [
+      "4331.49",
+      "119.89",
+      "1001.8",
+      "12.83",
+      "71.63",
+      "1371.23",
+      "235.93",
+      "834.52",
+      "17.83",
+      "3256.16",
+      "233.44"
+    ]
+  },
+  "wr_fee": {
+    "table": "web_returns",
+    "type": "numeric",
+    "value": [
+      "63.71",
+      "74.03",
+      "30.7",
+      "58.82",
+      "92.29",
+      "13.44",
+      "22.85",
+      "20.6",
+      "74.59",
+      "52.38"
+    ]
+  },
+  "wr_return_ship_cost": {
+    "table": "web_returns",
+    "type": "numeric",
+    "value": [
+      "55.0",
+      "272.16",
+      "27.14",
+      "121.0",
+      "45.15",
+      "5568.3",
+      "313.6",
+      "103.2",
+      "123.09",
+      "229.05",
+      "2419.2"
+    ]
+  },
+  "wr_refunded_cash": {
+    "table": "web_returns",
+    "type": "numeric",
+    "value": [
+      "26.71",
+      "20.13",
+      "1297.43",
+      "92.66",
+      "5.99",
+      "314.88"
+    ]
+  },
+  "wr_reversed_charge": {
+    "table": "web_returns",
+    "type": "numeric",
+    "value": [
+      "89.02",
+      "4.49",
+      "8.76",
+      "271.98",
+      "1531.82",
+      "488.89",
+      "15.6",
+      "67.71",
+      "28.17",
+      "37.6"
+    ]
+  },
+  "wr_account_credit": {
+    "table": "web_returns",
+    "type": "numeric",
+    "value": [
+      "43.15",
+      "7.74",
+      "7.89",
+      "4.72",
+      "44.11",
+      "85.23",
+      "279.3",
+      "0.0",
+      "14.28"
+    ]
+  },
+  "wr_net_loss": {
+    "table": "web_returns",
+    "type": "numeric",
+    "value": [
+      "361.95",
+      "211.77",
+      "393.57",
+      "219.34",
+      "1833.32",
+      "137.09",
+      "533.02",
+      "1291.13",
+      "655.11",
+      "88.83"
+    ]
+  },
+  "ws_sold_date_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      2450881,
+      2451034,
+      2451318,
+      2452505,
+      2452354,
+      2452148,
+      2451871,
+      2451841,
+      2452564,
+      2451811,
+      2452245,
+      2452212,
+      2452249,
+      2451518,
+      2451426,
+      2451732,
+      2451894,
+      2451831
+    ]
+  },
+  "ws_sold_time_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      75997,
+      61416,
+      58383,
+      23621,
+      70337,
+      14878,
+      29140,
+      64603,
+      81803,
+      65387,
+      8540,
+      45713,
+      45152,
+      47267,
+      78197,
+      23931,
+      56949,
+      33980,
+      71120,
+      41159
+    ]
+  },
+  "ws_ship_date_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      2452098,
+      2451917,
+      2451196,
+      2450847,
+      2451694,
+      2452046,
+      2451919,
+      2451674,
+      2452583,
+      2451626,
+      2452542,
+      2452188,
+      2451957,
+      2451167
+    ]
+  },
+  "ws_item_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      14167,
+      5791,
+      13069,
+      16558,
+      9424,
+      17842,
+      1051,
+      11804,
+      5132,
+      7744,
+      6018,
+      16347,
+      14324,
+      2463,
+      16576,
+      17769
+    ]
+  },
+  "ws_bill_customer_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      29230,
+      70771,
+      28608,
+      36658,
+      93825,
+      23008,
+      97934,
+      60582,
+      27977,
+      36737,
+      12723,
+      42854,
+      83184,
+      60437,
+      58498,
+      50543,
+      65085
+    ]
+  },
+  "ws_bill_cdemo_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      505159,
+      377607,
+      1110527,
+      1385154,
+      476573,
+      1822337,
+      1359819,
+      860394,
+      189483,
+      1464292,
+      790294,
+      1412558,
+      1122035,
+      84281,
+      328039,
+      776929
+    ]
+  },
+  "ws_bill_hdemo_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      6486,
+      5567,
+      1474,
+      4929,
+      6730,
+      5755,
+      7019,
+      3046,
+      6359,
+      4367,
+      2859,
+      5116,
+      1065,
+      1150,
+      4469
+    ]
+  },
+  "ws_bill_addr_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      5246,
+      48033,
+      39743,
+      41297,
+      16921,
+      24061,
+      1685,
+      36121,
+      19200,
+      591,
+      9584,
+      43941,
+      43590,
+      33266,
+      14041,
+      5666,
+      35718,
+      20118,
+      3532
+    ]
+  },
+  "ws_ship_customer_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      41738,
+      94072,
+      5254,
+      11833,
+      83709,
+      71625,
+      64452,
+      70098,
+      15918,
+      74712,
+      34444,
+      49097,
+      32735,
+      98279,
+      13242
+    ]
+  },
+  "ws_ship_cdemo_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      413446,
+      1164256,
+      1513681,
+      879213,
+      128314,
+      1852026,
+      1707120,
+      1351622,
+      896723,
+      55518,
+      1010928,
+      1393471,
+      821442,
+      1285618,
+      1000065
+    ]
+  },
+  "ws_ship_hdemo_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      6293,
+      6154,
+      6658,
+      4985,
+      4791,
+      1451,
+      3311,
+      843,
+      1910,
+      670,
+      3179,
+      6609,
+      5907,
+      6959,
+      7195,
+      5663,
+      5703
+    ]
+  },
+  "ws_ship_addr_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      15884,
+      37036,
+      24388,
+      22194,
+      47693,
+      4188,
+      37588,
+      48106,
+      38685,
+      29862,
+      15908,
+      39143,
+      16211
+    ]
+  },
+  "ws_web_page_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      51,
+      36,
+      22,
+      15,
+      18,
+      28,
+      13,
+      11,
+      37,
+      3
+    ]
+  },
+  "ws_web_site_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      15,
+      29,
+      4,
+      11,
+      9
+    ]
+  },
+  "ws_ship_mode_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      5,
+      16,
+      1
+    ]
+  },
+  "ws_warehouse_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      4,
+      3,
+      1
+    ]
+  },
+  "ws_promo_sk": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      67,
+      223,
+      109,
+      296,
+      220,
+      247,
+      209,
+      298,
+      214,
+      64,
+      190,
+      256,
+      265
+    ]
+  },
+  "ws_order_number": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      30173,
+      18148,
+      38456,
+      19288,
+      14945,
+      11876,
+      3074,
+      45742,
+      25590,
+      46644,
+      6747,
+      33364,
+      14123,
+      11450,
+      27981,
+      12881
+    ]
+  },
+  "ws_quantity": {
+    "table": "web_sales",
+    "type": "integer",
+    "value": [
+      2,
+      1,
+      72,
+      82,
+      84,
+      35,
+      36,
+      90,
+      57,
+      59
+    ]
+  },
+  "ws_wholesale_cost": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "55.52",
+      "9.58",
+      "2.77",
+      "61.87",
+      "89.77",
+      "13.09",
+      "72.86",
+      "50.28",
+      "81.71",
+      "41.46",
+      "51.49",
+      "50.16",
+      "24.46",
+      "93.23"
+    ]
+  },
+  "ws_list_price": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "192.67",
+      "171.66",
+      "44.06",
+      "122.72",
+      "144.43",
+      "54.02",
+      "134.92",
+      "23.31",
+      "168.69",
+      "228.07",
+      "67.43",
+      "23.99",
+      "211.25",
+      "155.29",
+      "4.52",
+      "25.31",
+      "30.55"
+    ]
+  },
+  "ws_sales_price": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "33.29",
+      "16.42",
+      "121.51",
+      "119.36",
+      "151.81",
+      "98.47",
+      "39.27",
+      "22.1",
+      "14.46",
+      "18.87",
+      "3.58",
+      "117.92",
+      "27.99",
+      "58.59",
+      "162.18"
+    ]
+  },
+  "ws_ext_discount_amt": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "21.67",
+      "55.32",
+      "3401.42",
+      "2542.35",
+      "2754.4",
+      "5441.04",
+      "1772.82",
+      "16.82",
+      "5435.43",
+      "1437.04",
+      "3053.6",
+      "390.05",
+      "118.72",
+      "2204.32",
+      "4460.4",
+      "3321.45"
+    ]
+  },
+  "ws_ext_sales_price": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "2301.46",
+      "1499.4",
+      "1763.1",
+      "133.38",
+      "118.8",
+      "1826.43",
+      "71.04",
+      "647.36",
+      "1215.5",
+      "130.9",
+      "15.12",
+      "995.6",
+      "3699.99"
+    ]
+  },
+  "ws_ext_wholesale_cost": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "1767.08",
+      "1035.24",
+      "5847.27",
+      "1690.31",
+      "267.96",
+      "4490.38",
+      "2163.98",
+      "5591.16",
+      "2289.04",
+      "871.31",
+      "434.25",
+      "1743.7",
+      "1102.8",
+      "1189.4",
+      "6337.02",
+      "158.4",
+      "2374.02",
+      "6572.16"
+    ]
+  },
+  "ws_ext_list_price": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "2774.24",
+      "7984.05",
+      "3189.78",
+      "271.31",
+      "17764.56",
+      "10907.38",
+      "3110.52",
+      "5734.8",
+      "669.12",
+      "20313.06",
+      "6147.44",
+      "851.2",
+      "631.15",
+      "242.55",
+      "6826.4",
+      "16019.64",
+      "9944.6"
+    ]
+  },
+  "ws_ext_tax": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "33.7",
+      "5.64",
+      "87.75",
+      "270.89",
+      "290.9",
+      "9.71",
+      "2.34",
+      "93.73",
+      "7.05",
+      "1064.69",
+      "40.82",
+      "24.91",
+      "97.34",
+      "4.73",
+      "15.83"
+    ]
+  },
+  "ws_coupon_amt": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "218.51",
+      "7379.42",
+      "174.66"
+    ]
+  },
+  "ws_ext_ship_cost": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "13.32",
+      "1960.64",
+      "1681.0",
+      "169.83",
+      "357.28",
+      "3211.95",
+      "1122.68",
+      "2813.58",
+      "21.92",
+      "458.64",
+      "706.99",
+      "87.44",
+      "2333.35",
+      "690.84",
+      "41.04",
+      "4376.17"
+    ]
+  },
+  "ws_net_paid": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "469.23",
+      "3869.23",
+      "137.55",
+      "10.92",
+      "1314.08",
+      "13.02",
+      "3402.81",
+      "4188.77",
+      "2835.75",
+      "1270.42",
+      "2522.64",
+      "8515.04",
+      "124.26",
+      "4261.4"
+    ]
+  },
+  "ws_net_paid_inc_tax": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "778.02",
+      "348.46",
+      "467.62",
+      "1639.66",
+      "22.71",
+      "1116.72",
+      "317.96",
+      "127.46",
+      "196.42",
+      "1702.08",
+      "908.85",
+      "815.89",
+      "1734.69",
+      "1627.22",
+      "8903.66"
+    ]
+  },
+  "ws_net_paid_inc_ship": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "112.0",
+      "297.42",
+      "35.38",
+      "209.9",
+      "747.52",
+      "2648.49",
+      "14323.72",
+      "5089.63",
+      "6197.5",
+      "3217.08",
+      "3646.72",
+      "171.35",
+      "2237.54",
+      "1940.72",
+      "1138.06"
+    ]
+  },
+  "ws_net_paid_inc_ship_tax": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "803.47",
+      "4134.68",
+      "393.39",
+      "17089.39",
+      "63.33",
+      "23.45",
+      "14616.82",
+      "399.38",
+      "8817.21",
+      "835.68",
+      "1257.33",
+      "2224.72",
+      "3023.56",
+      "6637.0",
+      "2422.38",
+      "2156.57",
+      "3396.22"
+    ]
+  },
+  "ws_net_profit": {
+    "table": "web_sales",
+    "type": "numeric",
+    "value": [
+      "-207.89",
+      "3978.24",
+      "5490.0",
+      "-133.65",
+      "-59.64",
+      "1049.22",
+      "-187.98",
+      "146.88",
+      "-634.5",
+      "-20.44",
+      "-765.04",
+      "-2182.5",
+      "2722.81",
+      "-272.6",
+      "78.32",
+      "-1719.63",
+      "-1365.67",
+      "-122.72"
+    ]
+  },
+  "c_customer_sk": {
+    "table": "customer",
+    "type": "integer",
+    "value": [
+      62012,
+      17097,
+      86660,
+      75518,
+      88626,
+      66405,
+      88212,
+      10161,
+      83210,
+      15735,
+      18804
+    ]
+  },
+  "c_customer_id": {
+    "table": "customer",
+    "type": "character",
+    "value": [
+      "AAAAAAAAJDHFBAAA",
+      "AAAAAAAAELBOAAAA",
+      "AAAAAAAANLMBBAAA",
+      "AAAAAAAABKOLAAAA",
+      "AAAAAAAAPNANAAAA",
+      "AAAAAAAAOEGNAAAA",
+      "AAAAAAAAPIGLAAAA",
+      "AAAAAAAALIBEAAAA",
+      "AAAAAAAAPJLBBAAA",
+      "AAAAAAAABIPDAAAA"
+    ]
+  },
+  "c_current_cdemo_sk": {
+    "table": "customer",
+    "type": "integer",
+    "value": [
+      44633,
+      821023,
+      1297179,
+      41827,
+      1292655,
+      210932,
+      1447057,
+      967127,
+      1507328,
+      434347,
+      1546895
+    ]
+  },
+  "c_current_hdemo_sk": {
+    "table": "customer",
+    "type": "integer",
+    "value": [
+      2144,
+      4487,
+      4446,
+      1789,
+      3762,
+      6937,
+      5674,
+      1003,
+      5405,
+      575,
+      159
+    ]
+  },
+  "c_current_addr_sk": {
+    "table": "customer",
+    "type": "integer",
+    "value": [
+      33304,
+      38965,
+      37344,
+      20103,
+      15218,
+      43578,
+      14131,
+      18588,
+      30416,
+      2096,
+      10825
+    ]
+  },
+  "c_first_shipto_date_sk": {
+    "table": "customer",
+    "type": "integer",
+    "value": [
+      2449310,
+      2449438,
+      2449251,
+      2451608,
+      2452267,
+      2449311,
+      2450165,
+      2451456,
+      2451169,
+      2450467,
+      2452351
+    ]
+  },
+  "c_first_sales_date_sk": {
+    "table": "customer",
+    "type": "integer",
+    "value": [
+      2449044,
+      2452460,
+      2450192,
+      2450850,
+      2451102,
+      2449104,
+      2452275,
+      2450553,
+      2452565,
+      2451007
+    ]
+  },
+  "c_salutation": {
+    "table": "customer",
+    "type": "character",
+    "value": [
+      "Mrs.",
+      "Dr.",
+      "Ms."
+    ]
+  },
+  "c_first_name": {
+    "table": "customer",
+    "type": "character",
+    "value": [
+      "James",
+      "Ed",
+      "Jose",
+      "Ruby",
+      "Joyce",
+      "Chris",
+      "Ana",
+      "Francis",
+      "Colleen",
+      "Edwin"
+    ]
+  },
+  "c_last_name": {
+    "table": "customer",
+    "type": "character",
+    "value": [
+      "Collins",
+      "Taylor",
+      "Brand",
+      "Keller",
+      "Emerson",
+      "Guyton",
+      "Banks",
+      "Brown",
+      "Hawkins"
+    ]
+  },
+  "c_preferred_cust_flag": {
+    "table": "customer",
+    "type": "character",
+    "value": [
+      "Y",
+      "N"
+    ]
+  },
+  "c_birth_day": {
+    "table": "customer",
+    "type": "integer",
+    "value": [
+      26,
+      19,
+      24
+    ]
+  },
+  "c_birth_month": {
+    "table": "customer",
+    "type": "integer",
+    "value": [
+      4,
+      6,
+      3
+    ]
+  },
+  "c_birth_year": {
+    "table": "customer",
+    "type": "integer",
+    "value": [
+      1990,
+      1932,
+      1947,
+      1946,
+      1964,
+      1940,
+      1991,
+      1977
+    ]
+  },
+  "c_birth_country": {
+    "table": "customer",
+    "type": "character varying",
+    "value": [
+      "FRENCH POLYNESIA",
+      "MYANMAR",
+      "MAYOTTE",
+      "NIGERIA",
+      "MAURITIUS",
+      "VIRGIN ISLANDS, U.S.",
+      "CHILE",
+      "MACAO",
+      "PALAU"
+    ]
+  },
+  "c_email_address": {
+    "table": "customer",
+    "type": "character",
+    "value": [
+      "Edith.Parker@nPqxtGStYU7.org",
+      "Vern.Arellano@pzoH6fC8DnrDynsnC.com",
+      "Cameron.Haynes@eC7cLM.com",
+      "Daniel.Schultz@oB2I7oBSHtp.org",
+      "Ricky.Beck@sqPfTXb1XXqa.org",
+      "Keith.Hernandez@FPFVnra2TilYnbL.com",
+      "Kenneth.Miller@BK.edu",
+      "Wilburn.Diaz@2Ks.org",
+      "Emmanuel.Wilkinson@se9vQCJVGmHE.edu",
+      "Lucille.Burk@yLpdo.com"
+    ]
+  },
+  "c_last_review_date_sk": {
+    "table": "customer",
+    "type": "integer",
+    "value": [
+      2452524,
+      2452374,
+      2452346,
+      2452576,
+      2452500,
+      2452434,
+      2452357,
+      2452458,
+      2452540
+    ]
+  },
+  "hd_demo_sk": {
+    "table": "household_demographics",
+    "type": "integer",
+    "value": [
+      3655,
+      6973,
+      5422,
+      4278,
+      2781,
+      3447,
+      3383,
+      3238,
+      5153,
+      5034,
+      5767
+    ]
+  },
+  "hd_income_band_sk": {
+    "table": "household_demographics",
+    "type": "integer",
+    "value": [
+      10,
+      5,
+      6,
+      13
+    ]
+  },
+  "hd_buy_potential": {
+    "table": "household_demographics",
+    "type": "character",
+    "value": [
+      "501-1000",
+      "1001-5000",
+      "0-500"
+    ]
+  },
+  "hd_dep_count": {
+    "table": "household_demographics",
+    "type": "integer",
+    "value": [
+      4,
+      1,
+      9
+    ]
+  },
+  "hd_vehicle_count": {
+    "table": "household_demographics",
+    "type": "integer",
+    "value": [
+      2,
+      0,
+      3
+    ]
+  },
+  "cr_returned_date_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      2452425,
+      2451570,
+      2452693,
+      2451289,
+      2452599,
+      2452384,
+      2452701,
+      2452350,
+      2451726,
+      2452470,
+      2452368
+    ]
+  },
+  "cr_returned_time_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      38630,
+      66008,
+      55220,
+      41548,
+      42277,
+      70547,
+      46057,
+      82047,
+      25672,
+      11747
+    ]
+  },
+  "cr_item_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      812,
+      9253,
+      10148,
+      12631,
+      13915,
+      542,
+      7789,
+      127,
+      8160,
+      13685,
+      1495
+    ]
+  },
+  "cr_refunded_customer_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      31009,
+      312,
+      41419,
+      52557,
+      47598,
+      60616,
+      61725,
+      36993,
+      13027,
+      51038,
+      28371
+    ]
+  },
+  "cr_refunded_cdemo_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      917768,
+      526197,
+      349590,
+      1141038,
+      1805629,
+      1828421,
+      569957,
+      97575,
+      655399,
+      474113,
+      852713
+    ]
+  },
+  "cr_refunded_hdemo_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      5330,
+      484,
+      1825,
+      5294,
+      6378,
+      1348,
+      6756,
+      3897,
+      4418,
+      5572
+    ]
+  },
+  "cr_refunded_addr_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      34877,
+      17421,
+      6640,
+      24461,
+      34425,
+      44695,
+      37866,
+      12607,
+      12193,
+      34987,
+      44756
+    ]
+  },
+  "cr_returning_customer_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      23294,
+      84007,
+      83093,
+      74861,
+      74153,
+      55330,
+      76470,
+      15376,
+      79797,
+      9400,
+      76184
+    ]
+  },
+  "cr_returning_cdemo_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      82814,
+      1575893,
+      973103,
+      648132,
+      1653129,
+      1654969,
+      74943,
+      294426,
+      1747060,
+      559292,
+      982936
+    ]
+  },
+  "cr_returning_hdemo_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      5407,
+      2599,
+      2788,
+      5572,
+      1249,
+      4829,
+      4304,
+      2070,
+      6863,
+      6964
+    ]
+  },
+  "cr_returning_addr_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      33473,
+      1001,
+      39714,
+      11077,
+      16265,
+      5197,
+      22940,
+      42186,
+      32179,
+      37871,
+      38955
+    ]
+  },
+  "cr_call_center_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      6,
+      5,
+      2
+    ]
+  },
+  "cr_catalog_page_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      8282,
+      2008,
+      264,
+      8441,
+      4093,
+      5844,
+      6229,
+      3983,
+      200,
+      5987,
+      2093
+    ]
+  },
+  "cr_ship_mode_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      1,
+      4,
+      18
+    ]
+  },
+  "cr_warehouse_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      4,
+      3,
+      1
+    ]
+  },
+  "cr_reason_sk": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      30,
+      24,
+      19,
+      21,
+      27
+    ]
+  },
+  "cr_order_number": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      101756,
+      1350,
+      2771,
+      97605,
+      92628,
+      71265,
+      136165,
+      153217,
+      106823,
+      124827,
+      21639
+    ]
+  },
+  "cr_return_quantity": {
+    "table": "catalog_returns",
+    "type": "integer",
+    "value": [
+      79,
+      83,
+      12,
+      62,
+      45,
+      80,
+      17,
+      59,
+      3
+    ]
+  },
+  "cr_return_amount": {
+    "table": "catalog_returns",
+    "type": "numeric",
+    "value": [
+      "226.36",
+      "121.8",
+      "875.33",
+      "59.15",
+      "3717.83",
+      "3311.4",
+      "58.22",
+      "592.0",
+      "1177.3",
+      "304.86",
+      "345.28"
+    ]
+  },
+  "cr_return_tax": {
+    "table": "catalog_returns",
+    "type": "numeric",
+    "value": [
+      "8.08",
+      "284.39",
+      "208.59",
+      "9.07",
+      "220.53",
+      "0.16",
+      "2.42",
+      "3.65",
+      "8.52"
+    ]
+  },
+  "cr_return_amt_inc_tax": {
+    "table": "catalog_returns",
+    "type": "numeric",
+    "value": [
+      "181.45",
+      "349.0",
+      "369.48",
+      "1523.68",
+      "352.42",
+      "225.69",
+      "22.09",
+      "67.04",
+      "695.1",
+      "8473.71"
+    ]
+  },
+  "cr_fee": {
+    "table": "catalog_returns",
+    "type": "numeric",
+    "value": [
+      "32.91",
+      "86.11",
+      "24.77",
+      "97.49",
+      "43.84",
+      "91.04",
+      "74.85",
+      "57.75",
+      "26.86",
+      "51.27"
+    ]
+  },
+  "cr_return_ship_cost": {
+    "table": "catalog_returns",
+    "type": "numeric",
+    "value": [
+      "71.8",
+      "226.32",
+      "440.0",
+      "29.7",
+      "4278.4",
+      "196.02",
+      "631.8",
+      "4315.2",
+      "1200.01",
+      "69.86",
+      "25.53"
+    ]
+  },
+  "cr_refunded_cash": {
+    "table": "catalog_returns",
+    "type": "numeric",
+    "value": [
+      "3943.12",
+      "2.18",
+      "1037.5",
+      "6.78",
+      "509.16",
+      "119.4",
+      "77.51",
+      "1351.85",
+      "33.51"
+    ]
+  },
+  "cr_reversed_charge": {
+    "table": "catalog_returns",
+    "type": "numeric",
+    "value": [
+      "270.33",
+      "53.68",
+      "16.29",
+      "397.93",
+      "89.89",
+      "425.04",
+      "252.06",
+      "34.02",
+      "5.51",
+      "56.28",
+      "1038.8"
+    ]
+  },
+  "cr_store_credit": {
+    "table": "catalog_returns",
+    "type": "numeric",
+    "value": [
+      "727.17",
+      "1.12",
+      "8.76",
+      "532.55",
+      "27.74",
+      "74.2",
+      "0.0",
+      "107.19",
+      "8.25"
+    ]
+  },
+  "cr_net_loss": {
+    "table": "catalog_returns",
+    "type": "numeric",
+    "value": [
+      "442.71",
+      "648.73",
+      "623.88",
+      "78.07",
+      "209.24",
+      "441.76",
+      "74.09",
+      "5027.03",
+      "509.96",
+      "284.85"
+    ]
+  },
+  "cc_call_center_sk": {
+    "table": "call_center",
+    "type": "integer",
+    "value": [
+      1,
+      2,
+      4
+    ]
+  },
+  "cc_call_center_id": {
+    "table": "call_center",
+    "type": "character",
+    "value": [
+      "AAAAAAAACAAAAAAA",
+      "AAAAAAAAEAAAAAAA",
+      "AAAAAAAABAAAAAAA"
+    ]
+  },
+  "cc_rec_start_date": {
+    "table": "call_center",
+    "type": "date",
+    "value": [
+      "2001-01-01",
+      "2000-01-02",
+      "1998-01-01"
+    ]
+  },
+  "cc_rec_end_date": {
+    "table": "call_center",
+    "type": "date",
+    "value": [
+      "2000-01-01",
+      "2001-12-31",
+      "2000-12-31"
+    ]
+  },
+  "cc_open_date_sk": {
+    "table": "call_center",
+    "type": "integer",
+    "value": [
+      2451031,
+      2450793,
+      2450941
+    ]
+  },
+  "cc_name": {
+    "table": "call_center",
+    "type": "character varying",
+    "value": [
+      "North Midwest",
+      "Mid Atlantic",
+      "NY Metro"
+    ]
+  },
+  "cc_class": {
+    "table": "call_center",
+    "type": "character varying",
+    "value": [
+      "medium",
+      "large",
+      "small"
+    ]
+  },
+  "cc_employees": {
+    "table": "call_center",
+    "type": "integer",
+    "value": [
+      1,
+      7,
+      3
+    ]
+  },
+  "cc_sq_ft": {
+    "table": "call_center",
+    "type": "integer",
+    "value": [
+      1162,
+      124,
+      2366
+    ]
+  },
+  "cc_hours": {
+    "table": "call_center",
+    "type": "character",
+    "value": [
+      "8AM-4PM",
+      "8AM-12AM"
+    ]
+  },
+  "cc_manager": {
+    "table": "call_center",
+    "type": "character varying",
+    "value": [
+      "Marcus Underwood",
+      "David Moore",
+      "Marc Oconnor"
+    ]
+  },
+  "cc_mkt_id": {
+    "table": "call_center",
+    "type": "integer",
+    "value": [
+      5,
+      6,
+      2
+    ]
+  },
+  "cc_mkt_class": {
+    "table": "call_center",
+    "type": "character",
+    "value": [
+      "Solid, able dangers should want with",
+      "Rural, likely women accept. Public, final th",
+      "Reactions might not design more. Diff"
+    ]
+  },
+  "cc_mkt_desc": {
+    "table": "call_center",
+    "type": "character varying",
+    "value": [
+      "Good, industrial colleagues should identify about rivals. Experiment",
+      "Working goods work short groups. For example previous churches shall mark necessa",
+      "Level models might show nevertheless effectiv"
+    ]
+  },
+  "cc_market_manager": {
+    "table": "call_center",
+    "type": "character varying",
+    "value": [
+      "Mohammed Gonzalez",
+      "Ronald Deleon",
+      "Robert Newsome"
+    ]
+  },
+  "cc_division": {
+    "table": "call_center",
+    "type": "integer",
+    "value": [
+      6,
+      3
+    ]
+  },
+  "cc_division_name": {
+    "table": "call_center",
+    "type": "character varying",
+    "value": [
+      "cally",
+      "pri"
+    ]
+  },
+  "cc_company": {
+    "table": "call_center",
+    "type": "integer",
+    "value": [
+      2,
+      6,
+      5
+    ]
+  },
+  "cc_company_name": {
+    "table": "call_center",
+    "type": "character",
+    "value": [
+      "anti",
+      "able",
+      "cally"
+    ]
+  },
+  "cc_street_number": {
+    "table": "call_center",
+    "type": "character",
+    "value": [
+      "757",
+      "843",
+      "70"
+    ]
+  },
+  "cc_street_name": {
+    "table": "call_center",
+    "type": "character varying",
+    "value": [
+      "Washington",
+      "3rd",
+      "2nd"
+    ]
+  },
+  "cc_street_type": {
+    "table": "call_center",
+    "type": "character",
+    "value": [
+      "ST",
+      "Cir.",
+      "RD"
+    ]
+  },
+  "cc_suite_number": {
+    "table": "call_center",
+    "type": "character",
+    "value": [
+      "Suite W",
+      "Suite R",
+      "Suite O"
+    ]
+  },
+  "cc_city": {
+    "table": "call_center",
+    "type": "character varying",
+    "value": [
+      "Fairview"
+    ]
+  },
+  "cc_county": {
+    "table": "call_center",
+    "type": "character varying",
+    "value": [
+      "Williamson County"
+    ]
+  },
+  "cc_state": {
+    "table": "call_center",
+    "type": "character",
+    "value": [
+      "TN"
+    ]
+  },
+  "cc_zip": {
+    "table": "call_center",
+    "type": "character",
+    "value": [
+      "35709"
+    ]
+  },
+  "cc_country": {
+    "table": "call_center",
+    "type": "character varying",
+    "value": [
+      "United States"
+    ]
+  },
+  "cc_gmt_offset": {
+    "table": "call_center",
+    "type": "numeric",
+    "value": [
+      "-5.0"
+    ]
+  },
+  "cc_tax_percentage": {
+    "table": "call_center",
+    "type": "numeric",
+    "value": [
+      "0.09",
+      "0.01",
+      "0.05"
+    ]
+  },
+  "d_date_sk": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      2460027,
+      2417126,
+      2432669,
+      2476626,
+      2457235,
+      2452782,
+      2473772,
+      2482273,
+      2434856,
+      2451536,
+      2451023
+    ]
+  },
+  "d_date_id": {
+    "table": "date_dim",
+    "type": "character",
+    "value": [
+      "AAAAAAAABCEAFCAA",
+      "AAAAAAAACJOFFCAA",
+      "AAAAAAAAOBKNFCAA",
+      "AAAAAAAAGHHNFCAA",
+      "AAAAAAAAIDKJFCAA",
+      "AAAAAAAABGAIFCAA",
+      "AAAAAAAANNLKFCAA",
+      "AAAAAAAAMLENFCAA"
+    ]
+  },
+  "d_date": {
+    "table": "date_dim",
+    "type": "date",
+    "value": [
+      "2039-06-27",
+      "1960-07-31",
+      "2068-05-08",
+      "1941-03-01",
+      "1981-05-26",
+      "2051-08-31",
+      "1984-04-22",
+      "1964-09-22",
+      "2099-07-27",
+      "2081-04-25",
+      "1952-04-10"
+    ]
+  },
+  "d_month_seq": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      1448,
+      2223,
+      1640,
+      2241,
+      1551,
+      1511,
+      1441,
+      2054,
+      1782,
+      1924,
+      326
+    ]
+  },
+  "d_week_seq": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      727,
+      9829,
+      3233,
+      4986,
+      2673,
+      2960,
+      342,
+      4492,
+      10094,
+      5802,
+      4922
+    ]
+  },
+  "d_quarter_seq": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      278,
+      542,
+      487,
+      1,
+      186,
+      442,
+      598,
+      727,
+      128,
+      69
+    ]
+  },
+  "d_year": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      1960,
+      2030,
+      1979,
+      2034,
+      2025,
+      1942,
+      2023,
+      1988
+    ]
+  },
+  "d_dow": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      0,
+      6,
+      1
+    ]
+  },
+  "d_moy": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      5,
+      11,
+      7
+    ]
+  },
+  "d_dom": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      28,
+      6,
+      8,
+      10
+    ]
+  },
+  "d_qoy": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      4,
+      1,
+      2
+    ]
+  },
+  "d_fy_year": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      1988,
+      2084,
+      2009,
+      2080,
+      1922,
+      1967,
+      1994,
+      2097
+    ]
+  },
+  "d_fy_quarter_seq": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      607,
+      238,
+      278,
+      735,
+      351,
+      541,
+      46,
+      385,
+      371,
+      773
+    ]
+  },
+  "d_fy_week_seq": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      9812,
+      9035,
+      9767,
+      83,
+      5759,
+      5829,
+      178,
+      7207,
+      7111,
+      9885,
+      1630
+    ]
+  },
+  "d_day_name": {
+    "table": "date_dim",
+    "type": "character",
+    "value": [
+      "Tuesday",
+      "Sunday",
+      "Wednesday"
+    ]
+  },
+  "d_quarter_name": {
+    "table": "date_dim",
+    "type": "character",
+    "value": [
+      "2014Q3",
+      "1969Q2",
+      "2053Q3",
+      "2001Q2",
+      "1939Q2",
+      "2014Q2",
+      "2063Q3",
+      "1935Q4",
+      "2024Q3",
+      "2061Q4",
+      "2077Q2"
+    ]
+  },
+  "d_holiday": {
+    "table": "date_dim",
+    "type": "character",
+    "value": [
+      "Y",
+      "N"
+    ]
+  },
+  "d_weekend": {
+    "table": "date_dim",
+    "type": "character",
+    "value": [
+      "Y",
+      "N"
+    ]
+  },
+  "d_following_holiday": {
+    "table": "date_dim",
+    "type": "character",
+    "value": [
+      "N"
+    ]
+  },
+  "d_first_dom": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      2446675,
+      2424425,
+      2438335,
+      2428839,
+      2485545,
+      2486487,
+      2417973,
+      2473154,
+      2434834,
+      2425429,
+      2476626
+    ]
+  },
+  "d_last_dom": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      2446246,
+      2476991,
+      2446976,
+      2444360,
+      2479971,
+      2444785,
+      2480155,
+      2481554,
+      2481735,
+      2450876
+    ]
+  },
+  "d_same_day_ly": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      2475800,
+      2465409,
+      2482363,
+      2418459,
+      2447336,
+      2476570,
+      2459344,
+      2486958,
+      2481783,
+      2475294
+    ]
+  },
+  "d_same_day_lq": {
+    "table": "date_dim",
+    "type": "integer",
+    "value": [
+      2449058,
+      2458457,
+      2433133,
+      2483124,
+      2453228,
+      2462255,
+      2466470,
+      2463719,
+      2429497,
+      2454377,
+      2420375
+    ]
+  },
+  "d_current_day": {
+    "table": "date_dim",
+    "type": "character",
+    "value": [
+      "N"
+    ]
+  },
+  "d_current_week": {
+    "table": "date_dim",
+    "type": "character",
+    "value": [
+      "N"
+    ]
+  },
+  "d_current_month": {
+    "table": "date_dim",
+    "type": "character",
+    "value": [
+      "N"
+    ]
+  },
+  "d_current_quarter": {
+    "table": "date_dim",
+    "type": "character",
+    "value": [
+      "N"
+    ]
+  },
+  "d_current_year": {
+    "table": "date_dim",
+    "type": "character",
+    "value": [
+      "N"
+    ]
+  }
+}

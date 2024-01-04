@@ -1,0 +1,424 @@
+[
+  {
+    "table": "warehouse",
+    "rows": 10,
+    "columns": [
+      {
+        "name": "w_id",
+        "type": "integer"
+      },
+      {
+        "name": "w_ytd",
+        "type": "numeric"
+      },
+      {
+        "name": "w_tax",
+        "type": "numeric"
+      },
+      {
+        "name": "w_name",
+        "type": "character varying"
+      },
+      {
+        "name": "w_street_1",
+        "type": "character varying"
+      },
+      {
+        "name": "w_street_2",
+        "type": "character varying"
+      },
+      {
+        "name": "w_city",
+        "type": "character varying"
+      },
+      {
+        "name": "w_state",
+        "type": "character"
+      },
+      {
+        "name": "w_zip",
+        "type": "character"
+      }
+    ]
+  },
+  {
+    "table": "item",
+    "rows": 100000,
+    "columns": [
+      {
+        "name": "i_id",
+        "type": "integer"
+      },
+      {
+        "name": "i_name",
+        "type": "character varying"
+      },
+      {
+        "name": "i_price",
+        "type": "numeric"
+      },
+      {
+        "name": "i_data",
+        "type": "character varying"
+      },
+      {
+        "name": "i_im_id",
+        "type": "integer"
+      }
+    ]
+  },
+  {
+    "table": "stock",
+    "rows": 1000000,
+    "columns": [
+      {
+        "name": "s_w_id",
+        "type": "integer"
+      },
+      {
+        "name": "s_i_id",
+        "type": "integer"
+      },
+      {
+        "name": "s_quantity",
+        "type": "integer"
+      },
+      {
+        "name": "s_ytd",
+        "type": "numeric"
+      },
+      {
+        "name": "s_order_cnt",
+        "type": "integer"
+      },
+      {
+        "name": "s_remote_cnt",
+        "type": "integer"
+      },
+      {
+        "name": "s_data",
+        "type": "character varying"
+      },
+      {
+        "name": "s_dist_01",
+        "type": "character"
+      },
+      {
+        "name": "s_dist_02",
+        "type": "character"
+      },
+      {
+        "name": "s_dist_03",
+        "type": "character"
+      },
+      {
+        "name": "s_dist_04",
+        "type": "character"
+      },
+      {
+        "name": "s_dist_05",
+        "type": "character"
+      },
+      {
+        "name": "s_dist_06",
+        "type": "character"
+      },
+      {
+        "name": "s_dist_07",
+        "type": "character"
+      },
+      {
+        "name": "s_dist_08",
+        "type": "character"
+      },
+      {
+        "name": "s_dist_09",
+        "type": "character"
+      },
+      {
+        "name": "s_dist_10",
+        "type": "character"
+      }
+    ]
+  },
+  {
+    "table": "district",
+    "rows": 100,
+    "columns": [
+      {
+        "name": "d_w_id",
+        "type": "integer"
+      },
+      {
+        "name": "d_id",
+        "type": "integer"
+      },
+      {
+        "name": "d_ytd",
+        "type": "numeric"
+      },
+      {
+        "name": "d_tax",
+        "type": "numeric"
+      },
+      {
+        "name": "d_next_o_id",
+        "type": "integer"
+      },
+      {
+        "name": "d_name",
+        "type": "character varying"
+      },
+      {
+        "name": "d_street_1",
+        "type": "character varying"
+      },
+      {
+        "name": "d_street_2",
+        "type": "character varying"
+      },
+      {
+        "name": "d_city",
+        "type": "character varying"
+      },
+      {
+        "name": "d_state",
+        "type": "character"
+      },
+      {
+        "name": "d_zip",
+        "type": "character"
+      }
+    ]
+  },
+  {
+    "table": "customer",
+    "rows": 300000,
+    "columns": [
+      {
+        "name": "c_w_id",
+        "type": "integer"
+      },
+      {
+        "name": "c_d_id",
+        "type": "integer"
+      },
+      {
+        "name": "c_id",
+        "type": "integer"
+      },
+      {
+        "name": "c_discount",
+        "type": "numeric"
+      },
+      {
+        "name": "c_credit",
+        "type": "character"
+      },
+      {
+        "name": "c_last",
+        "type": "character varying"
+      },
+      {
+        "name": "c_first",
+        "type": "character varying"
+      },
+      {
+        "name": "c_credit_lim",
+        "type": "numeric"
+      },
+      {
+        "name": "c_balance",
+        "type": "numeric"
+      },
+      {
+        "name": "c_ytd_payment",
+        "type": "double precision"
+      },
+      {
+        "name": "c_payment_cnt",
+        "type": "integer"
+      },
+      {
+        "name": "c_delivery_cnt",
+        "type": "integer"
+      },
+      {
+        "name": "c_street_1",
+        "type": "character varying"
+      },
+      {
+        "name": "c_street_2",
+        "type": "character varying"
+      },
+      {
+        "name": "c_city",
+        "type": "character varying"
+      },
+      {
+        "name": "c_state",
+        "type": "character"
+      },
+      {
+        "name": "c_zip",
+        "type": "character"
+      },
+      {
+        "name": "c_phone",
+        "type": "character"
+      },
+      {
+        "name": "c_since",
+        "type": "timestamp without time zone"
+      },
+      {
+        "name": "c_middle",
+        "type": "character"
+      },
+      {
+        "name": "c_data",
+        "type": "character varying"
+      }
+    ]
+  },
+  {
+    "table": "history",
+    "rows": 300000,
+    "columns": [
+      {
+        "name": "h_c_id",
+        "type": "integer"
+      },
+      {
+        "name": "h_c_d_id",
+        "type": "integer"
+      },
+      {
+        "name": "h_c_w_id",
+        "type": "integer"
+      },
+      {
+        "name": "h_d_id",
+        "type": "integer"
+      },
+      {
+        "name": "h_w_id",
+        "type": "integer"
+      },
+      {
+        "name": "h_date",
+        "type": "timestamp without time zone"
+      },
+      {
+        "name": "h_amount",
+        "type": "numeric"
+      },
+      {
+        "name": "h_data",
+        "type": "character varying"
+      }
+    ]
+  },
+  {
+    "table": "oorder",
+    "rows": 300000,
+    "columns": [
+      {
+        "name": "o_w_id",
+        "type": "integer"
+      },
+      {
+        "name": "o_d_id",
+        "type": "integer"
+      },
+      {
+        "name": "o_id",
+        "type": "integer"
+      },
+      {
+        "name": "o_c_id",
+        "type": "integer"
+      },
+      {
+        "name": "o_carrier_id",
+        "type": "integer"
+      },
+      {
+        "name": "o_ol_cnt",
+        "type": "integer"
+      },
+      {
+        "name": "o_all_local",
+        "type": "integer"
+      },
+      {
+        "name": "o_entry_d",
+        "type": "timestamp without time zone"
+      }
+    ]
+  },
+  {
+    "table": "new_order",
+    "rows": 90000,
+    "columns": [
+      {
+        "name": "no_w_id",
+        "type": "integer"
+      },
+      {
+        "name": "no_d_id",
+        "type": "integer"
+      },
+      {
+        "name": "no_o_id",
+        "type": "integer"
+      }
+    ]
+  },
+  {
+    "table": "order_line",
+    "rows": 3000644,
+    "columns": [
+      {
+        "name": "ol_w_id",
+        "type": "integer"
+      },
+      {
+        "name": "ol_d_id",
+        "type": "integer"
+      },
+      {
+        "name": "ol_o_id",
+        "type": "integer"
+      },
+      {
+        "name": "ol_number",
+        "type": "integer"
+      },
+      {
+        "name": "ol_i_id",
+        "type": "integer"
+      },
+      {
+        "name": "ol_delivery_d",
+        "type": "timestamp without time zone"
+      },
+      {
+        "name": "ol_amount",
+        "type": "numeric"
+      },
+      {
+        "name": "ol_supply_w_id",
+        "type": "integer"
+      },
+      {
+        "name": "ol_quantity",
+        "type": "numeric"
+      },
+      {
+        "name": "ol_dist_info",
+        "type": "character"
+      }
+    ]
+  }
+]

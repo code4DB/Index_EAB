@@ -1,0 +1,17 @@
+{
+    "database_system": "postgres",
+    "seed": 666,
+    "budget": 200,
+    "algorithms": [
+        {
+            "name": "mcts",
+            "parameters": {
+                "cardinality": 5,
+                "max_index_width": 2,
+                "select_policy": "UCT",
+                "roll_num": 1,
+                "best_policy": "BCE"
+            }
+        }
+    ]
+}

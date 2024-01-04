@@ -1,0 +1,68 @@
+{
+  "id": "drlinda_10w_TPCH_Experiment",
+  "description": "Just a TPCH Test Experiment",
+  "gym_version": 3,
+  "timesteps": 100000,
+  "random_seed": 60,
+  "parallel_environments": 1,
+  "pickle_cost_estimation_caches": true,
+  "action_manager": "DRLindaActionManager",
+  "observation_manager": "DRLindaObservationManager",
+  "reward_calculator": "DRLindaReward",
+  "max_steps_per_episode": 200,
+  "validation_frequency": 1000,
+  "filter_utilized_columns": false,
+  "max_index_width": 1,
+  "max_indexes": 5,
+  "reenable_indexes": false,
+  "result_path": "exp_res",
+  "rl_algorithm": {
+    "algorithm": "DQN",
+    "stable_baselines_version": 2,
+    "gamma": 0.5,
+    "policy": "MlpPolicy",
+    "model_architecture": {
+      "net_arch": [
+        {
+          "vf": [
+            256,
+            256
+          ],
+          "pi": [
+            256,
+            256
+          ]
+        }
+      ]
+    },
+    "args": {
+      "n_steps": 64
+    }
+  },
+  "workload": {
+    "benchmark": "TPCH",
+    "scale_factor": 1,
+    "size": 18,
+    "varying_frequencies": true,
+    "training_instances": 1,
+    "validation_testing": {
+      "number_of_workloads": 1,
+      "unknown_query_probabilities": [
+        0.0
+      ]
+    },
+    "similar_workloads": false,
+    "excluded_query_classes": [],
+    "unknown_queries": 0
+  },
+  "comparison_algorithms": [],
+  "budgets": {
+    "training": false,
+    "validation_and_testing": [
+      10000
+    ]
+  },
+  "column_filters": {
+    "TableNumRowsFilter": 5000
+  }
+}

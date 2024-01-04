@@ -1,0 +1,370 @@
+{
+  "w_id": {
+    "table": "warehouse",
+    "type": "integer"
+  },
+  "w_ytd": {
+    "table": "warehouse",
+    "type": "numeric"
+  },
+  "w_tax": {
+    "table": "warehouse",
+    "type": "numeric"
+  },
+  "w_name": {
+    "table": "warehouse",
+    "type": "character varying"
+  },
+  "w_street_1": {
+    "table": "warehouse",
+    "type": "character varying"
+  },
+  "w_street_2": {
+    "table": "warehouse",
+    "type": "character varying"
+  },
+  "w_city": {
+    "table": "warehouse",
+    "type": "character varying"
+  },
+  "w_state": {
+    "table": "warehouse",
+    "type": "character"
+  },
+  "w_zip": {
+    "table": "warehouse",
+    "type": "character"
+  },
+  "i_id": {
+    "table": "item",
+    "type": "integer"
+  },
+  "i_name": {
+    "table": "item",
+    "type": "character varying"
+  },
+  "i_price": {
+    "table": "item",
+    "type": "numeric"
+  },
+  "i_data": {
+    "table": "item",
+    "type": "character varying"
+  },
+  "i_im_id": {
+    "table": "item",
+    "type": "integer"
+  },
+  "s_w_id": {
+    "table": "stock",
+    "type": "integer"
+  },
+  "s_i_id": {
+    "table": "stock",
+    "type": "integer"
+  },
+  "s_quantity": {
+    "table": "stock",
+    "type": "integer"
+  },
+  "s_ytd": {
+    "table": "stock",
+    "type": "numeric"
+  },
+  "s_order_cnt": {
+    "table": "stock",
+    "type": "integer"
+  },
+  "s_remote_cnt": {
+    "table": "stock",
+    "type": "integer"
+  },
+  "s_data": {
+    "table": "stock",
+    "type": "character varying"
+  },
+  "s_dist_01": {
+    "table": "stock",
+    "type": "character"
+  },
+  "s_dist_02": {
+    "table": "stock",
+    "type": "character"
+  },
+  "s_dist_03": {
+    "table": "stock",
+    "type": "character"
+  },
+  "s_dist_04": {
+    "table": "stock",
+    "type": "character"
+  },
+  "s_dist_05": {
+    "table": "stock",
+    "type": "character"
+  },
+  "s_dist_06": {
+    "table": "stock",
+    "type": "character"
+  },
+  "s_dist_07": {
+    "table": "stock",
+    "type": "character"
+  },
+  "s_dist_08": {
+    "table": "stock",
+    "type": "character"
+  },
+  "s_dist_09": {
+    "table": "stock",
+    "type": "character"
+  },
+  "s_dist_10": {
+    "table": "stock",
+    "type": "character"
+  },
+  "d_w_id": {
+    "table": "district",
+    "type": "integer"
+  },
+  "d_id": {
+    "table": "district",
+    "type": "integer"
+  },
+  "d_ytd": {
+    "table": "district",
+    "type": "numeric"
+  },
+  "d_tax": {
+    "table": "district",
+    "type": "numeric"
+  },
+  "d_next_o_id": {
+    "table": "district",
+    "type": "integer"
+  },
+  "d_name": {
+    "table": "district",
+    "type": "character varying"
+  },
+  "d_street_1": {
+    "table": "district",
+    "type": "character varying"
+  },
+  "d_street_2": {
+    "table": "district",
+    "type": "character varying"
+  },
+  "d_city": {
+    "table": "district",
+    "type": "character varying"
+  },
+  "d_state": {
+    "table": "district",
+    "type": "character"
+  },
+  "d_zip": {
+    "table": "district",
+    "type": "character"
+  },
+  "c_w_id": {
+    "table": "customer",
+    "type": "integer"
+  },
+  "c_d_id": {
+    "table": "customer",
+    "type": "integer"
+  },
+  "c_id": {
+    "table": "customer",
+    "type": "integer"
+  },
+  "c_discount": {
+    "table": "customer",
+    "type": "numeric"
+  },
+  "c_credit": {
+    "table": "customer",
+    "type": "character"
+  },
+  "c_last": {
+    "table": "customer",
+    "type": "character varying"
+  },
+  "c_first": {
+    "table": "customer",
+    "type": "character varying"
+  },
+  "c_credit_lim": {
+    "table": "customer",
+    "type": "numeric"
+  },
+  "c_balance": {
+    "table": "customer",
+    "type": "numeric"
+  },
+  "c_ytd_payment": {
+    "table": "customer",
+    "type": "double precision"
+  },
+  "c_payment_cnt": {
+    "table": "customer",
+    "type": "integer"
+  },
+  "c_delivery_cnt": {
+    "table": "customer",
+    "type": "integer"
+  },
+  "c_street_1": {
+    "table": "customer",
+    "type": "character varying"
+  },
+  "c_street_2": {
+    "table": "customer",
+    "type": "character varying"
+  },
+  "c_city": {
+    "table": "customer",
+    "type": "character varying"
+  },
+  "c_state": {
+    "table": "customer",
+    "type": "character"
+  },
+  "c_zip": {
+    "table": "customer",
+    "type": "character"
+  },
+  "c_phone": {
+    "table": "customer",
+    "type": "character"
+  },
+  "c_since": {
+    "table": "customer",
+    "type": "timestamp without time zone"
+  },
+  "c_middle": {
+    "table": "customer",
+    "type": "character"
+  },
+  "c_data": {
+    "table": "customer",
+    "type": "character varying"
+  },
+  "h_c_id": {
+    "table": "history",
+    "type": "integer"
+  },
+  "h_c_d_id": {
+    "table": "history",
+    "type": "integer"
+  },
+  "h_c_w_id": {
+    "table": "history",
+    "type": "integer"
+  },
+  "h_d_id": {
+    "table": "history",
+    "type": "integer"
+  },
+  "h_w_id": {
+    "table": "history",
+    "type": "integer"
+  },
+  "h_date": {
+    "table": "history",
+    "type": "timestamp without time zone"
+  },
+  "h_amount": {
+    "table": "history",
+    "type": "numeric"
+  },
+  "h_data": {
+    "table": "history",
+    "type": "character varying"
+  },
+  "o_w_id": {
+    "table": "oorder",
+    "type": "integer"
+  },
+  "o_d_id": {
+    "table": "oorder",
+    "type": "integer"
+  },
+  "o_id": {
+    "table": "oorder",
+    "type": "integer"
+  },
+  "o_c_id": {
+    "table": "oorder",
+    "type": "integer"
+  },
+  "o_carrier_id": {
+    "table": "oorder",
+    "type": "integer"
+  },
+  "o_ol_cnt": {
+    "table": "oorder",
+    "type": "integer"
+  },
+  "o_all_local": {
+    "table": "oorder",
+    "type": "integer"
+  },
+  "o_entry_d": {
+    "table": "oorder",
+    "type": "timestamp without time zone"
+  },
+  "no_w_id": {
+    "table": "new_order",
+    "type": "integer"
+  },
+  "no_d_id": {
+    "table": "new_order",
+    "type": "integer"
+  },
+  "no_o_id": {
+    "table": "new_order",
+    "type": "integer"
+  },
+  "ol_w_id": {
+    "table": "order_line",
+    "type": "integer"
+  },
+  "ol_d_id": {
+    "table": "order_line",
+    "type": "integer"
+  },
+  "ol_o_id": {
+    "table": "order_line",
+    "type": "integer"
+  },
+  "ol_number": {
+    "table": "order_line",
+    "type": "integer"
+  },
+  "ol_i_id": {
+    "table": "order_line",
+    "type": "integer"
+  },
+  "ol_delivery_d": {
+    "table": "order_line",
+    "type": "timestamp without time zone"
+  },
+  "ol_amount": {
+    "table": "order_line",
+    "type": "numeric"
+  },
+  "ol_supply_w_id": {
+    "table": "order_line",
+    "type": "integer"
+  },
+  "ol_quantity": {
+    "table": "order_line",
+    "type": "numeric"
+  },
+  "ol_dist_info": {
+    "table": "order_line",
+    "type": "character"
+  }
+}

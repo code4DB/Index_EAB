@@ -1,0 +1,1503 @@
+2023-10-06 15:59:57 - tensorflow - DEBUG: - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-10-06 16:00:22 - root - INFO: - Load the train data from `/data2/wz/index/index_eab/eab_benefit/index_cost_lib/data/job/lib_job_cost_data_tgt_train.json` (29372).
+2023-10-06 16:00:22 - root - INFO: - Load the valid data from `/data2/wz/index/index_eab/eab_benefit/index_cost_lib/data/job/lib_job_cost_data_tgt_valid.json` (8322).
+2023-10-06 16:01:05 - root - INFO: - The `lr` of EP1 is `0.001`.
+2023-10-06 16:01:59 - root - INFO: - The final train loss of EP1 is: 30.435391722054316.
+2023-10-06 16:02:11 - root - INFO: - The final valid loss of EP1 is: 26.41319974263509.
+2023-10-06 16:02:11 - root - INFO: - The `lr` of EP2 is `0.001`.
+2023-10-06 16:03:14 - root - INFO: - The final train loss of EP2 is: 25.63142750181001.
+2023-10-06 16:03:27 - root - INFO: - The final valid loss of EP2 is: 24.666725158691406.
+2023-10-06 16:03:27 - root - INFO: - The `lr` of EP3 is `0.001`.
+2023-10-06 16:04:27 - root - INFO: - The final train loss of EP3 is: 21.926457240663726.
+2023-10-06 16:04:40 - root - INFO: - The final valid loss of EP3 is: 20.326493369208443.
+2023-10-06 16:04:40 - root - INFO: - The `lr` of EP4 is `0.001`.
+2023-10-06 16:05:40 - root - INFO: - The final train loss of EP4 is: 18.943646102116027.
+2023-10-06 16:05:53 - root - INFO: - The final valid loss of EP4 is: 17.61538569132487.
+2023-10-06 16:05:53 - root - INFO: - The `lr` of EP5 is `0.001`.
+2023-10-06 16:07:02 - root - INFO: - The final train loss of EP5 is: 17.85789072102514.
+2023-10-06 16:07:15 - root - INFO: - The final valid loss of EP5 is: 17.880347357855904.
+2023-10-06 16:07:15 - root - INFO: - The `lr` of EP6 is `0.001`.
+2023-10-06 16:08:18 - root - INFO: - The final train loss of EP6 is: 17.178503135154987.
+2023-10-06 16:08:31 - root - INFO: - The final valid loss of EP6 is: 17.027235560946995.
+2023-10-06 16:08:31 - root - INFO: - The `lr` of EP7 is `0.001`.
+2023-10-06 16:09:35 - root - INFO: - The final train loss of EP7 is: 16.92571419682996.
+2023-10-06 16:09:49 - root - INFO: - The final valid loss of EP7 is: 17.02441904279921.
+2023-10-06 16:09:49 - root - INFO: - The `lr` of EP8 is `0.001`.
+2023-10-06 16:11:05 - root - INFO: - The final train loss of EP8 is: 16.56522668641189.
+2023-10-06 16:11:30 - root - INFO: - The final valid loss of EP8 is: 16.27989122602675.
+2023-10-06 16:11:30 - root - INFO: - The `lr` of EP9 is `0.001`.
+2023-10-06 16:13:28 - root - INFO: - The final train loss of EP9 is: 16.36385470423205.
+2023-10-06 16:13:59 - root - INFO: - The final valid loss of EP9 is: 16.25575213962131.
+2023-10-06 16:13:59 - root - INFO: - The `lr` of EP10 is `0.001`.
+2023-10-06 16:16:11 - root - INFO: - The final train loss of EP10 is: 16.166814409453295.
+2023-10-06 16:16:40 - root - INFO: - The final valid loss of EP10 is: 16.120225058661568.
+2023-10-06 16:16:40 - root - INFO: - The `lr` of EP11 is `0.001`.
+2023-10-06 16:18:53 - root - INFO: - The final train loss of EP11 is: 16.169647973159265.
+2023-10-06 16:19:21 - root - INFO: - The final valid loss of EP11 is: 16.197970178392197.
+2023-10-06 16:19:21 - root - INFO: - The `lr` of EP12 is `0.001`.
+2023-10-06 16:21:29 - root - INFO: - The final train loss of EP12 is: 15.78860197396114.
+2023-10-06 16:21:57 - root - INFO: - The final valid loss of EP12 is: 15.761773109436035.
+2023-10-06 16:21:57 - root - INFO: - The `lr` of EP13 is `0.001`.
+2023-10-06 16:24:05 - root - INFO: - The final train loss of EP13 is: 15.896771628281165.
+2023-10-06 16:24:33 - root - INFO: - The final valid loss of EP13 is: 16.328770213656956.
+2023-10-06 16:24:33 - root - INFO: - The `lr` of EP14 is `0.001`.
+2023-10-06 16:26:42 - root - INFO: - The final train loss of EP14 is: 15.831193923950195.
+2023-10-06 16:27:09 - root - INFO: - The final valid loss of EP14 is: 16.116585307651096.
+2023-10-06 16:27:09 - root - INFO: - The `lr` of EP15 is `0.001`.
+2023-10-06 16:29:18 - root - INFO: - The final train loss of EP15 is: 15.682218814718313.
+2023-10-06 16:29:44 - root - INFO: - The final valid loss of EP15 is: 15.544809765285915.
+2023-10-06 16:29:44 - root - INFO: - The `lr` of EP16 is `0.001`.
+2023-10-06 16:31:53 - root - INFO: - The final train loss of EP16 is: 15.572072390852304.
+2023-10-06 16:32:20 - root - INFO: - The final valid loss of EP16 is: 15.387968063354492.
+2023-10-06 16:32:20 - root - INFO: - The `lr` of EP17 is `0.001`.
+2023-10-06 16:34:17 - root - INFO: - The final train loss of EP17 is: 15.477779454198377.
+2023-10-06 16:34:46 - root - INFO: - The final valid loss of EP17 is: 15.278558943006727.
+2023-10-06 16:34:46 - root - INFO: - The `lr` of EP18 is `0.001`.
+2023-10-06 16:36:35 - root - INFO: - The final train loss of EP18 is: 15.160733749126566.
+2023-10-06 16:36:59 - root - INFO: - The final valid loss of EP18 is: 15.655167049831814.
+2023-10-06 16:36:59 - root - INFO: - The `lr` of EP19 is `0.001`.
+2023-10-06 16:38:54 - root - INFO: - The final train loss of EP19 is: 15.134423321691052.
+2023-10-06 16:39:15 - root - INFO: - The final valid loss of EP19 is: 15.337360594007704.
+2023-10-06 16:39:15 - root - INFO: - The `lr` of EP20 is `0.001`.
+2023-10-06 16:40:52 - root - INFO: - The final train loss of EP20 is: 15.016308817370184.
+2023-10-06 16:41:12 - root - INFO: - The final valid loss of EP20 is: 14.81013266245524.
+2023-10-06 16:41:12 - root - INFO: - The `lr` of EP21 is `0.001`.
+2023-10-06 16:42:48 - root - INFO: - The final train loss of EP21 is: 14.885139596873316.
+2023-10-06 16:43:08 - root - INFO: - The final valid loss of EP21 is: 14.877126905653212.
+2023-10-06 16:43:08 - root - INFO: - The `lr` of EP22 is `0.001`.
+2023-10-06 16:44:38 - root - INFO: - The final train loss of EP22 is: 15.028545412523993.
+2023-10-06 16:44:57 - root - INFO: - The final valid loss of EP22 is: 14.305520905388725.
+2023-10-06 16:44:57 - root - INFO: - The `lr` of EP23 is `0.001`.
+2023-10-06 16:46:23 - root - INFO: - The final train loss of EP23 is: 14.751988608261634.
+2023-10-06 16:46:43 - root - INFO: - The final valid loss of EP23 is: 14.810236612955729.
+2023-10-06 16:46:43 - root - INFO: - The `lr` of EP24 is `0.001`.
+2023-10-06 16:48:10 - root - INFO: - The final train loss of EP24 is: 14.577516720212738.
+2023-10-06 16:48:29 - root - INFO: - The final valid loss of EP24 is: 14.206361876593697.
+2023-10-06 16:48:29 - root - INFO: - The `lr` of EP25 is `0.001`.
+2023-10-06 16:50:02 - root - INFO: - The final train loss of EP25 is: 14.544308234905374.
+2023-10-06 16:50:22 - root - INFO: - The final valid loss of EP25 is: 14.143875969780815.
+2023-10-06 16:50:22 - root - INFO: - The `lr` of EP26 is `0.001`.
+2023-10-06 16:51:52 - root - INFO: - The final train loss of EP26 is: 14.31246149128881.
+2023-10-06 16:52:09 - root - INFO: - The final valid loss of EP26 is: 14.649955007765028.
+2023-10-06 16:52:09 - root - INFO: - The `lr` of EP27 is `0.001`.
+2023-10-06 16:53:46 - root - INFO: - The final train loss of EP27 is: 14.368654316869275.
+2023-10-06 16:54:06 - root - INFO: - The final valid loss of EP27 is: 14.162403318617079.
+2023-10-06 16:54:06 - root - INFO: - The `lr` of EP28 is `0.001`.
+2023-10-06 16:55:37 - root - INFO: - The final train loss of EP28 is: 14.176929539647595.
+2023-10-06 16:55:54 - root - INFO: - The final valid loss of EP28 is: 14.587359216478136.
+2023-10-06 16:55:54 - root - INFO: - The `lr` of EP29 is `0.001`.
+2023-10-06 16:57:25 - root - INFO: - The final train loss of EP29 is: 14.13119181271257.
+2023-10-06 16:57:45 - root - INFO: - The final valid loss of EP29 is: 14.263330459594727.
+2023-10-06 16:57:45 - root - INFO: - The `lr` of EP30 is `0.001`.
+2023-10-06 16:59:17 - root - INFO: - The final train loss of EP30 is: 14.085178539670746.
+2023-10-06 16:59:33 - root - INFO: - The final valid loss of EP30 is: 13.811876720852322.
+2023-10-06 16:59:33 - root - INFO: - The `lr` of EP31 is `0.001`.
+2023-10-06 17:01:05 - root - INFO: - The final train loss of EP31 is: 13.966188693868704.
+2023-10-06 17:01:23 - root - INFO: - The final valid loss of EP31 is: 13.960759268866646.
+2023-10-06 17:01:23 - root - INFO: - The `lr` of EP32 is `0.001`.
+2023-10-06 17:02:41 - root - INFO: - The final train loss of EP32 is: 13.92500061824404.
+2023-10-06 17:03:00 - root - INFO: - The final valid loss of EP32 is: 14.561747233072916.
+2023-10-06 17:03:00 - root - INFO: - The `lr` of EP33 is `0.001`.
+2023-10-06 17:04:24 - root - INFO: - The final train loss of EP33 is: 13.907691593827872.
+2023-10-06 17:04:42 - root - INFO: - The final valid loss of EP33 is: 13.593164973788792.
+2023-10-06 17:04:42 - root - INFO: - The `lr` of EP34 is `0.001`.
+2023-10-06 17:06:03 - root - INFO: - The final train loss of EP34 is: 13.724977624827417.
+2023-10-06 17:06:21 - root - INFO: - The final valid loss of EP34 is: 14.231209966871473.
+2023-10-06 17:06:21 - root - INFO: - The `lr` of EP35 is `0.001`.
+2023-10-06 17:07:34 - root - INFO: - The final train loss of EP35 is: 13.762644175825448.
+2023-10-06 17:07:50 - root - INFO: - The final valid loss of EP35 is: 13.996234893798828.
+2023-10-06 17:07:50 - root - INFO: - The `lr` of EP36 is `0.001`.
+2023-10-06 17:09:14 - root - INFO: - The final train loss of EP36 is: 13.630169671157311.
+2023-10-06 17:09:33 - root - INFO: - The final valid loss of EP36 is: 13.462616284688314.
+2023-10-06 17:09:33 - root - INFO: - The `lr` of EP37 is `0.001`.
+2023-10-06 17:11:10 - root - INFO: - The final train loss of EP37 is: 13.596001361978464.
+2023-10-06 17:11:28 - root - INFO: - The final valid loss of EP37 is: 14.217197206285265.
+2023-10-06 17:11:28 - root - INFO: - The `lr` of EP38 is `0.001`.
+2023-10-06 17:13:03 - root - INFO: - The final train loss of EP38 is: 13.449791678066912.
+2023-10-06 17:13:20 - root - INFO: - The final valid loss of EP38 is: 13.501906924777561.
+2023-10-06 17:13:20 - root - INFO: - The `lr` of EP39 is `0.001`.
+2023-10-06 17:14:51 - root - INFO: - The final train loss of EP39 is: 13.392368974356815.
+2023-10-06 17:15:12 - root - INFO: - The final valid loss of EP39 is: 13.366530100504557.
+2023-10-06 17:15:12 - root - INFO: - The `lr` of EP40 is `0.001`.
+2023-10-06 17:16:38 - root - INFO: - The final train loss of EP40 is: 13.210137597445783.
+2023-10-06 17:16:57 - root - INFO: - The final valid loss of EP40 is: 13.68864197201199.
+2023-10-06 17:16:58 - root - INFO: - The `lr` of EP41 is `0.001`.
+2023-10-06 17:18:17 - root - INFO: - The final train loss of EP41 is: 13.167035727665342.
+2023-10-06 17:18:32 - root - INFO: - The final valid loss of EP41 is: 13.424247211880154.
+2023-10-06 17:18:32 - root - INFO: - The `lr` of EP42 is `0.001`.
+2023-10-06 17:19:50 - root - INFO: - The final train loss of EP42 is: 13.15814807497222.
+2023-10-06 17:20:09 - root - INFO: - The final valid loss of EP42 is: 13.089585834079319.
+2023-10-06 17:20:09 - root - INFO: - The `lr` of EP43 is `0.001`.
+2023-10-06 17:21:35 - root - INFO: - The final train loss of EP43 is: 13.263673519266062.
+2023-10-06 17:21:55 - root - INFO: - The final valid loss of EP43 is: 13.54904153611925.
+2023-10-06 17:21:55 - root - INFO: - The `lr` of EP44 is `0.001`.
+2023-10-06 17:23:16 - root - INFO: - The final train loss of EP44 is: 13.076025633976377.
+2023-10-06 17:23:32 - root - INFO: - The final valid loss of EP44 is: 13.143507957458496.
+2023-10-06 17:23:32 - root - INFO: - The `lr` of EP45 is `0.001`.
+2023-10-06 17:24:05 - root - INFO: - The final train loss of EP45 is: 13.05258109651763.
+2023-10-06 17:24:19 - root - INFO: - The final valid loss of EP45 is: 13.58238665262858.
+2023-10-06 17:24:19 - root - INFO: - The `lr` of EP46 is `0.001`.
+2023-10-06 17:25:10 - root - INFO: - The final train loss of EP46 is: 12.948510992115942.
+2023-10-06 17:25:20 - root - INFO: - The final valid loss of EP46 is: 13.062103589375814.
+2023-10-06 17:25:20 - root - INFO: - The `lr` of EP47 is `0.001`.
+2023-10-06 17:26:10 - root - INFO: - The final train loss of EP47 is: 12.897841091813712.
+2023-10-06 17:26:15 - root - INFO: - The final valid loss of EP47 is: 13.071404139200846.
+2023-10-06 17:26:15 - root - INFO: - The `lr` of EP48 is `0.001`.
+2023-10-06 17:26:50 - root - INFO: - The final train loss of EP48 is: 12.883371155837487.
+2023-10-06 17:26:57 - root - INFO: - The final valid loss of EP48 is: 12.973843892415365.
+2023-10-06 17:26:57 - root - INFO: - The `lr` of EP49 is `0.001`.
+2023-10-06 17:27:35 - root - INFO: - The final train loss of EP49 is: 12.88889454151022.
+2023-10-06 17:27:40 - root - INFO: - The final valid loss of EP49 is: 13.113693979051378.
+2023-10-06 17:27:40 - root - INFO: - The `lr` of EP50 is `0.001`.
+2023-10-06 17:28:15 - root - INFO: - The final train loss of EP50 is: 12.977765050427667.
+2023-10-06 17:28:24 - root - INFO: - The final valid loss of EP50 is: 12.95117219289144.
+2023-10-06 17:28:24 - root - INFO: - The `lr` of EP51 is `0.001`.
+2023-10-06 17:29:02 - root - INFO: - The final train loss of EP51 is: 12.658151067536453.
+2023-10-06 17:29:11 - root - INFO: - The final valid loss of EP51 is: 12.892117924160427.
+2023-10-06 17:29:11 - root - INFO: - The `lr` of EP52 is `0.001`.
+2023-10-06 17:29:56 - root - INFO: - The final train loss of EP52 is: 12.63802327780888.
+2023-10-06 17:30:06 - root - INFO: - The final valid loss of EP52 is: 12.617109192742241.
+2023-10-06 17:30:06 - root - INFO: - The `lr` of EP53 is `0.001`.
+2023-10-06 17:30:56 - root - INFO: - The final train loss of EP53 is: 12.679409651920713.
+2023-10-06 17:31:06 - root - INFO: - The final valid loss of EP53 is: 12.5192838244968.
+2023-10-06 17:31:06 - root - INFO: - The `lr` of EP54 is `0.001`.
+2023-10-06 17:31:51 - root - INFO: - The final train loss of EP54 is: 12.533769574658624.
+2023-10-06 17:32:00 - root - INFO: - The final valid loss of EP54 is: 12.861831771002876.
+2023-10-06 17:32:00 - root - INFO: - The `lr` of EP55 is `0.001`.
+2023-10-06 17:32:41 - root - INFO: - The final train loss of EP55 is: 12.427677154541016.
+2023-10-06 17:32:50 - root - INFO: - The final valid loss of EP55 is: 12.541147232055664.
+2023-10-06 17:32:50 - root - INFO: - The `lr` of EP56 is `0.001`.
+2023-10-06 17:33:25 - root - INFO: - The final train loss of EP56 is: 12.468192856887292.
+2023-10-06 17:33:33 - root - INFO: - The final valid loss of EP56 is: 12.943687227037218.
+2023-10-06 17:33:33 - root - INFO: - The `lr` of EP57 is `0.001`.
+2023-10-06 17:34:04 - root - INFO: - The final train loss of EP57 is: 12.479327333384546.
+2023-10-06 17:34:12 - root - INFO: - The final valid loss of EP57 is: 12.686863157484266.
+2023-10-06 17:34:12 - root - INFO: - The `lr` of EP58 is `0.001`.
+2023-10-06 17:35:07 - root - INFO: - The final train loss of EP58 is: 12.279506913546857.
+2023-10-06 17:35:18 - root - INFO: - The final valid loss of EP58 is: 12.639582528008354.
+2023-10-06 17:35:18 - root - INFO: - The `lr` of EP59 is `0.001`.
+2023-10-06 17:36:05 - root - INFO: - The final train loss of EP59 is: 12.34616180946087.
+2023-10-06 17:36:15 - root - INFO: - The final valid loss of EP59 is: 13.777394612630209.
+2023-10-06 17:36:15 - root - INFO: - The `lr` of EP60 is `0.001`.
+2023-10-06 17:37:05 - root - INFO: - The final train loss of EP60 is: 12.295158616427717.
+2023-10-06 17:37:11 - root - INFO: - The final valid loss of EP60 is: 12.200139893425835.
+2023-10-06 17:37:11 - root - INFO: - The `lr` of EP61 is `0.001`.
+2023-10-06 17:37:59 - root - INFO: - The final train loss of EP61 is: 12.162453421230975.
+2023-10-06 17:38:10 - root - INFO: - The final valid loss of EP61 is: 12.59380054473877.
+2023-10-06 17:38:10 - root - INFO: - The `lr` of EP62 is `0.001`.
+2023-10-06 17:38:57 - root - INFO: - The final train loss of EP62 is: 12.243195040472623.
+2023-10-06 17:39:07 - root - INFO: - The final valid loss of EP62 is: 12.18702612982856.
+2023-10-06 17:39:07 - root - INFO: - The `lr` of EP63 is `0.001`.
+2023-10-06 17:39:58 - root - INFO: - The final train loss of EP63 is: 12.241679125818713.
+2023-10-06 17:40:07 - root - INFO: - The final valid loss of EP63 is: 12.572850969102648.
+2023-10-06 17:40:07 - root - INFO: - The `lr` of EP64 is `0.001`.
+2023-10-06 17:41:00 - root - INFO: - The final train loss of EP64 is: 12.230005231396905.
+2023-10-06 17:41:09 - root - INFO: - The final valid loss of EP64 is: 12.222234725952148.
+2023-10-06 17:41:09 - root - INFO: - The `lr` of EP65 is `0.001`.
+2023-10-06 17:42:00 - root - INFO: - The final train loss of EP65 is: 12.0649304225527.
+2023-10-06 17:42:09 - root - INFO: - The final valid loss of EP65 is: 12.707453091939291.
+2023-10-06 17:42:09 - root - INFO: - The `lr` of EP66 is `0.001`.
+2023-10-06 17:42:38 - root - INFO: - The final train loss of EP66 is: 12.050704298348263.
+2023-10-06 17:42:42 - root - INFO: - The final valid loss of EP66 is: 13.034808052910698.
+2023-10-06 17:42:42 - root - INFO: - The `lr` of EP67 is `0.001`.
+2023-10-06 17:43:14 - root - INFO: - The final train loss of EP67 is: 12.111472655986917.
+2023-10-06 17:43:20 - root - INFO: - The final valid loss of EP67 is: 12.150571505228678.
+2023-10-06 17:43:20 - root - INFO: - The `lr` of EP68 is `0.001`.
+2023-10-06 17:43:50 - root - INFO: - The final train loss of EP68 is: 11.978674987266803.
+2023-10-06 17:43:58 - root - INFO: - The final valid loss of EP68 is: 12.593370013766819.
+2023-10-06 17:43:58 - root - INFO: - The `lr` of EP69 is `0.001`.
+2023-10-06 17:44:22 - root - INFO: - The final train loss of EP69 is: 12.018744961968784.
+2023-10-06 17:44:27 - root - INFO: - The final valid loss of EP69 is: 12.303424835205078.
+2023-10-06 17:44:27 - root - INFO: - The `lr` of EP70 is `0.001`.
+2023-10-06 17:44:46 - root - INFO: - The final train loss of EP70 is: 12.040485184768151.
+2023-10-06 17:44:50 - root - INFO: - The final valid loss of EP70 is: 12.51396910349528.
+2023-10-06 17:44:50 - root - INFO: - The `lr` of EP71 is `0.001`.
+2023-10-06 17:45:09 - root - INFO: - The final train loss of EP71 is: 11.869930201563342.
+2023-10-06 17:45:13 - root - INFO: - The final valid loss of EP71 is: 12.136162016126844.
+2023-10-06 17:45:13 - root - INFO: - The `lr` of EP72 is `0.001`.
+2023-10-06 17:45:32 - root - INFO: - The final train loss of EP72 is: 11.837591302805933.
+2023-10-06 17:45:36 - root - INFO: - The final valid loss of EP72 is: 11.881134351094564.
+2023-10-06 17:45:36 - root - INFO: - The `lr` of EP73 is `0.001`.
+2023-10-06 17:45:56 - root - INFO: - The final train loss of EP73 is: 11.773304478875522.
+2023-10-06 17:46:00 - root - INFO: - The final valid loss of EP73 is: 12.018237007988823.
+2023-10-06 17:46:00 - root - INFO: - The `lr` of EP74 is `0.001`.
+2023-10-06 17:46:19 - root - INFO: - The final train loss of EP74 is: 11.738787026240908.
+2023-10-06 17:46:23 - root - INFO: - The final valid loss of EP74 is: 12.12837717268202.
+2023-10-06 17:46:23 - root - INFO: - The `lr` of EP75 is `0.001`.
+2023-10-06 17:46:42 - root - INFO: - The final train loss of EP75 is: 11.800809366949673.
+2023-10-06 17:46:46 - root - INFO: - The final valid loss of EP75 is: 12.406768057081434.
+2023-10-06 17:46:46 - root - INFO: - The `lr` of EP76 is `0.001`.
+2023-10-06 17:47:05 - root - INFO: - The final train loss of EP76 is: 11.681218509016366.
+2023-10-06 17:47:08 - root - INFO: - The final valid loss of EP76 is: 12.053635597229004.
+2023-10-06 17:47:08 - root - INFO: - The `lr` of EP77 is `0.001`.
+2023-10-06 17:47:27 - root - INFO: - The final train loss of EP77 is: 11.726791414721259.
+2023-10-06 17:47:31 - root - INFO: - The final valid loss of EP77 is: 11.924257066514757.
+2023-10-06 17:47:31 - root - INFO: - The `lr` of EP78 is `0.001`.
+2023-10-06 17:47:50 - root - INFO: - The final train loss of EP78 is: 11.674459687594709.
+2023-10-06 17:47:54 - root - INFO: - The final valid loss of EP78 is: 11.710705333285862.
+2023-10-06 17:47:54 - root - INFO: - The `lr` of EP79 is `0.001`.
+2023-10-06 17:48:13 - root - INFO: - The final train loss of EP79 is: 11.517899677671235.
+2023-10-06 17:48:17 - root - INFO: - The final valid loss of EP79 is: 12.115467283460829.
+2023-10-06 17:48:17 - root - INFO: - The `lr` of EP80 is `0.001`.
+2023-10-06 17:48:36 - root - INFO: - The final train loss of EP80 is: 11.833361757212671.
+2023-10-06 17:48:40 - root - INFO: - The final valid loss of EP80 is: 12.14565732744005.
+2023-10-06 17:48:40 - root - INFO: - The `lr` of EP81 is `0.001`.
+2023-10-06 17:48:59 - root - INFO: - The final train loss of EP81 is: 11.494396637225973.
+2023-10-06 17:49:02 - root - INFO: - The final valid loss of EP81 is: 11.716279665629068.
+2023-10-06 17:49:02 - root - INFO: - The `lr` of EP82 is `0.001`.
+2023-10-06 17:49:22 - root - INFO: - The final train loss of EP82 is: 11.621407147111563.
+2023-10-06 17:49:26 - root - INFO: - The final valid loss of EP82 is: 11.801753573947483.
+2023-10-06 17:49:26 - root - INFO: - The `lr` of EP83 is `0.001`.
+2023-10-06 17:49:45 - root - INFO: - The final train loss of EP83 is: 11.513784112601444.
+2023-10-06 17:49:48 - root - INFO: - The final valid loss of EP83 is: 11.748920440673828.
+2023-10-06 17:49:48 - root - INFO: - The `lr` of EP84 is `0.001`.
+2023-10-06 17:50:07 - root - INFO: - The final train loss of EP84 is: 11.442064383934284.
+2023-10-06 17:50:11 - root - INFO: - The final valid loss of EP84 is: 11.797966851128471.
+2023-10-06 17:50:11 - root - INFO: - The `lr` of EP85 is `0.001`.
+2023-10-06 17:50:30 - root - INFO: - The final train loss of EP85 is: 11.30639148580617.
+2023-10-06 17:50:34 - root - INFO: - The final valid loss of EP85 is: 11.74502944946289.
+2023-10-06 17:50:34 - root - INFO: - The `lr` of EP86 is `0.001`.
+2023-10-06 17:50:53 - root - INFO: - The final train loss of EP86 is: 11.30641453841637.
+2023-10-06 17:50:57 - root - INFO: - The final valid loss of EP86 is: 11.879235797458225.
+2023-10-06 17:50:57 - root - INFO: - The `lr` of EP87 is `0.001`.
+2023-10-06 17:51:16 - root - INFO: - The final train loss of EP87 is: 11.34279205059183.
+2023-10-06 17:51:20 - root - INFO: - The final valid loss of EP87 is: 12.382102754380968.
+2023-10-06 17:51:20 - root - INFO: - The `lr` of EP88 is `0.001`.
+2023-10-06 17:51:39 - root - INFO: - The final train loss of EP88 is: 11.383070879969104.
+2023-10-06 17:51:42 - root - INFO: - The final valid loss of EP88 is: 11.631387180752224.
+2023-10-06 17:51:42 - root - INFO: - The `lr` of EP89 is `0.001`.
+2023-10-06 17:52:01 - root - INFO: - The final train loss of EP89 is: 11.226599923495588.
+2023-10-06 17:52:05 - root - INFO: - The final valid loss of EP89 is: 11.741325272454155.
+2023-10-06 17:52:05 - root - INFO: - The `lr` of EP90 is `0.001`.
+2023-10-06 17:52:24 - root - INFO: - The final train loss of EP90 is: 11.238473990867877.
+2023-10-06 17:52:28 - root - INFO: - The final valid loss of EP90 is: 11.356432808770073.
+2023-10-06 17:52:28 - root - INFO: - The `lr` of EP91 is `0.001`.
+2023-10-06 17:52:47 - root - INFO: - The final train loss of EP91 is: 11.271767484730688.
+2023-10-06 17:52:51 - root - INFO: - The final valid loss of EP91 is: 11.468615002102322.
+2023-10-06 17:52:51 - root - INFO: - The `lr` of EP92 is `0.001`.
+2023-10-06 17:53:10 - root - INFO: - The final train loss of EP92 is: 11.181828696152259.
+2023-10-06 17:53:14 - root - INFO: - The final valid loss of EP92 is: 11.09656196170383.
+2023-10-06 17:53:14 - root - INFO: - The `lr` of EP93 is `0.001`.
+2023-10-06 17:53:33 - root - INFO: - The final train loss of EP93 is: 11.111349697770743.
+2023-10-06 17:53:37 - root - INFO: - The final valid loss of EP93 is: 11.840516620212131.
+2023-10-06 17:53:37 - root - INFO: - The `lr` of EP94 is `0.001`.
+2023-10-06 17:53:56 - root - INFO: - The final train loss of EP94 is: 11.28294112764556.
+2023-10-06 17:53:59 - root - INFO: - The final valid loss of EP94 is: 11.23089928097195.
+2023-10-06 17:53:59 - root - INFO: - The `lr` of EP95 is `0.001`.
+2023-10-06 17:54:18 - root - INFO: - The final train loss of EP95 is: 11.15518934973355.
+2023-10-06 17:54:22 - root - INFO: - The final valid loss of EP95 is: 11.625434663560656.
+2023-10-06 17:54:22 - root - INFO: - The `lr` of EP96 is `0.001`.
+2023-10-06 17:54:41 - root - INFO: - The final train loss of EP96 is: 11.048529000117862.
+2023-10-06 17:54:45 - root - INFO: - The final valid loss of EP96 is: 11.471464474995932.
+2023-10-06 17:54:45 - root - INFO: - The `lr` of EP97 is `0.001`.
+2023-10-06 17:55:04 - root - INFO: - The final train loss of EP97 is: 11.08570490212276.
+2023-10-06 17:55:08 - root - INFO: - The final valid loss of EP97 is: 11.247122870551216.
+2023-10-06 17:55:08 - root - INFO: - The `lr` of EP98 is `0.001`.
+2023-10-06 17:55:27 - root - INFO: - The final train loss of EP98 is: 11.112851504621835.
+2023-10-06 17:55:30 - root - INFO: - The final valid loss of EP98 is: 11.265504837036133.
+2023-10-06 17:55:30 - root - INFO: - The `lr` of EP99 is `0.001`.
+2023-10-06 17:55:49 - root - INFO: - The final train loss of EP99 is: 11.007590721393454.
+2023-10-06 17:55:54 - root - INFO: - The final valid loss of EP99 is: 11.239224327935112.
+2023-10-06 17:55:54 - root - INFO: - The `lr` of EP100 is `0.001`.
+2023-10-06 17:56:13 - root - INFO: - The final train loss of EP100 is: 10.93852786360116.
+2023-10-06 17:56:17 - root - INFO: - The final valid loss of EP100 is: 11.263732380337185.
+2023-10-06 17:56:17 - root - INFO: - The `lr` of EP101 is `0.001`.
+2023-10-06 17:56:35 - root - INFO: - The final train loss of EP101 is: 11.066978816328378.
+2023-10-06 17:56:39 - root - INFO: - The final valid loss of EP101 is: 11.329657872517904.
+2023-10-06 17:56:39 - root - INFO: - The `lr` of EP102 is `0.001`.
+2023-10-06 17:56:58 - root - INFO: - The final train loss of EP102 is: 11.030398072867557.
+2023-10-06 17:57:02 - root - INFO: - The final valid loss of EP102 is: 11.502971119350857.
+2023-10-06 17:57:02 - root - INFO: - The `lr` of EP103 is `0.001`.
+2023-10-06 17:57:21 - root - INFO: - The final train loss of EP103 is: 10.857756483143774.
+2023-10-06 17:57:24 - root - INFO: - The final valid loss of EP103 is: 11.023996671040853.
+2023-10-06 17:57:24 - root - INFO: - The `lr` of EP104 is `0.001`.
+2023-10-06 17:57:43 - root - INFO: - The final train loss of EP104 is: 10.923644032971612.
+2023-10-06 17:57:47 - root - INFO: - The final valid loss of EP104 is: 11.151493284437391.
+2023-10-06 17:57:47 - root - INFO: - The `lr` of EP105 is `0.001`.
+2023-10-06 17:58:06 - root - INFO: - The final train loss of EP105 is: 10.889297814204776.
+2023-10-06 17:58:09 - root - INFO: - The final valid loss of EP105 is: 11.187778260972765.
+2023-10-06 17:58:09 - root - INFO: - The `lr` of EP106 is `0.001`.
+2023-10-06 17:58:28 - root - INFO: - The final train loss of EP106 is: 10.96467846837537.
+2023-10-06 17:58:32 - root - INFO: - The final valid loss of EP106 is: 11.584603415595161.
+2023-10-06 17:58:32 - root - INFO: - The `lr` of EP107 is `0.001`.
+2023-10-06 17:58:51 - root - INFO: - The final train loss of EP107 is: 10.992252086770945.
+2023-10-06 17:58:54 - root - INFO: - The final valid loss of EP107 is: 11.735619121127659.
+2023-10-06 17:58:54 - root - INFO: - The `lr` of EP108 is `0.001`.
+2023-10-06 17:59:13 - root - INFO: - The final train loss of EP108 is: 10.931255603658743.
+2023-10-06 17:59:17 - root - INFO: - The final valid loss of EP108 is: 12.058923615349663.
+2023-10-06 17:59:17 - root - INFO: - The `lr` of EP109 is `0.001`.
+2023-10-06 17:59:37 - root - INFO: - The final train loss of EP109 is: 10.898900459552634.
+2023-10-06 17:59:40 - root - INFO: - The final valid loss of EP109 is: 11.110851605733236.
+2023-10-06 17:59:40 - root - INFO: - The `lr` of EP110 is `0.001`.
+2023-10-06 17:59:59 - root - INFO: - The final train loss of EP110 is: 10.815710133519666.
+2023-10-06 18:00:03 - root - INFO: - The final valid loss of EP110 is: 11.328290621439615.
+2023-10-06 18:00:03 - root - INFO: - The `lr` of EP111 is `0.001`.
+2023-10-06 18:00:22 - root - INFO: - The final train loss of EP111 is: 10.824683353818696.
+2023-10-06 18:00:26 - root - INFO: - The final valid loss of EP111 is: 11.341252856784397.
+2023-10-06 18:00:26 - root - INFO: - The `lr` of EP112 is `0.001`.
+2023-10-06 18:00:45 - root - INFO: - The final train loss of EP112 is: 10.910005174834152.
+2023-10-06 18:00:49 - root - INFO: - The final valid loss of EP112 is: 10.799469417995876.
+2023-10-06 18:00:49 - root - INFO: - The `lr` of EP113 is `0.001`.
+2023-10-06 18:01:08 - root - INFO: - The final train loss of EP113 is: 10.854992734974829.
+2023-10-06 18:01:11 - root - INFO: - The final valid loss of EP113 is: 11.142455101013184.
+2023-10-06 18:01:11 - root - INFO: - The `lr` of EP114 is `0.001`.
+2023-10-06 18:01:30 - root - INFO: - The final train loss of EP114 is: 10.734545214422818.
+2023-10-06 18:01:34 - root - INFO: - The final valid loss of EP114 is: 11.397615008884006.
+2023-10-06 18:01:34 - root - INFO: - The `lr` of EP115 is `0.001`.
+2023-10-06 18:01:53 - root - INFO: - The final train loss of EP115 is: 10.78087645563586.
+2023-10-06 18:01:57 - root - INFO: - The final valid loss of EP115 is: 11.238886621263292.
+2023-10-06 18:01:57 - root - INFO: - The `lr` of EP116 is `0.001`.
+2023-10-06 18:02:16 - root - INFO: - The final train loss of EP116 is: 10.618961071145945.
+2023-10-06 18:02:20 - root - INFO: - The final valid loss of EP116 is: 10.865800963507759.
+2023-10-06 18:02:20 - root - INFO: - The `lr` of EP117 is `0.001`.
+2023-10-06 18:02:39 - root - INFO: - The final train loss of EP117 is: 10.849581685559503.
+2023-10-06 18:02:42 - root - INFO: - The final valid loss of EP117 is: 11.16527525583903.
+2023-10-06 18:02:42 - root - INFO: - The `lr` of EP118 is `0.001`.
+2023-10-06 18:03:02 - root - INFO: - The final train loss of EP118 is: 10.635229571112271.
+2023-10-06 18:03:05 - root - INFO: - The final valid loss of EP118 is: 11.079680972629124.
+2023-10-06 18:03:05 - root - INFO: - The `lr` of EP119 is `0.001`.
+2023-10-06 18:03:24 - root - INFO: - The final train loss of EP119 is: 10.663031775375892.
+2023-10-06 18:03:28 - root - INFO: - The final valid loss of EP119 is: 11.219760047064888.
+2023-10-06 18:03:28 - root - INFO: - The `lr` of EP120 is `0.001`.
+2023-10-06 18:03:47 - root - INFO: - The final train loss of EP120 is: 10.529553873785611.
+2023-10-06 18:03:51 - root - INFO: - The final valid loss of EP120 is: 11.028417163425022.
+2023-10-06 18:03:51 - root - INFO: - The `lr` of EP121 is `0.001`.
+2023-10-06 18:04:10 - root - INFO: - The final train loss of EP121 is: 10.519579887390137.
+2023-10-06 18:04:14 - root - INFO: - The final valid loss of EP121 is: 10.878688388400608.
+2023-10-06 18:04:14 - root - INFO: - The `lr` of EP122 is `0.001`.
+2023-10-06 18:04:33 - root - INFO: - The final train loss of EP122 is: 10.618483609166638.
+2023-10-06 18:04:36 - root - INFO: - The final valid loss of EP122 is: 11.027785619099935.
+2023-10-06 18:04:36 - root - INFO: - The `lr` of EP123 is `0.001`.
+2023-10-06 18:04:56 - root - INFO: - The final train loss of EP123 is: 10.696575592304098.
+2023-10-06 18:04:59 - root - INFO: - The final valid loss of EP123 is: 11.05557738410102.
+2023-10-06 18:04:59 - root - INFO: - The `lr` of EP124 is `0.0005`.
+2023-10-06 18:05:19 - root - INFO: - The final train loss of EP124 is: 10.475738196537412.
+2023-10-06 18:05:22 - root - INFO: - The final valid loss of EP124 is: 10.521740913391113.
+2023-10-06 18:05:22 - root - INFO: - The `lr` of EP125 is `0.0005`.
+2023-10-06 18:05:41 - root - INFO: - The final train loss of EP125 is: 10.457692508039804.
+2023-10-06 18:05:45 - root - INFO: - The final valid loss of EP125 is: 10.66626591152615.
+2023-10-06 18:05:45 - root - INFO: - The `lr` of EP126 is `0.0005`.
+2023-10-06 18:06:04 - root - INFO: - The final train loss of EP126 is: 10.462071024138352.
+2023-10-06 18:06:08 - root - INFO: - The final valid loss of EP126 is: 10.856244087219238.
+2023-10-06 18:06:08 - root - INFO: - The `lr` of EP127 is `0.0005`.
+2023-10-06 18:06:28 - root - INFO: - The final train loss of EP127 is: 10.480589340473044.
+2023-10-06 18:06:32 - root - INFO: - The final valid loss of EP127 is: 10.71783447265625.
+2023-10-06 18:06:32 - root - INFO: - The `lr` of EP128 is `0.0005`.
+2023-10-06 18:06:50 - root - INFO: - The final train loss of EP128 is: 10.385503144099795.
+2023-10-06 18:06:54 - root - INFO: - The final valid loss of EP128 is: 10.840437041388618.
+2023-10-06 18:06:54 - root - INFO: - The `lr` of EP129 is `0.0005`.
+2023-10-06 18:07:13 - root - INFO: - The final train loss of EP129 is: 10.341981953588025.
+2023-10-06 18:07:17 - root - INFO: - The final valid loss of EP129 is: 10.662669817606607.
+2023-10-06 18:07:17 - root - INFO: - The `lr` of EP130 is `0.0005`.
+2023-10-06 18:07:36 - root - INFO: - The final train loss of EP130 is: 10.307641128013874.
+2023-10-06 18:07:40 - root - INFO: - The final valid loss of EP130 is: 10.658689286973742.
+2023-10-06 18:07:40 - root - INFO: - The `lr` of EP131 is `0.0005`.
+2023-10-06 18:07:59 - root - INFO: - The final train loss of EP131 is: 10.388540563912228.
+2023-10-06 18:08:03 - root - INFO: - The final valid loss of EP131 is: 10.718046930101183.
+2023-10-06 18:08:03 - root - INFO: - The `lr` of EP132 is `0.0005`.
+2023-10-06 18:08:22 - root - INFO: - The final train loss of EP132 is: 10.357581631890659.
+2023-10-06 18:08:26 - root - INFO: - The final valid loss of EP132 is: 10.719633208380806.
+2023-10-06 18:08:26 - root - INFO: - The `lr` of EP133 is `0.0005`.
+2023-10-06 18:08:45 - root - INFO: - The final train loss of EP133 is: 10.501977821876263.
+2023-10-06 18:08:49 - root - INFO: - The final valid loss of EP133 is: 10.916531244913736.
+2023-10-06 18:08:49 - root - INFO: - The `lr` of EP134 is `0.0005`.
+2023-10-06 18:09:07 - root - INFO: - The final train loss of EP134 is: 10.408639315901132.
+2023-10-06 18:09:11 - root - INFO: - The final valid loss of EP134 is: 10.852321412828234.
+2023-10-06 18:09:11 - root - INFO: - The `lr` of EP135 is `0.0005`.
+2023-10-06 18:09:30 - root - INFO: - The final train loss of EP135 is: 10.316558640578698.
+2023-10-06 18:09:34 - root - INFO: - The final valid loss of EP135 is: 10.452333768208822.
+2023-10-06 18:09:34 - root - INFO: - The `lr` of EP136 is `0.0005`.
+2023-10-06 18:09:54 - root - INFO: - The final train loss of EP136 is: 10.414591295965787.
+2023-10-06 18:09:58 - root - INFO: - The final valid loss of EP136 is: 10.66402784983317.
+2023-10-06 18:09:58 - root - INFO: - The `lr` of EP137 is `0.0005`.
+2023-10-06 18:10:16 - root - INFO: - The final train loss of EP137 is: 10.294104148601663.
+2023-10-06 18:10:20 - root - INFO: - The final valid loss of EP137 is: 10.526610480414497.
+2023-10-06 18:10:20 - root - INFO: - The `lr` of EP138 is `0.0005`.
+2023-10-06 18:10:39 - root - INFO: - The final train loss of EP138 is: 10.339404402108029.
+2023-10-06 18:10:43 - root - INFO: - The final valid loss of EP138 is: 10.496924930148655.
+2023-10-06 18:10:43 - root - INFO: - The `lr` of EP139 is `0.0005`.
+2023-10-06 18:11:02 - root - INFO: - The final train loss of EP139 is: 10.416355231712604.
+2023-10-06 18:11:05 - root - INFO: - The final valid loss of EP139 is: 10.24780978096856.
+2023-10-06 18:11:05 - root - INFO: - The `lr` of EP140 is `0.0005`.
+2023-10-06 18:11:24 - root - INFO: - The final train loss of EP140 is: 10.200593422199118.
+2023-10-06 18:11:28 - root - INFO: - The final valid loss of EP140 is: 10.540341907077366.
+2023-10-06 18:11:28 - root - INFO: - The `lr` of EP141 is `0.0005`.
+2023-10-06 18:11:47 - root - INFO: - The final train loss of EP141 is: 10.26689756327662.
+2023-10-06 18:11:50 - root - INFO: - The final valid loss of EP141 is: 10.997841835021973.
+2023-10-06 18:11:50 - root - INFO: - The `lr` of EP142 is `0.0005`.
+2023-10-06 18:12:09 - root - INFO: - The final train loss of EP142 is: 10.324592721873316.
+2023-10-06 18:12:13 - root - INFO: - The final valid loss of EP142 is: 10.33780574798584.
+2023-10-06 18:12:13 - root - INFO: - The `lr` of EP143 is `0.0005`.
+2023-10-06 18:12:32 - root - INFO: - The final train loss of EP143 is: 10.244269042179502.
+2023-10-06 18:12:35 - root - INFO: - The final valid loss of EP143 is: 10.409324328104654.
+2023-10-06 18:12:35 - root - INFO: - The `lr` of EP144 is `0.0005`.
+2023-10-06 18:12:54 - root - INFO: - The final train loss of EP144 is: 10.202738137080752.
+2023-10-06 18:12:58 - root - INFO: - The final valid loss of EP144 is: 10.695624351501465.
+2023-10-06 18:12:58 - root - INFO: - The `lr` of EP145 is `0.0005`.
+2023-10-06 18:13:17 - root - INFO: - The final train loss of EP145 is: 10.26067986981622.
+2023-10-06 18:13:21 - root - INFO: - The final valid loss of EP145 is: 10.580694728427464.
+2023-10-06 18:13:21 - root - INFO: - The `lr` of EP146 is `0.0005`.
+2023-10-06 18:13:40 - root - INFO: - The final train loss of EP146 is: 10.283095787311423.
+2023-10-06 18:13:44 - root - INFO: - The final valid loss of EP146 is: 10.553115208943685.
+2023-10-06 18:13:44 - root - INFO: - The `lr` of EP147 is `0.0005`.
+2023-10-06 18:14:03 - root - INFO: - The final train loss of EP147 is: 10.152720023845804.
+2023-10-06 18:14:06 - root - INFO: - The final valid loss of EP147 is: 10.29630215962728.
+2023-10-06 18:14:06 - root - INFO: - The `lr` of EP148 is `0.0005`.
+2023-10-06 18:14:25 - root - INFO: - The final train loss of EP148 is: 10.276792756442365.
+2023-10-06 18:14:29 - root - INFO: - The final valid loss of EP148 is: 10.453248341878256.
+2023-10-06 18:14:29 - root - INFO: - The `lr` of EP149 is `0.0005`.
+2023-10-06 18:14:48 - root - INFO: - The final train loss of EP149 is: 10.249946988862137.
+2023-10-06 18:14:52 - root - INFO: - The final valid loss of EP149 is: 10.232636875576443.
+2023-10-06 18:14:52 - root - INFO: - The `lr` of EP150 is `0.0005`.
+2023-10-06 18:15:10 - root - INFO: - The final train loss of EP150 is: 10.226894444432752.
+2023-10-06 18:15:14 - root - INFO: - The final valid loss of EP150 is: 10.654891543918186.
+2023-10-06 18:15:14 - root - INFO: - The `lr` of EP151 is `0.0005`.
+2023-10-06 18:15:33 - root - INFO: - The final train loss of EP151 is: 10.2031140163027.
+2023-10-06 18:15:37 - root - INFO: - The final valid loss of EP151 is: 10.471770604451498.
+2023-10-06 18:15:37 - root - INFO: - The `lr` of EP152 is `0.0005`.
+2023-10-06 18:15:55 - root - INFO: - The final train loss of EP152 is: 10.216341215988685.
+2023-10-06 18:15:59 - root - INFO: - The final valid loss of EP152 is: 10.46031125386556.
+2023-10-06 18:15:59 - root - INFO: - The `lr` of EP153 is `0.0005`.
+2023-10-06 18:16:18 - root - INFO: - The final train loss of EP153 is: 10.169639422975738.
+2023-10-06 18:16:21 - root - INFO: - The final valid loss of EP153 is: 10.569089995490181.
+2023-10-06 18:16:21 - root - INFO: - The `lr` of EP154 is `0.0005`.
+2023-10-06 18:16:41 - root - INFO: - The final train loss of EP154 is: 10.223770963734594.
+2023-10-06 18:16:45 - root - INFO: - The final valid loss of EP154 is: 10.588081147935656.
+2023-10-06 18:16:45 - root - INFO: - The `lr` of EP155 is `0.0005`.
+2023-10-06 18:17:04 - root - INFO: - The final train loss of EP155 is: 10.134181877662396.
+2023-10-06 18:17:07 - root - INFO: - The final valid loss of EP155 is: 10.466498268975151.
+2023-10-06 18:17:07 - root - INFO: - The `lr` of EP156 is `0.0005`.
+2023-10-06 18:17:26 - root - INFO: - The final train loss of EP156 is: 10.094465255737305.
+2023-10-06 18:17:30 - root - INFO: - The final valid loss of EP156 is: 10.241012785169813.
+2023-10-06 18:17:30 - root - INFO: - The `lr` of EP157 is `0.0005`.
+2023-10-06 18:17:49 - root - INFO: - The final train loss of EP157 is: 10.288520122396536.
+2023-10-06 18:17:53 - root - INFO: - The final valid loss of EP157 is: 10.357175297207302.
+2023-10-06 18:17:53 - root - INFO: - The `lr` of EP158 is `0.0005`.
+2023-10-06 18:18:11 - root - INFO: - The final train loss of EP158 is: 10.198085127205685.
+2023-10-06 18:18:15 - root - INFO: - The final valid loss of EP158 is: 11.089897473653158.
+2023-10-06 18:18:15 - root - INFO: - The `lr` of EP159 is `0.0005`.
+2023-10-06 18:18:34 - root - INFO: - The final train loss of EP159 is: 10.172334473708581.
+2023-10-06 18:18:38 - root - INFO: - The final valid loss of EP159 is: 11.000297440422905.
+2023-10-06 18:18:38 - root - INFO: - The `lr` of EP160 is `0.0005`.
+2023-10-06 18:18:56 - root - INFO: - The final train loss of EP160 is: 10.158028076434958.
+2023-10-06 18:19:00 - root - INFO: - The final valid loss of EP160 is: 10.407059457567003.
+2023-10-06 18:19:00 - root - INFO: - The `lr` of EP161 is `0.00025`.
+2023-10-06 18:19:19 - root - INFO: - The final train loss of EP161 is: 10.036951525457974.
+2023-10-06 18:19:22 - root - INFO: - The final valid loss of EP161 is: 10.250479592217339.
+2023-10-06 18:19:22 - root - INFO: - The `lr` of EP162 is `0.00025`.
+2023-10-06 18:19:41 - root - INFO: - The final train loss of EP162 is: 10.075522948955667.
+2023-10-06 18:19:45 - root - INFO: - The final valid loss of EP162 is: 10.201218075222439.
+2023-10-06 18:19:45 - root - INFO: - The `lr` of EP163 is `0.00025`.
+2023-10-06 18:20:05 - root - INFO: - The final train loss of EP163 is: 9.995243006739123.
+2023-10-06 18:20:08 - root - INFO: - The final valid loss of EP163 is: 10.319143295288086.
+2023-10-06 18:20:08 - root - INFO: - The `lr` of EP164 is `0.00025`.
+2023-10-06 18:20:27 - root - INFO: - The final train loss of EP164 is: 10.140285689255286.
+2023-10-06 18:20:31 - root - INFO: - The final valid loss of EP164 is: 10.251489321390787.
+2023-10-06 18:20:31 - root - INFO: - The `lr` of EP165 is `0.00025`.
+2023-10-06 18:20:50 - root - INFO: - The final train loss of EP165 is: 10.033175073820969.
+2023-10-06 18:20:53 - root - INFO: - The final valid loss of EP165 is: 9.987864388359917.
+2023-10-06 18:20:53 - root - INFO: - The `lr` of EP166 is `0.00025`.
+2023-10-06 18:21:12 - root - INFO: - The final train loss of EP166 is: 10.08047445889177.
+2023-10-06 18:21:16 - root - INFO: - The final valid loss of EP166 is: 10.414809544881185.
+2023-10-06 18:21:16 - root - INFO: - The `lr` of EP167 is `0.00025`.
+2023-10-06 18:21:34 - root - INFO: - The final train loss of EP167 is: 10.044004341651654.
+2023-10-06 18:21:38 - root - INFO: - The final valid loss of EP167 is: 10.285686280992296.
+2023-10-06 18:21:38 - root - INFO: - The `lr` of EP168 is `0.00025`.
+2023-10-06 18:21:57 - root - INFO: - The final train loss of EP168 is: 9.981785741345636.
+2023-10-06 18:22:00 - root - INFO: - The final valid loss of EP168 is: 10.530887285868326.
+2023-10-06 18:22:00 - root - INFO: - The `lr` of EP169 is `0.00025`.
+2023-10-06 18:22:19 - root - INFO: - The final train loss of EP169 is: 10.05666029042211.
+2023-10-06 18:22:23 - root - INFO: - The final valid loss of EP169 is: 10.58192910088433.
+2023-10-06 18:22:23 - root - INFO: - The `lr` of EP170 is `0.00025`.
+2023-10-06 18:22:41 - root - INFO: - The final train loss of EP170 is: 9.970968608198495.
+2023-10-06 18:22:45 - root - INFO: - The final valid loss of EP170 is: 10.546732054816353.
+2023-10-06 18:22:45 - root - INFO: - The `lr` of EP171 is `0.00025`.
+2023-10-06 18:23:04 - root - INFO: - The final train loss of EP171 is: 10.04871105325633.
+2023-10-06 18:23:08 - root - INFO: - The final valid loss of EP171 is: 10.494439760843912.
+2023-10-06 18:23:08 - root - INFO: - The `lr` of EP172 is `0.00025`.
+2023-10-06 18:23:27 - root - INFO: - The final train loss of EP172 is: 9.990435896248654.
+2023-10-06 18:23:31 - root - INFO: - The final valid loss of EP172 is: 10.165809101528591.
+2023-10-06 18:23:31 - root - INFO: - The `lr` of EP173 is `0.00025`.
+2023-10-06 18:23:49 - root - INFO: - The final train loss of EP173 is: 9.985392241642392.
+2023-10-06 18:23:53 - root - INFO: - The final valid loss of EP173 is: 10.16509003109402.
+2023-10-06 18:23:53 - root - INFO: - The `lr` of EP174 is `0.00025`.
+2023-10-06 18:24:12 - root - INFO: - The final train loss of EP174 is: 9.956016507642023.
+2023-10-06 18:24:16 - root - INFO: - The final valid loss of EP174 is: 10.157366540696886.
+2023-10-06 18:24:16 - root - INFO: - The `lr` of EP175 is `0.00025`.
+2023-10-06 18:24:35 - root - INFO: - The final train loss of EP175 is: 9.979117886773471.
+2023-10-06 18:24:38 - root - INFO: - The final valid loss of EP175 is: 10.087441868252224.
+2023-10-06 18:24:38 - root - INFO: - The `lr` of EP176 is `0.00025`.
+2023-10-06 18:24:57 - root - INFO: - The final train loss of EP176 is: 9.989554240785797.
+2023-10-06 18:25:01 - root - INFO: - The final valid loss of EP176 is: 10.261093457539877.
+2023-10-06 18:25:01 - root - INFO: - The `lr` of EP177 is `0.000125`.
+2023-10-06 18:25:20 - root - INFO: - The final train loss of EP177 is: 9.971814879055682.
+2023-10-06 18:25:24 - root - INFO: - The final valid loss of EP177 is: 10.185534689161512.
+2023-10-06 18:25:24 - root - INFO: - The `lr` of EP178 is `0.000125`.
+2023-10-06 18:25:43 - root - INFO: - The final train loss of EP178 is: 9.936550896743249.
+2023-10-06 18:25:46 - root - INFO: - The final valid loss of EP178 is: 10.301266352335611.
+2023-10-06 18:25:46 - root - INFO: - The `lr` of EP179 is `0.000125`.
+2023-10-06 18:26:05 - root - INFO: - The final train loss of EP179 is: 9.92612417813005.
+2023-10-06 18:26:09 - root - INFO: - The final valid loss of EP179 is: 10.238601366678873.
+2023-10-06 18:26:09 - root - INFO: - The `lr` of EP180 is `0.000125`.
+2023-10-06 18:26:28 - root - INFO: - The final train loss of EP180 is: 9.895907138956003.
+2023-10-06 18:26:32 - root - INFO: - The final valid loss of EP180 is: 10.218738979763454.
+2023-10-06 18:26:32 - root - INFO: - The `lr` of EP181 is `0.000125`.
+2023-10-06 18:26:51 - root - INFO: - The final train loss of EP181 is: 9.884203088694605.
+2023-10-06 18:26:55 - root - INFO: - The final valid loss of EP181 is: 10.008570353190104.
+2023-10-06 18:26:55 - root - INFO: - The `lr` of EP182 is `0.000125`.
+2023-10-06 18:27:14 - root - INFO: - The final train loss of EP182 is: 9.972855502161487.
+2023-10-06 18:27:18 - root - INFO: - The final valid loss of EP182 is: 10.305950376722548.
+2023-10-06 18:27:18 - root - INFO: - The `lr` of EP183 is `0.000125`.
+2023-10-06 18:27:37 - root - INFO: - The final train loss of EP183 is: 9.923348689901418.
+2023-10-06 18:27:41 - root - INFO: - The final valid loss of EP183 is: 10.633798917134603.
+2023-10-06 18:27:41 - root - INFO: - The `lr` of EP184 is `0.000125`.
+2023-10-06 18:27:59 - root - INFO: - The final train loss of EP184 is: 9.970346286379058.
+2023-10-06 18:28:03 - root - INFO: - The final valid loss of EP184 is: 10.107170104980469.
+2023-10-06 18:28:03 - root - INFO: - The `lr` of EP185 is `0.000125`.
+2023-10-06 18:28:22 - root - INFO: - The final train loss of EP185 is: 10.007955090752963.
+2023-10-06 18:28:26 - root - INFO: - The final valid loss of EP185 is: 10.112490759955513.
+2023-10-06 18:28:26 - root - INFO: - The `lr` of EP186 is `0.000125`.
+2023-10-06 18:28:45 - root - INFO: - The final train loss of EP186 is: 9.926400447713918.
+2023-10-06 18:28:49 - root - INFO: - The final valid loss of EP186 is: 10.091868612501356.
+2023-10-06 18:28:49 - root - INFO: - The `lr` of EP187 is `0.000125`.
+2023-10-06 18:29:08 - root - INFO: - The final train loss of EP187 is: 9.958496784341746.
+2023-10-06 18:29:12 - root - INFO: - The final valid loss of EP187 is: 10.448719766404894.
+2023-10-06 18:29:12 - root - INFO: - The `lr` of EP188 is `6.25e-05`.
+2023-10-06 18:29:31 - root - INFO: - The final train loss of EP188 is: 9.861753989910257.
+2023-10-06 18:29:35 - root - INFO: - The final valid loss of EP188 is: 10.195537249247232.
+2023-10-06 18:29:35 - root - INFO: - The `lr` of EP189 is `6.25e-05`.
+2023-10-06 18:29:54 - root - INFO: - The final train loss of EP189 is: 9.94047947587638.
+2023-10-06 18:29:58 - root - INFO: - The final valid loss of EP189 is: 10.20069662729899.
+2023-10-06 18:29:58 - root - INFO: - The `lr` of EP190 is `6.25e-05`.
+2023-10-06 18:30:18 - root - INFO: - The final train loss of EP190 is: 9.93060881516029.
+2023-10-06 18:30:21 - root - INFO: - The final valid loss of EP190 is: 9.989764001634386.
+2023-10-06 18:30:21 - root - INFO: - The `lr` of EP191 is `6.25e-05`.
+2023-10-06 18:30:40 - root - INFO: - The final train loss of EP191 is: 9.957295845294821.
+2023-10-06 18:30:44 - root - INFO: - The final valid loss of EP191 is: 10.018805609809029.
+2023-10-06 18:30:44 - root - INFO: - The `lr` of EP192 is `6.25e-05`.
+2023-10-06 18:31:03 - root - INFO: - The final train loss of EP192 is: 9.764366708952805.
+2023-10-06 18:31:06 - root - INFO: - The final valid loss of EP192 is: 10.126010364956326.
+2023-10-06 18:31:06 - root - INFO: - The `lr` of EP193 is `6.25e-05`.
+2023-10-06 18:31:25 - root - INFO: - The final train loss of EP193 is: 9.930775313541806.
+2023-10-06 18:31:29 - root - INFO: - The final valid loss of EP193 is: 10.439456197950575.
+2023-10-06 18:31:29 - root - INFO: - The `lr` of EP194 is `6.25e-05`.
+2023-10-06 18:31:48 - root - INFO: - The final train loss of EP194 is: 9.840498398090231.
+2023-10-06 18:31:52 - root - INFO: - The final valid loss of EP194 is: 10.247669219970703.
+2023-10-06 18:31:52 - root - INFO: - The `lr` of EP195 is `6.25e-05`.
+2023-10-06 18:32:10 - root - INFO: - The final train loss of EP195 is: 10.001357604717386.
+2023-10-06 18:32:14 - root - INFO: - The final valid loss of EP195 is: 10.156521373324924.
+2023-10-06 18:32:14 - root - INFO: - The `lr` of EP196 is `6.25e-05`.
+2023-10-06 18:32:33 - root - INFO: - The final train loss of EP196 is: 9.931483992214861.
+2023-10-06 18:32:37 - root - INFO: - The final valid loss of EP196 is: 10.248428450690376.
+2023-10-06 18:32:37 - root - INFO: - The `lr` of EP197 is `6.25e-05`.
+2023-10-06 18:32:56 - root - INFO: - The final train loss of EP197 is: 9.921487906883502.
+2023-10-06 18:33:00 - root - INFO: - The final valid loss of EP197 is: 10.322604179382324.
+2023-10-06 18:33:00 - root - INFO: - The `lr` of EP198 is `6.25e-05`.
+2023-10-06 18:33:19 - root - INFO: - The final train loss of EP198 is: 9.806347156393118.
+2023-10-06 18:33:22 - root - INFO: - The final valid loss of EP198 is: 10.228515201144749.
+2023-10-06 18:33:22 - root - INFO: - The `lr` of EP199 is `3.125e-05`.
+2023-10-06 18:33:42 - root - INFO: - The final train loss of EP199 is: 9.924907454128924.
+2023-10-06 18:33:46 - root - INFO: - The final valid loss of EP199 is: 9.90297402275933.
+2023-10-06 18:33:46 - root - INFO: - The `lr` of EP200 is `3.125e-05`.
+2023-10-06 18:34:05 - root - INFO: - The final train loss of EP200 is: 9.915622809837604.
+2023-10-06 18:34:09 - root - INFO: - The final valid loss of EP200 is: 10.411476135253906.
+2023-10-06 18:34:09 - root - INFO: - The `lr` of EP201 is `3.125e-05`.
+2023-10-06 18:34:28 - root - INFO: - The final train loss of EP201 is: 9.908683776855469.
+2023-10-06 18:34:31 - root - INFO: - The final valid loss of EP201 is: 9.990366405910915.
+2023-10-06 18:34:31 - root - INFO: - The `lr` of EP202 is `3.125e-05`.
+2023-10-06 18:34:50 - root - INFO: - The final train loss of EP202 is: 9.850765820207267.
+2023-10-06 18:34:54 - root - INFO: - The final valid loss of EP202 is: 9.931105825636122.
+2023-10-06 18:34:54 - root - INFO: - The `lr` of EP203 is `3.125e-05`.
+2023-10-06 18:35:13 - root - INFO: - The final train loss of EP203 is: 9.88934405096646.
+2023-10-06 18:35:17 - root - INFO: - The final valid loss of EP203 is: 10.147345542907715.
+2023-10-06 18:35:17 - root - INFO: - The `lr` of EP204 is `3.125e-05`.
+2023-10-06 18:35:36 - root - INFO: - The final train loss of EP204 is: 9.86036044153674.
+2023-10-06 18:35:39 - root - INFO: - The final valid loss of EP204 is: 10.344600783454048.
+2023-10-06 18:35:39 - root - INFO: - The `lr` of EP205 is `3.125e-05`.
+2023-10-06 18:35:58 - root - INFO: - The final train loss of EP205 is: 9.895443291499697.
+2023-10-06 18:36:02 - root - INFO: - The final valid loss of EP205 is: 10.227515644497341.
+2023-10-06 18:36:02 - root - INFO: - The `lr` of EP206 is `3.125e-05`.
+2023-10-06 18:36:21 - root - INFO: - The final train loss of EP206 is: 9.825587075332116.
+2023-10-06 18:36:25 - root - INFO: - The final valid loss of EP206 is: 10.322168774074978.
+2023-10-06 18:36:25 - root - INFO: - The `lr` of EP207 is `3.125e-05`.
+2023-10-06 18:36:44 - root - INFO: - The final train loss of EP207 is: 9.884504877287766.
+2023-10-06 18:36:48 - root - INFO: - The final valid loss of EP207 is: 10.182040850321451.
+2023-10-06 18:36:48 - root - INFO: - The `lr` of EP208 is `3.125e-05`.
+2023-10-06 18:37:08 - root - INFO: - The final train loss of EP208 is: 9.904500369367929.
+2023-10-06 18:37:11 - root - INFO: - The final valid loss of EP208 is: 10.262354426913792.
+2023-10-06 18:37:11 - root - INFO: - The `lr` of EP209 is `3.125e-05`.
+2023-10-06 18:37:30 - root - INFO: - The final train loss of EP209 is: 9.81109405386037.
+2023-10-06 18:37:34 - root - INFO: - The final valid loss of EP209 is: 10.336633682250977.
+2023-10-06 18:37:34 - root - INFO: - The `lr` of EP210 is `3.125e-05`.
+2023-10-06 18:37:53 - root - INFO: - The final train loss of EP210 is: 9.821811445828143.
+2023-10-06 18:37:57 - root - INFO: - The final valid loss of EP210 is: 10.548051410251194.
+2023-10-06 18:37:57 - root - INFO: - The `lr` of EP211 is `1.5625e-05`.
+2023-10-06 18:38:16 - root - INFO: - The final train loss of EP211 is: 9.769142216649549.
+2023-10-06 18:38:19 - root - INFO: - The final valid loss of EP211 is: 10.645241737365723.
+2023-10-06 18:38:19 - root - INFO: - The `lr` of EP212 is `1.5625e-05`.
+2023-10-06 18:38:38 - root - INFO: - The final train loss of EP212 is: 9.898011733745706.
+2023-10-06 18:38:42 - root - INFO: - The final valid loss of EP212 is: 10.105359395345053.
+2023-10-06 18:38:42 - root - INFO: - The `lr` of EP213 is `1.5625e-05`.
+2023-10-06 18:39:01 - root - INFO: - The final train loss of EP213 is: 9.940201660682416.
+2023-10-06 18:39:04 - root - INFO: - The final valid loss of EP213 is: 10.034611596001518.
+2023-10-06 18:39:04 - root - INFO: - The `lr` of EP214 is `1.5625e-05`.
+2023-10-06 18:39:23 - root - INFO: - The final train loss of EP214 is: 9.824406722496295.
+2023-10-06 18:39:27 - root - INFO: - The final valid loss of EP214 is: 10.158560011121962.
+2023-10-06 18:39:27 - root - INFO: - The `lr` of EP215 is `1.5625e-05`.
+2023-10-06 18:39:46 - root - INFO: - The final train loss of EP215 is: 9.801105236185007.
+2023-10-06 18:39:50 - root - INFO: - The final valid loss of EP215 is: 9.85713365342882.
+2023-10-06 18:39:50 - root - INFO: - The `lr` of EP216 is `1.5625e-05`.
+2023-10-06 18:40:08 - root - INFO: - The final train loss of EP216 is: 9.79921110745134.
+2023-10-06 18:40:12 - root - INFO: - The final valid loss of EP216 is: 9.869814236958822.
+2023-10-06 18:40:12 - root - INFO: - The `lr` of EP217 is `1.5625e-05`.
+2023-10-06 18:40:32 - root - INFO: - The final train loss of EP217 is: 9.885228157043457.
+2023-10-06 18:40:36 - root - INFO: - The final valid loss of EP217 is: 10.301890479193794.
+2023-10-06 18:40:36 - root - INFO: - The `lr` of EP218 is `1.5625e-05`.
+2023-10-06 18:40:54 - root - INFO: - The final train loss of EP218 is: 9.851347561540274.
+2023-10-06 18:40:58 - root - INFO: - The final valid loss of EP218 is: 9.980962541368273.
+2023-10-06 18:40:58 - root - INFO: - The `lr` of EP219 is `1.5625e-05`.
+2023-10-06 18:41:17 - root - INFO: - The final train loss of EP219 is: 9.936889878634748.
+2023-10-06 18:41:21 - root - INFO: - The final valid loss of EP219 is: 9.938981003231472.
+2023-10-06 18:41:21 - root - INFO: - The `lr` of EP220 is `1.5625e-05`.
+2023-10-06 18:41:39 - root - INFO: - The final train loss of EP220 is: 9.86544835978541.
+2023-10-06 18:41:43 - root - INFO: - The final valid loss of EP220 is: 9.980762693617079.
+2023-10-06 18:41:43 - root - INFO: - The `lr` of EP221 is `1.5625e-05`.
+2023-10-06 18:42:02 - root - INFO: - The final train loss of EP221 is: 9.946677865653202.
+2023-10-06 18:42:05 - root - INFO: - The final valid loss of EP221 is: 10.15446302625868.
+2023-10-06 18:42:05 - root - INFO: - The `lr` of EP222 is `1.5625e-05`.
+2023-10-06 18:42:24 - root - INFO: - The final train loss of EP222 is: 9.896683594276166.
+2023-10-06 18:42:28 - root - INFO: - The final valid loss of EP222 is: 10.164107004801432.
+2023-10-06 18:42:28 - root - INFO: - The `lr` of EP223 is `1.5625e-05`.
+2023-10-06 18:42:47 - root - INFO: - The final train loss of EP223 is: 9.88991010600123.
+2023-10-06 18:42:50 - root - INFO: - The final valid loss of EP223 is: 9.90458016925388.
+2023-10-06 18:42:50 - root - INFO: - The `lr` of EP224 is `1.5625e-05`.
+2023-10-06 18:43:09 - root - INFO: - The final train loss of EP224 is: 9.885601865834204.
+2023-10-06 18:43:13 - root - INFO: - The final valid loss of EP224 is: 10.038426187303331.
+2023-10-06 18:43:13 - root - INFO: - The `lr` of EP225 is `1.5625e-05`.
+2023-10-06 18:43:32 - root - INFO: - The final train loss of EP225 is: 9.955618496598868.
+2023-10-06 18:43:36 - root - INFO: - The final valid loss of EP225 is: 10.022779782613119.
+2023-10-06 18:43:36 - root - INFO: - The `lr` of EP226 is `1.5625e-05`.
+2023-10-06 18:43:55 - root - INFO: - The final train loss of EP226 is: 9.8707914352417.
+2023-10-06 18:43:59 - root - INFO: - The final valid loss of EP226 is: 10.46703412797716.
+2023-10-06 18:43:59 - root - INFO: - The `lr` of EP227 is `1e-05`.
+2023-10-06 18:44:18 - root - INFO: - The final train loss of EP227 is: 9.949740936016214.
+2023-10-06 18:44:22 - root - INFO: - The final valid loss of EP227 is: 10.43200651804606.
+2023-10-06 18:44:22 - root - INFO: - The `lr` of EP228 is `1e-05`.
+2023-10-06 18:44:41 - root - INFO: - The final train loss of EP228 is: 9.866660019447064.
+2023-10-06 18:44:44 - root - INFO: - The final valid loss of EP228 is: 10.11200957828098.
+2023-10-06 18:44:44 - root - INFO: - The `lr` of EP229 is `1e-05`.
+2023-10-06 18:45:03 - root - INFO: - The final train loss of EP229 is: 9.84015780481799.
+2023-10-06 18:45:07 - root - INFO: - The final valid loss of EP229 is: 10.655593342251247.
+2023-10-06 18:45:07 - root - INFO: - The `lr` of EP230 is `1e-05`.
+2023-10-06 18:45:26 - root - INFO: - The final train loss of EP230 is: 9.900566298386146.
+2023-10-06 18:45:29 - root - INFO: - The final valid loss of EP230 is: 9.980893241034615.
+2023-10-06 18:45:29 - root - INFO: - The `lr` of EP231 is `1e-05`.
+2023-10-06 18:45:48 - root - INFO: - The final train loss of EP231 is: 9.927508748810867.
+2023-10-06 18:45:52 - root - INFO: - The final valid loss of EP231 is: 10.040373060438368.
+2023-10-06 18:45:52 - root - INFO: - The `lr` of EP232 is `1e-05`.
+2023-10-06 18:46:11 - root - INFO: - The final train loss of EP232 is: 9.900747529391584.
+2023-10-06 18:46:15 - root - INFO: - The final valid loss of EP232 is: 9.969983842637804.
+2023-10-06 18:46:15 - root - INFO: - The `lr` of EP233 is `1e-05`.
+2023-10-06 18:46:33 - root - INFO: - The final train loss of EP233 is: 9.909571943611935.
+2023-10-06 18:46:37 - root - INFO: - The final valid loss of EP233 is: 10.395865652296278.
+2023-10-06 18:46:37 - root - INFO: - The `lr` of EP234 is `1e-05`.
+2023-10-06 18:46:56 - root - INFO: - The final train loss of EP234 is: 9.835310245382376.
+2023-10-06 18:47:00 - root - INFO: - The final valid loss of EP234 is: 9.963626861572266.
+2023-10-06 18:47:00 - root - INFO: - The `lr` of EP235 is `1e-05`.
+2023-10-06 18:47:19 - root - INFO: - The final train loss of EP235 is: 9.809488954215213.
+2023-10-06 18:47:23 - root - INFO: - The final valid loss of EP235 is: 9.947420120239258.
+2023-10-06 18:47:23 - root - INFO: - The `lr` of EP236 is `1e-05`.
+2023-10-06 18:47:42 - root - INFO: - The final train loss of EP236 is: 9.897625627188846.
+2023-10-06 18:47:46 - root - INFO: - The final valid loss of EP236 is: 10.528193791707357.
+2023-10-06 18:47:46 - root - INFO: - The `lr` of EP237 is `1e-05`.
+2023-10-06 18:48:04 - root - INFO: - The final train loss of EP237 is: 9.908415399748703.
+2023-10-06 18:48:08 - root - INFO: - The final valid loss of EP237 is: 9.976828893025717.
+2023-10-06 18:48:08 - root - INFO: - The `lr` of EP238 is `1e-05`.
+2023-10-06 18:48:27 - root - INFO: - The final train loss of EP238 is: 9.819858814107961.
+2023-10-06 18:48:31 - root - INFO: - The final valid loss of EP238 is: 10.17935848236084.
+2023-10-06 18:48:31 - root - INFO: - The `lr` of EP239 is `1e-05`.
+2023-10-06 18:48:50 - root - INFO: - The final train loss of EP239 is: 9.831190438106143.
+2023-10-06 18:48:53 - root - INFO: - The final valid loss of EP239 is: 9.88759634229872.
+2023-10-06 18:48:53 - root - INFO: - The `lr` of EP240 is `1e-05`.
+2023-10-06 18:49:12 - root - INFO: - The final train loss of EP240 is: 9.79017760835845.
+2023-10-06 18:49:16 - root - INFO: - The final valid loss of EP240 is: 10.519149250454372.
+2023-10-06 18:49:16 - root - INFO: - The `lr` of EP241 is `1e-05`.
+2023-10-06 18:49:35 - root - INFO: - The final train loss of EP241 is: 9.829804815095047.
+2023-10-06 18:49:39 - root - INFO: - The final valid loss of EP241 is: 10.215386814541286.
+2023-10-06 18:49:39 - root - INFO: - The `lr` of EP242 is `1e-05`.
+2023-10-06 18:49:58 - root - INFO: - The final train loss of EP242 is: 9.818830950506802.
+2023-10-06 18:50:01 - root - INFO: - The final valid loss of EP242 is: 10.02573627895779.
+2023-10-06 18:50:01 - root - INFO: - The `lr` of EP243 is `1e-05`.
+2023-10-06 18:50:20 - root - INFO: - The final train loss of EP243 is: 9.939810588442047.
+2023-10-06 18:50:24 - root - INFO: - The final valid loss of EP243 is: 10.05111641354031.
+2023-10-06 18:50:24 - root - INFO: - The `lr` of EP244 is `1e-05`.
+2023-10-06 18:50:44 - root - INFO: - The final train loss of EP244 is: 9.903922212534937.
+2023-10-06 18:50:47 - root - INFO: - The final valid loss of EP244 is: 10.067881796095106.
+2023-10-06 18:50:47 - root - INFO: - The `lr` of EP245 is `1e-05`.
+2023-10-06 18:51:06 - root - INFO: - The final train loss of EP245 is: 9.825988473563358.
+2023-10-06 18:51:10 - root - INFO: - The final valid loss of EP245 is: 9.980336401197645.
+2023-10-06 18:51:10 - root - INFO: - The `lr` of EP246 is `1e-05`.
+2023-10-06 18:51:28 - root - INFO: - The final train loss of EP246 is: 9.82416712004563.
+2023-10-06 18:51:32 - root - INFO: - The final valid loss of EP246 is: 10.283440907796225.
+2023-10-06 18:51:32 - root - INFO: - The `lr` of EP247 is `1e-05`.
+2023-10-06 18:51:51 - root - INFO: - The final train loss of EP247 is: 9.804301853837638.
+2023-10-06 18:51:54 - root - INFO: - The final valid loss of EP247 is: 10.012255880567762.
+2023-10-06 18:51:54 - root - INFO: - The `lr` of EP248 is `1e-05`.
+2023-10-06 18:52:13 - root - INFO: - The final train loss of EP248 is: 9.878134694592706.
+2023-10-06 18:52:17 - root - INFO: - The final valid loss of EP248 is: 10.135966512891981.
+2023-10-06 18:52:17 - root - INFO: - The `lr` of EP249 is `1e-05`.
+2023-10-06 18:52:36 - root - INFO: - The final train loss of EP249 is: 9.897928106373755.
+2023-10-06 18:52:39 - root - INFO: - The final valid loss of EP249 is: 10.503684573703342.
+2023-10-06 18:52:39 - root - INFO: - The `lr` of EP250 is `1e-05`.
+2023-10-06 18:52:58 - root - INFO: - The final train loss of EP250 is: 9.764621076912716.
+2023-10-06 18:53:02 - root - INFO: - The final valid loss of EP250 is: 10.320971700880262.
+2023-10-06 18:53:02 - root - INFO: - The `lr` of EP251 is `1e-05`.
+2023-10-06 18:53:21 - root - INFO: - The final train loss of EP251 is: 9.987527715748755.
+2023-10-06 18:53:24 - root - INFO: - The final valid loss of EP251 is: 10.201529184977213.
+2023-10-06 18:53:24 - root - INFO: - The `lr` of EP252 is `1e-05`.
+2023-10-06 18:53:43 - root - INFO: - The final train loss of EP252 is: 9.926888465881348.
+2023-10-06 18:53:47 - root - INFO: - The final valid loss of EP252 is: 10.593621253967285.
+2023-10-06 18:53:47 - root - INFO: - The `lr` of EP253 is `1e-05`.
+2023-10-06 18:54:07 - root - INFO: - The final train loss of EP253 is: 9.88087719884412.
+2023-10-06 18:54:10 - root - INFO: - The final valid loss of EP253 is: 10.126974635654026.
+2023-10-06 18:54:10 - root - INFO: - The `lr` of EP254 is `1e-05`.
+2023-10-06 18:54:28 - root - INFO: - The final train loss of EP254 is: 9.871728897094727.
+2023-10-06 18:54:31 - root - INFO: - The final valid loss of EP254 is: 10.076326900058323.
+2023-10-06 18:54:31 - root - INFO: - The `lr` of EP255 is `1e-05`.
+2023-10-06 18:54:50 - root - INFO: - The final train loss of EP255 is: 9.860509379156705.
+2023-10-06 18:54:54 - root - INFO: - The final valid loss of EP255 is: 10.140563117133247.
+2023-10-06 18:54:54 - root - INFO: - The `lr` of EP256 is `1e-05`.
+2023-10-06 18:55:13 - root - INFO: - The final train loss of EP256 is: 9.885119306630102.
+2023-10-06 18:55:17 - root - INFO: - The final valid loss of EP256 is: 9.937435574001736.
+2023-10-06 18:55:17 - root - INFO: - The `lr` of EP257 is `1e-05`.
+2023-10-06 18:55:35 - root - INFO: - The final train loss of EP257 is: 9.857456799211173.
+2023-10-06 18:55:39 - root - INFO: - The final valid loss of EP257 is: 9.967169337802464.
+2023-10-06 18:55:39 - root - INFO: - The `lr` of EP258 is `1e-05`.
+2023-10-06 18:55:58 - root - INFO: - The final train loss of EP258 is: 9.88681303221604.
+2023-10-06 18:56:02 - root - INFO: - The final valid loss of EP258 is: 10.3687195248074.
+2023-10-06 18:56:02 - root - INFO: - The `lr` of EP259 is `1e-05`.
+2023-10-06 18:56:20 - root - INFO: - The final train loss of EP259 is: 9.881023702950314.
+2023-10-06 18:56:24 - root - INFO: - The final valid loss of EP259 is: 10.346352895100912.
+2023-10-06 18:56:24 - root - INFO: - The `lr` of EP260 is `1e-05`.
+2023-10-06 18:56:43 - root - INFO: - The final train loss of EP260 is: 9.804575755678375.
+2023-10-06 18:56:47 - root - INFO: - The final valid loss of EP260 is: 10.521014107598198.
+2023-10-06 18:56:47 - root - INFO: - The `lr` of EP261 is `1e-05`.
+2023-10-06 18:57:06 - root - INFO: - The final train loss of EP261 is: 9.88229149785535.
+2023-10-06 18:57:09 - root - INFO: - The final valid loss of EP261 is: 10.066862530178494.
+2023-10-06 18:57:09 - root - INFO: - The `lr` of EP262 is `1e-05`.
+2023-10-06 18:57:29 - root - INFO: - The final train loss of EP262 is: 9.856004353227286.
+2023-10-06 18:57:32 - root - INFO: - The final valid loss of EP262 is: 9.995041105482313.
+2023-10-06 18:57:32 - root - INFO: - The `lr` of EP263 is `1e-05`.
+2023-10-06 18:57:51 - root - INFO: - The final train loss of EP263 is: 9.823749739548255.
+2023-10-06 18:57:54 - root - INFO: - The final valid loss of EP263 is: 10.08899540371365.
+2023-10-06 18:57:54 - root - INFO: - The `lr` of EP264 is `1e-05`.
+2023-10-06 18:58:13 - root - INFO: - The final train loss of EP264 is: 9.812934283552499.
+2023-10-06 18:58:17 - root - INFO: - The final valid loss of EP264 is: 10.18627675374349.
+2023-10-06 18:58:17 - root - INFO: - The `lr` of EP265 is `1e-05`.
+2023-10-06 18:58:36 - root - INFO: - The final train loss of EP265 is: 9.826708793640137.
+2023-10-06 18:58:40 - root - INFO: - The final valid loss of EP265 is: 10.194429079691568.
+2023-10-06 18:58:40 - root - INFO: - The `lr` of EP266 is `1e-05`.
+2023-10-06 18:58:59 - root - INFO: - The final train loss of EP266 is: 9.85866533476731.
+2023-10-06 18:59:03 - root - INFO: - The final valid loss of EP266 is: 10.036920017666286.
+2023-10-06 18:59:03 - root - INFO: - The `lr` of EP267 is `1e-05`.
+2023-10-06 18:59:22 - root - INFO: - The final train loss of EP267 is: 9.861463448096966.
+2023-10-06 18:59:25 - root - INFO: - The final valid loss of EP267 is: 9.973090277777779.
+2023-10-06 18:59:25 - root - INFO: - The `lr` of EP268 is `1e-05`.
+2023-10-06 18:59:44 - root - INFO: - The final train loss of EP268 is: 9.891269618067248.
+2023-10-06 18:59:48 - root - INFO: - The final valid loss of EP268 is: 10.269203715854221.
+2023-10-06 18:59:48 - root - INFO: - The `lr` of EP269 is `1e-05`.
+2023-10-06 19:00:07 - root - INFO: - The final train loss of EP269 is: 9.984807540630472.
+2023-10-06 19:00:11 - root - INFO: - The final valid loss of EP269 is: 9.856531673007542.
+2023-10-06 19:00:11 - root - INFO: - The `lr` of EP270 is `1e-05`.
+2023-10-06 19:00:30 - root - INFO: - The final train loss of EP270 is: 9.942121472851984.
+2023-10-06 19:00:33 - root - INFO: - The final valid loss of EP270 is: 9.952715979682075.
+2023-10-06 19:00:33 - root - INFO: - The `lr` of EP271 is `1e-05`.
+2023-10-06 19:00:52 - root - INFO: - The final train loss of EP271 is: 9.999942516458445.
+2023-10-06 19:00:57 - root - INFO: - The final valid loss of EP271 is: 10.21715874142117.
+2023-10-06 19:00:57 - root - INFO: - The `lr` of EP272 is `1e-05`.
+2023-10-06 19:01:16 - root - INFO: - The final train loss of EP272 is: 9.850922452992407.
+2023-10-06 19:01:20 - root - INFO: - The final valid loss of EP272 is: 9.987966431511772.
+2023-10-06 19:01:20 - root - INFO: - The `lr` of EP273 is `1e-05`.
+2023-10-06 19:01:39 - root - INFO: - The final train loss of EP273 is: 9.902105758930075.
+2023-10-06 19:01:42 - root - INFO: - The final valid loss of EP273 is: 10.13318517473009.
+2023-10-06 19:01:42 - root - INFO: - The `lr` of EP274 is `1e-05`.
+2023-10-06 19:02:01 - root - INFO: - The final train loss of EP274 is: 9.884707319325415.
+2023-10-06 19:02:05 - root - INFO: - The final valid loss of EP274 is: 10.051415867275661.
+2023-10-06 19:02:05 - root - INFO: - The `lr` of EP275 is `1e-05`.
+2023-10-06 19:02:24 - root - INFO: - The final train loss of EP275 is: 9.873050722582587.
+2023-10-06 19:02:28 - root - INFO: - The final valid loss of EP275 is: 10.102186308966743.
+2023-10-06 19:02:28 - root - INFO: - The `lr` of EP276 is `1e-05`.
+2023-10-06 19:02:47 - root - INFO: - The final train loss of EP276 is: 9.782144513623468.
+2023-10-06 19:02:50 - root - INFO: - The final valid loss of EP276 is: 10.086454815334744.
+2023-10-06 19:02:50 - root - INFO: - The `lr` of EP277 is `1e-05`.
+2023-10-06 19:03:09 - root - INFO: - The final train loss of EP277 is: 9.832462639644229.
+2023-10-06 19:03:13 - root - INFO: - The final valid loss of EP277 is: 9.860698752933079.
+2023-10-06 19:03:13 - root - INFO: - The `lr` of EP278 is `1e-05`.
+2023-10-06 19:03:32 - root - INFO: - The final train loss of EP278 is: 9.875592560603701.
+2023-10-06 19:03:36 - root - INFO: - The final valid loss of EP278 is: 10.362614843580458.
+2023-10-06 19:03:36 - root - INFO: - The `lr` of EP279 is `1e-05`.
+2023-10-06 19:03:55 - root - INFO: - The final train loss of EP279 is: 9.94858820685025.
+2023-10-06 19:03:59 - root - INFO: - The final valid loss of EP279 is: 10.061990525987413.
+2023-10-06 19:03:59 - root - INFO: - The `lr` of EP280 is `1e-05`.
+2023-10-06 19:04:17 - root - INFO: - The final train loss of EP280 is: 9.794578848213986.
+2023-10-06 19:04:22 - root - INFO: - The final valid loss of EP280 is: 10.575818485683865.
+2023-10-06 19:04:22 - root - INFO: - The `lr` of EP281 is `1e-05`.
+2023-10-06 19:04:41 - root - INFO: - The final train loss of EP281 is: 9.88914443706644.
+2023-10-06 19:04:44 - root - INFO: - The final valid loss of EP281 is: 10.123548719618055.
+2023-10-06 19:04:44 - root - INFO: - The `lr` of EP282 is `1e-05`.
+2023-10-06 19:05:03 - root - INFO: - The final train loss of EP282 is: 9.830958432164685.
+2023-10-06 19:05:07 - root - INFO: - The final valid loss of EP282 is: 9.786641173892551.
+2023-10-06 19:05:07 - root - INFO: - The `lr` of EP283 is `1e-05`.
+2023-10-06 19:05:25 - root - INFO: - The final train loss of EP283 is: 9.863950992452688.
+2023-10-06 19:05:29 - root - INFO: - The final valid loss of EP283 is: 10.153047773573133.
+2023-10-06 19:05:29 - root - INFO: - The `lr` of EP284 is `1e-05`.
+2023-10-06 19:05:45 - root - INFO: - The final train loss of EP284 is: 9.764894123735099.
+2023-10-06 19:05:47 - root - INFO: - The final valid loss of EP284 is: 10.098620626661512.
+2023-10-06 19:05:47 - root - INFO: - The `lr` of EP285 is `1e-05`.
+2023-10-06 19:06:06 - root - INFO: - The final train loss of EP285 is: 9.787031962953765.
+2023-10-06 19:06:09 - root - INFO: - The final valid loss of EP285 is: 10.253487269083658.
+2023-10-06 19:06:09 - root - INFO: - The `lr` of EP286 is `1e-05`.
+2023-10-06 19:06:28 - root - INFO: - The final train loss of EP286 is: 9.862183242008603.
+2023-10-06 19:06:32 - root - INFO: - The final valid loss of EP286 is: 10.013098504808214.
+2023-10-06 19:06:32 - root - INFO: - The `lr` of EP287 is `1e-05`.
+2023-10-06 19:06:51 - root - INFO: - The final train loss of EP287 is: 9.86959222267414.
+2023-10-06 19:06:54 - root - INFO: - The final valid loss of EP287 is: 10.164765993754068.
+2023-10-06 19:06:54 - root - INFO: - The `lr` of EP288 is `1e-05`.
+2023-10-06 19:07:13 - root - INFO: - The final train loss of EP288 is: 9.795177130863584.
+2023-10-06 19:07:17 - root - INFO: - The final valid loss of EP288 is: 10.048437118530273.
+2023-10-06 19:07:17 - root - INFO: - The `lr` of EP289 is `1e-05`.
+2023-10-06 19:07:37 - root - INFO: - The final train loss of EP289 is: 9.825186104610049.
+2023-10-06 19:07:40 - root - INFO: - The final valid loss of EP289 is: 10.186235745747885.
+2023-10-06 19:07:40 - root - INFO: - The `lr` of EP290 is `1e-05`.
+2023-10-06 19:08:00 - root - INFO: - The final train loss of EP290 is: 9.86756311613938.
+2023-10-06 19:08:04 - root - INFO: - The final valid loss of EP290 is: 10.430297003851997.
+2023-10-06 19:08:04 - root - INFO: - The `lr` of EP291 is `1e-05`.
+2023-10-06 19:08:22 - root - INFO: - The final train loss of EP291 is: 9.849445573214826.
+2023-10-06 19:08:26 - root - INFO: - The final valid loss of EP291 is: 9.986377716064453.
+2023-10-06 19:08:26 - root - INFO: - The `lr` of EP292 is `1e-05`.
+2023-10-06 19:08:45 - root - INFO: - The final train loss of EP292 is: 9.847935610804065.
+2023-10-06 19:08:49 - root - INFO: - The final valid loss of EP292 is: 9.994148254394531.
+2023-10-06 19:08:49 - root - INFO: - The `lr` of EP293 is `1e-05`.
+2023-10-06 19:09:08 - root - INFO: - The final train loss of EP293 is: 9.91004828749032.
+2023-10-06 19:09:11 - root - INFO: - The final valid loss of EP293 is: 9.996363427903917.
+2023-10-06 19:09:11 - root - INFO: - The `lr` of EP294 is `1e-05`.
+2023-10-06 19:09:30 - root - INFO: - The final train loss of EP294 is: 9.826070456669248.
+2023-10-06 19:09:34 - root - INFO: - The final valid loss of EP294 is: 10.440088801913792.
+2023-10-06 19:09:34 - root - INFO: - The `lr` of EP295 is `1e-05`.
+2023-10-06 19:09:52 - root - INFO: - The final train loss of EP295 is: 9.845618280871161.
+2023-10-06 19:09:56 - root - INFO: - The final valid loss of EP295 is: 10.395883348253038.
+2023-10-06 19:09:56 - root - INFO: - The `lr` of EP296 is `1e-05`.
+2023-10-06 19:10:15 - root - INFO: - The final train loss of EP296 is: 9.813684101762442.
+2023-10-06 19:10:19 - root - INFO: - The final valid loss of EP296 is: 10.100918451944986.
+2023-10-06 19:10:19 - root - INFO: - The `lr` of EP297 is `1e-05`.
+2023-10-06 19:10:38 - root - INFO: - The final train loss of EP297 is: 9.878781647517764.
+2023-10-06 19:10:42 - root - INFO: - The final valid loss of EP297 is: 10.015806833902994.
+2023-10-06 19:10:42 - root - INFO: - The `lr` of EP298 is `1e-05`.
+2023-10-06 19:11:00 - root - INFO: - The final train loss of EP298 is: 9.871521489373569.
+2023-10-06 19:11:04 - root - INFO: - The final valid loss of EP298 is: 10.575507799784342.
+2023-10-06 19:11:04 - root - INFO: - The `lr` of EP299 is `1e-05`.
+2023-10-06 19:11:23 - root - INFO: - The final train loss of EP299 is: 9.862461254514496.
+2023-10-06 19:11:27 - root - INFO: - The final valid loss of EP299 is: 10.244945102267796.
+2023-10-06 19:11:27 - root - INFO: - The `lr` of EP300 is `1e-05`.
+2023-10-06 19:11:46 - root - INFO: - The final train loss of EP300 is: 9.870390201437063.
+2023-10-06 19:11:49 - root - INFO: - The final valid loss of EP300 is: 10.011982282002768.
+2023-10-06 19:11:49 - root - INFO: - The `lr` of EP301 is `1e-05`.
+2023-10-06 19:12:08 - root - INFO: - The final train loss of EP301 is: 9.863196405871161.
+2023-10-06 19:12:12 - root - INFO: - The final valid loss of EP301 is: 10.062693066067165.
+2023-10-06 19:12:12 - root - INFO: - The `lr` of EP302 is `1e-05`.
+2023-10-06 19:12:31 - root - INFO: - The final train loss of EP302 is: 9.877696103063123.
+2023-10-06 19:12:34 - root - INFO: - The final valid loss of EP302 is: 10.170099470350477.
+2023-10-06 19:12:34 - root - INFO: - The `lr` of EP303 is `1e-05`.
+2023-10-06 19:12:53 - root - INFO: - The final train loss of EP303 is: 9.835924181444891.
+2023-10-06 19:12:57 - root - INFO: - The final valid loss of EP303 is: 9.967565536499023.
+2023-10-06 19:12:57 - root - INFO: - The `lr` of EP304 is `1e-05`.
+2023-10-06 19:13:15 - root - INFO: - The final train loss of EP304 is: 9.901706531130035.
+2023-10-06 19:13:19 - root - INFO: - The final valid loss of EP304 is: 10.132500966389975.
+2023-10-06 19:13:19 - root - INFO: - The `lr` of EP305 is `1e-05`.
+2023-10-06 19:13:38 - root - INFO: - The final train loss of EP305 is: 9.849080710575498.
+2023-10-06 19:13:42 - root - INFO: - The final valid loss of EP305 is: 10.339342965020073.
+2023-10-06 19:13:42 - root - INFO: - The `lr` of EP306 is `1e-05`.
+2023-10-06 19:14:00 - root - INFO: - The final train loss of EP306 is: 9.813152839397562.
+2023-10-06 19:14:04 - root - INFO: - The final valid loss of EP306 is: 10.324393802218967.
+2023-10-06 19:14:04 - root - INFO: - The `lr` of EP307 is `1e-05`.
+2023-10-06 19:14:23 - root - INFO: - The final train loss of EP307 is: 9.988877329333075.
+2023-10-06 19:14:27 - root - INFO: - The final valid loss of EP307 is: 10.160387463039822.
+2023-10-06 19:14:27 - root - INFO: - The `lr` of EP308 is `1e-05`.
+2023-10-06 19:14:47 - root - INFO: - The final train loss of EP308 is: 9.810270145021637.
+2023-10-06 19:14:50 - root - INFO: - The final valid loss of EP308 is: 10.84087414211697.
+2023-10-06 19:14:50 - root - INFO: - The `lr` of EP309 is `1e-05`.
+2023-10-06 19:15:09 - root - INFO: - The final train loss of EP309 is: 9.837833601852942.
+2023-10-06 19:15:13 - root - INFO: - The final valid loss of EP309 is: 10.080287403530544.
+2023-10-06 19:15:13 - root - INFO: - The `lr` of EP310 is `1e-05`.
+2023-10-06 19:15:32 - root - INFO: - The final train loss of EP310 is: 9.892493905692264.
+2023-10-06 19:15:36 - root - INFO: - The final valid loss of EP310 is: 10.043382326761881.
+2023-10-06 19:15:36 - root - INFO: - The `lr` of EP311 is `1e-05`.
+2023-10-06 19:15:55 - root - INFO: - The final train loss of EP311 is: 9.850243732847016.
+2023-10-06 19:15:59 - root - INFO: - The final valid loss of EP311 is: 9.874916341569689.
+2023-10-06 19:15:59 - root - INFO: - The `lr` of EP312 is `1e-05`.
+2023-10-06 19:16:18 - root - INFO: - The final train loss of EP312 is: 9.908351667996111.
+2023-10-06 19:16:21 - root - INFO: - The final valid loss of EP312 is: 10.183323860168457.
+2023-10-06 19:16:21 - root - INFO: - The `lr` of EP313 is `1e-05`.
+2023-10-06 19:16:40 - root - INFO: - The final train loss of EP313 is: 9.952364592716611.
+2023-10-06 19:16:44 - root - INFO: - The final valid loss of EP313 is: 10.176774236891005.
+2023-10-06 19:16:44 - root - INFO: - The `lr` of EP314 is `1e-05`.
+2023-10-06 19:17:03 - root - INFO: - The final train loss of EP314 is: 9.878447368227203.
+2023-10-06 19:17:07 - root - INFO: - The final valid loss of EP314 is: 10.2481812371148.
+2023-10-06 19:17:07 - root - INFO: - The `lr` of EP315 is `1e-05`.
+2023-10-06 19:17:26 - root - INFO: - The final train loss of EP315 is: 9.82549867958858.
+2023-10-06 19:17:30 - root - INFO: - The final valid loss of EP315 is: 9.923226091596815.
+2023-10-06 19:17:30 - root - INFO: - The `lr` of EP316 is `1e-05`.
+2023-10-06 19:17:48 - root - INFO: - The final train loss of EP316 is: 9.856353496683054.
+2023-10-06 19:17:52 - root - INFO: - The final valid loss of EP316 is: 9.925446192423502.
+2023-10-06 19:17:52 - root - INFO: - The `lr` of EP317 is `1e-05`.
+2023-10-06 19:18:11 - root - INFO: - The final train loss of EP317 is: 9.854636751372238.
+2023-10-06 19:18:16 - root - INFO: - The final valid loss of EP317 is: 10.20024585723877.
+2023-10-06 19:18:16 - root - INFO: - The `lr` of EP318 is `1e-05`.
+2023-10-06 19:18:35 - root - INFO: - The final train loss of EP318 is: 9.839530517315042.
+2023-10-06 19:18:39 - root - INFO: - The final valid loss of EP318 is: 10.211792204115126.
+2023-10-06 19:18:39 - root - INFO: - The `lr` of EP319 is `1e-05`.
+2023-10-06 19:18:57 - root - INFO: - The final train loss of EP319 is: 9.861734291602826.
+2023-10-06 19:19:01 - root - INFO: - The final valid loss of EP319 is: 9.999368879530165.
+2023-10-06 19:19:01 - root - INFO: - The `lr` of EP320 is `1e-05`.
+2023-10-06 19:19:20 - root - INFO: - The final train loss of EP320 is: 9.891439898260709.
+2023-10-06 19:19:24 - root - INFO: - The final valid loss of EP320 is: 10.130665037367079.
+2023-10-06 19:19:24 - root - INFO: - The `lr` of EP321 is `1e-05`.
+2023-10-06 19:19:42 - root - INFO: - The final train loss of EP321 is: 9.833067071848902.
+2023-10-06 19:19:46 - root - INFO: - The final valid loss of EP321 is: 10.429276996188694.
+2023-10-06 19:19:46 - root - INFO: - The `lr` of EP322 is `1e-05`.
+2023-10-06 19:20:05 - root - INFO: - The final train loss of EP322 is: 9.766723797239106.
+2023-10-06 19:20:09 - root - INFO: - The final valid loss of EP322 is: 9.887235588497585.
+2023-10-06 19:20:09 - root - INFO: - The `lr` of EP323 is `1e-05`.
+2023-10-06 19:20:28 - root - INFO: - The final train loss of EP323 is: 9.900399569807382.
+2023-10-06 19:20:32 - root - INFO: - The final valid loss of EP323 is: 10.49518542819553.
+2023-10-06 19:20:32 - root - INFO: - The `lr` of EP324 is `1e-05`.
+2023-10-06 19:20:51 - root - INFO: - The final train loss of EP324 is: 9.82576011789256.
+2023-10-06 19:20:55 - root - INFO: - The final valid loss of EP324 is: 10.033210542466906.
+2023-10-06 19:20:55 - root - INFO: - The `lr` of EP325 is `1e-05`.
+2023-10-06 19:21:13 - root - INFO: - The final train loss of EP325 is: 9.840686337701205.
+2023-10-06 19:21:17 - root - INFO: - The final valid loss of EP325 is: 10.079331927829319.
+2023-10-06 19:21:17 - root - INFO: - The `lr` of EP326 is `1e-05`.
+2023-10-06 19:21:36 - root - INFO: - The final train loss of EP326 is: 9.83157624869511.
+2023-10-06 19:21:41 - root - INFO: - The final valid loss of EP326 is: 9.880189789666069.
+2023-10-06 19:21:41 - root - INFO: - The `lr` of EP327 is `1e-05`.
+2023-10-06 19:22:00 - root - INFO: - The final train loss of EP327 is: 9.916902706540863.
+2023-10-06 19:22:04 - root - INFO: - The final valid loss of EP327 is: 10.197507752312553.
+2023-10-06 19:22:04 - root - INFO: - The `lr` of EP328 is `1e-05`.
+2023-10-06 19:22:23 - root - INFO: - The final train loss of EP328 is: 9.858275380627862.
+2023-10-06 19:22:26 - root - INFO: - The final valid loss of EP328 is: 10.344016498989529.
+2023-10-06 19:22:27 - root - INFO: - The `lr` of EP329 is `1e-05`.
+2023-10-06 19:22:46 - root - INFO: - The final train loss of EP329 is: 9.80041737392031.
+2023-10-06 19:22:49 - root - INFO: - The final valid loss of EP329 is: 10.362076759338379.
+2023-10-06 19:22:49 - root - INFO: - The `lr` of EP330 is `1e-05`.
+2023-10-06 19:23:08 - root - INFO: - The final train loss of EP330 is: 9.890486519912194.
+2023-10-06 19:23:12 - root - INFO: - The final valid loss of EP330 is: 9.891278478834364.
+2023-10-06 19:23:12 - root - INFO: - The `lr` of EP331 is `1e-05`.
+2023-10-06 19:23:31 - root - INFO: - The final train loss of EP331 is: 9.920630389246448.
+2023-10-06 19:23:35 - root - INFO: - The final valid loss of EP331 is: 10.160711076524523.
+2023-10-06 19:23:35 - root - INFO: - The `lr` of EP332 is `1e-05`.
+2023-10-06 19:23:54 - root - INFO: - The final train loss of EP332 is: 9.803728202293659.
+2023-10-06 19:23:58 - root - INFO: - The final valid loss of EP332 is: 10.344164742363823.
+2023-10-06 19:23:58 - root - INFO: - The `lr` of EP333 is `1e-05`.
+2023-10-06 19:24:17 - root - INFO: - The final train loss of EP333 is: 9.908254590527765.
+2023-10-06 19:24:21 - root - INFO: - The final valid loss of EP333 is: 10.316342777676052.
+2023-10-06 19:24:21 - root - INFO: - The `lr` of EP334 is `1e-05`.
+2023-10-06 19:24:40 - root - INFO: - The final train loss of EP334 is: 9.883707506903287.
+2023-10-06 19:24:44 - root - INFO: - The final valid loss of EP334 is: 9.878246042463514.
+2023-10-06 19:24:44 - root - INFO: - The `lr` of EP335 is `1e-05`.
+2023-10-06 19:25:03 - root - INFO: - The final train loss of EP335 is: 9.858471081174653.
+2023-10-06 19:25:06 - root - INFO: - The final valid loss of EP335 is: 9.980458153618706.
+2023-10-06 19:25:06 - root - INFO: - The `lr` of EP336 is `1e-05`.
+2023-10-06 19:25:26 - root - INFO: - The final train loss of EP336 is: 9.953798951773807.
+2023-10-06 19:25:30 - root - INFO: - The final valid loss of EP336 is: 9.926423496670193.
+2023-10-06 19:25:30 - root - INFO: - The `lr` of EP337 is `1e-05`.
+2023-10-06 19:25:49 - root - INFO: - The final train loss of EP337 is: 9.844641488173913.
+2023-10-06 19:25:53 - root - INFO: - The final valid loss of EP337 is: 10.026540756225586.
+2023-10-06 19:25:53 - root - INFO: - The `lr` of EP338 is `1e-05`.
+2023-10-06 19:26:12 - root - INFO: - The final train loss of EP338 is: 9.839882291596512.
+2023-10-06 19:26:16 - root - INFO: - The final valid loss of EP338 is: 10.270307540893555.
+2023-10-06 19:26:16 - root - INFO: - The `lr` of EP339 is `1e-05`.
+2023-10-06 19:26:35 - root - INFO: - The final train loss of EP339 is: 9.855549647890289.
+2023-10-06 19:26:38 - root - INFO: - The final valid loss of EP339 is: 10.108433299594456.
+2023-10-06 19:26:38 - root - INFO: - The `lr` of EP340 is `1e-05`.
+2023-10-06 19:26:57 - root - INFO: - The final train loss of EP340 is: 9.782776437956711.
+2023-10-06 19:27:01 - root - INFO: - The final valid loss of EP340 is: 10.140542242262098.
+2023-10-06 19:27:01 - root - INFO: - The `lr` of EP341 is `1e-05`.
+2023-10-06 19:27:20 - root - INFO: - The final train loss of EP341 is: 9.850644210289264.
+2023-10-06 19:27:24 - root - INFO: - The final valid loss of EP341 is: 9.973753081427681.
+2023-10-06 19:27:24 - root - INFO: - The `lr` of EP342 is `1e-05`.
+2023-10-06 19:27:43 - root - INFO: - The final train loss of EP342 is: 9.78538624993686.
+2023-10-06 19:27:47 - root - INFO: - The final valid loss of EP342 is: 10.11884774102105.
+2023-10-06 19:27:47 - root - INFO: - The `lr` of EP343 is `1e-05`.
+2023-10-06 19:28:06 - root - INFO: - The final train loss of EP343 is: 9.790470550800192.
+2023-10-06 19:28:10 - root - INFO: - The final valid loss of EP343 is: 10.32332377963596.
+2023-10-06 19:28:10 - root - INFO: - The `lr` of EP344 is `1e-05`.
+2023-10-06 19:28:29 - root - INFO: - The final train loss of EP344 is: 9.955138666876431.
+2023-10-06 19:28:32 - root - INFO: - The final valid loss of EP344 is: 9.949808438618978.
+2023-10-06 19:28:32 - root - INFO: - The `lr` of EP345 is `1e-05`.
+2023-10-06 19:28:52 - root - INFO: - The final train loss of EP345 is: 9.833398325689908.
+2023-10-06 19:28:56 - root - INFO: - The final valid loss of EP345 is: 10.2923551135593.
+2023-10-06 19:28:56 - root - INFO: - The `lr` of EP346 is `1e-05`.
+2023-10-06 19:29:15 - root - INFO: - The final train loss of EP346 is: 9.843376324094574.
+2023-10-06 19:29:19 - root - INFO: - The final valid loss of EP346 is: 10.04330062866211.
+2023-10-06 19:29:19 - root - INFO: - The `lr` of EP347 is `1e-05`.
+2023-10-06 19:29:38 - root - INFO: - The final train loss of EP347 is: 9.96968624509614.
+2023-10-06 19:29:42 - root - INFO: - The final valid loss of EP347 is: 10.011578665839302.
+2023-10-06 19:29:42 - root - INFO: - The `lr` of EP348 is `1e-05`.
+2023-10-06 19:30:01 - root - INFO: - The final train loss of EP348 is: 9.799865262261752.
+2023-10-06 19:30:05 - root - INFO: - The final valid loss of EP348 is: 10.032163196139866.
+2023-10-06 19:30:05 - root - INFO: - The `lr` of EP349 is `1e-05`.
+2023-10-06 19:30:23 - root - INFO: - The final train loss of EP349 is: 9.851045246781974.
+2023-10-06 19:30:27 - root - INFO: - The final valid loss of EP349 is: 10.031413290235731.
+2023-10-06 19:30:27 - root - INFO: - The `lr` of EP350 is `1e-05`.
+2023-10-06 19:30:46 - root - INFO: - The final train loss of EP350 is: 9.844832880743619.
+2023-10-06 19:30:50 - root - INFO: - The final valid loss of EP350 is: 9.884509828355577.
+2023-10-06 19:30:50 - root - INFO: - The `lr` of EP351 is `1e-05`.
+2023-10-06 19:31:09 - root - INFO: - The final train loss of EP351 is: 9.850529045894229.
+2023-10-06 19:31:13 - root - INFO: - The final valid loss of EP351 is: 9.988440089755589.
+2023-10-06 19:31:13 - root - INFO: - The `lr` of EP352 is `1e-05`.
+2023-10-06 19:31:32 - root - INFO: - The final train loss of EP352 is: 9.94024293176059.
+2023-10-06 19:31:35 - root - INFO: - The final valid loss of EP352 is: 10.07932292090522.
+2023-10-06 19:31:35 - root - INFO: - The `lr` of EP353 is `1e-05`.
+2023-10-06 19:31:54 - root - INFO: - The final train loss of EP353 is: 9.85391166292388.
+2023-10-06 19:31:58 - root - INFO: - The final valid loss of EP353 is: 10.283277617560493.
+2023-10-06 19:31:58 - root - INFO: - The `lr` of EP354 is `1e-05`.
+2023-10-06 19:32:18 - root - INFO: - The final train loss of EP354 is: 9.783101016077502.
+2023-10-06 19:32:22 - root - INFO: - The final valid loss of EP354 is: 10.358810318840874.
+2023-10-06 19:32:22 - root - INFO: - The `lr` of EP355 is `1e-05`.
+2023-10-06 19:32:40 - root - INFO: - The final train loss of EP355 is: 9.786439698317956.
+2023-10-06 19:32:44 - root - INFO: - The final valid loss of EP355 is: 10.07237434387207.
+2023-10-06 19:32:44 - root - INFO: - The `lr` of EP356 is `1e-05`.
+2023-10-06 19:33:03 - root - INFO: - The final train loss of EP356 is: 9.895190600691171.
+2023-10-06 19:33:07 - root - INFO: - The final valid loss of EP356 is: 10.029036521911621.
+2023-10-06 19:33:07 - root - INFO: - The `lr` of EP357 is `1e-05`.
+2023-10-06 19:33:26 - root - INFO: - The final train loss of EP357 is: 9.81467944178088.
+2023-10-06 19:33:29 - root - INFO: - The final valid loss of EP357 is: 10.238896263970268.
+2023-10-06 19:33:29 - root - INFO: - The `lr` of EP358 is `1e-05`.
+2023-10-06 19:33:48 - root - INFO: - The final train loss of EP358 is: 9.8355875344112.
+2023-10-06 19:33:52 - root - INFO: - The final valid loss of EP358 is: 10.286962191263834.
+2023-10-06 19:33:52 - root - INFO: - The `lr` of EP359 is `1e-05`.
+2023-10-06 19:34:11 - root - INFO: - The final train loss of EP359 is: 9.828538467144144.
+2023-10-06 19:34:15 - root - INFO: - The final valid loss of EP359 is: 9.887414985232883.
+2023-10-06 19:34:15 - root - INFO: - The `lr` of EP360 is `1e-05`.
+2023-10-06 19:34:34 - root - INFO: - The final train loss of EP360 is: 9.818657546207822.
+2023-10-06 19:34:38 - root - INFO: - The final valid loss of EP360 is: 10.143898963928223.
+2023-10-06 19:34:38 - root - INFO: - The `lr` of EP361 is `1e-05`.
+2023-10-06 19:34:57 - root - INFO: - The final train loss of EP361 is: 9.86094698412665.
+2023-10-06 19:35:00 - root - INFO: - The final valid loss of EP361 is: 9.901277277204725.
+2023-10-06 19:35:00 - root - INFO: - The `lr` of EP362 is `1e-05`.
+2023-10-06 19:35:19 - root - INFO: - The final train loss of EP362 is: 9.905214375463025.
+2023-10-06 19:35:23 - root - INFO: - The final valid loss of EP362 is: 10.199702156914604.
+2023-10-06 19:35:23 - root - INFO: - The `lr` of EP363 is `1e-05`.
+2023-10-06 19:35:43 - root - INFO: - The final train loss of EP363 is: 9.795168695778683.
+2023-10-06 19:35:46 - root - INFO: - The final valid loss of EP363 is: 10.19854662153456.
+2023-10-06 19:35:46 - root - INFO: - The `lr` of EP364 is `1e-05`.
+2023-10-06 19:36:05 - root - INFO: - The final train loss of EP364 is: 9.933340500141012.
+2023-10-06 19:36:09 - root - INFO: - The final valid loss of EP364 is: 10.134671423170301.
+2023-10-06 19:36:09 - root - INFO: - The `lr` of EP365 is `1e-05`.
+2023-10-06 19:36:28 - root - INFO: - The final train loss of EP365 is: 9.863085352141281.
+2023-10-06 19:36:32 - root - INFO: - The final valid loss of EP365 is: 9.95837836795383.
+2023-10-06 19:36:32 - root - INFO: - The `lr` of EP366 is `1e-05`.
+2023-10-06 19:36:51 - root - INFO: - The final train loss of EP366 is: 9.879434684227252.
+2023-10-06 19:36:54 - root - INFO: - The final valid loss of EP366 is: 10.181771384345161.
+2023-10-06 19:36:54 - root - INFO: - The `lr` of EP367 is `1e-05`.
+2023-10-06 19:37:13 - root - INFO: - The final train loss of EP367 is: 9.968394049282733.
+2023-10-06 19:37:17 - root - INFO: - The final valid loss of EP367 is: 10.128059175279406.
+2023-10-06 19:37:17 - root - INFO: - The `lr` of EP368 is `1e-05`.
+2023-10-06 19:37:36 - root - INFO: - The final train loss of EP368 is: 9.863110904035898.
+2023-10-06 19:37:39 - root - INFO: - The final valid loss of EP368 is: 9.89269569185045.
+2023-10-06 19:37:39 - root - INFO: - The `lr` of EP369 is `1e-05`.
+2023-10-06 19:37:58 - root - INFO: - The final train loss of EP369 is: 9.82561548824968.
+2023-10-06 19:38:02 - root - INFO: - The final valid loss of EP369 is: 10.02615695529514.
+2023-10-06 19:38:02 - root - INFO: - The `lr` of EP370 is `1e-05`.
+2023-10-06 19:38:20 - root - INFO: - The final train loss of EP370 is: 9.755365009965567.
+2023-10-06 19:38:24 - root - INFO: - The final valid loss of EP370 is: 9.918455176883274.
+2023-10-06 19:38:24 - root - INFO: - The `lr` of EP371 is `1e-05`.
+2023-10-06 19:38:43 - root - INFO: - The final train loss of EP371 is: 9.845734464711157.
+2023-10-06 19:38:46 - root - INFO: - The final valid loss of EP371 is: 10.018877665201822.
+2023-10-06 19:38:46 - root - INFO: - The `lr` of EP372 is `1e-05`.
+2023-10-06 19:39:06 - root - INFO: - The final train loss of EP372 is: 9.831475751153354.
+2023-10-06 19:39:10 - root - INFO: - The final valid loss of EP372 is: 9.95249154832628.
+2023-10-06 19:39:10 - root - INFO: - The `lr` of EP373 is `1e-05`.
+2023-10-06 19:39:28 - root - INFO: - The final train loss of EP373 is: 9.825872881659146.
+2023-10-06 19:39:33 - root - INFO: - The final valid loss of EP373 is: 10.049487431844076.
+2023-10-06 19:39:33 - root - INFO: - The `lr` of EP374 is `1e-05`.
+2023-10-06 19:39:52 - root - INFO: - The final train loss of EP374 is: 9.814170377007846.
+2023-10-06 19:39:55 - root - INFO: - The final valid loss of EP374 is: 10.165233506096733.
+2023-10-06 19:39:55 - root - INFO: - The `lr` of EP375 is `1e-05`.
+2023-10-06 19:40:14 - root - INFO: - The final train loss of EP375 is: 9.777951141883587.
+2023-10-06 19:40:18 - root - INFO: - The final valid loss of EP375 is: 10.12164274851481.
+2023-10-06 19:40:18 - root - INFO: - The `lr` of EP376 is `1e-05`.
+2023-10-06 19:40:37 - root - INFO: - The final train loss of EP376 is: 9.907031585430277.
+2023-10-06 19:40:41 - root - INFO: - The final valid loss of EP376 is: 10.172256787618002.
+2023-10-06 19:40:41 - root - INFO: - The `lr` of EP377 is `1e-05`.
+2023-10-06 19:41:00 - root - INFO: - The final train loss of EP377 is: 9.859959372158709.
+2023-10-06 19:41:03 - root - INFO: - The final valid loss of EP377 is: 10.030791070726183.
+2023-10-06 19:41:04 - root - INFO: - The `lr` of EP378 is `1e-05`.
+2023-10-06 19:41:22 - root - INFO: - The final train loss of EP378 is: 9.7689790725708.
+2023-10-06 19:41:26 - root - INFO: - The final valid loss of EP378 is: 10.145187589857313.
+2023-10-06 19:41:26 - root - INFO: - The `lr` of EP379 is `1e-05`.
+2023-10-06 19:41:45 - root - INFO: - The final train loss of EP379 is: 9.858894348144531.
+2023-10-06 19:41:48 - root - INFO: - The final valid loss of EP379 is: 10.145962609185112.
+2023-10-06 19:41:48 - root - INFO: - The `lr` of EP380 is `1e-05`.
+2023-10-06 19:42:07 - root - INFO: - The final train loss of EP380 is: 9.79117909793196.
+2023-10-06 19:42:11 - root - INFO: - The final valid loss of EP380 is: 9.9294630156623.
+2023-10-06 19:42:11 - root - INFO: - The `lr` of EP381 is `1e-05`.
+2023-10-06 19:42:30 - root - INFO: - The final train loss of EP381 is: 9.848016278497104.
+2023-10-06 19:42:34 - root - INFO: - The final valid loss of EP381 is: 10.18156517876519.
+2023-10-06 19:42:34 - root - INFO: - The `lr` of EP382 is `1e-05`.
+2023-10-06 19:42:52 - root - INFO: - The final train loss of EP382 is: 9.80219137257543.
+2023-10-06 19:42:56 - root - INFO: - The final valid loss of EP382 is: 9.989495383368599.
+2023-10-06 19:42:56 - root - INFO: - The `lr` of EP383 is `1e-05`.
+2023-10-06 19:43:15 - root - INFO: - The final train loss of EP383 is: 9.90728417758284.
+2023-10-06 19:43:18 - root - INFO: - The final valid loss of EP383 is: 9.84168979856703.
+2023-10-06 19:43:18 - root - INFO: - The `lr` of EP384 is `1e-05`.
+2023-10-06 19:43:37 - root - INFO: - The final train loss of EP384 is: 9.900284569838952.
+2023-10-06 19:43:41 - root - INFO: - The final valid loss of EP384 is: 10.038160430060493.
+2023-10-06 19:43:41 - root - INFO: - The `lr` of EP385 is `1e-05`.
+2023-10-06 19:44:00 - root - INFO: - The final train loss of EP385 is: 9.851018774098364.
+2023-10-06 19:44:03 - root - INFO: - The final valid loss of EP385 is: 10.030882941351997.
+2023-10-06 19:44:03 - root - INFO: - The `lr` of EP386 is `1e-05`.
+2023-10-06 19:44:22 - root - INFO: - The final train loss of EP386 is: 9.831915986949.
+2023-10-06 19:44:26 - root - INFO: - The final valid loss of EP386 is: 10.419679217868381.
+2023-10-06 19:44:26 - root - INFO: - The `lr` of EP387 is `1e-05`.
+2023-10-06 19:44:44 - root - INFO: - The final train loss of EP387 is: 9.843177433671622.
+2023-10-06 19:44:48 - root - INFO: - The final valid loss of EP387 is: 10.291972478230795.
+2023-10-06 19:44:48 - root - INFO: - The `lr` of EP388 is `1e-05`.
+2023-10-06 19:45:07 - root - INFO: - The final train loss of EP388 is: 9.91797660959178.
+2023-10-06 19:45:10 - root - INFO: - The final valid loss of EP388 is: 10.060324350992838.
+2023-10-06 19:45:10 - root - INFO: - The `lr` of EP389 is `1e-05`.
+2023-10-06 19:45:29 - root - INFO: - The final train loss of EP389 is: 9.874832416402883.
+2023-10-06 19:45:33 - root - INFO: - The final valid loss of EP389 is: 9.862426916758219.
+2023-10-06 19:45:33 - root - INFO: - The `lr` of EP390 is `1e-05`.
+2023-10-06 19:45:52 - root - INFO: - The final train loss of EP390 is: 9.787178697257206.
+2023-10-06 19:45:56 - root - INFO: - The final valid loss of EP390 is: 9.88817220264011.
+2023-10-06 19:45:56 - root - INFO: - The `lr` of EP391 is `1e-05`.
+2023-10-06 19:46:15 - root - INFO: - The final train loss of EP391 is: 9.801230331947064.
+2023-10-06 19:46:18 - root - INFO: - The final valid loss of EP391 is: 9.90215015411377.
+2023-10-06 19:46:18 - root - INFO: - The `lr` of EP392 is `1e-05`.
+2023-10-06 19:46:37 - root - INFO: - The final train loss of EP392 is: 9.828188961949841.
+2023-10-06 19:46:41 - root - INFO: - The final valid loss of EP392 is: 9.840082592434353.
+2023-10-06 19:46:41 - root - INFO: - The `lr` of EP393 is `1e-05`.
+2023-10-06 19:47:00 - root - INFO: - The final train loss of EP393 is: 9.81897969081484.
+2023-10-06 19:47:03 - root - INFO: - The final valid loss of EP393 is: 9.974062283833822.
+2023-10-06 19:47:03 - root - INFO: - The `lr` of EP394 is `1e-05`.
+2023-10-06 19:47:22 - root - INFO: - The final train loss of EP394 is: 9.847245709649448.
+2023-10-06 19:47:26 - root - INFO: - The final valid loss of EP394 is: 10.519713189866808.
+2023-10-06 19:47:26 - root - INFO: - The `lr` of EP395 is `1e-05`.
+2023-10-06 19:47:44 - root - INFO: - The final train loss of EP395 is: 9.806463570430362.
+2023-10-06 19:47:48 - root - INFO: - The final valid loss of EP395 is: 10.16999371846517.
+2023-10-06 19:47:48 - root - INFO: - The `lr` of EP396 is `1e-05`.
+2023-10-06 19:48:07 - root - INFO: - The final train loss of EP396 is: 9.82690561228785.
+2023-10-06 19:48:11 - root - INFO: - The final valid loss of EP396 is: 10.092160012986925.
+2023-10-06 19:48:11 - root - INFO: - The `lr` of EP397 is `1e-05`.
+2023-10-06 19:48:29 - root - INFO: - The final train loss of EP397 is: 9.768186536328546.
+2023-10-06 19:48:33 - root - INFO: - The final valid loss of EP397 is: 10.269052611456978.
+2023-10-06 19:48:33 - root - INFO: - The `lr` of EP398 is `1e-05`.
+2023-10-06 19:48:52 - root - INFO: - The final train loss of EP398 is: 9.829392400281183.
+2023-10-06 19:48:56 - root - INFO: - The final valid loss of EP398 is: 10.120062192281088.
+2023-10-06 19:48:56 - root - INFO: - The `lr` of EP399 is `1e-05`.
+2023-10-06 19:49:15 - root - INFO: - The final train loss of EP399 is: 9.802499343608988.
+2023-10-06 19:49:19 - root - INFO: - The final valid loss of EP399 is: 10.130870819091797.
+2023-10-06 19:49:19 - root - INFO: - The `lr` of EP400 is `1e-05`.
+2023-10-06 19:49:38 - root - INFO: - The final train loss of EP400 is: 9.793810745765423.
+2023-10-06 19:49:42 - root - INFO: - The final valid loss of EP400 is: 9.911112467447916.
+2023-10-06 19:49:42 - root - INFO: - The `lr` of EP401 is `1e-05`.
+2023-10-06 19:50:01 - root - INFO: - The final train loss of EP401 is: 9.763922625574573.
+2023-10-06 19:50:05 - root - INFO: - The final valid loss of EP401 is: 10.166331926981607.
+2023-10-06 19:50:05 - root - INFO: - The `lr` of EP402 is `1e-05`.
+2023-10-06 19:50:24 - root - INFO: - The final train loss of EP402 is: 9.954412164359256.
+2023-10-06 19:50:27 - root - INFO: - The final valid loss of EP402 is: 10.295129987928602.
+2023-10-06 19:50:27 - root - INFO: - The `lr` of EP403 is `1e-05`.
+2023-10-06 19:50:46 - root - INFO: - The final train loss of EP403 is: 9.870902225889008.
+2023-10-06 19:50:50 - root - INFO: - The final valid loss of EP403 is: 10.254796346028646.
+2023-10-06 19:50:50 - root - INFO: - The `lr` of EP404 is `1e-05`.
+2023-10-06 19:51:09 - root - INFO: - The final train loss of EP404 is: 9.858594466900003.
+2023-10-06 19:51:12 - root - INFO: - The final valid loss of EP404 is: 10.354541566636827.
+2023-10-06 19:51:12 - root - INFO: - The `lr` of EP405 is `1e-05`.
+2023-10-06 19:51:31 - root - INFO: - The final train loss of EP405 is: 9.84959026862835.
+2023-10-06 19:51:35 - root - INFO: - The final valid loss of EP405 is: 10.2069124645657.
+2023-10-06 19:51:35 - root - INFO: - The `lr` of EP406 is `1e-05`.
+2023-10-06 19:51:54 - root - INFO: - The final train loss of EP406 is: 9.862850748259445.
+2023-10-06 19:51:58 - root - INFO: - The final valid loss of EP406 is: 10.025312529669868.
+2023-10-06 19:51:58 - root - INFO: - The `lr` of EP407 is `1e-05`.
+2023-10-06 19:52:17 - root - INFO: - The final train loss of EP407 is: 9.942571870211896.
+2023-10-06 19:52:20 - root - INFO: - The final valid loss of EP407 is: 10.210055139329699.
+2023-10-06 19:52:20 - root - INFO: - The `lr` of EP408 is `1e-05`.
+2023-10-06 19:52:40 - root - INFO: - The final train loss of EP408 is: 9.848101681676404.
+2023-10-06 19:52:44 - root - INFO: - The final valid loss of EP408 is: 9.932153489854601.
+2023-10-06 19:52:44 - root - INFO: - The `lr` of EP409 is `1e-05`.
+2023-10-06 19:53:03 - root - INFO: - The final train loss of EP409 is: 9.799681992366397.
+2023-10-06 19:53:07 - root - INFO: - The final valid loss of EP409 is: 9.974209997389051.
+2023-10-06 19:53:07 - root - INFO: - The `lr` of EP410 is `1e-05`.
+2023-10-06 19:53:26 - root - INFO: - The final train loss of EP410 is: 9.848457763934958.
+2023-10-06 19:53:29 - root - INFO: - The final valid loss of EP410 is: 10.282129817538792.
+2023-10-06 19:53:29 - root - INFO: - The `lr` of EP411 is `1e-05`.
+2023-10-06 19:53:48 - root - INFO: - The final train loss of EP411 is: 9.895398238609577.
+2023-10-06 19:53:52 - root - INFO: - The final valid loss of EP411 is: 10.36943531036377.
+2023-10-06 19:53:52 - root - INFO: - The `lr` of EP412 is `1e-05`.
+2023-10-06 19:54:11 - root - INFO: - The final train loss of EP412 is: 9.859208863357019.
+2023-10-06 19:54:15 - root - INFO: - The final valid loss of EP412 is: 10.126302931043837.
+2023-10-06 19:54:15 - root - INFO: - The `lr` of EP413 is `1e-05`.
+2023-10-06 19:54:34 - root - INFO: - The final train loss of EP413 is: 9.806624757832495.
+2023-10-06 19:54:37 - root - INFO: - The final valid loss of EP413 is: 10.41831726498074.
+2023-10-06 19:54:37 - root - INFO: - The `lr` of EP414 is `1e-05`.
+2023-10-06 19:54:56 - root - INFO: - The final train loss of EP414 is: 9.785635060277478.
+2023-10-06 19:55:00 - root - INFO: - The final valid loss of EP414 is: 9.850176175435385.
+2023-10-06 19:55:00 - root - INFO: - The `lr` of EP415 is `1e-05`.
+2023-10-06 19:55:19 - root - INFO: - The final train loss of EP415 is: 9.87230034532218.
+2023-10-06 19:55:23 - root - INFO: - The final valid loss of EP415 is: 10.08539793226454.
+2023-10-06 19:55:23 - root - INFO: - The `lr` of EP416 is `1e-05`.
+2023-10-06 19:55:42 - root - INFO: - The final train loss of EP416 is: 9.777027130126953.
+2023-10-06 19:55:46 - root - INFO: - The final valid loss of EP416 is: 10.239027341206869.
+2023-10-06 19:55:46 - root - INFO: - The `lr` of EP417 is `1e-05`.
+2023-10-06 19:56:05 - root - INFO: - The final train loss of EP417 is: 9.853560118839658.
+2023-10-06 19:56:09 - root - INFO: - The final valid loss of EP417 is: 9.970415963066948.
+2023-10-06 19:56:09 - root - INFO: - The `lr` of EP418 is `1e-05`.
+2023-10-06 19:56:28 - root - INFO: - The final train loss of EP418 is: 9.91908076713825.
+2023-10-06 19:56:32 - root - INFO: - The final valid loss of EP418 is: 9.793697410159641.
+2023-10-06 19:56:32 - root - INFO: - The `lr` of EP419 is `1e-05`.
+2023-10-06 19:56:50 - root - INFO: - The final train loss of EP419 is: 9.754064362624597.
+2023-10-06 19:56:54 - root - INFO: - The final valid loss of EP419 is: 10.683456103006998.
+2023-10-06 19:56:54 - root - INFO: - The `lr` of EP420 is `1e-05`.
+2023-10-06 19:57:13 - root - INFO: - The final train loss of EP420 is: 9.769969052281873.
+2023-10-06 19:57:16 - root - INFO: - The final valid loss of EP420 is: 10.5072906282213.
+2023-10-06 19:57:17 - root - INFO: - The `lr` of EP421 is `1e-05`.
+2023-10-06 19:57:35 - root - INFO: - The final train loss of EP421 is: 9.839610691728263.
+2023-10-06 19:57:39 - root - INFO: - The final valid loss of EP421 is: 10.134216732449001.
+2023-10-06 19:57:39 - root - INFO: - The `lr` of EP422 is `1e-05`.
+2023-10-06 19:57:58 - root - INFO: - The final train loss of EP422 is: 9.795618451874832.
+2023-10-06 19:58:01 - root - INFO: - The final valid loss of EP422 is: 10.095219824049208.
+2023-10-06 19:58:01 - root - INFO: - The `lr` of EP423 is `1e-05`.
+2023-10-06 19:58:20 - root - INFO: - The final train loss of EP423 is: 9.901357617871515.
+2023-10-06 19:58:24 - root - INFO: - The final valid loss of EP423 is: 10.360761324564615.
+2023-10-06 19:58:24 - root - INFO: - The `lr` of EP424 is `1e-05`.
+2023-10-06 19:58:43 - root - INFO: - The final train loss of EP424 is: 9.83121894967967.
+2023-10-06 19:58:46 - root - INFO: - The final valid loss of EP424 is: 10.169744279649523.
+2023-10-06 19:58:46 - root - INFO: - The `lr` of EP425 is `1e-05`.
+2023-10-06 19:59:05 - root - INFO: - The final train loss of EP425 is: 9.79282678406814.
+2023-10-06 19:59:09 - root - INFO: - The final valid loss of EP425 is: 10.063577969868978.
+2023-10-06 19:59:09 - root - INFO: - The `lr` of EP426 is `1e-05`.
+2023-10-06 19:59:28 - root - INFO: - The final train loss of EP426 is: 9.850050202731428.
+2023-10-06 19:59:32 - root - INFO: - The final valid loss of EP426 is: 10.025450706481934.
+2023-10-06 19:59:32 - root - INFO: - The `lr` of EP427 is `1e-05`.
+2023-10-06 19:59:50 - root - INFO: - The final train loss of EP427 is: 9.806685513463513.
+2023-10-06 19:59:54 - root - INFO: - The final valid loss of EP427 is: 10.06861506568061.
+2023-10-06 19:59:54 - root - INFO: - The `lr` of EP428 is `1e-05`.
+2023-10-06 20:00:13 - root - INFO: - The final train loss of EP428 is: 9.868802465241531.
+2023-10-06 20:00:17 - root - INFO: - The final valid loss of EP428 is: 9.865196333991157.
+2023-10-06 20:00:17 - root - INFO: - The `lr` of EP429 is `1e-05`.
+2023-10-06 20:00:35 - root - INFO: - The final train loss of EP429 is: 9.87652663526864.
+2023-10-06 20:00:39 - root - INFO: - The final valid loss of EP429 is: 10.037981881035698.
+2023-10-06 20:00:39 - root - INFO: - The `lr` of EP430 is `1e-05`.
+2023-10-06 20:00:58 - root - INFO: - The final train loss of EP430 is: 9.843134551212705.
+2023-10-06 20:01:02 - root - INFO: - The final valid loss of EP430 is: 10.586023542616102.
+2023-10-06 20:01:02 - root - INFO: - The `lr` of EP431 is `1e-05`.
+2023-10-06 20:01:20 - root - INFO: - The final train loss of EP431 is: 9.837402508176606.
+2023-10-06 20:01:24 - root - INFO: - The final valid loss of EP431 is: 10.210218535529243.
+2023-10-06 20:01:24 - root - INFO: - The `lr` of EP432 is `1e-05`.
+2023-10-06 20:01:43 - root - INFO: - The final train loss of EP432 is: 9.79155553620437.
+2023-10-06 20:01:47 - root - INFO: - The final valid loss of EP432 is: 10.033625284830729.
+2023-10-06 20:01:47 - root - INFO: - The `lr` of EP433 is `1e-05`.
+2023-10-06 20:02:06 - root - INFO: - The final train loss of EP433 is: 9.807388601631954.
+2023-10-06 20:02:09 - root - INFO: - The final valid loss of EP433 is: 10.06563271416558.
+2023-10-06 20:02:09 - root - INFO: - The `lr` of EP434 is `1e-05`.
+2023-10-06 20:02:29 - root - INFO: - The final train loss of EP434 is: 9.81151505174308.
+2023-10-06 20:02:32 - root - INFO: - The final valid loss of EP434 is: 9.960902743869358.
+2023-10-06 20:02:32 - root - INFO: - The `lr` of EP435 is `1e-05`.
+2023-10-06 20:02:52 - root - INFO: - The final train loss of EP435 is: 9.840852309917581.
+2023-10-06 20:02:56 - root - INFO: - The final valid loss of EP435 is: 10.507010247972277.
+2023-10-06 20:02:56 - root - INFO: - The `lr` of EP436 is `1e-05`.
+2023-10-06 20:03:15 - root - INFO: - The final train loss of EP436 is: 9.782228798701846.
+2023-10-06 20:03:19 - root - INFO: - The final valid loss of EP436 is: 10.217501640319824.
+2023-10-06 20:03:19 - root - INFO: - The `lr` of EP437 is `1e-05`.
+2023-10-06 20:03:38 - root - INFO: - The final train loss of EP437 is: 9.838779581004175.
+2023-10-06 20:03:41 - root - INFO: - The final valid loss of EP437 is: 9.968331019083658.
+2023-10-06 20:03:41 - root - INFO: - The `lr` of EP438 is `1e-05`.
+2023-10-06 20:04:00 - root - INFO: - The final train loss of EP438 is: 9.819745721488163.
+2023-10-06 20:04:04 - root - INFO: - The final valid loss of EP438 is: 10.360682063632542.
+2023-10-06 20:04:04 - root - INFO: - The `lr` of EP439 is `1e-05`.
+2023-10-06 20:04:23 - root - INFO: - The final train loss of EP439 is: 9.817756323978818.
+2023-10-06 20:04:27 - root - INFO: - The final valid loss of EP439 is: 10.468993716769749.
+2023-10-06 20:04:27 - root - INFO: - The `lr` of EP440 is `1e-05`.
+2023-10-06 20:04:46 - root - INFO: - The final train loss of EP440 is: 9.7424263789736.
+2023-10-06 20:04:50 - root - INFO: - The final valid loss of EP440 is: 10.037308057149252.
+2023-10-06 20:04:50 - root - INFO: - The `lr` of EP441 is `1e-05`.
+2023-10-06 20:05:09 - root - INFO: - The final train loss of EP441 is: 9.85122693818191.
+2023-10-06 20:05:13 - root - INFO: - The final valid loss of EP441 is: 9.970217174953884.
+2023-10-06 20:05:13 - root - INFO: - The `lr` of EP442 is `1e-05`.
+2023-10-06 20:05:32 - root - INFO: - The final train loss of EP442 is: 9.814232135641165.
+2023-10-06 20:05:35 - root - INFO: - The final valid loss of EP442 is: 10.133214314778646.
+2023-10-06 20:05:35 - root - INFO: - The `lr` of EP443 is `1e-05`.
+2023-10-06 20:05:54 - root - INFO: - The final train loss of EP443 is: 9.842880183252795.
+2023-10-06 20:05:58 - root - INFO: - The final valid loss of EP443 is: 10.017827033996582.
+2023-10-06 20:05:58 - root - INFO: - The `lr` of EP444 is `1e-05`.
+2023-10-06 20:06:18 - root - INFO: - The final train loss of EP444 is: 9.8638779870395.
+2023-10-06 20:06:22 - root - INFO: - The final valid loss of EP444 is: 10.131093343098959.
+2023-10-06 20:06:22 - root - INFO: - The `lr` of EP445 is `1e-05`.
+2023-10-06 20:06:41 - root - INFO: - The final train loss of EP445 is: 9.7650240865247.
+2023-10-06 20:06:44 - root - INFO: - The final valid loss of EP445 is: 10.265521261427137.
+2023-10-06 20:06:44 - root - INFO: - The `lr` of EP446 is `1e-05`.
+2023-10-06 20:07:03 - root - INFO: - The final train loss of EP446 is: 9.851507318430933.
+2023-10-06 20:07:07 - root - INFO: - The final valid loss of EP446 is: 10.12293201022678.
+2023-10-06 20:07:07 - root - INFO: - The `lr` of EP447 is `1e-05`.
+2023-10-06 20:07:26 - root - INFO: - The final train loss of EP447 is: 9.769571830486429.
+2023-10-06 20:07:30 - root - INFO: - The final valid loss of EP447 is: 10.22023476494683.
+2023-10-06 20:07:30 - root - INFO: - The `lr` of EP448 is `1e-05`.
+2023-10-06 20:07:49 - root - INFO: - The final train loss of EP448 is: 9.90493892801219.
+2023-10-06 20:07:52 - root - INFO: - The final valid loss of EP448 is: 10.165724330478245.
+2023-10-06 20:07:52 - root - INFO: - The `lr` of EP449 is `1e-05`.
+2023-10-06 20:08:11 - root - INFO: - The final train loss of EP449 is: 9.848902702331543.
+2023-10-06 20:08:15 - root - INFO: - The final valid loss of EP449 is: 10.37406423356798.
+2023-10-06 20:08:15 - root - INFO: - The `lr` of EP450 is `1e-05`.
+2023-10-06 20:08:34 - root - INFO: - The final train loss of EP450 is: 9.890903801753604.
+2023-10-06 20:08:38 - root - INFO: - The final valid loss of EP450 is: 10.036174032423231.
+2023-10-06 20:08:38 - root - INFO: - The `lr` of EP451 is `1e-05`.
+2023-10-06 20:08:57 - root - INFO: - The final train loss of EP451 is: 9.89887520362591.
+2023-10-06 20:09:00 - root - INFO: - The final valid loss of EP451 is: 10.103745778401693.
+2023-10-06 20:09:00 - root - INFO: - The `lr` of EP452 is `1e-05`.
+2023-10-06 20:09:19 - root - INFO: - The final train loss of EP452 is: 9.823835044071592.
+2023-10-06 20:09:23 - root - INFO: - The final valid loss of EP452 is: 10.142170694139269.
+2023-10-06 20:09:23 - root - INFO: - The `lr` of EP453 is `1e-05`.
+2023-10-06 20:09:43 - root - INFO: - The final train loss of EP453 is: 9.860111269457587.
+2023-10-06 20:09:47 - root - INFO: - The final valid loss of EP453 is: 10.062558703952366.
+2023-10-06 20:09:47 - root - INFO: - The `lr` of EP454 is `1e-05`.
+2023-10-06 20:10:06 - root - INFO: - The final train loss of EP454 is: 9.778778832534265.
+2023-10-06 20:10:09 - root - INFO: - The final valid loss of EP454 is: 9.971112039354113.
+2023-10-06 20:10:09 - root - INFO: - The `lr` of EP455 is `1e-05`.
+2023-10-06 20:10:28 - root - INFO: - The final train loss of EP455 is: 9.80188225055563.
+2023-10-06 20:10:32 - root - INFO: - The final valid loss of EP455 is: 10.176775932312012.
+2023-10-06 20:10:32 - root - INFO: - The `lr` of EP456 is `1e-05`.
+2023-10-06 20:10:51 - root - INFO: - The final train loss of EP456 is: 9.847876417225805.
+2023-10-06 20:10:55 - root - INFO: - The final valid loss of EP456 is: 10.24172740512424.
+2023-10-06 20:10:55 - root - INFO: - The `lr` of EP457 is `1e-05`.
+2023-10-06 20:11:14 - root - INFO: - The final train loss of EP457 is: 9.860394839582773.
+2023-10-06 20:11:18 - root - INFO: - The final valid loss of EP457 is: 9.953420956929525.
+2023-10-06 20:11:18 - root - INFO: - The `lr` of EP458 is `1e-05`.
+2023-10-06 20:11:37 - root - INFO: - The final train loss of EP458 is: 9.791829142077216.
+2023-10-06 20:11:41 - root - INFO: - The final valid loss of EP458 is: 10.17909993065728.
+2023-10-06 20:11:41 - root - INFO: - The `lr` of EP459 is `1e-05`.
+2023-10-06 20:12:00 - root - INFO: - The final train loss of EP459 is: 9.745984800930682.
+2023-10-06 20:12:03 - root - INFO: - The final valid loss of EP459 is: 10.173047171698677.
+2023-10-06 20:12:03 - root - INFO: - The `lr` of EP460 is `1e-05`.
+2023-10-06 20:12:22 - root - INFO: - The final train loss of EP460 is: 9.895365155976394.
+2023-10-06 20:12:26 - root - INFO: - The final valid loss of EP460 is: 10.164263725280762.
+2023-10-06 20:12:26 - root - INFO: - The `lr` of EP461 is `1e-05`.
+2023-10-06 20:12:45 - root - INFO: - The final train loss of EP461 is: 9.74703522386222.
+2023-10-06 20:12:49 - root - INFO: - The final valid loss of EP461 is: 10.07932260301378.
+2023-10-06 20:12:49 - root - INFO: - The `lr` of EP462 is `1e-05`.
+2023-10-06 20:13:09 - root - INFO: - The final train loss of EP462 is: 9.896417749339136.
+2023-10-06 20:13:12 - root - INFO: - The final valid loss of EP462 is: 10.171290821499294.
+2023-10-06 20:13:12 - root - INFO: - The `lr` of EP463 is `1e-05`.
+2023-10-06 20:13:31 - root - INFO: - The final train loss of EP463 is: 9.846995189272125.
+2023-10-06 20:13:35 - root - INFO: - The final valid loss of EP463 is: 9.860892560746935.
+2023-10-06 20:13:35 - root - INFO: - The `lr` of EP464 is `1e-05`.
+2023-10-06 20:13:54 - root - INFO: - The final train loss of EP464 is: 9.923091066294703.
+2023-10-06 20:13:58 - root - INFO: - The final valid loss of EP464 is: 9.964044041103786.
+2023-10-06 20:13:58 - root - INFO: - The `lr` of EP465 is `1e-05`.
+2023-10-06 20:14:17 - root - INFO: - The final train loss of EP465 is: 9.845283606956745.
+2023-10-06 20:14:20 - root - INFO: - The final valid loss of EP465 is: 10.148218790690104.
+2023-10-06 20:14:20 - root - INFO: - The `lr` of EP466 is `1e-05`.
+2023-10-06 20:14:39 - root - INFO: - The final train loss of EP466 is: 9.757427018264245.
+2023-10-06 20:14:43 - root - INFO: - The final valid loss of EP466 is: 10.283304426405165.
+2023-10-06 20:14:43 - root - INFO: - The `lr` of EP467 is `1e-05`.
+2023-10-06 20:15:02 - root - INFO: - The final train loss of EP467 is: 9.816488693500387.
+2023-10-06 20:15:06 - root - INFO: - The final valid loss of EP467 is: 10.472158855862087.
+2023-10-06 20:15:06 - root - INFO: - The `lr` of EP468 is `1e-05`.
+2023-10-06 20:15:25 - root - INFO: - The final train loss of EP468 is: 9.804608246375775.
+2023-10-06 20:15:28 - root - INFO: - The final valid loss of EP468 is: 9.855759355756971.
+2023-10-06 20:15:28 - root - INFO: - The `lr` of EP469 is `1e-05`.
+2023-10-06 20:15:47 - root - INFO: - The final train loss of EP469 is: 9.818089912677634.
+2023-10-06 20:15:51 - root - INFO: - The final valid loss of EP469 is: 10.018632570902506.
+2023-10-06 20:15:51 - root - INFO: - The `lr` of EP470 is `1e-05`.
+2023-10-06 20:16:10 - root - INFO: - The final train loss of EP470 is: 9.806246329998148.
+2023-10-06 20:16:13 - root - INFO: - The final valid loss of EP470 is: 10.376630571153429.
+2023-10-06 20:16:13 - root - INFO: - The `lr` of EP471 is `1e-05`.
+2023-10-06 20:16:33 - root - INFO: - The final train loss of EP471 is: 9.803332328796387.
+2023-10-06 20:16:37 - root - INFO: - The final valid loss of EP471 is: 10.31448851691352.
+2023-10-06 20:16:37 - root - INFO: - The `lr` of EP472 is `1e-05`.
+2023-10-06 20:16:56 - root - INFO: - The final train loss of EP472 is: 9.856323735467319.
+2023-10-06 20:17:00 - root - INFO: - The final valid loss of EP472 is: 10.18606620364719.
+2023-10-06 20:17:00 - root - INFO: - The `lr` of EP473 is `1e-05`.
+2023-10-06 20:17:19 - root - INFO: - The final train loss of EP473 is: 9.866342873408877.
+2023-10-06 20:17:23 - root - INFO: - The final valid loss of EP473 is: 10.230900446573893.
+2023-10-06 20:17:23 - root - INFO: - The `lr` of EP474 is `1e-05`.
+2023-10-06 20:17:42 - root - INFO: - The final train loss of EP474 is: 9.83024317642738.
+2023-10-06 20:17:45 - root - INFO: - The final valid loss of EP474 is: 10.141483624776205.
+2023-10-06 20:17:45 - root - INFO: - The `lr` of EP475 is `1e-05`.
+2023-10-06 20:18:05 - root - INFO: - The final train loss of EP475 is: 9.854766944359088.
+2023-10-06 20:18:08 - root - INFO: - The final valid loss of EP475 is: 10.121243794759115.
+2023-10-06 20:18:08 - root - INFO: - The `lr` of EP476 is `1e-05`.
+2023-10-06 20:18:28 - root - INFO: - The final train loss of EP476 is: 9.900838851928711.
+2023-10-06 20:18:31 - root - INFO: - The final valid loss of EP476 is: 10.34743234846327.
+2023-10-06 20:18:31 - root - INFO: - The `lr` of EP477 is `1e-05`.
+2023-10-06 20:18:50 - root - INFO: - The final train loss of EP477 is: 9.845559777884647.
+2023-10-06 20:18:54 - root - INFO: - The final valid loss of EP477 is: 10.153371810913086.
+2023-10-06 20:18:54 - root - INFO: - The `lr` of EP478 is `1e-05`.
+2023-10-06 20:19:13 - root - INFO: - The final train loss of EP478 is: 9.759186744689941.
+2023-10-06 20:19:17 - root - INFO: - The final valid loss of EP478 is: 10.10406059688992.
+2023-10-06 20:19:17 - root - INFO: - The `lr` of EP479 is `1e-05`.
+2023-10-06 20:19:36 - root - INFO: - The final train loss of EP479 is: 9.838350723529684.
+2023-10-06 20:19:40 - root - INFO: - The final valid loss of EP479 is: 10.220376862419975.
+2023-10-06 20:19:40 - root - INFO: - The `lr` of EP480 is `1e-05`.
+2023-10-06 20:20:00 - root - INFO: - The final train loss of EP480 is: 9.758007970349542.
+2023-10-06 20:20:03 - root - INFO: - The final valid loss of EP480 is: 10.404283099704319.
+2023-10-06 20:20:03 - root - INFO: - The `lr` of EP481 is `1e-05`.
+2023-10-06 20:20:23 - root - INFO: - The final train loss of EP481 is: 9.817204574058795.
+2023-10-06 20:20:26 - root - INFO: - The final valid loss of EP481 is: 10.435795042249891.
+2023-10-06 20:20:26 - root - INFO: - The `lr` of EP482 is `1e-05`.
+2023-10-06 20:20:45 - root - INFO: - The final train loss of EP482 is: 9.795936255619443.
+2023-10-06 20:20:49 - root - INFO: - The final valid loss of EP482 is: 9.769304911295572.
+2023-10-06 20:20:49 - root - INFO: - The `lr` of EP483 is `1e-05`.
+2023-10-06 20:21:08 - root - INFO: - The final train loss of EP483 is: 9.827105587926404.
+2023-10-06 20:21:12 - root - INFO: - The final valid loss of EP483 is: 10.073966556125217.
+2023-10-06 20:21:12 - root - INFO: - The `lr` of EP484 is `1e-05`.
+2023-10-06 20:21:31 - root - INFO: - The final train loss of EP484 is: 9.786302204789786.
+2023-10-06 20:21:35 - root - INFO: - The final valid loss of EP484 is: 10.180506494310167.
+2023-10-06 20:21:35 - root - INFO: - The `lr` of EP485 is `1e-05`.
+2023-10-06 20:21:54 - root - INFO: - The final train loss of EP485 is: 9.754710065907446.
+2023-10-06 20:21:58 - root - INFO: - The final valid loss of EP485 is: 10.019691043429905.
+2023-10-06 20:21:58 - root - INFO: - The `lr` of EP486 is `1e-05`.
+2023-10-06 20:22:17 - root - INFO: - The final train loss of EP486 is: 9.869732593667917.
+2023-10-06 20:22:20 - root - INFO: - The final valid loss of EP486 is: 9.982525295681423.
+2023-10-06 20:22:20 - root - INFO: - The `lr` of EP487 is `1e-05`.
+2023-10-06 20:22:39 - root - INFO: - The final train loss of EP487 is: 9.796982074606008.
+2023-10-06 20:22:43 - root - INFO: - The final valid loss of EP487 is: 10.227132903205025.
+2023-10-06 20:22:43 - root - INFO: - The `lr` of EP488 is `1e-05`.
+2023-10-06 20:23:02 - root - INFO: - The final train loss of EP488 is: 9.86700281603583.
+2023-10-06 20:23:06 - root - INFO: - The final valid loss of EP488 is: 10.039580980936686.
+2023-10-06 20:23:06 - root - INFO: - The `lr` of EP489 is `1e-05`.
+2023-10-06 20:23:25 - root - INFO: - The final train loss of EP489 is: 9.829685836002744.
+2023-10-06 20:23:29 - root - INFO: - The final valid loss of EP489 is: 10.145448578728569.
+2023-10-06 20:23:29 - root - INFO: - The `lr` of EP490 is `1e-05`.
+2023-10-06 20:23:48 - root - INFO: - The final train loss of EP490 is: 9.790509585676523.
+2023-10-06 20:23:52 - root - INFO: - The final valid loss of EP490 is: 10.062456978691948.
+2023-10-06 20:23:52 - root - INFO: - The `lr` of EP491 is `1e-05`.
+2023-10-06 20:24:11 - root - INFO: - The final train loss of EP491 is: 9.767696577927161.
+2023-10-06 20:24:14 - root - INFO: - The final valid loss of EP491 is: 10.089813656277126.
+2023-10-06 20:24:14 - root - INFO: - The `lr` of EP492 is `1e-05`.
+2023-10-06 20:24:33 - root - INFO: - The final train loss of EP492 is: 9.867570844189874.
+2023-10-06 20:24:37 - root - INFO: - The final valid loss of EP492 is: 10.334595362345377.
+2023-10-06 20:24:37 - root - INFO: - The `lr` of EP493 is `1e-05`.
+2023-10-06 20:24:56 - root - INFO: - The final train loss of EP493 is: 9.80540841201256.
+2023-10-06 20:25:00 - root - INFO: - The final valid loss of EP493 is: 10.019954999287924.
+2023-10-06 20:25:00 - root - INFO: - The `lr` of EP494 is `1e-05`.
+2023-10-06 20:25:19 - root - INFO: - The final train loss of EP494 is: 9.814980868635507.
+2023-10-06 20:25:22 - root - INFO: - The final valid loss of EP494 is: 10.095731523301867.
+2023-10-06 20:25:22 - root - INFO: - The `lr` of EP495 is `1e-05`.
+2023-10-06 20:25:41 - root - INFO: - The final train loss of EP495 is: 9.803554666453394.
+2023-10-06 20:25:45 - root - INFO: - The final valid loss of EP495 is: 10.107921282450357.
+2023-10-06 20:25:45 - root - INFO: - The `lr` of EP496 is `1e-05`.
+2023-10-06 20:26:04 - root - INFO: - The final train loss of EP496 is: 9.834759186054098.
+2023-10-06 20:26:08 - root - INFO: - The final valid loss of EP496 is: 9.942801581488716.
+2023-10-06 20:26:08 - root - INFO: - The `lr` of EP497 is `1e-05`.
+2023-10-06 20:26:27 - root - INFO: - The final train loss of EP497 is: 9.774777609726478.
+2023-10-06 20:26:31 - root - INFO: - The final valid loss of EP497 is: 10.1491822136773.
+2023-10-06 20:26:31 - root - INFO: - The `lr` of EP498 is `1e-05`.
+2023-10-06 20:26:50 - root - INFO: - The final train loss of EP498 is: 9.813955372777478.
+2023-10-06 20:26:54 - root - INFO: - The final valid loss of EP498 is: 10.005229843987358.
+2023-10-06 20:26:54 - root - INFO: - The `lr` of EP499 is `1e-05`.
+2023-10-06 20:27:13 - root - INFO: - The final train loss of EP499 is: 9.786878191191574.
+2023-10-06 20:27:17 - root - INFO: - The final valid loss of EP499 is: 10.187545034620497.
+2023-10-06 20:27:17 - root - INFO: - The `lr` of EP500 is `1e-05`.
+2023-10-06 20:27:36 - root - INFO: - The final train loss of EP500 is: 9.78457391673121.
+2023-10-06 20:27:40 - root - INFO: - The final valid loss of EP500 is: 10.294469409518772.

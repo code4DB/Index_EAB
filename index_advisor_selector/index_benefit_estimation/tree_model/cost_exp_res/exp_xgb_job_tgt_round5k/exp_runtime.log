@@ -1,0 +1,10 @@
+2023-10-06 15:56:26 - root - INFO: - Start Cost Calibration Experiment.
+2023-10-06 15:56:26 - root - INFO: - Create the directory `./cost_exp_res/exp_xgb_job_tgt_round5k/logdir` to save experiment result.
+2023-10-06 15:56:28 - tensorflow - DEBUG: - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-10-06 15:56:29 - root - INFO: - Set the tensorboard logdir = `./cost_exp_res/exp_xgb_job_tgt_round5k/logdir/`.
+2023-10-06 15:56:29 - root - INFO: - Set the random seed = `666`.
+2023-10-06 15:56:54 - root - INFO: - Load the train data from `/data2/wz/index/index_eab/eab_benefit/tree_model/data/job/tree_job_cost_data_tgt_train.json` (36309).
+2023-10-06 15:56:54 - root - INFO: - Load the valid data from `/data2/wz/index/index_eab/eab_benefit/tree_model/data/job/tree_job_cost_data_tgt_valid.json` (10374).
+2023-10-06 15:56:54 - root - INFO: - The characteristic of the data is: `cost_row, concat, raw`.
+2023-10-06 15:56:58 - root - INFO: - Start the training process of the model of XGBoost.
+2023-10-06 17:27:27 - root - INFO: - End the training process of the model of XGBoost.

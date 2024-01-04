@@ -1,0 +1,342 @@
+{
+  "region": {
+    "columns": [
+      "r_regionkey",
+      "r_name",
+      "r_comment"
+    ],
+    "integer": [
+      "r_regionkey"
+    ],
+    "character": [
+      "r_name",
+      "r_comment"
+    ]
+  },
+  "nation": {
+    "columns": [
+      "n_nationkey",
+      "n_name",
+      "n_regionkey",
+      "n_comment"
+    ],
+    "integer": [
+      "n_nationkey",
+      "n_regionkey"
+    ],
+    "character": [
+      "n_name",
+      "n_comment"
+    ]
+  },
+  "supplier": {
+    "columns": [
+      "su_suppkey",
+      "su_name",
+      "su_address",
+      "su_nationkey",
+      "su_phone",
+      "su_acctbal",
+      "su_comment"
+    ],
+    "integer": [
+      "su_suppkey",
+      "su_nationkey"
+    ],
+    "character": [
+      "su_name",
+      "su_phone",
+      "su_comment"
+    ],
+    "character varying": [
+      "su_address"
+    ],
+    "numeric": [
+      "su_acctbal"
+    ]
+  },
+  "warehouse": {
+    "columns": [
+      "w_id",
+      "w_ytd",
+      "w_tax",
+      "w_name",
+      "w_street_1",
+      "w_street_2",
+      "w_city",
+      "w_state",
+      "w_zip"
+    ],
+    "integer": [
+      "w_id"
+    ],
+    "numeric": [
+      "w_ytd",
+      "w_tax"
+    ],
+    "character varying": [
+      "w_name",
+      "w_street_1",
+      "w_street_2",
+      "w_city"
+    ],
+    "character": [
+      "w_state",
+      "w_zip"
+    ]
+  },
+  "item": {
+    "columns": [
+      "i_id",
+      "i_name",
+      "i_price",
+      "i_data",
+      "i_im_id"
+    ],
+    "integer": [
+      "i_id",
+      "i_im_id"
+    ],
+    "character varying": [
+      "i_name",
+      "i_data"
+    ],
+    "numeric": [
+      "i_price"
+    ]
+  },
+  "stock": {
+    "columns": [
+      "s_w_id",
+      "s_i_id",
+      "s_quantity",
+      "s_ytd",
+      "s_order_cnt",
+      "s_remote_cnt",
+      "s_data",
+      "s_dist_01",
+      "s_dist_02",
+      "s_dist_03",
+      "s_dist_04",
+      "s_dist_05",
+      "s_dist_06",
+      "s_dist_07",
+      "s_dist_08",
+      "s_dist_09",
+      "s_dist_10"
+    ],
+    "integer": [
+      "s_w_id",
+      "s_i_id",
+      "s_quantity",
+      "s_order_cnt",
+      "s_remote_cnt"
+    ],
+    "numeric": [
+      "s_ytd"
+    ],
+    "character varying": [
+      "s_data"
+    ],
+    "character": [
+      "s_dist_01",
+      "s_dist_02",
+      "s_dist_03",
+      "s_dist_04",
+      "s_dist_05",
+      "s_dist_06",
+      "s_dist_07",
+      "s_dist_08",
+      "s_dist_09",
+      "s_dist_10"
+    ]
+  },
+  "district": {
+    "columns": [
+      "d_w_id",
+      "d_id",
+      "d_ytd",
+      "d_tax",
+      "d_next_o_id",
+      "d_name",
+      "d_street_1",
+      "d_street_2",
+      "d_city",
+      "d_state",
+      "d_zip"
+    ],
+    "integer": [
+      "d_w_id",
+      "d_id",
+      "d_next_o_id"
+    ],
+    "numeric": [
+      "d_ytd",
+      "d_tax"
+    ],
+    "character varying": [
+      "d_name",
+      "d_street_1",
+      "d_street_2",
+      "d_city"
+    ],
+    "character": [
+      "d_state",
+      "d_zip"
+    ]
+  },
+  "customer": {
+    "columns": [
+      "c_w_id",
+      "c_d_id",
+      "c_id",
+      "c_discount",
+      "c_credit",
+      "c_last",
+      "c_first",
+      "c_credit_lim",
+      "c_balance",
+      "c_ytd_payment",
+      "c_payment_cnt",
+      "c_delivery_cnt",
+      "c_street_1",
+      "c_street_2",
+      "c_city",
+      "c_state",
+      "c_zip",
+      "c_phone",
+      "c_since",
+      "c_middle",
+      "c_data"
+    ],
+    "integer": [
+      "c_w_id",
+      "c_d_id",
+      "c_id",
+      "c_payment_cnt",
+      "c_delivery_cnt"
+    ],
+    "numeric": [
+      "c_discount",
+      "c_credit_lim",
+      "c_balance"
+    ],
+    "character": [
+      "c_credit",
+      "c_state",
+      "c_zip",
+      "c_phone",
+      "c_middle"
+    ],
+    "character varying": [
+      "c_last",
+      "c_first",
+      "c_street_1",
+      "c_street_2",
+      "c_city",
+      "c_data"
+    ],
+    "double precision": [
+      "c_ytd_payment"
+    ],
+    "timestamp without time zone": [
+      "c_since"
+    ]
+  },
+  "history": {
+    "columns": [
+      "h_c_id",
+      "h_c_d_id",
+      "h_c_w_id",
+      "h_d_id",
+      "h_w_id",
+      "h_date",
+      "h_amount",
+      "h_data"
+    ],
+    "integer": [
+      "h_c_id",
+      "h_c_d_id",
+      "h_c_w_id",
+      "h_d_id",
+      "h_w_id"
+    ],
+    "timestamp without time zone": [
+      "h_date"
+    ],
+    "numeric": [
+      "h_amount"
+    ],
+    "character varying": [
+      "h_data"
+    ]
+  },
+  "oorder": {
+    "columns": [
+      "o_w_id",
+      "o_d_id",
+      "o_id",
+      "o_c_id",
+      "o_carrier_id",
+      "o_ol_cnt",
+      "o_all_local",
+      "o_entry_d"
+    ],
+    "integer": [
+      "o_w_id",
+      "o_d_id",
+      "o_id",
+      "o_c_id",
+      "o_carrier_id",
+      "o_ol_cnt",
+      "o_all_local"
+    ],
+    "timestamp without time zone": [
+      "o_entry_d"
+    ]
+  },
+  "new_order": {
+    "columns": [
+      "no_w_id",
+      "no_d_id",
+      "no_o_id"
+    ],
+    "integer": [
+      "no_w_id",
+      "no_d_id",
+      "no_o_id"
+    ]
+  },
+  "order_line": {
+    "columns": [
+      "ol_w_id",
+      "ol_d_id",
+      "ol_o_id",
+      "ol_number",
+      "ol_i_id",
+      "ol_delivery_d",
+      "ol_amount",
+      "ol_supply_w_id",
+      "ol_quantity",
+      "ol_dist_info"
+    ],
+    "integer": [
+      "ol_w_id",
+      "ol_d_id",
+      "ol_o_id",
+      "ol_number",
+      "ol_i_id",
+      "ol_supply_w_id"
+    ],
+    "timestamp without time zone": [
+      "ol_delivery_d"
+    ],
+    "numeric": [
+      "ol_amount",
+      "ol_quantity"
+    ],
+    "character": [
+      "ol_dist_info"
+    ]
+  }
+}
