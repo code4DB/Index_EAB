@@ -2,15 +2,23 @@
 
 This is the code respository of the testbed proposed in the **Index Advisor (EA&B)** paper, which conducts a comprehensive assessment of the heuristic-based and the learning-based index advisors.
 
+***Note that we have released a python package about this testbed at the official open-source website: *[index-eab · PyPI](https://pypi.org/project/index-eab/0.1.0/)*. Therefore, you can use the follwoing command to download it with little effort!**
+
+```shell
+pip install index-eab==0.1.0
+```
+
+![image-20240107023318952](/pypi_package.png)
+
+
+
+## Project Structure
+
 Specifically, the testbed is comprised of three modules. 
 
 - **(1) Configuration Loader:** initializes a series of evaluation settings, including the benchmark, the index advisor, and the database;
 - **(2) Workload Generator:** supports three methods for generating workloads with diverse features (e.g., query changes due to typical workload drifts) to simulate the requirements posed by various scenarios;
 - **(3) Index Advisor Selector:** implements existing index advisors, including seven heuristic-based index advisors and ten learning-based index advisors.
-
-
-
-## Project Structure
 
 The overall code structure of our **Index Advisor (EA&B)** project, where the critical files are marked with additional comments.
 
