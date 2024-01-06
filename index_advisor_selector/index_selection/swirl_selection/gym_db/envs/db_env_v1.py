@@ -11,7 +11,7 @@ from index_advisor_selector.index_selection.swirl_selection.swirl_utils.index im
 from index_advisor_selector.index_selection.swirl_selection.swirl_utils.cost_evaluation import CostEvaluation
 from index_advisor_selector.index_selection.swirl_selection.swirl_utils.postgres_dbms import PostgresDatabaseConnector
 
-# todo(0805): newly added. for `number`.
+# (0805): newly added. for `number`.
 MAX_INDEX_NUM = 5
 
 
@@ -26,7 +26,7 @@ class DBEnvV1(gym.Env):
         self.environment_type = environment_type
         self.config = config
 
-        # todo(0805): newly added. for `number`.
+        # (0805): newly added. for `number`.
         self.constraint = constraint
         if "constraint" in self.config.keys():
             self.constraint = self.config["constraint"]
@@ -46,7 +46,7 @@ class DBEnvV1(gym.Env):
 
         self.globally_index_candidates = config["globally_index_candidates"]
 
-        # todo: In certain cases, workloads are consumed: therefore, we need copy.?
+        # : In certain cases, workloads are consumed: therefore, we need copy.?
         self.workloads = copy.copy(config["workloads"])
         self.current_workload_idx = 0
         self.similar_workloads = config["similar_workloads"]
@@ -80,7 +80,7 @@ class DBEnvV1(gym.Env):
     def _step_asserts(self, action):
         try:
             assert self.action_space.contains(action), f"{action} ({type(action)}) invalid"
-            assert (  # todo: ?
+            assert (  # : ?
                     self.valid_actions[action] == self.action_manager.ALLOWED_ACTION
             ), f"Agent has chosen invalid action: {action}"
             assert (
@@ -89,14 +89,14 @@ class DBEnvV1(gym.Env):
         except:
             logging.info(f"Agent has chosen invalid action: {action}")
             # self.action_manager.get_initial_valid_actions(self.current_workload, self.current_budget)
-            # todo(1212, 0327): randomly select one from the valid action if invalid chosen.
+            # (1212, 0327): randomly select one from the valid action if invalid chosen.
             if self.valid_actions[action] != self.action_manager.ALLOWED_ACTION:
                 action = random.choice([i for i in range(len(self.valid_actions))
                                         if self.valid_actions[i] == self.action_manager.ALLOWED_ACTION])
         return action
 
     def step(self, action):
-        # todo(0327): newly added. initial valid action: None
+        # (0327): newly added. initial valid action: None
         if sum(self.valid_actions) == 0:
             environment_state = self._update_return_env_state(init=True)
             if self.environment_type != EnvironmentType.TRAINING:
@@ -106,7 +106,7 @@ class DBEnvV1(gym.Env):
 
             return self._init_modifiable_state(), -1, True, {"action_mask": self.valid_actions}
         else:
-            # todo: judge the validity of the current action?
+            # : judge the validity of the current action?
             action = self._step_asserts(action)
 
             self.steps_taken += 1
@@ -123,7 +123,7 @@ class DBEnvV1(gym.Env):
                     if index == parent_index:
                         old_index_size = index.estimated_size
 
-                # todo(1212): newly added for nonmasking.
+                # (1212): newly added for nonmasking.
                 if "NonMasking" not in str(self.action_manager):
                     self.current_indexes.remove(parent_index)
                     assert old_index_size > 0, "Parent index size must have been found if not single column index."
@@ -137,12 +137,12 @@ class DBEnvV1(gym.Env):
                 action, self.current_budget, self.current_storage_consumption
             )
 
-            # todo(0805): newly added. for number.
+            # (0805): newly added. for number.
             if self.constraint == "storage":
                 episode_done = self.steps_taken >= self.max_steps_per_episode or \
                                not is_valid_action_left
             elif self.constraint == "number":
-                # todo(0822): newly modified. add `not is_valid_action_left`.
+                # (0822): newly modified. add `not is_valid_action_left`.
                 episode_done = self.steps_taken >= self.max_steps_per_episode or \
                                len(self.current_indexes) >= self.action_manager.max_indexes or \
                                not is_valid_action_left
@@ -233,24 +233,24 @@ class DBEnvV1(gym.Env):
 
         new_index_size = None
         if new_index is not None:
-            # todo: newly added.
+            # : newly added.
             if new_index.estimated_size is None:
                 self.cost_evaluation.what_if.simulate_index(new_index, store_size=True)
 
-            # todo(1212): new_index.estimated_size -> full_index_size
+            # (1212): new_index.estimated_size -> full_index_size
             self.current_storage_consumption += new_index.estimated_size
             self.current_storage_consumption -= old_index_size
 
             # This assumes that old_index_size is not None if new_index is not None
             assert new_index.estimated_size >= old_index_size
             # index_delta_size
-            # todo: new_index.estimated_size - old_index_size (calculated all-together)?
+            # : new_index.estimated_size - old_index_size (calculated all-together)?
             new_index_size = new_index.estimated_size - old_index_size
             if new_index_size == 0:
                 new_index_size = 1
 
             if self.current_budget:
-                # todo(0819): newly added. for `storage`.
+                # (0819): newly added. for `storage`.
                 if self.constraint == "storage":
                     # assert b_to_mb(self.current_storage_consumption) <= self.current_budget, (
                     #     "Storage consumption exceeds budget: "

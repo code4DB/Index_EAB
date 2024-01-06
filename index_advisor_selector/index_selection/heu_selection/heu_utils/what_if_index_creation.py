@@ -30,13 +30,7 @@ class WhatIfIndexCreation:
         del self.simulated_indexes[oid]
 
     def all_simulated_indexes(self):
-        # todo: `()` or not.
-        # if self.db_connector.config["postgresql"]["host"] in ["10.24.82.151", "10.24.82.152"]:
-        #     statement = "select * from hypopg_list_indexes"
-        # else:
-        #     statement = "select * from hypopg_list_indexes()"
-
-        # todo: newly added.
+    
         try:
             statement = "select * from hypopg_list_indexes"
             indexes = self.db_connector.exec_fetch(statement, one=False)
@@ -56,7 +50,7 @@ class WhatIfIndexCreation:
 
         return result
 
-    # TODO: refactoring
+    # : refactoring
     # This is never used, we keep it for debugging reasons.
     def index_names(self):
         indexes = self.all_simulated_indexes()

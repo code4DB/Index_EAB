@@ -1,7 +1,7 @@
 import re
 import itertools
 
-# todo(0817): newly added.
+# (0817): newly added.
 MAX_INDEX_WIDTH = 3
 
 
@@ -154,12 +154,12 @@ class Parser:
             select_stmt = stmt['SelectStmt']
             self.parse_select(select_stmt)
 
-        # todo(0915): newly added.
+        # (0915): newly added.
         elif "UpdateStmt" in stmt.keys():
             update_stmt = stmt['UpdateStmt']
             self.parse_update(update_stmt)
 
-        # todo(0915): newly added.
+        # (0915): newly added.
         elif "DeleteStmt" in stmt.keys():
             delete_stmt = stmt['DeleteStmt']
             self.parse_update(delete_stmt)
@@ -184,7 +184,7 @@ class Parser:
         table_name = subselect['alias']['Alias']['aliasname']
         alias_name = table_name
         self.parse_select(subselect['subquery']['SelectStmt'])
-        # TODO: deal with the targets
+        # : deal with the targets
         self.table_info[alias_name] = Table(table_name, alias_name, False)
 
     def parse_from_clause(self, from_clause):
@@ -196,11 +196,11 @@ class Parser:
             elif 'RangeSubselect' in _table.keys():
                 subselect = _table['RangeSubselect']
                 self.parse_range_subselect(subselect)
-            # todo(1117): newly added.
+            # (1117): newly added.
             else:
                 tbl_names = re.findall(r"'RangeVar': \{'relname': '(.*?)',", str(_table))
                 for name in tbl_names:
-                    # todo(1126): newly added.
+                    # (1126): newly added.
                     if name not in self.db_info.keys():
                         continue
 
@@ -498,7 +498,7 @@ class Parser:
         if 'sortClause' in select_stmt.keys():
             self.parse_sort_clause(select_stmt['sortClause'])
 
-    # todo(0915): newly added.
+    # (0915): newly added.
     def parse_update(self, update_stmt):
         # (1)parse where
         if 'whereClause' in update_stmt.keys():

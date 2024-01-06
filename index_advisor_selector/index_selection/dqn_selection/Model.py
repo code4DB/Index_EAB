@@ -104,7 +104,7 @@ class DQN:
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.index_mode = index_mode
 
-        # todo(0813): newly added.
+        # (0813): newly added.
         self.constraint = args.constraint
         self.max_count = args.max_count
         self.max_storage = args.max_storage * 1000 * 1000  # mb_to_b()
@@ -247,7 +247,7 @@ class DQN:
 
             self.actor_loss_trace.append(actor_loss.data.item())
 
-            # todo(0807): newly added.
+            # (0807): newly added.
             self.writer.add_scalar("actor_loss", actor_loss.data.item(), global_step=Common.tf_step)
             Common.tf_step += 1
             # for item in self.actor.named_parameters():
@@ -266,7 +266,7 @@ class DQN:
         if os.path.exists(self.args.model_load):
             self.load_model()
 
-        # todo(0813): newly added.
+        # (0813): newly added.
         if self.constraint == "number":
             self.envx.max_count = self.max_count
         elif self.constraint == "storage":
@@ -279,7 +279,7 @@ class DQN:
             pre_create = list()
         logging.info(f"The set of the pre-create index is: {pre_create}.")
 
-        # todo(0813): newly added.
+        # (0813): newly added.
         if self.constraint == "number" and len(pre_create) >= self.max_count:
             return pre_create
 
@@ -305,7 +305,7 @@ class DQN:
                 action = self.select_action(ep, state)
                 next_state, reward, done = self.envx.step(action)
 
-                # todo(0813): newly added.
+                # (0813): newly added.
                 if reward == -1:
                     break
 
@@ -341,7 +341,7 @@ class DQN:
 
                 state = next_state
 
-            # todo(0816): newly added.
+            # (0816): newly added.
             self.envx.measure["Reward"].append(t_r)
 
             rewards.append(t_r)
@@ -369,7 +369,7 @@ class DQN:
         # return current_best_index
         return current_best_index, self.envx.index_trace_overall[-1]
 
-    # todo(0817): newly added.
+    # (0817): newly added.
     def infer(self):
         # assert os.path.exists(self.args.model_load), "The corresponding model does not exist!"
         if os.path.exists(self.args.model_load):
@@ -406,7 +406,7 @@ class DQN:
         # plot the cost
         cost_save = f"{os.path.dirname(self.args.runlog).format(self.args.exp_id)}/cost.png"
 
-        # todo(0813): newly added / modified.
+        # (0813): newly added / modified.
         if self.constraint == "number":
             plt.figure(self.max_count)
         elif self.constraint == "storage":
@@ -424,7 +424,7 @@ class DQN:
         # plot the reward
         reward_save = f"{os.path.dirname(self.args.runlog).format(self.args.exp_id)}/reward.png"
 
-        # todo(0813): newly added / modified.
+        # (0813): newly added / modified.
         if self.constraint == "number":
             plt.figure(self.max_count + 1)
         elif self.constraint == "storage":

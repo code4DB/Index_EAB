@@ -17,7 +17,7 @@ def get_sql_connection(args, db_file):
     db_config.read(db_file)
     db_type = db_config["SYSTEM"]["db_type"]
 
-    # todo(0731): newly added.
+    # (0731): newly added.
     if db_type == "MSSQL":
         server = db_config[db_type]["server"]
         database = db_config[db_type]["database"]
@@ -29,7 +29,7 @@ def get_sql_connection(args, db_file):
     elif db_type == "postgresql":
         host = db_config[db_type]["host"]
 
-        # todo(1030): newly added.
+        # (1030): newly added.
         db_name = db_config[db_type]["database"]
         if args.db_name is not None:
             db_name = args.db_name

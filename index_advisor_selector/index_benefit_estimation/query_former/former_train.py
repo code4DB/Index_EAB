@@ -119,14 +119,14 @@ def get_parser():
 def main(args):
     device = torch.device(f"cuda:{args.gpu_no}" if torch.cuda.is_available() else "cpu")
 
-    # todo(1005): newly modified.
+    # (1005): newly modified.
     # hist_file = pd.DataFrame()
     hist_file = None
     # data_path = "./data/imdb/"
     # hist_file = get_hist_file(data_path + "histogram_string.csv")
 
     # zw: np.log()? MinMaxScaler()?
-    # todo(1005): newly modified.
+    # (1005): newly modified.
     if os.path.exists(args.cost_norm_load):
         cost_norm = torch.load(args.cost_norm_load)
     else:
@@ -142,7 +142,7 @@ def main(args):
 
     # col2idx, column_min_max_vals, idx2col, idx2join, idx2op,
     # idx2table, idx2type, join2idx, op2idx, table2idx, type2idx
-    # todo(1005): newly modified.
+    # (1005): newly modified.
     encoding = torch.load(args.encoding_load)
     # encoding_ckpt = torch.load("checkpoints/encoding.pt")
     # encoding = encoding_ckpt["encoding"]
@@ -167,11 +167,11 @@ def main(args):
     with open(args.valid_data_file, "r") as rf:
         val_df = json.load(rf)
 
-    # todo(1005): newly modified.
+    # (1005): newly modified.
     table_sample = None
     # table_sample = get_job_table_sample(imdb_path + "train")
 
-    # todo(1005): newly added.
+    # (1005): newly added.
     if "tpch" in args.train_data_file:
         alias2tbl = alias2table_tpch
     elif "tpcds" in args.train_data_file:
@@ -184,7 +184,7 @@ def main(args):
     val_ds = PlanTreeDataset(val_df, None, encoding, hist_file,
                              card_norm, cost_norm, args.to_predict, table_sample, alias2tbl=alias2tbl)
 
-    # todo(1007): newly added.
+    # (1007): newly added.
     torch.save(cost_norm, args.cost_norm_load.replace(".pt", "_v2.pt"))
     torch.save(card_norm, args.card_norm_load.replace(".pt", "_v2.pt"))
 

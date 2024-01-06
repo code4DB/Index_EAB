@@ -80,7 +80,7 @@ def get_heu_result(args, algos, work_list):
 
         configs = heu_com.find_parameter_list(exp_config["algorithms"][0],
                                                 params=args.sel_params)
-        # todo(0824): newly modified.
+        # (0824): newly modified.
         workload = Workload(heu_com.read_row_query(work_list, exp_config, columns, type="",
                                                      varying_frequencies=args.varying_frequencies, seed=args.seed))
 
@@ -88,7 +88,7 @@ def get_heu_result(args, algos, work_list):
         for config in tqdm(configs):
             connector.drop_hypo_indexes()
 
-            # todo(0818): newly added.
+            # (0818): newly added.
             if args.constraint is not None:
                 config["parameters"]["constraint"] = args.constraint
             if args.budget_MB is not None:
@@ -96,15 +96,15 @@ def get_heu_result(args, algos, work_list):
             if args.max_indexes is not None:
                 config["parameters"]["max_indexes"] = args.max_indexes
 
-            # todo(0926): newly added.
+            # (0926): newly added.
             if "max_index_width" in args and args.max_index_width is not None:
                 config["parameters"]["max_index_width"] = args.max_index_width
 
-            # todo(0918): newly added.
+            # (0918): newly added.
             if algo == "drop" and "multi_column" in args:
                 config["parameters"]["multi_column"] = args.multi_column
 
-            # todo(1211): newly added. for `cophy`
+            # (1211): newly added. for `cophy`
             if algo == "cophy":
                 config["parameters"]["ampl_bin_path"] = args.ampl_bin_path
                 config["parameters"]["ampl_mod_path"] = args.ampl_mod_path
@@ -132,14 +132,14 @@ def get_heu_result(args, algos, work_list):
             no_cost, ind_cost = list(), list()
             total_no_cost, total_ind_cost = 0, 0
 
-            # # todo(0916): newly added.
+            # # (0916): newly added.
             # freq_list = [1 for _ in work_list]
             # if isinstance(work_list[0], list):
             #     work_list = [item[1] for item in work_list]
             #     if args.varying_frequencies:
             #         freq_list = [item[-1] for item in work_list]
             #
-            # # todo(0916): newly modified.
+            # # (0916): newly modified.
             # for sql, freq in zip(work_list, freq_list):
             #     no_cost_ = connector.get_ind_cost(sql, "") * freq
             #     total_no_cost += no_cost_
@@ -149,7 +149,7 @@ def get_heu_result(args, algos, work_list):
             #     total_ind_cost += ind_cost_
             #     ind_cost.append(ind_cost_)
 
-            # todo(0916): newly modified.
+            # (0916): newly modified.
             freq_list = list()
             for query in workload.queries:
                 no_cost_ = connector.get_ind_cost(query.text, "") * query.frequency
@@ -162,7 +162,7 @@ def get_heu_result(args, algos, work_list):
 
                 freq_list.append(query.frequency)
 
-            # todo(0916): newly added.
+            # (0916): newly added.
             if args.varying_frequencies:
                 data.append({"config": config["parameters"],
                              "workload": [work_list, freq_list],

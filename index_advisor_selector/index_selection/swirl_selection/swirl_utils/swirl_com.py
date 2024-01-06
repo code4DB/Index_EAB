@@ -73,7 +73,7 @@ def get_parser():
     parser.add_argument("--filter_workload_cols", action="store_true")
     parser.add_argument("--filter_utilized_columns", action="store_true")
 
-    # todo(0918): newly added.
+    # (0918): newly added.
     parser.add_argument("--max_index_width", type=int, default=None)
     parser.add_argument("--cand_gen", type=str, default=None,
                         choices=["permutation", "dqn_rule", "openGauss"])
@@ -88,46 +88,18 @@ def get_parser():
     parser.add_argument("--reward_calculator", type=str, default=None)
 
     # 1) template
-    # parser.add_argument("--work_type", type=str, default="template",
-    #                     choices=["template", "not_template"])
-    # parser.add_argument("--work_file", type=str,
-    #                     default="/data/wz/index/index_eab/eab_olap/bench_temp/tpch_template_18.sql")
-    # parser.add_argument("--eval_file", type=str,
-    #                     default="/data/wz/index/index_eab/eab_olap/bench_temp/tpch_template_18.sql")
-    # parser.add_argument("--eval_file", type=str,
-    #                     default="/data/wz/index/index_eab/eab_olap/bench_temp/job/job_temp_example_w33_n1.json")
-    # parser.add_argument("--eval_file", type=str,
-    #                     default="/data/wz/index/index_eab/eab_olap/bench_temp/tpch/tpch_query_temp_multi_n21_eval.json")
     parser.add_argument("--eval_file", type=str,
                         default="/data/wz/index/index_eab/eab_olap/bench_temp/tpch/tpch_work_temp_multi_w18_freq_n10_eval.json")
 
     # 2) not_template
     parser.add_argument("--work_type", type=str, default="not_template",
                         choices=["template", "not_template"])
-    # parser.add_argument("--work_file", type=str,
-    #                     default="/data/wz/index/index_eab/eab_olap/bench_temp/tpch/tpch_1gb_template_22_multi_work.json")
-    # parser.add_argument("--work_file", type=str,
-    #                     default="/data/wz/index/index_eab/eab_olap/bench_temp/tpch_template_18.sql")
-    # parser.add_argument("--work_file", type=str,
-    #                     default="/data/wz/index/index_eab/eab_olap/bench_temp/tpch/tpch_1gb_template_18_multi500_work.json")
-    # parser.add_argument("--work_file", type=str,
-    #                     default="/data/wz/index/index_eab/eab_olap/bench_temp/job/job_temp_duplicate_multi_w33_n1000.json")
     parser.add_argument("--work_file", type=str,
                         default="/data/wz/index/index_eab/eab_olap/bench_temp/tpch/tpch_query_temp_multi_n1000.json")
 
     parser.add_argument("--temp_expand", action="store_true")
     parser.add_argument("--temp_load", type=str, default=None)
-    # parser.add_argument("--temp_load", type=str,
-    #                     default="/data/wz/index/index_eab/eab_olap/bench_temp/tpch/tpch_1gb_template_18_multi500_work.json")
-
-    # todo: to be removed.
-    # parser.add_argument("--temp_expand", action="store_true", default=True)
-    # parser.add_argument("--temp_load", type=str,
-    #                     default="/data/wz/index/index_eab/eab_olap/bench_temp/tpch_template_21.sql")
-
-    parser.add_argument("--train_mode", type=str, default="scratch",
-                        choices=["continuous", "scratch", "advTrain"])
-
+    
     parser.add_argument("--rl_exp_load", type=str,
                         default="/data/wz/index/attack/swirl_selection/exp_res/s152_swirlh1gb_temp_w18_b500_10w/experiment_object.pickle")
     parser.add_argument("--rl_model_load", type=str,
@@ -167,7 +139,7 @@ def set_logger(log_file):
     logger.addHandler(fh)
 
 
-# todo: This could be improved by passing index candidates as input.
+# : This could be improved by passing index candidates as input.
 def predict_index_sizes(column_combinations, db_config, is_precond=True):
     connector = PostgresDatabaseConnector(db_config, autocommit=True)
     connector.drop_indexes()
@@ -183,7 +155,7 @@ def predict_index_sizes(column_combinations, db_config, is_precond=True):
         full_index_size = potential_index.estimated_size
         index_delta_size = full_index_size
 
-        # todo(1212): leading index? index_delta_size
+        # (1212): leading index? index_delta_size
         if is_precond:
             if len(column_combination) > 1:
                 index_delta_size -= parent_index_size_map[column_combination[:-1]]
@@ -193,7 +165,7 @@ def predict_index_sizes(column_combinations, db_config, is_precond=True):
 
         parent_index_size_map[column_combination] = full_index_size
 
-    # todo: newly added.
+    # : newly added.
     connector.close()
 
     return predicted_index_sizes
@@ -221,7 +193,7 @@ def get_hypo_index_sizes(column_combinations, db_config):
 
         parent_index_size_map[column_combination] = full_index_size
 
-    # todo: newly added.
+    # : newly added.
     connector.close()
 
     return predicted_index_sizes
@@ -244,7 +216,7 @@ def get_prom_index_candidates(token_load, colinfo_load, columns):
 
     column_dict = dict()  # w_warehouse_sk
     for col in columns:
-        # todo (0327, 0418): newly added. for job and real.
+        #  (0327, 0418): newly added. for job and real.
         if "tpch" in colinfo_load or "tpcds" in colinfo_load:
             column_dict[str(col).split(".")[-1]] = col
         else:
@@ -264,7 +236,7 @@ def get_prom_index_candidates(token_load, colinfo_load, columns):
         # 1. extract the columns in certain positions.
         join_col = list()
         for typ, tok in zip(sql_token["from"]["pre_type"], sql_token["from"]["pre_token"]):
-            # todo (0327, 0418): newly added. for job and real.
+            #  (0327, 0418): newly added. for job and real.
             if "tpch" in colinfo_load or "tpcds" in colinfo_load:
                 if typ == "from#join_column" and tok.split(".")[-1] not in join_col \
                         and tok.split(".")[-1] in column_dict.keys():
@@ -277,7 +249,7 @@ def get_prom_index_candidates(token_load, colinfo_load, columns):
         eq_col, range_col = list(), list()
         if "where" in sql_token.keys():
             for i, tok in enumerate(sql_token["where"]["pre_token"]):
-                # todo (0327, 0418): newly added. for job and real.
+                #  (0327, 0418): newly added. for job and real.
                 if "tpch" in colinfo_load or "tpcds" in colinfo_load:
                     if tok == "=" and \
                             sql_token["where"]["pre_token"][i - 1].split(".")[-1] not in eq_col \
@@ -300,7 +272,7 @@ def get_prom_index_candidates(token_load, colinfo_load, columns):
         gro_col = list()
         if "group by" in sql_token.keys():
             for typ, tok in zip(sql_token["group by"]["pre_type"], sql_token["group by"]["pre_token"]):
-                # todo (0327): newly added. for job and real.
+                #  (0327): newly added. for job and real.
                 if "tpch" in colinfo_load or "tpcds" in colinfo_load:
                     if typ == "group by#column" and tok.split(".")[-1] in column_dict.keys():
                         gro_col.append(tok.split(".")[-1])
@@ -311,7 +283,7 @@ def get_prom_index_candidates(token_load, colinfo_load, columns):
         ord_col = list()
         if "order by" in sql_token.keys():
             for typ, tok in zip(sql_token["order by"]["pre_type"], sql_token["order by"]["pre_token"]):
-                # todo (0327): newly added. for job.
+                #  (0327): newly added. for job.
                 if "tpch" in colinfo_load or "tpcds" in colinfo_load:
                     if typ == "order by#column" and tok.split(".")[-1] in column_dict.keys():
                         ord_col.append(tok.split(".")[-1])
@@ -452,16 +424,16 @@ def get_prom_index_candidates_original(db_conf, query_texts, temp_load, columns)
     enc = en.encoding_schema(db_conf)
     parser = pi.Parser(enc["attr"])
 
-    # todo(0822): newly added.
+    # (0822): newly added.
     workload_ori = list()
     for texts in query_texts:
-        # todo(0917): newly modified.
+        # (0917): newly modified.
         if isinstance(texts, list):
             workload_ori.extend(texts)
         if isinstance(texts, str):
             workload_ori.append(texts)
 
-    # todo(0822): newly modified.
+    # (0822): newly modified.
     if temp_load is not None:
         if temp_load.endswith(".pickle"):
             with open(temp_load, "rb") as rf:
@@ -469,7 +441,7 @@ def get_prom_index_candidates_original(db_conf, query_texts, temp_load, columns)
         elif temp_load.endswith(".sql"):
             with open(temp_load, "r") as rf:
                 workload = rf.readlines()
-        # todo(0822): newly added.
+        # (0822): newly added.
         elif temp_load.endswith(".json"):
             with open(temp_load, "r") as rf:
                 data = json.load(rf)
@@ -482,7 +454,7 @@ def get_prom_index_candidates_original(db_conf, query_texts, temp_load, columns)
                     elif "sql" in item.keys():
                         workload.append(item["sql"])
                 elif isinstance(item, list):
-                    # todo(0822): newly modified. data:[item:[info:[]]]
+                    # (0822): newly modified. data:[item:[info:[]]]
                     if isinstance(item[0], list):
                         workload.extend([info[1] for info in item])
                     elif isinstance(item[0], str):
@@ -506,32 +478,32 @@ def get_prom_index_candidates_original(db_conf, query_texts, temp_load, columns)
 
     column_dict = dict()
     for column in columns:
-        # todo(0822): newly modified.
+        # (0822): newly modified.
         column_dict[f"{column.table}.{column.name}"] = column
         # column_dict[column.name] = column
 
     prom_ind = dict()
     for cand in index_candidates:
-        # todo(0822): newly modified.
+        # (0822): newly modified.
         tbl = cand.split("#")[0]
         ind_cols = cand.split("#")[-1].split(",")
         if len(ind_cols) not in prom_ind.keys():
             prom_ind[len(ind_cols)] = list()
         try:
-            # todo(0822): newly modified.
+            # (0822): newly modified.
             prom_ind[len(ind_cols)].append(tuple([column_dict[f"{tbl}.{col}"] for col in ind_cols]))
             # prom_ind[len(ind_cols)].append(tuple([column_dict[col] for col in ind_cols]))
         except Exception as e:
             logging.info("Some columns in the indexes are not involved in the global column set.")
 
     for key in sorted(prom_ind.keys()):
-        # todo(0919): newly modified.
+        # (0919): newly modified.
         result_column_combinations.append(sorted(list(set(prom_ind[key]))))
 
     return result_column_combinations
 
 
-# todo(0917): newly added. index candidates generation by openGauss.
+# (0917): newly added. index candidates generation by openGauss.
 def get_prom_index_candidates_openGauss(db_conf, query_texts, temp_load, columns):
     result_column_combinations = list()
 
@@ -539,13 +511,13 @@ def get_prom_index_candidates_openGauss(db_conf, query_texts, temp_load, columns
     for col in columns:
         col_dict[str(col)] = col
 
-    # todo(0919): newly modified.
+    # (0919): newly modified.
     db_conf_bak = copy.deepcopy(db_conf)
 
-    db_conf_bak["postgresql"]["host"] = "10.26.42.166"
-    db_conf_bak["postgresql"]["user"] = "postgres"
-    db_conf_bak["postgresql"]["password"] = "dmai4db2021."
-    db_conf_bak["postgresql"]["port"] = "5433"
+    db_conf_bak["postgresql"]["host"] = "xx.xx.xx.xx"
+    db_conf_bak["postgresql"]["user"] = "xxxx"
+    db_conf_bak["postgresql"]["password"] = "xxxx"
+    db_conf_bak["postgresql"]["port"] = "xxxx"
     connector = PostgresDatabaseConnector(db_conf_bak, autocommit=True)
 
     workload_ori = list()
@@ -591,7 +563,7 @@ def get_prom_index_candidates_openGauss(db_conf, query_texts, temp_load, columns
 
     prom_ind = dict()
     for query in workload_ori:
-        # todo(0920): newly added.
+        # (0920): newly added.
         query = query.replace("2) ratio,", "2) AS ratio,")
         tbl_col = connector.exec_fetch(api_query.format(query.replace("'", "''")), one=False)
 
@@ -609,7 +581,7 @@ def get_prom_index_candidates_openGauss(db_conf, query_texts, temp_load, columns
                 logging.info("Some columns in the indexes are not involved in the global column set.")
 
     for key in sorted(prom_ind.keys()):
-        # todo(0919): newly modified.
+        # (0919): newly modified.
         result_column_combinations.append(sorted(list(set(prom_ind[key]))))
 
     return result_column_combinations
@@ -632,7 +604,7 @@ def create_column_permutation_indexes(columns, max_index_width):
             count += len(set(itertools.permutations(columns_per_table, length)))
         logging.info(f"the total number of the unique {length}-column indexes is: {count}")
 
-        # todo(1212): newly added, sorted list.
+        # (1212): newly added, sorted list.
         result_column_combinations.append(sorted(list(unique)))
         # result_column_combinations.append(list(unique))
 
@@ -678,7 +650,7 @@ def read_row_query(sql_list, columns):
                 else:
                     # if column.name in query.text and column.table.name in query.text:
                     # if " " + column.name + " " in query.text and column.table.name in query.text:
-                    # todo(0329): newly modified. for JOB,
+                    # (0329): newly modified. for JOB,
                     #  SELECT COUNT(*), too many candidates.
                     if "." in query.text.lower().split("from")[0] or \
                             ("where" in query.text.lower() and (
@@ -692,13 +664,13 @@ def read_row_query(sql_list, columns):
                                     or f"({job_table_alias[tbl]}.{col}" in query.text.lower():
                                 query.columns.append(column)
                     # else:
-                    #     # todo(0408): newly added. check?
+                    #     # (0408): newly added. check?
                     #     # if column.name in query.text:
                     #     if column.name in query.text.lower() and \
                     #             f"{column.table.name}" in query.text.lower():
                     #         query.columns.append(column)
 
-                # todo(0408): newly added. check? (different table, same column name)
+                # (0408): newly added. check? (different table, same column name)
                 # if column.name in query.text.lower() and \
                 #         column.table.name in query.text.lower():
                 #     query.columns.append(column)

@@ -36,8 +36,8 @@ def syntactically_relevant_indexes(query, max_index_width):
 
     logging.debug(f"Potential indexes: {len(possible_column_combinations)}")
 
-    # todo(0804): newly added. for reproduction.
+    # (0804): newly added. for reproduction.
     return sorted([Index(p) for p in possible_column_combinations])
 
 
-# todo: index candidates generation rules for `DQN`.
+# : index candidates generation rules for `DQN`.

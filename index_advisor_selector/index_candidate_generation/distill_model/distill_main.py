@@ -21,7 +21,7 @@ from index_advisor_selector.index_candidate_generation.distill_model.distill_uti
 from index_advisor_selector.index_candidate_generation.distill_model.distill_dataset import PlanPairDataset, normalize, unnormalize
 from index_advisor_selector.index_candidate_generation.distill_model.distill_model import XGBoost, LightGBM, RandomForest
 
-# todo: 1. get the params.
+# : 1. get the params.
 parser = distill_com.get_parser()
 args = parser.parse_args()
 
@@ -29,7 +29,7 @@ import torch
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 
-# todo: 3. create the directory to store the `exp_res`.
+# : 3. create the directory to store the `exp_res`.
 assert not os.path.exists(os.path.dirname(args.logdir.format(args.exp_id))), \
     f"`{os.path.dirname(args.logdir.format(args.exp_id))}` dir existed!"
 os.makedirs(os.path.dirname(args.logdir.format(args.exp_id)))
@@ -50,7 +50,7 @@ distill_com.summary_writer.add_text(
 )
 logging.info(f"Set the tensorboard logdir = `{args.logdir.format(args.exp_id)}`.")
 
-# todo: 4. set the torch random_seed.
+# : 4. set the torch random_seed.
 # Sets the seed for generating random numbers.
 # Returns a `torch.Generator` object.
 random.seed(args.seed)
@@ -58,7 +58,7 @@ np.random.seed(args.seed)
 torch.manual_seed(args.seed)
 logging.info(f"Set the random seed = `{args.seed}`.")
 
-# todo: 5. load the training data.
+# : 5. load the training data.
 # ["utility", "query_shape", "index_shape", "physical_operator"]
 
 # args.train_data_load = "/data1/wz/index/index_eab/eab_other/distill_model/data/tpch/tree_tpch_cost_data_tgt_train.json"
@@ -123,7 +123,7 @@ y_valid = [np.log(y) for y in y_valid]
 
 y_train, y_valid = np.array(y_train, dtype=np.float32), np.array(y_valid, dtype=np.float32)
 
-# todo: 6. create the train/valid data loader.
+# : 6. create the train/valid data loader.
 train_set, valid_set = list(zip(X_train, y_train)), list(zip(X_valid, y_valid))
 
 # torch.save(train_set, args.data_save.format(args.exp_id, "train"))
@@ -139,7 +139,7 @@ if args.model_type == "XGBoost":
     X_valid = [item[0] for item in list(valid_set)]
     y_valid = [item[1] for item in list(valid_set)]
 
-    # todo: adjust the params (classification and regression).
+    # : adjust the params (classification and regression).
     # 333 train-rmse:136547.53125	test-rmse:411392.46875
     # 666 train-rmse:136547.54688	test-rmse:411392.50000
     # 66  train-rmse:136547.54688	test-rmse:411392.46875
@@ -176,7 +176,7 @@ elif args.model_type == "LightGBM":
     X_valid = [item[0] for item in list(valid_set)]
     y_valid = [item[1] for item in list(valid_set)]
 
-    # todo: adjust the params (classification and regression).
+    # : adjust the params (classification and regression).
     params = {
         "task": "train",
         # "n_estimators": 100,

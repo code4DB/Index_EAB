@@ -60,7 +60,7 @@ class BagOfOperators(object):
             node_representation += f"{self._parse_merge_join(node)}"
         elif node["Node Type"] == "Sort":
             node_representation += f"{self._parse_sort(node)}"
-        else:  # todo: useless
+        else:  # : useless
             raise ValueError("_parse_node called with unsupported Node Type.")
 
         return node_representation

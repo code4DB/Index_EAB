@@ -53,7 +53,7 @@ class WorkloadGenerator(object):
 
         self.is_varying_frequencies = work_config["varying_frequencies"]  # default: false
         if work_type == "template":
-            # todo: 22/99/33
+            # : 22/99/33
             self.number_of_query_classes = self._set_number_of_query_classes()
             # default: 2, 17, 20 for TPC-H
             self.excluded_query_classes = set(work_config["excluded_query_classes"])
@@ -64,7 +64,7 @@ class WorkloadGenerator(object):
             self.query_texts = self._retrieve_query_texts(work_file)
         else:
             self.query_texts = self._load_query_classes(work_file)
-            # todo(0822): newly modified.
+            # (0822): newly modified.
             if self.temp_num is not None:
                 self.number_of_query_classes = self.temp_num
             else:
@@ -83,7 +83,7 @@ class WorkloadGenerator(object):
                                                                          is_filter_utilized_cols)
         assert work_config["size"] > 1 or not (
                 self.work_gen == "random" and work_config["size"] == 1 and work_config["training_instances"] +
-                work_config["validation_testing"]["number_of_workloads"]  # todo(0820): newly modified. add "random"
+                work_config["validation_testing"]["number_of_workloads"]  # (0820): newly modified. add "random"
                 > self.number_of_query_classes), "Can not generate the workload satisfied!"
 
         num_validation_instances = work_config["validation_testing"]["number_of_workloads"]
@@ -91,16 +91,16 @@ class WorkloadGenerator(object):
         self.wl_validation = []
         self.wl_testing = []
 
-        # todo: workloads generation, work_config["similar_workloads"] -> `training`.
+        # : workloads generation, work_config["similar_workloads"] -> `training`.
         if self.work_gen == "random":
             if work_config["similar_workloads"] and work_config["unknown_queries"] == 0:
-                # todo: this branch can probably be removed.
+                # : this branch can probably be removed.
                 assert self.is_varying_frequencies, "Similar workloads can only be created with varying frequencies."
                 self.wl_validation = [None]
                 self.wl_testing = [None]
                 _, self.wl_validation[0], self.wl_testing[0] = self._generate_workloads(
                     0, num_validation_instances, num_test_instances, work_config["size"])
-                # todo: `query_class_change_frequency`?
+                # : `query_class_change_frequency`?
                 if "query_class_change_frequency" not in work_config \
                         or work_config["query_class_change_frequency"] is None:
                     self.wl_training = self._generate_similar_workloads(work_config["training_instances"],
@@ -119,7 +119,7 @@ class WorkloadGenerator(object):
                     query_texts=self.query_texts,
                     representation_size=0,
                     database_connector=embedder_connector,
-                    # todo: single-column only? Transform `globally_indexable_columns` to list of lists.
+                    # : single-column only? Transform `globally_indexable_columns` to list of lists.
                     globally_index_candidates=[list(map(lambda x: [x], self.globally_indexable_columns))],
                     retrieve_plans=True)
                 self.unknown_query_classes = embedding_utils.which_queries_to_remove(
@@ -134,7 +134,7 @@ class WorkloadGenerator(object):
                                     missing_classes)
                 )
                 assert len(self.unknown_query_classes) == work_config["unknown_queries"]
-                # todo: newly added.
+                # : newly added.
                 embedder_connector.close()
 
                 self.known_query_classes = self.available_query_classes - frozenset(self.unknown_query_classes)
@@ -197,7 +197,7 @@ class WorkloadGenerator(object):
 
             num_training_instances = len(workloads) - num_validation_instances - num_test_instances
 
-            # todo(0818): newly added.
+            # (0818): newly added.
             if num_training_instances <= 0:
                 num_training_instances = 1
 
@@ -215,7 +215,7 @@ class WorkloadGenerator(object):
         TPC-H: 22, TPC-DS: 99, JOB: 113.
         :return:
         """
-        # todo(0822): newly modified.
+        # (0822): newly modified.
         if self.benchmark == "TPCH":
             return 22
         elif self.benchmark == "TPCH-SKEW":
@@ -241,7 +241,7 @@ class WorkloadGenerator(object):
         finished_queries = []
         for query_file in query_files:
             queries = query_file.readlines()
-            # queries = query_file.readlines()[:1]  # todo: only the first row/example
+            # queries = query_file.readlines()[:1]  # : only the first row/example
             # remove `limit x`, replace the name of the view with the experiment id
             queries = self._preprocess_queries(queries)
 
@@ -258,28 +258,28 @@ class WorkloadGenerator(object):
             with open(work_file, "r") as rf:
                 sql_list = rf.readlines()
 
-            # todo(0820): newly modified.
+            # (0820): newly modified.
             if self.work_num != -1:
                 sql_list = sql_list[:self.work_num]
         elif work_file.endswith(".json"):
             with open(work_file, "r") as rf:
                 data = json.load(rf)
 
-            # todo(0820): newly modified.
+            # (0820): newly modified.
             if self.work_num != -1:
                 data = data[:self.work_num]
 
-            # todo(0822). newly added
+            # (0822). newly added
             query_classes = dict()
 
-            # todo(0804): newly modified / added.
+            # (0804): newly modified / added.
             for item in data:
                 if isinstance(item, dict) and "workload" in item.keys():
                     sql_list.extend([it["sql"] for it in item["workload"]])
                 elif isinstance(item, dict) and "sql" in item.keys():
                     sql_list.append(item["sql"])
                 elif isinstance(item, list):
-                    # todo(0822): newly modified. data:[item:[info:[]]]
+                    # (0822): newly modified. data:[item:[info:[]]]
                     if isinstance(item[0], list):
                         for info in item:
                             if info[0] not in query_classes.keys():
@@ -294,7 +294,7 @@ class WorkloadGenerator(object):
                 elif isinstance(item, str):
                     sql_list.append(item)
 
-        # todo(0822): newly added.
+        # (0822): newly added.
         if len(query_classes) != 0:
             sql_list = [list(set(value)) for key, value in sorted(query_classes.items())]
             finished_queries = list()
@@ -316,7 +316,7 @@ class WorkloadGenerator(object):
         return finished_queries
 
     def _load_no_temp_workload(self, work_file):
-        # todo(0825): newly added.
+        # (0825): newly added.
         query_cache = dict()
 
         workload = list()
@@ -326,17 +326,17 @@ class WorkloadGenerator(object):
             if self.work_num != -1:
                 data = data[:self.work_num]
 
-            # todo(0818): newly modified.
+            # (0818): newly modified.
             sql_list = list()
             for no, sql in enumerate(data):
                 if self.is_varying_frequencies:
-                    # todo: to be modified. load directly.
+                    # : to be modified. load directly.
                     frequency = self.np_rnd.integers(1, 10000, 1)[0]
                 else:
                     frequency = 1
                 query = Query(no, self._preprocess_queries([sql])[0], frequency=frequency)
 
-                # todo(0825): newly modified.
+                # (0825): newly modified.
                 if self.is_query_cache and query.nr in query_cache.keys():
                     query.columns = query_cache[query.nr].columns
                 else:
@@ -357,7 +357,7 @@ class WorkloadGenerator(object):
 
             qno = 0
 
-            # todo(0820): newly added.
+            # (0820): newly added.
             # [Q1, Q2, ...]
             if isinstance(data[0], str):
                 queries = list()
@@ -369,7 +369,7 @@ class WorkloadGenerator(object):
                     query = Query(qno, self._preprocess_queries([sql])[0], frequency=frequency)
                     qno += 1
 
-                    # todo(0825): newly modified.
+                    # (0825): newly modified.
                     if self.is_query_cache and query.nr in query_cache.keys():
                         query.columns = query_cache[query.nr].columns
                     else:
@@ -396,7 +396,7 @@ class WorkloadGenerator(object):
                                 query = Query(qno, self._preprocess_queries([it["sql"]])[0], frequency=frequency)
                                 qno += 1
 
-                                # todo(0825): newly modified.
+                                # (0825): newly modified.
                                 if self.is_query_cache and query.nr in query_cache.keys():
                                     query.columns = query_cache[query.nr].columns
                                 else:
@@ -416,7 +416,7 @@ class WorkloadGenerator(object):
                             query = Query(qno, self._preprocess_queries([item["sql"]])[0], frequency=frequency)
                             qno += 1
 
-                            # todo(0825): newly modified.
+                            # (0825): newly modified.
                             if self.is_query_cache and query.nr in query_cache.keys():
                                 query.columns = query_cache[query.nr].columns
                             else:
@@ -427,7 +427,7 @@ class WorkloadGenerator(object):
 
                             workload.append(Workload([query]))
 
-                    # todo(0822): newly modified.
+                    # (0822): newly modified.
                     # [[Q1, Q2, ...], [Q1, Q2, ...], ...]
                     # [[qid1, Q1, freq1], [qid2, Q2, freq2], ...]
                     # [[[qid1, Q1, freq1], [qid2, Q2, freq2], ...], [[qid1, Q1, freq1], [qid2, Q2, freq2], ...], ...]
@@ -442,7 +442,7 @@ class WorkloadGenerator(object):
                                 query = Query(qno, self._preprocess_queries([it])[0], frequency=frequency)
                                 qno += 1
 
-                                # todo(0825): newly modified.
+                                # (0825): newly modified.
                                 if self.is_query_cache and query.nr in query_cache.keys():
                                     query.columns = query_cache[query.nr].columns
                                 else:
@@ -462,7 +462,7 @@ class WorkloadGenerator(object):
                                 frequency = 1
                             query = Query(item[0], self._preprocess_queries([item[1]])[0], frequency=frequency)
 
-                            # todo(0825): newly modified.
+                            # (0825): newly modified.
                             if self.is_query_cache and query.nr in query_cache.keys():
                                 query.columns = query_cache[query.nr].columns
                             else:
@@ -483,7 +483,7 @@ class WorkloadGenerator(object):
                                     frequency = 1
                                 query = Query(it[0], self._preprocess_queries([it[1]])[0], frequency=frequency)
 
-                                # todo(0825): newly modified.
+                                # (0825): newly modified.
                                 if self.is_query_cache and query.nr in query_cache.keys():
                                     query.columns = query_cache[query.nr].columns
                                 else:
@@ -508,7 +508,7 @@ class WorkloadGenerator(object):
         """
         processed_queries = []
         for query in queries:
-            # todo(0818): newly removed.
+            # (0818): newly removed.
             # query = query.replace("limit 100", "")
             # query = query.replace("limit 20", "")
             # query = query.replace("limit 10", "")
@@ -540,7 +540,7 @@ class WorkloadGenerator(object):
             # return the sorted(by default) list of the indexable columns given the workload.
             indexable_columns = workload.indexable_columns(return_sorted=True)
 
-            # todo: filter the indexes that do not appear in the query plan.
+            # : filter the indexes that do not appear in the query plan.
             if is_filter_utilized_cols:
                 indexable_columns = self._only_utilized_indexes(indexable_columns)
         else:
@@ -548,7 +548,7 @@ class WorkloadGenerator(object):
 
         selected_columns = []
         global_column_id = 0
-        # todo: to be optimized.
+        # : to be optimized.
         for column in self.schema_columns:
             if column in indexable_columns:
                 column.global_column_id = global_column_id
@@ -568,13 +568,13 @@ class WorkloadGenerator(object):
             the previously_unseen_queries.
         :return:
         """
-        # todo(0825): newly modified.
+        # (0825): newly modified.
         query_cache = dict()
 
         workloads = list()
         unknown_query_probability = "" if unknown_query_probability is None else unknown_query_probability
 
-        # todo: tuples is a list whose length is `1`? no,
+        # : tuples is a list whose length is `1`? no,
         #  the call in `_generate_workloads()` to synthesize the training/validation/testing workload.
         # multiple workloads: len(tuples) = number of workloads/instances
         for tup in tuples:
@@ -588,7 +588,7 @@ class WorkloadGenerator(object):
                 query_text = self.rnd.choice(self.query_texts[query_class - 1])
                 query = Query(query_class, query_text, frequency=frequency)
 
-                # todo(0825): newly modified.
+                # (0825): newly modified.
                 if self.is_query_cache and query.nr in query_cache.keys():
                     query.columns = query_cache[query.nr].columns
                 else:
@@ -606,7 +606,7 @@ class WorkloadGenerator(object):
                 queries.append(query)
 
             assert isinstance(queries, list), f"Queries is not of type list but of {type(queries)}"
-            # todo: what's the function of `unknown_query_probability`?
+            # : what's the function of `unknown_query_probability`?
             # the `number` of the previously_unseen_queries
             previously_unseen_queries = (round(unknown_query_probability * len(queries))
                                          if unknown_query_probability != "" else 0)
@@ -646,7 +646,7 @@ class WorkloadGenerator(object):
                                 query.columns.append(column)
 
         # for column in self.schema_columns:
-        #     # todo(0329): newly modified. for JOB,
+        #     # (0329): newly modified. for JOB,
         #     #  SELECT COUNT(*), too many candidates.
         #     if "." in query.text.lower().split("from")[0] or \
         #             ("where" in query.text.lower() and ("." in query.text.lower().split("where")[0] or
@@ -654,7 +654,7 @@ class WorkloadGenerator(object):
         #         if str(column) in query.text.lower():
         #             query.columns.append(column)
         #     else:
-        #         # todo(0408): newly added. check?
+        #         # (0408): newly added. check?
         #         # if column.name in query.text:
         #         if column.name in query.text.lower() and \
         #                 f"{column.table.name}" in query.text.lower():
@@ -662,22 +662,22 @@ class WorkloadGenerator(object):
 
         # if self.benchmark != "JOB":
         #     for column in self.schema_columns:
-        #         if column.name in query.text.lower():  # todo: lower(completed), value.
+        #         if column.name in query.text.lower():  # : lower(completed), value.
         #             query.columns.append(column)
         # else:
-        #     query_text = query.text.lower()  # todo: lower(completed), value.
+        #     query_text = query.text.lower()  # : lower(completed), value.
         #     # assert "WHERE" in query_text, f"Query without WHERE clause encountered: {query_text} in {query.nr}"
         #     assert "where" in query_text, f"Query without WHERE clause encountered: {query_text} in {query.nr}"
         #
         #     # split = query_text.split("WHERE")
-        #     # todo (0329): newly added.
+        #     #  (0329): newly added.
         #     split = query_text.split("where", 1)
         #     # assert len(split) == 2, f"Query split for JOB query contains subquery: {query_text} in {query.nr}"
         #     query_text_before_where = split[0]
         #     query_text_after_where = split[1]
         #
         #     for column in self.schema_columns:
-        #         # todo: only column in where clause. why, existed?
+        #         # : only column in where clause. why, existed?
         #         # if column.name in query_text_after_where and f" {column.table.name}" in query_text_before_where:
         #         #     query.columns.append(column)
         #         if column.name in query_text_after_where and f"{column.table.name}" in query_text_before_where:
@@ -698,7 +698,7 @@ class WorkloadGenerator(object):
                                           max_index_width=1,
                                           candidate_generator=syntactically_relevant_indexes)
 
-        # todo:
+        # :
         # connector = PostgresDatabaseConnector(self.database_name, self.db_config?, autocommit=True)
         connector = PostgresDatabaseConnector(self.db_config, autocommit=True)
         connector.drop_indexes()
@@ -779,11 +779,11 @@ class WorkloadGenerator(object):
             query_classes = known_query_classes
             query_classes.extend(unknown_query_classes)
             workload_query_classes = tuple(query_classes)
-            # todo(0820): to be sorted.
+            # (0820): to be sorted.
             # workload_query_classes = sorted(workload_query_classes)
             assert len(workload_query_classes) == size
         else:
-            # todo(0820): to be sorted.
+            # (0820): to be sorted.
             workload_query_classes = tuple(self.rnd.sample(self.available_query_classes, size))
             # workload_query_classes = sorted(workload_query_classes)
 
@@ -813,13 +813,13 @@ class WorkloadGenerator(object):
 
         workload_tuples = []
         query_classes = self.rnd.sample(self.available_query_classes, size)
-        # todo(0820): to be sorted.
+        # (0820): to be sorted.
         available_query_classes = self.available_query_classes - frozenset(query_classes)
         frequencies = list(self.np_rnd.zipf(1.5, size))
 
         workload_tuples.append((copy.copy(query_classes), copy.copy(frequencies)))
 
-        # todo: Remove a random element iteratively.
+        # : Remove a random element iteratively.
         for workload_idx in range(instances - 1):
             # Remove a random element
             idx_to_remove = self.rnd.randrange(len(query_classes))

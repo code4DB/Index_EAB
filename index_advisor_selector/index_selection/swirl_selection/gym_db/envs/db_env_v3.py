@@ -11,7 +11,7 @@ from index_advisor_selector.index_selection.swirl_selection.swirl_utils.index im
 from index_advisor_selector.index_selection.swirl_selection.swirl_utils.cost_evaluation import CostEvaluation
 from index_advisor_selector.index_selection.swirl_selection.swirl_utils.postgres_dbms import PostgresDatabaseConnector
 
-# todo(0805): newly added. for `storage`.
+# (0805): newly added. for `storage`.
 MAX_STORAGE_BUDGET = 50000
 
 
@@ -26,7 +26,7 @@ class DBEnvV3(gym.Env):
         self.environment_type = environment_type
         self.config = config
 
-        # todo(0805): newly added. for `storage`.
+        # (0805): newly added. for `storage`.
         self.constraint = constraint
         if "constraint" in self.config.keys():
             self.constraint = self.config["constraint"]
@@ -40,7 +40,7 @@ class DBEnvV3(gym.Env):
 
         self.globally_index_candidates = config["globally_index_candidates"]
 
-        # todo: In certain cases, workloads are consumed: therefore, we need copy.?
+        # : In certain cases, workloads are consumed: therefore, we need copy.?
         self.workloads = copy.copy(config["workloads"])
         self.current_workload_idx = 0
         self.similar_workloads = config["similar_workloads"]
@@ -70,11 +70,11 @@ class DBEnvV3(gym.Env):
 
     def _step_asserts(self, action):
         assert self.action_space.contains(action), f"{action} ({type(action)}) invalid"
-        assert (  # todo: ?
+        assert (  # : ?
                 self.valid_actions[action] == self.action_manager.ALLOWED_ACTION
         ), f"Agent has chosen invalid action: {action}"
         # try:
-        #     assert (  # todo: ?
+        #     assert (  # : ?
         #         self.valid_actions[action] == self.action_manager.ALLOWED_ACTION
         #     ), f"Agent has chosen invalid action: {action}"
         # except:
@@ -84,12 +84,12 @@ class DBEnvV3(gym.Env):
         ), f"{Index(self.globally_index_candidates[action])} already in self.current_indexes"
 
     def step(self, action):
-        # self._step_asserts(action)  # todo: ?
+        # self._step_asserts(action)  # : ?
 
         self.steps_taken += 1
         new_index = Index(self.globally_index_candidates[action])
 
-        # todo: newly added.
+        # : newly added.
         if new_index in self.current_indexes:
             environment_state = self._update_return_env_state(
                 init=False, new_index=None, old_index_size=0
@@ -100,7 +100,7 @@ class DBEnvV3(gym.Env):
 
         old_index_size = 0
         self.current_indexes.add(new_index)
-        # todo(0822): newly modified.
+        # (0822): newly modified.
         # if not new_index.is_single_column():
         #     parent_index = Index(new_index.columns[:-1])
         #
@@ -121,8 +121,8 @@ class DBEnvV3(gym.Env):
             action, self.current_budget, self.current_storage_consumption
         )
 
-        # todo: termination con
-        # todo(0805): newly added. for `storage`.
+        # : termination con
+        # (0805): newly added. for `storage`.
         if self.constraint == "storage":
             total_size = b_to_mb(sum([index.estimated_size for index in self.current_indexes]))
             assert total_size == b_to_mb(self.current_storage_consumption), "The storage consumption is not consistent!"
@@ -135,7 +135,7 @@ class DBEnvV3(gym.Env):
         reward = self.reward_calculator.calculate_reward(environment_state)
 
         if episode_done and self.environment_type != EnvironmentType.TRAINING:
-            # todo(0805): newly added. for `storage`.
+            # (0805): newly added. for `storage`.
             if self.constraint == "storage":
                 total_size = b_to_mb(sum([index.estimated_size for index in self.current_indexes]))
                 if total_size > self.current_budget:
@@ -143,7 +143,7 @@ class DBEnvV3(gym.Env):
                     self.current_storage_consumption = \
                         sum([index.estimated_size for index in self.current_indexes])
 
-                    # todo(0822): newly added.
+                    # (0822): newly added.
                     # self.current_costs = self.previous_cost
                     # self.current_storage_consumption = self.previous_storage_consumption
                     environment_state = self._update_return_env_state(
@@ -193,17 +193,17 @@ class DBEnvV3(gym.Env):
             self.workloads = copy.copy(self.config["workloads"])
 
         if self.environment_type == EnvironmentType.TRAINING:
-            if self.similar_workloads:  # todo: pop in order?
+            if self.similar_workloads:  # : pop in order?
                 # 200 is an arbitrary value
                 self.current_workload = self.workloads.pop(0 + self.env_id * 200)
-            else:  # todo: only one workload, chosen randomly?
+            else:  # : only one workload, chosen randomly?
                 self.current_workload = self.rnd.choice(self.workloads)
         else:
             self.current_workload = self.workloads[self.current_workload_idx % len(self.workloads)]
 
         self.current_budget = self.current_workload.budget
 
-        # todo(0805): newly added. for `storage`. when the value is assigned?
+        # (0805): newly added. for `storage`. when the value is assigned?
         if self.constraint == "storage" and self.current_budget == 100000:
             self.current_budget = MAX_STORAGE_BUDGET
 
@@ -245,12 +245,12 @@ class DBEnvV3(gym.Env):
 
             # This assumes that old_index_size is not None if new_index is not None
             assert new_index.estimated_size >= old_index_size
-            # todo: new_index.estimated_size - old_index_size (calculated all-together)?
+            # : new_index.estimated_size - old_index_size (calculated all-together)?
             new_index_size = new_index.estimated_size - old_index_size
             if new_index_size == 0:
                 new_index_size = 1
 
-            # todo(0805): newly modified. for `storage`.
+            # (0805): newly modified. for `storage`.
             # if self.current_budget:
             #     assert b_to_mb(self.current_storage_consumption) <= self.current_budget, (
             #         "Storage consumption exceeds budget: "

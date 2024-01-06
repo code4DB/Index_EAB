@@ -32,40 +32,9 @@ def get_parser():
     parser.add_argument("--test_data_load", type=str,
                         default="/data1/wz/index/index_eab/eab_other/distill_model/distill_data/plan_raw_feat_tpch_test.json")
 
-    # parser.add_argument("--model_load", type=str,
-    #                     default="/data/wz/index/index_eab/eab_benefit/tree_model/cost_exp_res/exp_xgb_tpch_tgt_round5k/model/reg_xgb_cost.xgb.model")
-    # parser.add_argument("--scale_load", type=str,
-    #                     default="/data/wz/index/index_eab/eab_benefit/tree_model/cost_exp_res/exp_xgb_tpch_tgt_round5k/data/train_scale_data.pt")
-
     parser.add_argument("--model_load", type=str, default=None)
     parser.add_argument("--scale_load", type=str, default=None)
-
-    # 2. tpcds
-    # parser.add_argument("--train_data_load", type=str,
-    #                     default="/data/wz/index/index_eab/eab_benefit/tree_model/data/tpcds/tree_tpcds_cost_data_tgt_train.json")
-    # parser.add_argument("--valid_data_load", type=str,
-    #                     default="/data/wz/index/index_eab/eab_benefit/tree_model/data/tpcds/tree_tpcds_cost_data_tgt_valid.json")
-    # parser.add_argument("--test_data_load", type=str,
-    #                     default="/data/wz/index/index_eab/eab_benefit/tree_model/data/tpcds/tree_tpcds_cost_data_tgt_test.json")
-    #
-    # parser.add_argument("--model_load", type=str,
-    #                     default="/data/wz/index/index_eab/eab_benefit/tree_model/cost_exp_res/exp_xgb_tpcds_tgt_round5k/model/reg_xgb_cost.xgb.model")
-    # parser.add_argument("--scale_load", type=str,
-    #                     default="/data/wz/index/index_eab/eab_benefit/tree_model/cost_exp_res/exp_xgb_tpcds_tgt_round5k/data/train_scale_data.pt")
-
-    # 3. job
-    # parser.add_argument("--train_data_load", type=str,
-    #                     default="/data/wz/index/index_eab/eab_benefit/tree_model/data/job/tree_job_cost_data_tgt_train.json")
-    # parser.add_argument("--valid_data_load", type=str,
-    #                     default="/data/wz/index/index_eab/eab_benefit/tree_model/data/job/tree_job_cost_data_tgt_valid.json")
-    # parser.add_argument("--test_data_load", type=str,
-    #                     default="/data/wz/index/index_eab/eab_benefit/tree_model/data/job/tree_job_cost_data_tgt_test.json")
-
-    # parser.add_argument("--model_load", type=str,
-    #                     default="/data/wz/index/index_eab/eab_benefit/tree_model/cost_exp_res/exp_xgb_job_tgt_round5k/model/reg_xgb_cost.xgb.model")
-    # parser.add_argument("--scale_load", type=str,
-    #                     default="/data/wz/index/index_eab/eab_benefit/tree_model/cost_exp_res/exp_xgb_job_tgt_round5k/data/train_scale_data.pt")
-
+    
     parser.add_argument("--data_save", type=str,
                         default="./cost_exp_res/{}/data/{}_data.pt")
 
@@ -75,14 +44,14 @@ def get_parser():
     parser.add_argument("--model_save_dir", type=str,
                         default="./cost_exp_res/{}/model/{}")
 
-    # todo: 1. common setting.
+    # : 1. common setting.
     parser.add_argument("--seed", type=int, default=666)
     parser.add_argument("--logdir", type=str,
                         default="./cost_exp_res/{}/logdir/")
     parser.add_argument("--runlog", type=str,
                         default="./cost_exp_res/{}/exp_runtime.log")
 
-    # todo: hyper parameter.
+    # : hyper parameter.
     parser.add_argument("--num_round", type=int, default=5000)
 
     return parser

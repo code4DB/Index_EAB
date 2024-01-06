@@ -22,21 +22,12 @@ def get_parser():
     parser.add_argument("--exp_conf_file", type=str,
                         default="/data/wz/index/index_eab/eab_data/heu_run_conf/{}_config_tpch.json")
 
-    # parser.add_argument("--constraint", type=str, default="number",
-    #                     choices=["storage", "number"])
-    # parser.add_argument("--budget_MB", type=int, default=500)
-    # parser.add_argument("--max_indexes", type=int, default=5)
-
     parser.add_argument("--constraint", type=str, default="storage",
                         choices=["storage", "number"])
     parser.add_argument("--budget_MB", type=int, default=500)
-    # parser.add_argument("--max_indexes", type=int, default=5)
+    parser.add_argument("--max_indexes", type=int, default=5)
 
     parser.add_argument("--max_index_width", type=int, default=None)
-
-    # parser.add_argument("--constraint", type=str, default=None)
-    # parser.add_argument("--budget_MB", type=int, default=None)
-    # parser.add_argument("--max_indexes", type=int, default=None)
 
     parser.add_argument("--process", action="store_true")
     parser.add_argument("--overhead", action="store_true")
@@ -46,6 +37,9 @@ def get_parser():
                         choices=["permutation", "dqn_rule", "openGauss"])
     parser.add_argument("--is_utilized", action="store_true")  # , default=True
     parser.add_argument("--multi_column", action="store_true")  # , default=True
+
+    parser.add_argument("--est_model", type=str, default="optimizer",
+                        choices=["optimizer", "tree", "lib", "queryformer"])
 
     parser.add_argument("--sel_oracle", type=str, default=None,
                         choices=["cost_per_sto", "cost_pure", "benefit_per_sto", "benefit_pure"])
@@ -60,7 +54,7 @@ def get_parser():
 
     parser.add_argument("--res_save", type=str)  # , required=True
 
-    # todo(1211): newly added. for `cophy`
+    # (1211): newly added. for `cophy`
     parser.add_argument("--ampl_solver", type=str, default="highs")
     parser.add_argument("--ampl_bin_path", type=str,
                         default="/data1/wz/ampl.linux-intel64")
@@ -75,12 +69,6 @@ def get_parser():
     parser.add_argument("--port", type=str, default=None)
     parser.add_argument("--user", type=str, default=None)
     parser.add_argument("--password", type=str, default=None)
-
-    # parser.add_argument("--host", type=str, default="10.26.42.166")
-    # parser.add_argument("--db_name", type=str, default="dsb_1gb103")
-    # parser.add_argument("--port", type=str, default="5432")
-    # parser.add_argument("--user", type=str, default="wz")
-    # parser.add_argument("--password", type=str, default="ai4db2021")
 
     return parser
 
@@ -207,7 +195,7 @@ def read_row_query(sql_list, exp_conf, columns, type="template",
                 and query_id + 1 not in exp_conf["queries"]:
             continue
 
-        # todo(0824): newly modified.
+        # (0824): newly modified.
         if isinstance(query_text, list):
             if varying_frequencies:
                 freq = query_text[-1]
@@ -235,7 +223,7 @@ def read_row_query(sql_list, exp_conf, columns, type="template",
                 else:
                     # if column.name in query.text and column.table.name in query.text:
                     # if " " + column.name + " " in query.text and column.table.name in query.text:
-                    # todo(0329): newly modified. for JOB,
+                    # (0329): newly modified. for JOB,
                     #  SELECT COUNT(*), too many candidates.
                     if "." in query.text.lower().split("from")[0] or \
                             ("where" in query.text.lower() and (
@@ -249,13 +237,13 @@ def read_row_query(sql_list, exp_conf, columns, type="template",
                                     or f"({job_table_alias[tbl]}.{col}" in query.text.lower():
                                 query.columns.append(column)
                     # else:
-                    #     # todo(0408): newly added. check?
+                    #     # (0408): newly added. check?
                     #     # if column.name in query.text:
                     #     if column.name in query.text.lower() and \
                     #             f"{column.table.name}" in query.text.lower():
                     #         query.columns.append(column)
 
-                # todo(0408): newly added. check? (different table, same column name)
+                # (0408): newly added. check? (different table, same column name)
                 # if column.name in query.text.lower() and \
                 #         column.table.name in query.text.lower():
                 #     query.columns.append(column)
@@ -285,7 +273,7 @@ def read_row_query_new(sql_list, columns):
                 else:
                     # if column.name in query.text and column.table.name in query.text:
                     # if " " + column.name + " " in query.text and column.table.name in query.text:
-                    # todo(0329): newly modified. for JOB,
+                    # (0329): newly modified. for JOB,
                     #  SELECT COUNT(*), too many candidates.
                     if "." in query.text.lower().split("from")[0] or \
                             ("where" in query.text.lower() and (
@@ -299,13 +287,13 @@ def read_row_query_new(sql_list, columns):
                                     or f"({job_table_alias[tbl]}.{col}" in query.text.lower():
                                 query.columns.append(column)
                     # else:
-                    #     # todo(0408): newly added. check?
+                    #     # (0408): newly added. check?
                     #     # if column.name in query.text:
                     #     if column.name in query.text.lower() and \
                     #             f"{column.table.name}" in query.text.lower():
                     #         query.columns.append(column)
 
-                # todo(0408): newly added. check? (different table, same column name)
+                # (0408): newly added. check? (different table, same column name)
                 # if column.name in query.text.lower() and \
                 #         column.table.name in query.text.lower():
                 #     query.columns.append(column)
@@ -340,7 +328,7 @@ def s_to_ms(s):
 # --- Index selection utilities ---
 def indexes_by_table(indexes):
     indexes_by_table = dict()
-    # todo(0804): newly added. for reproduction.
+    # (0804): newly added. for reproduction.
     for index in sorted(list(indexes)):
         table = index.table()
         if table not in indexes_by_table:
@@ -366,7 +354,7 @@ def get_utilized_indexes(
             cost_without_indexes = cost_evaluation.calculate_cost(
                 Workload([query]), indexes=[]
             )
-            # todo: cost_with_indexes > cost_without_indexes, continue.
+            # : cost_with_indexes > cost_without_indexes, continue.
             query_details[query] = {
                 "cost_without_indexes": cost_without_indexes,
                 "cost_with_indexes": cost_with_indexes,

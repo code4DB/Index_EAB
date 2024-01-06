@@ -4,7 +4,7 @@ from .index import Index
 class Workload:
     def __init__(self, queries, description=""):
         self.queries = queries
-        self.budget = None  # todo: ?
+        self.budget = None  # : ?
         self.description = description
 
     def indexable_columns(self, return_sorted=True):
@@ -44,7 +44,7 @@ class Column:
 
     def __repr__(self):
         # return f"C {self.table}.{self.name}"
-        # todo(0821): newly modified.
+        # (0821): newly modified.
         return f"{self.table}.{self.name}"
 
     # We cannot check self.table == other.table here since Table.__eq__()

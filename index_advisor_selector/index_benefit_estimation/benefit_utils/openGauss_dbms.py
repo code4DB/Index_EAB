@@ -38,7 +38,7 @@ class openGaussDatabaseConnector(DatabaseConnector):
 
         self.create_connection()
 
-        # todo(1006): newly added.
+        # (1006): newly added.
         self.enable_simulation()
 
         # Set the random seed to obtain deterministic statistics
@@ -66,7 +66,7 @@ class openGaussDatabaseConnector(DatabaseConnector):
         self.exec_only(f"SELECT setseed({value})")
 
     def enable_simulation(self):
-        # todo(1006): newly modified.
+        # (1006): newly modified.
         # self.exec_only("create extension hypopg")
         self.exec_only("set enable_hypo_index = on;")
         self.commit()
@@ -80,7 +80,7 @@ class openGaussDatabaseConnector(DatabaseConnector):
         text = text.replace(";\nlimit ", " limit ").replace("limit -1", "")
         text = re.sub(r" ([0-9]+) days\)", r" interval '\1 days')", text)
 
-        # todo(0802): newly added.
+        # (0802): newly added.
         text = re.sub(r" \(([0-9]+)\)\n", " ", text)
         if "grouping(i_category)+grouping(i_class) as lochierarchy" in text:
             text = text.replace("case when lochierarchy", "case when grouping(i_category)+grouping(i_class)")
@@ -147,7 +147,7 @@ class openGaussDatabaseConnector(DatabaseConnector):
         logging.info("openGauss: Run `analyze`")
         self.commit()
         self._connection.autocommit = True
-        # todo: blocked?
+        # : blocked?
         # self.exec_only("analyze")
         self._connection.autocommit = self.autocommit
 
@@ -164,7 +164,7 @@ class openGaussDatabaseConnector(DatabaseConnector):
             f"({index.joined_column_names()})')"
         )
 
-        # todo(0415): newly added. for column_name = keyword
+        # (0415): newly added. for column_name = keyword
         if "group" in statement:
             statement = statement.replace("(group)", "(\"group\")")
             statement = statement.replace("(group,", "(\"group\",")
@@ -257,7 +257,7 @@ class openGaussDatabaseConnector(DatabaseConnector):
         indexes = self.exec_fetch(stmt, one=False)
         for index in indexes:
             index_name = index[0]
-            # todo(0408): newly added for real.
+            # (0408): newly added for real.
             if "_pkey" not in index_name and "primary" not in index_name:
                 drop_stmt = "drop index {}".format(index_name)
                 logging.debug("Dropping index {}".format(index_name))

@@ -244,7 +244,7 @@ class QueryFormer(nn.Module):
         t = self.super_token_virtual_distance.weight.view(1, self.head_size, 1)
         tree_attn_bias[:, :, 1:, 0] = tree_attn_bias[:, :, 1:, 0] + t
         tree_attn_bias[:, :, 0, :] = tree_attn_bias[:, :, 0, :] + t
-        # todo: ?zw: tree_attn_bias[:, :, 0, 1:] = tree_attn_bias[:, :, 0, 1:] + t
+        # : ?zw: tree_attn_bias[:, :, 0, 1:] = tree_attn_bias[:, :, 0, 1:] + t
 
         # zw: torch.Size([30720, 1165])
         x_view = x.view(-1, x.shape[-1])  # zw: modify, 1165 -> x.shape[-1]
@@ -291,7 +291,7 @@ class QueryFormer(nn.Module):
         t = self.super_token_virtual_distance.weight.view(1, self.head_size, 1)
         tree_attn_bias[:, :, 1:, 0] = tree_attn_bias[:, :, 1:, 0] + t
         tree_attn_bias[:, :, 0, :] = tree_attn_bias[:, :, 0, :] + t
-        # todo: ?zw: tree_attn_bias[:, :, 0, 1:] = tree_attn_bias[:, :, 0, 1:] + t
+        # : ?zw: tree_attn_bias[:, :, 0, 1:] = tree_attn_bias[:, :, 0, 1:] + t
 
         # zw: torch.Size([30720, 1165])
         x_view = x.view(-1, x.shape[-1])  # zw: modify, 1165 -> x.shape[-1]

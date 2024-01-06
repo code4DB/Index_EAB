@@ -175,7 +175,7 @@ class FeedForwardPolicy(DQNPolicy):
             actions = np.argmax(q_values, axis=1)
         else:
             # Unefficient sampling
-            # TODO: replace the loop
+            # : replace the loop
             # maybe with Gumbel-max trick ? (http://amid.fish/humble-gumbel)
             actions = np.zeros((len(obs),), dtype=np.int64)
             for action_idx in range(len(obs)):

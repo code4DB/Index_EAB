@@ -118,7 +118,7 @@ class KfacOptimizer:
                     factors.append(_search_factors(grad, graph))
                 op_names = [_item['opName'] for _item in factors]
                 if self.verbose > 1:
-                    # TODO: need to check all the attribute of the ops as well
+                    # : need to check all the attribute of the ops as well
                     print(gradient.name)
                     print(op_names)
                     print(len(np.unique(op_names)))
@@ -175,7 +175,7 @@ class KfacOptimizer:
 
         # check associated weights and bias for homogeneous coordinate representation
         # and check redundent factors
-        # TODO: there may be a bug to detect associate bias and weights for forking layer, e.g. in inception models.
+        # : there may be a bug to detect associate bias and weights for forking layer, e.g. in inception models.
         for param in varlist:
             factor_tensors[param]['assnWeights'] = None
             factor_tensors[param]['assnBias'] = None
@@ -608,7 +608,7 @@ class KfacOptimizer:
 
         :return: ([TensorFlow Tensor]) update operations
         """
-        # TODO: figure out why this op has delays (possibly moving eigenvectors around?)
+        # : figure out why this op has delays (possibly moving eigenvectors around?)
         with tf.device('/cpu:0'):
             stats_eigen = self.stats_eigen
             computed_eigen = {}
@@ -712,7 +712,7 @@ class KfacOptimizer:
 
                 if (self.stats[var]['assnBias'] is not None) and not self._blockdiag_bias:
                     # use homogeneous coordinates only works for 2D grad.
-                    # TODO: figure out how to factorize bias grad
+                    # : figure out how to factorize bias grad
                     # stack bias grad
                     var_assn_bias = self.stats[var]['assnBias']
                     grad = tf.concat(
@@ -797,7 +797,7 @@ class KfacOptimizer:
 
                 if (self.stats[var]['assnBias'] is not None) and not self._blockdiag_bias:
                     # use homogeneous coordinates only works for 2D grad.
-                    # TODO: figure out how to factorize bias grad
+                    # : figure out how to factorize bias grad
                     # un-stack bias grad
                     var_assn_bias = self.stats[var]['assnBias']
                     c_plus_one = int(grad.get_shape()[0])

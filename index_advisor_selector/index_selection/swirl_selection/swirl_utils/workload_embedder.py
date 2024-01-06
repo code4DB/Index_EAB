@@ -43,7 +43,7 @@ class WorkloadEmbedder(object):
                            "in"]
         self.INDEXES_SIMULATED_IN_PARALLEL = 1000
 
-        # todo(0805): newly added. for embedding overhead reduction.
+        # (0805): newly added. for embedding overhead reduction.
         self.MAX_TEMP_NUM = 500
 
         self.SEED = 666
@@ -61,7 +61,7 @@ class WorkloadEmbedder(object):
             self.plans = ([], [])
             # [query plan `without` indexes]
             for query_idx, query_texts_per_query_class in enumerate(query_texts):
-                # todo(0820): newly modified. list -> str, sample
+                # (0820): newly modified. list -> str, sample
                 # query_text = query_texts_per_query_class[0]
                 query_text = self.rnd.sample(query_texts_per_query_class, 1)[0]
                 query = Query(query_idx, query_text)
@@ -70,7 +70,7 @@ class WorkloadEmbedder(object):
                 self.plans[0].append(plan)
             # [query plan `with` indexes]
             for n, n_column_combinations in enumerate(self.globally_index_candidates):
-                # todo(1005): to be removed.
+                # (1005): to be removed.
                 if n + 1 > 3:
                     continue
 
@@ -79,7 +79,7 @@ class WorkloadEmbedder(object):
                 num_created_indexes = 0
                 while num_created_indexes < len(n_column_combinations):
                     potential_indexes = []
-                    # todo: INDEXES_SIMULATED_IN_PARALLEL, at most 1000 indexes created one time?
+                    # : INDEXES_SIMULATED_IN_PARALLEL, at most 1000 indexes created one time?
                     # single-column: 40, 2-column: 336, 3-column: 1000, 2000, 3000.
                     for i in range(self.INDEXES_SIMULATED_IN_PARALLEL):
                         potential_index = Index(n_column_combinations[num_created_indexes])
@@ -89,7 +89,7 @@ class WorkloadEmbedder(object):
                         if num_created_indexes == len(n_column_combinations):
                             break
 
-                    # todo(0805): newly added. for embedding overhead reduction.
+                    # (0805): newly added. for embedding overhead reduction.
                     query_texts_temp = query_texts
                     # if len(query_texts_temp) > self.MAX_TEMP_NUM:
                     #     query_texts_temp = self.rnd.sample(query_texts, self.MAX_TEMP_NUM)
@@ -106,7 +106,7 @@ class WorkloadEmbedder(object):
 
                     logging.critical(f"Finished checking {num_created_indexes} indexes of width {n + 1}.")
 
-        # todo: self.database_connector.close()?
+        # : self.database_connector.close()?
         self.database_connector = None
 
     def get_embeddings(self, workload):
@@ -275,7 +275,7 @@ class PlanEmbedder(WorkloadEmbedder):
         self.relevant_operators = []
         self.relevant_operators_wo_indexes = []
         self.relevant_operators_with_indexes = []
-        # todo: key in the dictionary?
+        # : key in the dictionary?
         self.boo_creator = BagOfOperators()
 
         # node['Node Type']_attribute(Sort Key/Filter)_element/columns
@@ -411,7 +411,7 @@ class PlanEmbedderBOW(PlanEmbedder):
         return self._to_full_bow(bow)
 
 
-# todo: By default.
+# : By default.
 class PlanEmbedderLSIBOW(PlanEmbedder):
     def __init__(self, query_texts, representation_size, database_connector, globally_index_candidates,
                  without_indexes=False):

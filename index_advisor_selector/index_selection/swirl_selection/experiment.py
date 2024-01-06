@@ -28,33 +28,33 @@ class Experiment(object):
         self.args = args
         self.id = args.exp_id
 
-        # todo(0823): newly added.
+        # (0823): newly added.
         if "seed" not in self.args:
             self.args.seed = 60
 
-        # todo(0418): newly added.
+        # (0418): newly added.
         # a) workload configurations.
         if "work_num" not in self.args:
             self.args.work_num = -1
-        # todo(0822): newly added.
+        # (0822): newly added.
         if "temp_num" not in self.args:
             self.args.temp_num = None
-        # todo(0821): newly added.
+        # (0821): newly added.
         if "class_num" not in self.args:
             self.args.class_num = -1
         if "work_size" not in self.args:
             self.args.work_size = 1
         if "work_gen" not in self.args:
             self.args.work_gen = "random"
-        # todo(0825): newly added.
+        # (0825): newly added.
         if "is_query_cache" not in self.args:
             self.args.is_query_cache = False
         if "filter_workload_cols" not in self.args:
             self.args.filter_workload_cols = False
-        # todo(0820): newly added.
+        # (0820): newly added.
         if "filter_utilized_columns" not in self.args:
             self.args.filter_utilized_columns = False
-        # todo(0822): newly added.
+        # (0822): newly added.
         if "training_instances" not in self.args:
             self.args.training_instances = None
         if "validation_testing_instances" not in self.args:
@@ -76,11 +76,11 @@ class Experiment(object):
         cp = ConfigurationParser(args.exp_conf_file)
         self.exp_config = cp.config
 
-        # todo(0823): newly added.
+        # (0823): newly added.
         if self.args.seed is not None:
             self.exp_config["random_seed"] = self.args.seed
 
-        # todo(0805): newly added. for `constraint`.
+        # (0805): newly added. for `constraint`.
         # c) constraint configurations.
         if "constraint" not in self.exp_config:
             if self.args.algo == "swirl":
@@ -91,7 +91,7 @@ class Experiment(object):
         if args.constraint is not None:
             self.exp_config["constraint"] = args.constraint
 
-        # todo(0822): newly added.
+        # (0822): newly added.
         if args.training_instances is not None:
             self.exp_config["workload"]["training_instances"] = args.training_instances
         if args.validation_testing_instances is not None:
@@ -127,7 +127,7 @@ class Experiment(object):
         self.globally_index_candidates_flat = None
         self.action_storage_consumptions = None
 
-        self.number_of_features = None  # todo: 66? 96=50+1+1+4+40
+        self.number_of_features = None  # : 66? 96=50+1+1+4+40
         self.number_of_actions = None  # 3376: 40+336+3000
 
         # 4) Create the folder to store the experiment `exp_res`.
@@ -136,7 +136,7 @@ class Experiment(object):
         log_file = args.log_file.format(args.exp_id)
         swirl_com.set_logger(log_file)
 
-        # todo(0918): newly added.
+        # (0918): newly added.
         if "max_index_width" in self.args and self.args.max_index_width is not None:
             self.exp_config["max_index_width"] = self.args.max_index_width
         if "action_manager" in self.args and self.args.action_manager is not None:
@@ -222,7 +222,7 @@ class Experiment(object):
         # {lineitem.l_linenumber, partsupp.ps_comment, part.p_comment,
         # part.p_retailprice, part.p_mfgr, lineitem.l_comment, orders.o_clerk}
 
-        # todo(0418): newly added. for multiple-query workload.
+        # (0418): newly added. for multiple-query workload.
         self.exp_config["workload"]["size"] = self.args.work_size
         self.exp_config["workload"]["varying_frequencies"] = self.args.varying_frequencies
         self.workload_generator = WorkloadGenerator(work_config=self.exp_config["workload"],
@@ -235,15 +235,15 @@ class Experiment(object):
                                                     schema_columns=self.schema.columns,
                                                     random_seed=self.exp_config["random_seed"],
                                                     experiment_id=self.id,
-                                                    # todo(0825): newly added.
+                                                    # (0825): newly added.
                                                     is_query_cache=self.args.is_query_cache,
                                                     is_filter_workload_cols=self.args.filter_workload_cols,
-                                                    # todo(0820): newly modified.
+                                                    # (0820): newly modified.
                                                     is_filter_utilized_cols=self.args.filter_utilized_columns)
         logging.info(f"Load the workload ({self.args.work_num}, {self.args.work_gen}) from `{self.args.work_file}`.")
 
         # randomly assign budget to each workload.
-        # todo: newly added. specify the `storage` budget from the argument.
+        # : newly added. specify the `storage` budget from the argument.
         if self.args.max_budgets is not None:
             self.exp_config["budgets"]["validation_and_testing"] = [int(self.args.max_budgets)]
         self._assign_budgets_to_workloads()
@@ -254,10 +254,10 @@ class Experiment(object):
         # indexable columns appears in the workload.
         globally_indexable_columns = self.workload_generator.globally_indexable_columns
 
-        # todo(0918): newly modified.
+        # (0918): newly modified.
         if self.args.cand_gen is None:
             # [[single-column indexes]: 40, [2-column combinations]: 336, [3-column combinations]: 3000...]
-            # todo(0822): newly modified.
+            # (0822): newly modified.
             if self.args.algo == "dqn":
                 if self.args.temp_expand:
                     temp_load = self.args.temp_load
@@ -279,7 +279,7 @@ class Experiment(object):
                                                                                               globally_indexable_columns)
 
                 # self.single_column_flat_set = set(map(lambda x: x[0], globally_indexable_columns))
-                # todo(0327): newly added. the max-width constraint.
+                # (0327): newly added. the max-width constraint.
                 self.globally_index_candidates = self.globally_index_candidates[:self.exp_config["max_index_width"]]
                 logging.info(
                     f"DQN: Generate the promising index candidates based on the query from `{self.args.temp_load}`.")
@@ -317,7 +317,7 @@ class Experiment(object):
                                                                                            temp_load,
                                                                                            globally_indexable_columns)
 
-            # todo(0919): newly added.
+            # (0919): newly added.
             self.globally_index_candidates[0] = sorted([(column, ) for column in globally_indexable_columns])
             self.globally_index_candidates = self.globally_index_candidates[:self.exp_config["max_index_width"]]
             logging.info(
@@ -329,7 +329,7 @@ class Experiment(object):
         self.globally_index_candidates_flat = [item for sublist in self.globally_index_candidates for item in sublist]
         logging.info(f"Feeding {len(self.globally_index_candidates_flat)} candidates into the environments.")
 
-        # todo(0820): newly added. `args.algo`
+        # (0820): newly added. `args.algo`
         if self.args.algo != "swirl" or "NonMasking" in self.exp_config["action_manager"]:
             self.action_storage_consumptions = swirl_com.predict_index_sizes(
                 self.globally_index_candidates_flat, self.schema.db_config, is_precond=False)
@@ -345,7 +345,7 @@ class Experiment(object):
                 self.exp_config["workload_embedder"]["type"])
             workload_embedder_connector = PostgresDatabaseConnector(self.schema.db_config, autocommit=True)
 
-            # todo: newly added, more SQL texts input for large LSI corpus.
+            # : newly added, more SQL texts input for large LSI corpus.
             query_texts = self.workload_generator.query_texts
             if self.args.temp_expand:
                 if self.args.temp_load.endswith(".json"):
@@ -362,7 +362,7 @@ class Experiment(object):
                                 query_texts.append([token["sql"]])
                         elif isinstance(token, list):
                             for item in token:
-                                # todo(0822): newly modified.
+                                # (0822): newly modified.
                                 if isinstance(item[0], list):
                                     for it in item:
                                         query_texts.append([it[1]])
@@ -371,14 +371,14 @@ class Experiment(object):
                                 elif isinstance(item, str):
                                     query_texts.append([item])
 
-                # todo(0817): newly added.
+                # (0817): newly added.
                 elif self.args.temp_load.endswith(".sql"):
                     with open(self.args.temp_load, "r") as rf:
                         sql_list = rf.readlines()
                     for sql in sql_list:
                         query_texts.append([sql])
 
-                # todo(0820): remove the duplicate classes.
+                # (0820): remove the duplicate classes.
                 qno, query_list = list(), list()
                 for no, queries in enumerate(query_texts):
                     query = self.rnd.sample(queries, 1)[0].strip("\n").strip(" ")
@@ -387,10 +387,10 @@ class Experiment(object):
                         qno.append(no)
                 query_texts = [texts for i, texts in enumerate(query_texts) if i in qno]
 
-                # todo(0820): newly added. class num.
+                # (0820): newly added. class num.
                 logging.info(f"Expand the templates of the query ({len(query_texts)}) from `{self.args.temp_load}`.")
 
-            # todo(0821): newly added.
+            # (0821): newly added.
             if self.args.class_num != -1:
                 query_texts = self.rnd.sample(query_texts, self.args.class_num)
             logging.info(f"The number of the query class for the workload embedder is {len(query_texts)}.")
@@ -409,7 +409,7 @@ class Experiment(object):
         # plan = workload_embedder_connector.get_plan(Q(query))
         # self.workload_embedder.get_embeddings(plan)
 
-        # todo: multi_validation, useless?
+        # : multi_validation, useless?
         if len(self.workload_generator.wl_validation) > 1:
             for workloads in self.workload_generator.wl_validation:
                 self.multi_validation_wl.extend(self.rnd.sample(workloads, min(7, len(workloads))))
@@ -419,7 +419,7 @@ class Experiment(object):
         Randomly assign the budgets to the `validation_and_testing` workloads.
         :return:
         """
-        # todo: not add budget to training workload?
+        # : not add budget to training workload?
         for workload in self.workload_generator.wl_training:
             workload.budget = self.rnd.choice(self.exp_config["budgets"]["validation_and_testing"])
 
@@ -469,7 +469,7 @@ class Experiment(object):
                 max_index_width=self.exp_config["max_index_width"],
                 max_index_num=self.exp_config["max_indexes"],
                 reenable_indexes=self.exp_config["reenable_indexes"],
-                # todo(0819): newly added.
+                # (0819): newly added.
                 constraint=self.exp_config["constraint"]
             )
             if self.number_of_actions is None:
@@ -505,10 +505,10 @@ class Experiment(object):
             if environment_type == EnvironmentType.TRAINING:
                 workloads = self.workload_generator.wl_training if workloads_in is None else workloads_in
             elif environment_type == EnvironmentType.TESTING:
-                # todo: Selecting the hardest workload by default?
+                # : Selecting the hardest workload by default?
                 workloads = self.workload_generator.wl_testing[-1] if workloads_in is None else workloads_in
             elif environment_type == EnvironmentType.VALIDATION:
-                # todo: Selecting the hardest workload by default?
+                # : Selecting the hardest workload by default?
                 workloads = self.workload_generator.wl_validation[-1] if workloads_in is None else workloads_in
             else:
                 raise ValueError
@@ -544,7 +544,7 @@ class Experiment(object):
     def set_model(self, model):
         self.model = model
 
-    # todo: code duplication with validate_model
+    # : code duplication with validate_model
     def test_model(self, model):
         model_performances = list()
         for test_wl in self.workload_generator.wl_testing:
@@ -586,7 +586,7 @@ class Experiment(object):
         return model_performances, "validation"
 
     def _evaluate_model(self, model, evaluation_env, n_eval_episodes):
-        # todo: ?
+        # : ?
         training_env = model.get_vec_normalize_env()
         self.sync_envs_normalization(training_env, evaluation_env)
 
@@ -668,7 +668,7 @@ class Experiment(object):
             with gzip.open(f"{self.experiment_folder_path}/caches.pickle.gzip", "wb") as handle:
                 pickle.dump(combined_caches, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-            # todo(0825): newly added.
+            # (0825): newly added.
             cost_requests = training_env.venv.envs[0].env.env.env.cost_evaluation.cost_requests
             cache_hits = training_env.venv.envs[0].env.env.env.cost_evaluation.cache_hits
 
@@ -714,7 +714,7 @@ class Experiment(object):
         self.moving_average_model.training = False
         self.test_ma = self.test_model(self.moving_average_model)[0]
         self.vali_ma = self.validate_model(self.moving_average_model)[0]
-        # todo: useless?
+        # : useless?
         if len(self.multi_validation_wl) > 0:
             self.moving_average_model_mv = self.model_type.load(
                 f"{self.experiment_folder_path}/moving_average_model_mv.zip"
@@ -723,12 +723,12 @@ class Experiment(object):
             self.test_ma_mv = self.test_model(self.moving_average_model_mv)[0]
             self.vali_ma_mv = self.validate_model(self.moving_average_model_mv)[0]
 
-        # todo: ?
+        # : ?
         self.moving_average_model_3 = self.model_type.load(f"{self.experiment_folder_path}/moving_average_model_3.zip")
         self.moving_average_model_3.training = False
         self.test_ma_3 = self.test_model(self.moving_average_model_3)[0]
         self.vali_ma_3 = self.validate_model(self.moving_average_model_3)[0]
-        # todo: useless?
+        # : useless?
         if len(self.multi_validation_wl) > 0:
             self.moving_average_model_3_mv = self.model_type.load(
                 f"{self.experiment_folder_path}/moving_average_model_3_mv.zip"
@@ -742,7 +742,7 @@ class Experiment(object):
         self.best_mean_reward_model.training = False
         self.test_bm = self.test_model(self.best_mean_reward_model)[0]
         self.vali_bm = self.validate_model(self.best_mean_reward_model)[0]
-        # todo: useless?
+        # : useless?
         if len(self.multi_validation_wl) > 0:
             self.best_mean_reward_model_mv = self.model_type.load(
                 f"{self.experiment_folder_path}/best_mean_reward_model_mv.zip"

@@ -49,7 +49,7 @@ def print_qerror(preds_unnorm, labels_unnorm, prints=False):
 def get_corr(ps, ls):  # unnormalised
     ps = np.array(ps)
     ls = np.array(ls)
-    corr, _ = pearsonr(np.log(ps), np.log(ls))  # todo: why unnormalised?
+    corr, _ = pearsonr(np.log(ps), np.log(ls))  # : why unnormalised?
 
     return corr
 
@@ -170,7 +170,7 @@ def evaluate(model, ds, bs, norm, device, prints=False):
 
 
 def logging_func(args, epoch, qscores, filename=None, save_model=False, model=None):
-    # todo(1004): newly modified.
+    # (1004): newly modified.
     arg_keys = [attr for attr in dir(args) if not attr.startswith('__') and not attr.startswith('_')]
     arg_vals = [getattr(args, attr) for attr in arg_keys]
 

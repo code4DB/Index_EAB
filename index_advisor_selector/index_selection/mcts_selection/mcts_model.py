@@ -23,7 +23,7 @@ from index_advisor_selector.index_selection.mcts_selection.mcts_utils.mcts_workl
 # Larger scalar will increase exploration, smaller will increase exploitation.
 LAMBDA = math.sqrt(2.0)
 
-# todo(1125):
+# (1125):
 sel_oracle = None  # None, benefit_per_sto
 
 
@@ -32,7 +32,7 @@ class State:
         self.current_index = current_index
         self.potential_index = potential_index
 
-        # todo(0805): newly added. for `storage`.
+        # (0805): newly added. for `storage`.
         self.constraint = constraint
         self.cardinality = cardinality
         self.storage = storage
@@ -48,7 +48,7 @@ class State:
             next_index = [random.choice(self.potential_index)]
             potential_index = sorted(list(set(self.potential_index) - set(self.current_index + next_index)))
 
-            # todo(0806): newly added. for `storage`.
+            # (0806): newly added. for `storage`.
             if self.constraint == "storage":
                 potential_index_filter = list()
                 for index in potential_index:
@@ -63,7 +63,7 @@ class State:
         return next_state
 
     def is_terminal(self):
-        # todo(0806): newly added. for `storage`.
+        # (0806): newly added. for `storage`.
         if self.constraint == "number":
             if len(self.current_index) == self.cardinality:
                 return True
@@ -77,7 +77,7 @@ class State:
 
     def get_reward(self, ind_cost, no_cost):
         if no_cost == 0:
-            reward = 0  # todo: -1?
+            reward = 0  # : -1?
         else:
             reward = 1.0 - (ind_cost / no_cost)
             if sel_oracle == "benefit_per_sto":
@@ -137,7 +137,7 @@ class MCTS:
         self.pg_utils = pg_utils
         self.cost_evaluation = cost_evaluation
 
-        # todo(1018): newly added.
+        # (1018): newly added.
         self.min_budget = args.min_budget
         self.early_stopping = args.early_stopping
 
@@ -151,12 +151,12 @@ class MCTS:
         self.best_conf = list()
         self.best_reward = 0.0
 
-        # todo: newly added. for process visualization.
+        # : newly added. for process visualization.
         self.process = process
         self.step = {"selected": list()}
         self.layer = 0
 
-        # todo(0818): newly added.
+        # (0818): newly added.
         self.is_trace = args.is_trace
         self.index_trace = list()
         self.measure = {"Workload Cost": list(), "Reward": list()}
@@ -170,7 +170,7 @@ class MCTS:
             # 3. update: the node utility and frequency backward.
             self.back_update(front, reward)
 
-            # todo(0818): newly added.
+            # (0818): newly added.
             if self.is_trace:
                 index, best_reward = self.extract_best(root, is_final=False)
                 self.index_trace.append(index)

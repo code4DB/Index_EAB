@@ -14,7 +14,7 @@ class PlanTreeDataset(Dataset):
         self.encoding = encoding
         self.hist_file = hist_file
 
-        # todo(1006): newly added.
+        # (1006): newly added.
         self.alias2tbl = alias2tbl
 
         self.length = len(json_df)
@@ -24,12 +24,12 @@ class PlanTreeDataset(Dataset):
         # nodes = [json.loads(plan)['Plan'] for plan in json_df['json']]
         nodes = [item["w/ plan"] for item in json_df]
 
-        # todo(1005): newly modified.
+        # (1005): newly modified.
         # self.cards = [node['Actual Rows'] for node in nodes]
         # self.costs = [json.loads(plan)['Execution Time'] for plan in json_df['json']]
         self.costs = [item["w/ actual cost"] for item in json_df]
 
-        # todo(1005): newly modified.
+        # (1005): newly modified.
         # self.card_labels = torch.from_numpy(card_norm.normalize_labels(self.cards))
         self.cost_labels = torch.from_numpy(cost_norm.normalize_labels(self.costs))
 
@@ -37,7 +37,7 @@ class PlanTreeDataset(Dataset):
         if to_predict == 'cost':
             self.gts = self.costs
             self.labels = self.cost_labels
-        # todo(1005): newly modified.
+        # (1005): newly modified.
         # elif to_predict == 'card':
         #     self.gts = self.cards
         #     self.labels = self.card_labels
@@ -47,7 +47,7 @@ class PlanTreeDataset(Dataset):
         else:
             raise Exception('Unknown to_predict type')
 
-        # todo(1005): newly modified.
+        # (1005): newly modified.
         idxs = list(range(len(json_df)))
         # idxs = list(json_df['id'])
 
@@ -69,7 +69,7 @@ class PlanTreeDataset(Dataset):
     def __len__(self):
         return self.length
 
-    # todo(1006): newly modified.
+    # (1006): newly modified.
     def __getitem__(self, idx):
         return self.collated_dicts[idx], (self.cost_labels[idx], self.cost_labels[idx])
 
@@ -82,8 +82,8 @@ class PlanTreeDataset(Dataset):
     # pre-process first half of old collator
     def pre_collate(self, the_dict, max_node=30, rel_pos_max=20):
         x = pad_2d_unsqueeze(the_dict['features'], max_node)
-        N = len(the_dict['features'])  # todo: zw: len(the_dict['features']) = the_dict['features'].size()[0]?
-        attn_bias = torch.zeros([N + 1, N + 1], dtype=torch.float)  # todo: zw: 1 for super node?
+        N = len(the_dict['features'])  # : zw: len(the_dict['features']) = the_dict['features'].size()[0]?
+        attn_bias = torch.zeros([N + 1, N + 1], dtype=torch.float)  # : zw: 1 for super node?
 
         edge_index = the_dict['adjacency_list'].t()
         if len(edge_index) == 0:
@@ -217,15 +217,15 @@ def node2feature(node, encoding, hist_file, table_sample,
     # 1, 1, 3x3=9, 3
     type_join = np.array([node.typeId, node.join])
 
-    # TODO: add sample (or so-called table)
+    # : add sample (or so-called table)
     num_filter = len(node.filterDict['colId'])
-    # todo: zw: at most 3 predicates?
-    # todo(1006): newly modified.
+    # : zw: at most 3 predicates?
+    # (1006): newly modified.
     pad = np.zeros((3, max(0, max_pred_num - num_filter)))
     # pad = np.zeros((3, max_pred_num - num_filter))
     filts = np.array(list(node.filterDict.values()))  # cols, ops, vals
     # 3x3 -> 9, get back with reshape 3,3
-    # todo(1006): newly modified. [:, :max_pred_num]
+    # (1006): newly modified. [:, :max_pred_num]
     filts = np.concatenate((filts, pad), axis=1)[:, :max_pred_num].flatten()
 
     # zw: for pred, hist embedding(average non-mask ones)
@@ -233,20 +233,20 @@ def node2feature(node, encoding, hist_file, table_sample,
     mask[:num_filter] = 1
 
     # zw: (3*50, )
-    # todo(1006): newly modified.
+    # (1006): newly modified.
     if hist_file is not None:
         hists = filterDict2Hist(hist_file, node.filterDict, encoding)
 
     # table, bitmap, 1 + 1000 bits
     table = np.array([node.table_id])
-    # todo(1006): newly modified.
+    # (1006): newly modified.
     if table_sample is not None:
         if node.table_id == 0:
             sample = np.zeros(sample_num)
         else:
             sample = table_sample[node.query_id][node.table]
 
-    # todo(1006): newly modified.
+    # (1006): newly modified.
     if hist_file is not None and table_sample is not None:
         # return np.concatenate((type_join, filts, mask))
         return np.concatenate((type_join, filts, mask, hists, table, sample))

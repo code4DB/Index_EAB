@@ -26,7 +26,7 @@ def get_parser():
     parser.add_argument("--overhead", action="store_true")
     parser.add_argument("--varying_frequencies", action="store_true")
 
-    # todo(1118): newly added.
+    # (1118): newly added.
     parser.add_argument("--is_utilized", action="store_true")
     parser.add_argument("--cand_gen", default=None)
 
@@ -153,7 +153,7 @@ def pre_work(work_list, schema_file, varying_frequencies=False):
             # # if column.name in query and column.table.name in query:
             # # if " " + column.name + " " in query and column.table.name in query:
             #     columns.append(col)
-            # todo(0329): newly modified. for JOB,
+            # (0329): newly modified. for JOB,
             #  SELECT COUNT(*), too many candidates.
             # if "." in query.lower().split("from")[0] or \
             #         ("where" in query.lower() and ("." in query.lower().split("where")[0] or
@@ -162,7 +162,7 @@ def pre_work(work_list, schema_file, varying_frequencies=False):
             #     if str(column) in query.lower():
             #         columns.append(column)
             # else:
-            #     # todo(0408): newly added. check?
+            #     # (0408): newly added. check?
             #     if column.name in query.lower() and \
             #             f"{column.table.name}" in query.lower():
             #         columns.append(column)
@@ -178,7 +178,7 @@ def pre_work(work_list, schema_file, varying_frequencies=False):
                             f"{column.table.name}" in query.text.lower():
                         query.columns.append(column)
                 else:
-                    # todo(0329): newly modified. for JOB,
+                    # (0329): newly modified. for JOB,
                     #  SELECT COUNT(*), too many candidates.
                     if "." in query.text.lower().split("from")[0] or \
                             ("where" in query.text.lower() and (
@@ -202,7 +202,7 @@ def syntactically_relevant_indexes(workload, max_index_width):
     # This implementation is "BFI" and uses all syntactically relevant indexes.
     possible_column_combinations = set()
 
-    # todo(1118): newly added.
+    # (1118): newly added.
     if not isinstance(workload, list):
         workload = [workload]
 

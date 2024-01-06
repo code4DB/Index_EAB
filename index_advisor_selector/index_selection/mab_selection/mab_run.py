@@ -85,7 +85,7 @@ def get_mab_res(args, workload):
     reload(logging)
 
     # configuring the log
-    # todo(1018): to be removed. (uncommented)
+    # (1018): to be removed. (uncommented)
     # filename = f"{experiment_folder_path}/{args.exp_id}.log"
     # set_logger(filename)
     # logging.getLogger().setLevel(constants.LOGGING_LEVEL)

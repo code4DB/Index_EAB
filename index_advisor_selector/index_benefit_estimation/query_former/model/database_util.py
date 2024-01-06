@@ -261,7 +261,7 @@ def filterDict2Hist(hist_file, filterDict, encoding):
                 break
 
         res = np.zeros(len(bins) - 1)
-        # todo: ?
+        # : ?
         if op == '=':
             res[left:right] = 1
         elif op == '<':
@@ -280,7 +280,7 @@ def formatJoin(json_node):
         join = json_node['Hash Cond']
     elif 'Join Filter' in json_node:
         join = json_node['Join Filter']
-    # TODO: index cond
+    # : index cond
     # elif 'Index Cond' in json_node and not json_node['Index Cond'][-2].isnumeric() and \
     #         not json_node['Index Cond'][-3].isnumeric() and " = " in str(json_node['Index Cond']):
     #     join = json_node['Index Cond']
@@ -297,7 +297,7 @@ def formatJoin(json_node):
         # print(twoCol)
         # print(len(twoCol[0].split('.')) == 1)
 
-        # todo(1006): to be removed.
+        # (1006): to be removed.
         try:
             twoCol = [json_node['Alias'] + '.' + col
                       if len(col.split('.')) == 1 else col for col in twoCol]
@@ -364,9 +364,9 @@ class Encoding:
 
         val_norm = 0.0
         if maxi > mini:
-            # todo(1006): newly modified.
+            # (1006): newly modified.
             # val_norm = (val - mini) / (maxi - mini)
-            # todo(1006): to be removed. try
+            # (1006): to be removed. try
             try:
                 val = val.split("::")[0]
                 val, mini, maxi = float(val), float(mini), float(maxi)
@@ -389,10 +389,10 @@ class Encoding:
         res = {'colId': [], 'opId': [], 'val': []}
         for filt in filters:
             filt = ''.join(c for c in filt if c not in '()')
-            # todo(1006): newly added.
+            # (1006): newly added.
             filt = filt.replace("(", "").replace(")", "")
 
-            # todo: zw: OR? disjunctive predicates, unsupported.
+            # : zw: OR? disjunctive predicates, unsupported.
             fs_temp = filt.split(' AND ')
             fs = list()
             for temp in fs_temp:
@@ -400,7 +400,7 @@ class Encoding:
 
             for f in fs:
                 #           print(filters)
-                # todo(1006): newly added. maxsplit=2
+                # (1006): newly added. maxsplit=2
                 col, op, num = f.split(' ', maxsplit=2)
                 col = col.split("::")[0]
 
@@ -416,7 +416,7 @@ class Encoding:
                         column = col
                 #            print(f)
 
-                # todo(1006): newly added.
+                # (1006): newly added.
                 # sum, min, max, avg
                 if column[:3] in ["sum", "min", "max", "avg"]:
                     column = column[3:]
@@ -424,14 +424,14 @@ class Encoding:
                 if column[:5] in ["count"]:
                     column = column[5:]
 
-                # todo(1006): to be removed. try
+                # (1006): to be removed. try
                 try:
                     if "." not in column:
                         column = f"{alias2tbl[column.split('_')[0]]}.{column}"
 
                     res['colId'].append(self.col2idx[column])
                     res['opId'].append(self.op2idx[op])
-                    # todo(1006): newly modified.
+                    # (1006): newly modified.
                     # res['val'].append(self.normalize_val(column, float(num)))
                     res['val'].append(self.normalize_val(column, num))
                 except:
@@ -446,8 +446,8 @@ class Encoding:
 
     def encode_join(self, join):
         if join is not None:
-            # todo(1006): newly added.
-            # todo(1006): to be removed. try
+            # (1006): newly added.
+            # (1006): to be removed. try
             try:
                 col1, col2 = join.split(" = ")
                 tbl1, name1 = col1.split(".")
@@ -464,7 +464,7 @@ class Encoding:
                 traceback.print_exc()
 
         if join not in self.join2idx:
-            # todo(1007): to be removed.
+            # (1007): to be removed.
             join = None
             # self.join2idx[join] = len(self.join2idx)
             # self.idx2join[self.join2idx[join]] = join
@@ -489,7 +489,7 @@ class Encoding:
         :return:
         """
         if nodeType not in self.type2idx:
-            # todo(1007): to be removed.
+            # (1007): to be removed.
             nodeType = "Result"
             # self.type2idx[nodeType] = len(self.type2idx)
             # self.idx2type[self.type2idx[nodeType]] = nodeType

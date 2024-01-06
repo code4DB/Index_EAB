@@ -320,7 +320,7 @@ def create_query_drop_v3(connection, schema_name, bandit_arm_list, arm_list_to_a
             for index_scan in clustered_index_usage:
                 table_name = index_scan[0]
                 current_clustered_index_scans[table_name] = index_scan[constants.COST_TYPE_CURRENT_EXECUTION]
-                # todo(0801): newly added.
+                # (0801): newly added.
                 table_name = table_name.upper()
                 if len(query.table_scan_times[table_name]) < constants.TABLE_SCAN_TIME_LENGTH:
                     query.table_scan_times[table_name].append(index_scan[constants.COST_TYPE_CURRENT_EXECUTION])
@@ -569,7 +569,7 @@ def hyp_create_query_drop_v2(connection, schema_name, bandit_arm_list, arm_list_
         execute_cost += time
         if clustered_index_usage:
             for index_scan in clustered_index_usage:
-                # todo(0814): newly added.
+                # (0814): newly added.
                 table_name = index_scan[0].upper()
                 if len(query.table_scan_times_hyp[table_name]) < constants.TABLE_SCAN_TIME_LENGTH:
                     query.table_scan_times_hyp[table_name].append(index_scan[constants.COST_TYPE_SUB_TREE_COST])
@@ -578,7 +578,7 @@ def hyp_create_query_drop_v2(connection, schema_name, bandit_arm_list, arm_list_
             for index_use in non_clustered_index_usage:
                 re.findall(r"btree_(.*)", "<666>btree_supplier_suppkey")
                 index_name = index_use[0]
-                # todo(0814): newly added.
+                # (0814): newly added.
                 table_name = bandit_arm_list[index_name].table_name.upper()
                 if len(query.table_scan_times_hyp[table_name]) < constants.TABLE_SCAN_TIME_LENGTH:
                     query.index_scan_times_hyp[table_name].append(index_use[constants.COST_TYPE_SUB_TREE_COST])
@@ -621,7 +621,7 @@ def hyp_create_query_drop_new(connection, schema_name, bandit_arm_list,
     :param queries: queries that should be executed
     :return:
     """
-    # todo(0814): newly added.
+    # (0814): newly added.
     # execute_cost_no_index = 0
     # for query in queries:
     #     time = hyp_execute_query(connection, query.query_string)
@@ -642,7 +642,7 @@ def hyp_create_query_drop_new(connection, schema_name, bandit_arm_list,
 
     time_split = list()
     for query in queries:
-        # todo(1016): newly modified. `* query.freq`
+        # (1016): newly modified. `* query.freq`
         time = hyp_execute_query(connection, query.query_string) * query.freq
         time_split.append(time)
         execute_cost += time
@@ -653,7 +653,7 @@ def hyp_create_query_drop_new(connection, schema_name, bandit_arm_list,
 
     for key in creation_cost:
         if key in arm_rewards:
-            # todo(0815): newly added.
+            # (0815): newly added.
             creation = 0
             arm_rewards[key][1] += creation
         else:
@@ -799,7 +799,7 @@ def get_column_data_length_v2(connection, table_name, col_names):
     column_data_length = 0
 
     for column_name in col_names:
-        # todo(0801): newly added.
+        # (0801): newly added.
         column = tables[table_name.lower()].columns[column_name.lower()]
         if column.column_type == "varchar":
             varchar_count += 1
@@ -909,7 +909,7 @@ def get_estimated_size_of_index_v1(connection, schema_name, tbl_name, col_names,
     """
 
     if db_type == "MSSQL":
-        # todo(0801): newly added.
+        # (0801): newly added.
         table = get_tables(connection)[tbl_name.lower()]
         header_size = 6
         nullable_buffer = 2
@@ -950,7 +950,7 @@ def get_max_column_data_length_v2(connection, table_name, col_names):
     tables = get_tables(connection)
     column_data_length = 0
     for column_name in col_names:
-        # todo(0801): newly added.
+        # (0801): newly added.
         column = tables[table_name.lower()].columns[column_name.lower()]
         column_data_length += column.max_column_size if column.max_column_size else 0
     return column_data_length
@@ -1017,7 +1017,7 @@ def get_selectivity_v3(connection, query, predicates, db_type="postgresql"):
             read_rows[index_scan[0]] = min(float(index_scan[5]), read_rows[index_scan[0]])
 
         for table in tables:
-            # todo(1018): newly added.
+            # (1018): newly added.
             if get_table_row_count(connection, "dbo", table) == 0:
                 selectivity[table] = 1
             else:
@@ -1058,7 +1058,7 @@ def get_table_scan_times(connection, query_string):
 
 def get_table_scan_times_structure(connection):
     # query_table_scan_times = copy.deepcopy(constants.TABLE_SCAN_TIMES["TPCH"])
-    # todo(0814): newly added.
+    # (0814): newly added.
     if tables_global is None:
         get_tables(connection)
     query_table_scan_times = dict()

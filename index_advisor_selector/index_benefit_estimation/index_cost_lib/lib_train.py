@@ -188,7 +188,7 @@ def train(args):
             # optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            # todo: newly added, scheduler.
+            # : newly added, scheduler.
             # scheduler.step(loss)
 
             total_loss += loss.item()
@@ -220,7 +220,7 @@ def train(args):
             if lib_com.tf_step % 100 == 0:
                 lib_com.summary_writer.flush()
 
-        # todo: newly added, scheduler.
+        # : newly added, scheduler.
         scheduler.step(total_loss / (bi + 1))
 
         logging.info(f"The final valid loss of EP{epoch} is: {total_loss / (bi + 1)}.")

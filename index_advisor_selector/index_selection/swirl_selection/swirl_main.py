@@ -11,11 +11,8 @@ import logging
 import importlib
 import numpy as np
 
-import sys
-sys.path.append("..")
-
 from experiment import Experiment
-from index_advisor_selector.index_selection.swirl_selection.gym_db.common import EnvironmentType
+from gym_db.common import EnvironmentType
 
 from swirl_utils.swirl_com import set_logger, get_parser
 from swirl_utils.workload import Query, Workload
@@ -31,44 +28,6 @@ from swirl_utils.configuration_parser import ConfigurationParser
 
 def train_swirl(args):
     logging.info(f"The training mode is `{args.train_mode}`.")
-    if args.train_mode == "continuous":
-        with open(args.rl_exp_load, "rb") as rf:
-            experiment = pickle.load(rf)
-        parallel_environments = experiment.exp_config["parallel_environments"]
-
-        experiment.id = args.exp_id
-        cp = ConfigurationParser(args.exp_conf_file)
-        experiment.exp_config = cp.config
-        experiment.exp_config["parallel_environments"] = parallel_environments
-        logging.info(f"The value of `parallel_environments` is `{experiment.exp_config['parallel_environments']}`.")
-
-        experiment._create_experiment_folder()
-
-        log_file = args.log_file.format(args.exp_id)
-        set_logger(log_file)
-
-        experiment.comparison_performances = {
-            "test": {"Extend": [], "DB2Adv": []},
-            "validation": {"Extend": [], "DB2Adv": []}
-        }
-        experiment.comparison_indexes = {"Extend": set(), "DB2Adv": set()}
-
-        experiment.workload_generator = WorkloadGenerator(work_config=experiment.exp_config["workload"],
-                                                          work_type=args.work_type,
-                                                          work_file=args.work_file,
-                                                          db_config=experiment.schema.db_config,
-                                                          schema_columns=experiment.schema.columns,
-                                                          random_seed=experiment.exp_config["random_seed"],
-                                                          experiment_id=experiment.id,
-                                                          is_filter_workload_cols=False,
-                                                          is_filter_utilized_cols=experiment.exp_config[
-                                                              "filter_utilized_columns"])
-
-        # randomly assign budget to each workload.
-        experiment._assign_budgets_to_workloads()
-        # Save the workloads into `.pickle` file.
-        experiment._pickle_workloads()
-    if args.train_mode == "advTrain":
         with open(args.rl_exp_load, "rb") as rf:
             experiment = pickle.load(rf)
         parallel_environments = experiment.exp_config["parallel_environments"]
@@ -112,7 +71,7 @@ def train_swirl(args):
 
         # Save the workloads into `.pickle` file.
         experiment._pickle_workloads()
-    elif args.train_mode == "scratch":
+    if True:
         # 1) Record the experiment time; 2) Load the configuration;
         # 3) Specify the stable_baselines version; 4) Create the experiment folder.
         experiment = Experiment(args)
@@ -130,25 +89,7 @@ def train_swirl(args):
     else:
         raise ValueError
 
-    if args.train_mode == "continuous" or args.train_mode == "advTrain":
-        model = experiment.model_type.load(args.rl_model_load)
-        # model.training = False
-
-        ParallelEnv = SubprocVecEnv if experiment.exp_config["parallel_environments"] > 1 else DummyVecEnv
-        training_env = ParallelEnv([experiment.make_env(env_id,
-                                                        environment_type=EnvironmentType.TRAINING,
-                                                        workloads_in=None,
-                                                        db_config=experiment.schema.db_config)
-                                    for env_id in range(experiment.exp_config["parallel_environments"])])
-
-        model.set_env(VecNormalize.load(args.rl_env_load, training_env))
-        # model.env.training = False
-
-        model.tensorboard_log = args.logdir.format(args.exp_id)
-        experiment.set_model(model)
-        logging.info(
-            f"Loading model and env from: {args.rl_model_load} / {args.rl_env_load}.")
-    elif args.train_mode == "scratch":
+    if True:
         # 1) Schema information preparation; 2) Workload preparation;
         # 3) Index candidates preparation; 4) Workload embedding / representation.
         experiment.prepare()
@@ -158,7 +99,7 @@ def train_swirl(args):
             cp = ConfigurationParser(args.exp_conf_file)
             exp_config = cp.config
 
-            # todo: number
+            # : number
             if args.max_budgets is not None:
                 exp_config["budgets"]["validation_and_testing"] = [int(args.max_budgets)]
             # is_varying_frequencies = exp_config["workload"]["varying_frequencies"]
@@ -174,10 +115,10 @@ def train_swirl(args):
                 with open(args.eval_file, "r") as rf:
                     query_text = json.load(rf)
 
-            # todo(0818): newly added.
+            # (0818): newly added.
             # query_text = experiment.workload_generator._preprocess_queries(query_text)
 
-            # todo(0822): newly modified.  [["", ""]]; [[(), ()]]
+            # (0822): newly modified.  [["", ""]]; [[(), ()]]
             # [Q1, Q2, ...]
             if isinstance(query_text[0], str):
                 sql_list = list()
@@ -253,7 +194,7 @@ def train_swirl(args):
                     eval_workload.append(workload)
 
         ParallelEnv = SubprocVecEnv if experiment.exp_config["parallel_environments"] > 1 else DummyVecEnv
-        # todo: register the Env, workloads_in
+        # : register the Env, workloads_in
         training_env = ParallelEnv([experiment.make_env(env_id,
                                                         environment_type=EnvironmentType.TRAINING,
                                                         workloads_in=None,
@@ -295,10 +236,10 @@ def train_swirl(args):
 
         experiment.set_model(model)
 
-    # todo: ?  callback_test_env.venv.envs[0].unwrapped.workloads
+    # : ?  callback_test_env.venv.envs[0].unwrapped.workloads
     callback_test_env = VecNormalize(
         DummyVecEnv([experiment.make_env(0, environment_type=EnvironmentType.TESTING,
-                                         # todo: workloads_in
+                                         # : workloads_in
                                          workloads_in=eval_workload,
                                          db_config=experiment.schema.db_config)]),
         norm_obs=True,
@@ -320,7 +261,7 @@ def train_swirl(args):
 
     callback_validation_env = VecNormalize(
         DummyVecEnv([experiment.make_env(0, environment_type=EnvironmentType.VALIDATION,
-                                         # todo: workloads_in
+                                         # : workloads_in
                                          workloads_in=eval_workload,
                                          db_config=experiment.schema.db_config)]),
         norm_obs=True,
@@ -357,7 +298,7 @@ def train_swirl(args):
 
     # set the `training_start_time`.
     experiment.record_learning_start_time()
-    # todo: newly added `experiment.exp_config["timesteps"]`.
+    # : newly added `experiment.exp_config["timesteps"]`.
     model.learn(total_timesteps=args.timesteps,
                 callback=callbacks,
                 tb_log_name=experiment.id)  # the name of the run for tensorboard log

@@ -46,7 +46,7 @@ class RelaxationAlgorithm(SelectionAlgorithm):
             "removal",
         }
 
-        # todo(0804): newly added. for number.
+        # (0804): newly added. for number.
         self.max_indexes = self.parameters["max_indexes"]
         self.constraint = self.parameters["constraint"]
 
@@ -66,13 +66,13 @@ class RelaxationAlgorithm(SelectionAlgorithm):
         """
         logging.info("Calculating best indexes Relaxation")
 
-        # todo(0804): newly added. for storage budget/number.
+        # (0804): newly added. for storage budget/number.
         if (self.constraint == "number" and self.max_indexes == 0) or \
                 (self.constraint == "storage" and self.disk_constraint == 0):
             return list()
 
         # Generate syntactically relevant candidates
-        # todo(0917): newly added.
+        # (0917): newly added.
         if self.cand_gen is None or self.cand_gen == "permutation":
             candidates = candidates_per_query(
                 workload,
@@ -90,7 +90,7 @@ class RelaxationAlgorithm(SelectionAlgorithm):
                                                                    self.parameters["max_index_width"]) for query in
                           workload.queries]
 
-        # todo(0918): newly modified.
+        # (0918): newly modified.
         if self.cand_gen is None or self.is_utilized:
             # Obtain the utilized indexes considering every single query
             candidates, _ = get_utilized_indexes(workload, candidates, self.cost_evaluation)
@@ -105,17 +105,17 @@ class RelaxationAlgorithm(SelectionAlgorithm):
                 , store_size=True  # newly added.
             )
 
-        # todo: newly added. for process visualization.
+        # : newly added. for process visualization.
         if self.process:
             self.step["candidates"] = candidates.copy()
 
         # CP in Figure 5
-        # todo(0804): newly added. for reproduction.
+        # (0804): newly added. for reproduction.
         cp = sorted(list(candidates.copy()))
         cp_size = sum(index.estimated_size for index in cp)
         cp_cost = self.cost_evaluation.calculate_cost(workload, cp, store_size=True)
         while True:
-            # todo(0804): newly added. for storage budget/number.
+            # (0804): newly added. for storage budget/number.
             if self.constraint == "storage" and cp_size <= self.disk_constraint:
                 break
             if self.constraint == "number" and len(cp) <= self.max_indexes:
@@ -127,7 +127,7 @@ class RelaxationAlgorithm(SelectionAlgorithm):
             )
 
             # Pick a configuration that can be relaxed
-            # TODO: Currently only one is considered
+            # : Currently only one is considered
 
             # Relax the configuration
             best_relaxed = None
@@ -136,7 +136,7 @@ class RelaxationAlgorithm(SelectionAlgorithm):
 
             cp_by_table = indexes_by_table(cp)
 
-            # todo: newly added. for process visualization.
+            # : newly added. for process visualization.
             if self.process:
                 self.step[self.layer] = list()
 
@@ -148,7 +148,7 @@ class RelaxationAlgorithm(SelectionAlgorithm):
                     # indicated by a negative value.
                     relaxed_cost_increase = relaxed_cost - cp_cost
 
-                    # # todo(0804): newly added. for storage budget/number.
+                    # # (0804): newly added. for storage budget/number.
                     # if self.constraint == "storage":
 
                     # Some transformations could increase or not affect the storage consumption.
@@ -162,7 +162,7 @@ class RelaxationAlgorithm(SelectionAlgorithm):
                         # For a (fixed) cost decrease,
                         # (indicated by a negative value for relaxed_cost_increase),
                         # higher storage savings produce a lower penalty.
-                        # todo(0917): newly added.
+                        # (0917): newly added.
                         if self.sel_oracle is None:
                             relaxed_penalty = relaxed_cost_increase * relaxed_storage_savings
                         elif self.sel_oracle == "cost_per_sto":
@@ -174,7 +174,7 @@ class RelaxationAlgorithm(SelectionAlgorithm):
                         elif self.sel_oracle == "benefit_pure":
                             relaxed_penalty = relaxed_cost_increase
                     else:
-                        # todo(0917): newly added.
+                        # (0917): newly added.
                         if self.sel_oracle is None:
                             relaxed_penalty = (relaxed_cost_increase / relaxed_considered_storage_savings)
                         elif self.sel_oracle == "cost_per_sto":
@@ -189,7 +189,7 @@ class RelaxationAlgorithm(SelectionAlgorithm):
                     # elif self.constraint == "number":
                     #     relaxed_penalty = relaxed_cost_increase
 
-                    # todo: newly added. for process visualization.
+                    # : newly added. for process visualization.
                     if self.process:
                         self.step[self.layer].append({"combination": relaxed,
                                                       "candidate": relaxed,
@@ -198,23 +198,23 @@ class RelaxationAlgorithm(SelectionAlgorithm):
                     if best_relaxed is None or relaxed_penalty < lowest_relaxed_penalty:
                         # set new best relaxed configuration
                         best_relaxed = relaxed
-                        # todo(0804): newly added. for storage budget/number.
+                        # (0804): newly added. for storage budget/number.
                         if self.constraint == "storage":
                             best_relaxed_size = cp_size - relaxed_considered_storage_savings
                         lowest_relaxed_penalty = relaxed_penalty
 
             cp = best_relaxed
-            # todo(0804): newly added. for storage budget/number.
+            # (0804): newly added. for storage budget/number.
             if self.constraint == "storage":
                 cp_size = best_relaxed_size
 
-            # todo: newly added. for process visualization.
+            # : newly added. for process visualization.
             if self.process:
                 self.step["selected"].append(
                     [item["oracle"] for item in self.step[self.layer]].index(lowest_relaxed_penalty))
                 self.layer += 1
 
-        # todo(0804): newly added. for reproduction.
+        # (0804): newly added. for reproduction.
         return sorted(list(cp))
 
     def _configurations_by_transformation(
@@ -222,7 +222,7 @@ class RelaxationAlgorithm(SelectionAlgorithm):
     ):
         # 1) relaxation by adding the prefix and removing the index.
         if transformation == "prefixing":
-            # todo(0804): newly added. for reproduction.
+            # (0804): newly added. for reproduction.
             for index in sorted(list(input_configuration)):
                 for prefix in index.prefixes():
                     relaxed = set(input_configuration.copy())
@@ -235,14 +235,14 @@ class RelaxationAlgorithm(SelectionAlgorithm):
                     yield relaxed, relaxed_storage_savings
         # 2) relaxation by removing the index directly.
         elif transformation == "removal":
-            # todo(0804): newly added. for reproduction.
+            # (0804): newly added. for reproduction.
             for index in sorted(list(input_configuration)):
                 relaxed = set(input_configuration.copy())
                 relaxed.remove(index)
                 yield relaxed, index.estimated_size
         # 3) relaxation by merging two index and removing them.
         elif transformation == "merging":  # same as anytime
-            # todo(0804): newly added. for reproduction.
+            # (0804): newly added. for reproduction.
             for table in sorted(list(input_configuration_by_table)):
                 for index1, index2 in itertools.permutations(
                         input_configuration_by_table[table], 2
@@ -264,7 +264,7 @@ class RelaxationAlgorithm(SelectionAlgorithm):
                     yield relaxed, relaxed_storage_savings
         # 4) relaxation by splitting two index into three indexes: (common, residual_1, residual_2).
         elif transformation == "splitting":
-            # todo(0804): newly added. for reproduction.
+            # (0804): newly added. for reproduction.
             for table in sorted(list(input_configuration_by_table)):
                 for index1, index2 in itertools.permutations(
                         input_configuration_by_table[table], 2

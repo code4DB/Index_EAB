@@ -155,7 +155,7 @@ if __name__ == "__main__":
     parser = get_parser()
     args = parser.parse_args()
 
-    # todo(0813): newly added.
+    # (0813): newly added.
     logging.disable(logging.DEBUG)
 
     if args.action_mode == "train":

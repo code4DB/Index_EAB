@@ -34,12 +34,12 @@ class SelectionAlgorithm:
             estimation = self.parameters["cost_estimation"]
             self.cost_evaluation.cost_estimation = estimation
 
-        # todo: newly added. for process visualization.
+        # : newly added. for process visualization.
         self.process = process
         self.step = {"selected": list()}
         self.layer = 0
 
-        # todo(0917): newly added.
+        # (0917): newly added.
         self.cand_gen = cand_gen
         self.is_utilized = is_utilized
         self.sel_oracle = sel_oracle
@@ -65,18 +65,18 @@ class SelectionAlgorithm:
         simulation_duration_aft = self.database_connector.index_simulation_duration
 
         self._log_cache_hits()
-        # todo: newly added for `swirl`.
+        # : newly added for `swirl`.
         # self.final_cost_proportion = self._calculate_final_cost_proportion(
         #     workload, indexes
         # )
 
-        # todo: newly added. for selection runtime
+        # : newly added. for selection runtime
         cache_hits = self.cost_evaluation.cache_hits
         cost_requests = self.cost_evaluation.cost_requests
 
         self.cost_evaluation.complete_cost_estimation()
 
-        # todo: newly added.
+        # : newly added.
         if self.process:
             if overhead:
                 return indexes, {"step": self.step, "cache_hits": cache_hits,

@@ -36,7 +36,7 @@ class MCTSAdvisor:
 
         self.mcts_tree = None
 
-        # todo: newly added. for process visualization.
+        # : newly added. for process visualization.
         self.process = process
         self.step = {"selected": list()}
 
@@ -60,13 +60,13 @@ class MCTSAdvisor:
         simulation_num_aft = self.database_connector.simulated_indexes
         simulation_duration_aft = self.database_connector.index_simulation_duration
 
-        # todo: newly added. for selection runtime
+        # : newly added. for selection runtime
         cache_hits = self.cost_evaluation.cache_hits
         cost_requests = self.cost_evaluation.cost_requests
 
         self.cost_evaluation.complete_cost_estimation()
 
-        # todo: newly added.
+        # : newly added.
         if self.process:
             if overhead:
                 return indexes, {"step": self.step, "cache_hits": cache_hits,
@@ -98,7 +98,7 @@ class MCTSAdvisor:
         # potential_index = syntactically_relevant_indexes(workload, self.parameters.max_index_width)
 
         # Generate syntactically relevant candidates
-        # todo(0917): newly added.
+        # (0917): newly added.
         if self.parameters.cand_gen is None or self.parameters.cand_gen == "permutation":
             potential_index = candidates_per_query(
                 Workload(workload),
@@ -126,7 +126,7 @@ class MCTSAdvisor:
                                                                         self.parameters.max_index_width) for query in
                                workload]
 
-        # todo(0918): newly modified.
+        # (0918): newly modified.
         if self.parameters.cand_gen is None or self.parameters.is_utilized:
             # Obtain the utilized indexes considering every single query
             potential_index, _ = get_utilized_indexes(Workload(workload), potential_index, self.cost_evaluation)
@@ -163,7 +163,7 @@ class MCTSAdvisor:
 
         # _ = self.cost_evaluation.calculate_cost(Workload(workload), potential_index, store_size=True)
 
-        # todo(0805): newly added. for `storage`.
+        # (0805): newly added. for `storage`.
         if self.parameters.constraint == "storage":
             # _ = self.cost_evaluation.calculate_cost(Workload(workload), potential_index, store_size=True)
 
@@ -191,13 +191,13 @@ class MCTSAdvisor:
 
         root = Node(State(current_index, potential_index, self.parameters.constraint,
                           self.parameters.cardinality, self.parameters.storage))
-        # todo(0818): newly added.
+        # (0818): newly added.
         if self.mcts_tree is None:
             self.mcts_tree = MCTS(self.parameters, workload, potential_index,
                                   self.database_connector, self.cost_evaluation, self.process)
         final_conf, final_reward = self.mcts_tree.mcts_search(self.parameters.budget, root)
 
-        # todo(0818): newly added.
+        # (0818): newly added.
         save_dir = os.path.dirname(self.parameters.log_file.format(self.parameters.exp_id))
         # plot_report(save_dir, self.mcts_tree.measure)
 

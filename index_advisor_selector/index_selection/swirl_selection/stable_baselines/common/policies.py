@@ -584,7 +584,7 @@ class LstmPolicy(RecurrentActorCriticPolicy):
                     raise ValueError("The net_arch parameter must contain at least one occurrence of 'lstm'!")
 
                 self._value_fn = linear(latent_value, 'vf', 1)
-                # TODO: why not init_scale = 0.001 here like in the feedforward
+                # : why not init_scale = 0.001 here like in the feedforward
                 self._proba_distribution, self._policy, self.q_value = \
                     self.pdtype.proba_distribution_from_latent(latent_policy, latent_value)
         self._setup_init()
@@ -659,7 +659,7 @@ class FeedForwardPolicy(ActorCriticPolicy):
                 pi_latent, vf_latent = mlp_extractor(tf.layers.flatten(self.processed_obs), net_arch, act_fun)
 
             self._value_fn = linear(vf_latent, 'vf', 1)
-            # todo:
+            # :
             self._proba_distribution, self._policy, self.q_value = \
                 self.pdtype.proba_distribution_from_latent(pi_latent, vf_latent, init_scale=0.01)
 

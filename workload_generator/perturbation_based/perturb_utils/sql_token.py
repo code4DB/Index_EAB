@@ -34,7 +34,7 @@ def do_tokenization(token_list):
 def do_assign_type(clk, tbls, cols, tokens):
     types = list()
 
-    # todo(0406): newly added. for `IN`.
+    # (0406): newly added. for `IN`.
     # pass
 
     for i in range(len(tokens)):
@@ -60,7 +60,7 @@ def do_assign_type(clk, tbls, cols, tokens):
 
 def assign_type(clk, tbls, cols, pre2, pre4, pre5,
                 pre7, token, nxt2, nxt4):
-    # todo*(0411): IN VALUE.
+    # *(0411): IN VALUE.
     # if token == " ":
     #     return "whitespace"
     if token in perturb_const.punctuation:
@@ -69,20 +69,20 @@ def assign_type(clk, tbls, cols, pre2, pre4, pre5,
         return token
     elif token.lower() in perturb_const.keyword:
         return token.lower()
-    # todo(0411): newly modified. `INNER JOIN` etc.
+    # (0411): newly modified. `INNER JOIN` etc.
     elif token.upper() in perturb_const.join:
         return token.lower()
-    # todo: join column: col1 `op` col2
+    # : join column: col1 `op` col2
     elif (pre2.lower().split(".")[-1] in cols
           or pre2.lower() in cols) and \
             token in perturb_const.operator and \
             (nxt2.lower().split(".")[-1] in cols
              or nxt2.lower() in cols):
         return f"{clk}#join_operator"
-    # todo*: join column? subquery?
+    # *: join column? subquery?
     elif token in perturb_const.operator:
         return "operator"
-    # todo(0411): newly added. for `IS`, tokenization.
+    # (0411): newly added. for `IS`, tokenization.
     elif token.lower() in perturb_const.null_operator:
         return "null_operator"
     elif token.lower() in perturb_const.aggregator:
@@ -99,30 +99,30 @@ def assign_type(clk, tbls, cols, pre2, pre4, pre5,
         return "exists_predicate"
     elif token.lower() in perturb_const.like_predicate:
         return "like_predicate"
-    # todo: aggregate column: agg(`col1`)
+    # : aggregate column: agg(`col1`)
     elif pre2.lower() in perturb_const.aggregator \
             and (token.lower().split(".")[-1] in cols
                  or token.lower() in cols):
         return f"{clk}#aggregate_column"
-    # todo: join column: `col1` op col2
+    # : join column: `col1` op col2
     elif (nxt4.lower().split(".")[-1] in cols
           or nxt4.lower() in cols) \
             and nxt2.lower() in perturb_const.operator \
             and (token.lower().split(".")[-1] in cols
                  or token.lower() in cols):
         return f"{clk}#join_column"
-    # todo: join column: col1 op `col2`
+    # : join column: col1 op `col2`
     elif (pre4.lower().split(".")[-1] in cols
           or pre4.lower() in cols) \
             and pre2.lower() in perturb_const.operator \
             and (token.lower().split(".")[-1] in cols
                  or token.lower() in cols):
         return f"{clk}#join_column"  # where?
-    # todo(0413): newly modified. why after `value`?
+    # (0413): newly modified. why after `value`?
     elif (token.lower().split(".")[-1] in cols
           or token.lower() in cols):
         return f"{clk}#column"
-    # todo(0411): newly added.
+    # (0411): newly added.
     #  predicate value(like): col op `val`, op: like, not like.
     elif (pre4.lower().split(".")[-1] in cols
           or pre4.lower() in cols) \
@@ -131,25 +131,25 @@ def assign_type(clk, tbls, cols, pre2, pre4, pre5,
                  or token.lower() not in cols) \
             and token.lower().split(".")[-1] not in tbls:
         if len(list(cols)[0].split(".")) == 2:
-            # todo*(0411): column name, with table, '.'
+            # *(0411): column name, with table, '.'
             return f"{pre4.lower()}#like_value"
         else:
             return f"{pre4.lower().split('.')[-1]}#like_value"
-    # todo: predicate value: col op `val`
-    # todo: token.lower().split(".")[-1] not in tbls? (removed? join column?)
+    # : predicate value: col op `val`
+    # : token.lower().split(".")[-1] not in tbls? (removed? join column?)
     elif (pre4.lower().split(".")[-1] in cols
           or pre4.lower() in cols) \
             and (token.lower().split(".")[-1] not in cols
                  or token.lower() not in cols) \
             and token.lower().split(".")[-1] not in tbls:
         if len(list(cols)[0].split(".")) == 2:
-            # todo*(0411): column name, with table, '.'
+            # *(0411): column name, with table, '.'
             return f"{pre4.lower()}#value"
         else:
             return f"{pre4.lower().split('.')[-1]}#value"
-    # todo: aggregate value: agg(col) op `val`, agg: "max", "min", "count"
-    # todo: count(), `numeric` or not? (multiple choice)
-    # todo: token.lower().split(".")[-1] not in tbls? removed?,
+    # : aggregate value: agg(col) op `val`, agg: "max", "min", "count"
+    # : count(), `numeric` or not? (multiple choice)
+    # : token.lower().split(".")[-1] not in tbls? removed?,
     #  pre7.lower().split(".")[-1] in perturb_const.aggregator[:2]? removed?
     elif (pre7.lower().split(".")[-1] in perturb_const.aggregator[:2]
           or pre7.lower() in perturb_const.aggregator[:2]) \
@@ -159,13 +159,13 @@ def assign_type(clk, tbls, cols, pre2, pre4, pre5,
                  or token.lower() not in cols) \
             and token.lower().split(".")[-1] not in tbls:
         if len(list(cols)[0].split(".")) == 2:
-            # todo*(0411): column name, with table, '.'
+            # *(0411): column name, with table, '.'
             return f"{pre5.lower()}#aggregate_value"
         else:
             return f"{pre5.lower().split('.')[-1]}#aggregate_value"
-    # todo: aggregate value: agg(col) op `val`, agg: "count", "avg", "sum"
-    # todo: count(), `numeric` or not? (multiple choice)
-    # todo: token.lower().split(".")[-1] not in tbls? removed?
+    # : aggregate value: agg(col) op `val`, agg: "count", "avg", "sum"
+    # : count(), `numeric` or not? (multiple choice)
+    # : token.lower().split(".")[-1] not in tbls? removed?
     elif (pre7.lower().split(".")[-1] in perturb_const.aggregator[-3:]
           or pre7.lower() in perturb_const.aggregator[-3:]) \
             and (pre5.lower().split(".")[-1] in cols
@@ -174,7 +174,7 @@ def assign_type(clk, tbls, cols, pre2, pre4, pre5,
                  or token.lower() not in cols) \
             and token.lower().split(".")[-1] not in tbls:
         if len(list(cols)[0].split(".")) == 2:
-            # todo*(0411): column name, with table, '.'
+            # *(0411): column name, with table, '.'
             return f"{pre5.lower()}#numeric_aggregate_value"
         else:
             return f"{pre5.lower().split('.')[-1]}#numeric_aggregate_value"
@@ -186,7 +186,7 @@ def assign_type(clk, tbls, cols, pre2, pre4, pre5,
         return f"{clk}#table"
     elif perturb_const.wildcard in token:
         return "wildcard"
-    # # todo(0411): newly added. for unknown.
+    # # (0411): newly added. for unknown.
     #   removed to check type assignment error.
     # else:
     #     return "unknown"
@@ -317,15 +317,15 @@ def tokenize_sql(sql_list, tbls, cols, word2idx):
     sql_res, except_item = list(), list()
     for i, sql in tqdm(enumerate(sql_list)):
         try:
-            # todo: verify the equality.
+            # : verify the equality.
             # format: 1) keyword -> `upper case`;
             #         2) join column -> `add space`;
             #         3) `!=` -> `<>`.
             sql = mosqlparse.format(mosqlparse.parse(sql))
-            # todo*(0411): nested query, function (recursive)? problematic
+            # *(0411): nested query, function (recursive)? problematic
             # mosqlparse.parse(sql).keys()  # clauses
             # mosqlparse.format({"select": mosqlparse.parse(sql)["select"]})
-            _, clauses = split_sql(sql)  # todo: nested query?
+            _, clauses = split_sql(sql)  # : nested query?
             # try:
             #     _, clauses = split_sql(sql)
             # except:
@@ -353,7 +353,7 @@ def tokenize_sql(sql_list, tbls, cols, word2idx):
                 # remove the punctuation
                 cla_res[clk]["pre_token"], cla_res[clk]["pre_type"] = list(), list()
                 for tok in cla_res[clk]["token"]:
-                    # todo(0412): newly added.
+                    # (0412): newly added.
                     punctuation = perturb_const.punctuation
                     if word2idx.get("(", -1) == -1 and word2idx.get(")", -1) == -1:
                         punctuation.extend(["(", ")"])
@@ -361,7 +361,7 @@ def tokenize_sql(sql_list, tbls, cols, word2idx):
                         cla_res[clk]["pre_token"].append(tok)
                 cla_res["pre_tokens"].extend(cla_res[clk]["pre_token"])
                 for tok in cla_res[clk]["type"]:
-                    # todo(0412): newly added.
+                    # (0412): newly added.
                     punctuation = perturb_const.punctuation
                     if word2idx.get("(", -1) == -1 and word2idx.get(")", -1) == -1:
                         punctuation.extend(["(", ")"])
@@ -378,19 +378,3 @@ def tokenize_sql(sql_list, tbls, cols, word2idx):
             except_item.append((i, sql, str(e)))
 
     return sql_res, except_item
-
-
-if __name__ == "__main__":
-    db_conf_file = "/data/wz/index/attack/data_resource/db_info/db.conf"
-    db_config = configparser.ConfigParser()
-    db_config.read(db_conf_file)
-
-    sql_load = "/data/wz/index/attack/data_resource/visrew_queries/srctgt4_valswap/new_src4_valswap.sql"
-    token_save = "/data/wz/index/attack/data_resource/visrew_queries/srctgt4_valswap/index_src4_valswap.json"
-
-    # _, except_item = get_token_res(db_config, sql_load, token_save, word2idx,
-    #                                isp_algo=["auto_admin", "db2advis", "drop", "extend"])
-
-    json_load = "/data/wz/index/attack/data_resource/visrew_queries/srctgt4_valswap/index_src4_valswap.json"
-    with open(json_load, "r") as rf:
-        sql_token = json.load(rf)

@@ -29,7 +29,7 @@ from shared.mab_com import plot_report
 # Simulation built on vQ to collect the super arm performance
 class BaseSimulator:
     def __init__(self, args, workload):
-        # todo(1016): newly added.
+        # (1016): newly added.
         self.args = args
 
         # configuring the logger
@@ -42,7 +42,7 @@ class BaseSimulator:
         # Get the query List
         # 'id', 'query_string', 'predicates', 'payload', 'group_by', 'order_by'
 
-        # todo(1016): newly modified.
+        # (1016): newly modified.
         # with open(args.workload_file, "r") as rf:
         #     workload = json.load(rf)
 
@@ -51,7 +51,7 @@ class BaseSimulator:
         self.query_obj_store = {}
         reload(bandit_helper)
 
-        # todo(0816): newly added.
+        # (0816): newly added.
         self.exp_id = args.exp_id
         self.writer = SummaryWriter(get_log_folder_path(args.exp_id))
 
@@ -63,7 +63,7 @@ class BaseSimulator:
         self.params_save = args.params_save
         self.save_gap = args.save_gap
 
-        # todo(0818): newly added.
+        # (0818): newly added.
         self.process = args.process
 
 
@@ -87,11 +87,11 @@ class Simulator(BaseSimulator):
                 1 + constants.CONTEXT_UNIQUENESS + constants.CONTEXT_INCLUDES) + constants.STATIC_CONTEXT_SIZE
 
         # Create oracle and the bandit
-        # todo(0814): newly modified.
+        # (0814): newly modified.
         # configs.max_memory -= int(sql_helper.get_current_pds_size(self.connection))
         oracle = Oracle(configs.constraint, configs.max_memory, configs.max_count, self.process)
         c3ucb_bandit = bandits.C3UCB(context_size, configs.input_alpha, configs.input_lambda, oracle)
-        # todo(0818): newly added.
+        # (0818): newly added.
         if os.path.exists(self.params_load):
             c3ucb_bandit.load_params(self.params_load)
 
@@ -118,7 +118,7 @@ class Simulator(BaseSimulator):
             # # New set of queries in this batch, required for query execution
             # queries_current_batch = self.queries[queries_start:queries_end]
 
-            # todo(0814): newly added.
+            # (0814): newly added.
             if t == 0:
                 # New set of queries in this batch, required for query execution
                 queries_current_batch = self.queries[queries_start:queries_end]
@@ -127,7 +127,7 @@ class Simulator(BaseSimulator):
                 no_cost = list()
                 execute_cost_no_index = 0
                 for query in queries_current_batch:
-                    # todo(1016): newly modified. `* query["freq"]`
+                    # (1016): newly modified. `* query["freq"]`
                     time = sql_helper.hyp_execute_query(self.connection, query["query_string"]) * query["freq"]
                     no_cost.append(time)
                     execute_cost_no_index += time
@@ -144,7 +144,7 @@ class Simulator(BaseSimulator):
             #     queries_current_batch = self.queries[queries_start:queries_end]
             #     work_list = [query["query_string"] for query in self.queries[queries_start:queries_end]]
             #
-            #     # todo(0814): newly added. no index?
+            #     # (0814): newly added. no index?
             #     no_cost = list()
             #     execute_cost_no_index = 0
             #     for query in queries_current_batch:
@@ -167,7 +167,7 @@ class Simulator(BaseSimulator):
                 else:
                     query = Query(self.connection, query_id, query["query_string"],
                                   query["predicates"], query["payload"], t, freq=query["freq"])
-                    # todo(0815): for what?
+                    # (0815): for what?
                     query.context = bandit_helper.get_query_context_v1(query, all_columns, number_of_columns)
                     self.query_obj_store[query_id] = query
                 query_obj_list_current.append(self.query_obj_store[query_id])
@@ -297,7 +297,7 @@ class Simulator(BaseSimulator):
             # indexes = sql_helper.get_current_index(self.connection)
             # logging.info(f"L260, The list of the current indexes ({len(indexes)}) is: {indexes}.")
 
-            # todo: newly added. `execute_cost_no_index`. execute_cost, creation_cost, arm_rewards
+            # : newly added. `execute_cost_no_index`. execute_cost, creation_cost, arm_rewards
             time_split, time_taken, creation_cost_dict, arm_rewards = sql_helper.hyp_create_query_drop_new(
                 self.connection,
                 constants.SCHEMA_NAME,
@@ -320,7 +320,7 @@ class Simulator(BaseSimulator):
 
             c3ucb_bandit.update_v4(chosen_arm_ids, arm_rewards)
 
-            # todo(0818): newly added.
+            # (0818): newly added.
             # if t % self.save_gap == 0:
             #     c3ucb_bandit.save_params(self.params_save.format(self.exp_id, str(t)))
 
@@ -338,13 +338,13 @@ class Simulator(BaseSimulator):
             # keeping track of queries that we saw last time
             chosen_arms_last_round = chosen_arms
 
-            # todo(0815): last round?
+            # (0815): last round?
             if t == (configs.rounds + configs.hyp_rounds - 1):
                 sql_helper.bulk_drop_index(self.connection, constants.SCHEMA_NAME, chosen_arms)
 
             end_time_round = datetime.datetime.now()
 
-            # todo(0816): newly added. `Index Utility`
+            # (0816): newly added. `Index Utility`
             self.measure["Workload Cost"].append(time_taken)
             self.measure["Index Utility"].append(1 - time_taken / execute_cost_no_index)
             self.measure["Total Time"].append((end_time_round - start_time_round).total_seconds())
@@ -358,7 +358,7 @@ class Simulator(BaseSimulator):
 
             # current_config_size = float(sql_helper.get_current_pds_size(self.connection))
             # logging.info("Size taken by the config: " + str(current_config_size) + "MB")
-            # todo(0814): newly modified.
+            # (0814): newly modified.
             logging.info(f"Size taken by the config: {used_memory} MB")
 
             time_duration = (end_time_round - start_time_round).total_seconds()
@@ -375,7 +375,7 @@ class Simulator(BaseSimulator):
                 results.append(
                     [actual_round_number, constants.MEASURE_INDEX_RECOMMENDATION_COST, recommendation_time])
                 # results.append([actual_round_number, constants.MEASURE_MEMORY_COST, current_config_size])
-                # todo(0814): newly modified.
+                # (0814): newly modified.
                 results.append([actual_round_number, constants.MEASURE_MEMORY_COST, used_memory])
             else:
                 total_round_time = (end_time_round - start_time_round).total_seconds() - (

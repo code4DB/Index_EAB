@@ -48,14 +48,14 @@ def get_parser():
     parser.add_argument("--model_save_dir", type=str,
                         default="./cost_exp_res/{}/model/{}")
 
-    # todo: 1. common setting.
+    # : 1. common setting.
     parser.add_argument("--seed", type=int, default=666)
     parser.add_argument("--logdir", type=str,
                         default="./cost_exp_res/{}/logdir/")
     parser.add_argument("--runlog", type=str,
                         default="./cost_exp_res/{}/exp_runtime.log")
 
-    # todo: hyper parameter.
+    # : hyper parameter.
     parser.add_argument("--epoch", type=int, default=300)
     parser.add_argument("--num_round", type=int, default=5000)
     parser.add_argument("--lr", type=float, default=0.1)

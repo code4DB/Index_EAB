@@ -140,7 +140,7 @@ def make_robotics_env(env_id, seed, rank=0, allow_early_resets=True):
     set_global_seeds(seed)
     env = gym.make(env_id)
     keys = ['observation', 'desired_goal']
-    # TODO: remove try-except once most users are running modern Gym
+    # : remove try-except once most users are running modern Gym
     try:  # for modern Gym (>=0.15.4)
         from gym.wrappers import FilterObservation, FlattenObservation
         env = FlattenObservation(FilterObservation(env, keys))

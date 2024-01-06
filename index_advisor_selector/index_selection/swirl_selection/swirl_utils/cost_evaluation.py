@@ -45,7 +45,7 @@ class CostEvaluation:
         # self.model = load_model_former()
 
     def estimate_size(self, index):
-        # TODO: Refactor: It is currently too complicated to compute
+        # : Refactor: It is currently too complicated to compute
         # We must search in current indexes to get an index object with .hypopg_oid
         result = None
         for i in self.current_indexes:
@@ -66,9 +66,9 @@ class CostEvaluation:
 
         plan = self.db_connector.get_plan(query)
 
-        # todo(0917): newly modified.
+        # (0917): newly modified.
         # cost = plan["Total Cost"] * query.frequency
-        # todo(1008): newly modified.
+        # (1008): newly modified.
         cost = self.calculate_cost(Workload([query]), indexes)
 
         plan_str = str(plan)
@@ -85,7 +85,7 @@ class CostEvaluation:
             assert (
                     index in indexes
             ), "Something went wrong with _prepare_cost_calculation."
-            # todo: hypopg_name/indexname, <221319>btree_lineitem_l_shipmode?
+            # : hypopg_name/indexname, <221319>btree_lineitem_l_shipmode?
             if index.hypopg_name not in plan_str:
                 continue
             recommended_indexes.add(index)
@@ -125,10 +125,10 @@ class CostEvaluation:
         self._prepare_cost_calculation(indexes, store_size=store_size)
         total_cost = 0
 
-        # TODO: Make query cost higher for queries which are running often
+        # : Make query cost higher for queries which are running often
         for query in workload.queries:
             self.cost_requests += 1
-            # todo(0822): newly modified.
+            # (0822): newly modified.
             # total_cost += self._request(query, indexes) * query.frequency
             total_cost += self._request_cache_by_qtext(query, indexes) * query.frequency
             # total_cost += self._request_cache(query, indexes) * query.frequency
@@ -141,7 +141,7 @@ class CostEvaluation:
                 self.completed is False
         ), "Cost Evaluation is completed and cannot be reused."
 
-        # TODO: Make query cost higher for queries which are running often
+        # : Make query cost higher for queries which are running often
         if len(indexes) != 0:
             total_cost = 0
             for index in indexes:
@@ -150,7 +150,7 @@ class CostEvaluation:
                 for query in workload.queries:
                     self.cost_requests += 1
                     # total_cost += self._request_cache(query, indexes)
-                    # todo(0824): newly modified.
+                    # (0824): newly modified.
                     total_cost += self._request_cache(query, indexes) * query.frequency
             total_cost = total_cost / len(indexes)
         else:
@@ -160,7 +160,7 @@ class CostEvaluation:
             for query in workload.queries:
                 self.cost_requests += 1
                 # total_cost += self._request_cache(query, indexes)
-                # todo(0824): newly modified.
+                # (0824): newly modified.
                 total_cost += self._request_cache(query, indexes) * query.frequency
         return total_cost
 
@@ -173,7 +173,7 @@ class CostEvaluation:
         self._prepare_cost_calculation(indexes, store_size=store_size)
         total_cost = 0
 
-        # TODO: Make query cost higher for queries which are running often
+        # : Make query cost higher for queries which are running often
         for query in workload.queries:
             self.cost_requests += 1
 
@@ -210,7 +210,7 @@ class CostEvaluation:
 
         total_cost = 0
 
-        # TODO: Make query cost higher for queries which are running often
+        # : Make query cost higher for queries which are running often
         for query in workload.queries:
             self.cost_requests += 1
 
@@ -253,7 +253,7 @@ class CostEvaluation:
         self._prepare_cost_calculation(indexes, store_size=store_size)
         total_cost = 0
 
-        # TODO: Make query cost higher for queries which are running often
+        # : Make query cost higher for queries which are running often
         for query in workload.queries:
             self.cost_requests += 1
 
@@ -293,7 +293,7 @@ class CostEvaluation:
 
         for query in workload.queries:
             self.cost_requests += 1
-            # todo(0822): newly modified.
+            # (0822): newly modified.
             # cost, plan = self._request_plans(query, indexes)
             cost, plan = self._request_cache_plans_by_qtext(query, indexes)
             # cost, plan = self._request_cache_plans(query, indexes)
@@ -361,7 +361,7 @@ class CostEvaluation:
             self.cache[(query.text, relevant_indexes)] = cost
             return cost
 
-    # todo(0822): newly added.
+    # (0822): newly added.
     def _request(self, query, indexes):
         cost = self._get_cost(query)
         return cost
@@ -385,7 +385,7 @@ class CostEvaluation:
 
             return cost, plan
 
-    # todo(0822): newly added.
+    # (0822): newly added.
     def _request_cache_plans_by_qtext(self, query, indexes):
         q_i_hash = (query.text, frozenset(indexes))
         if q_i_hash in self.relevant_indexes_cache:
@@ -405,7 +405,7 @@ class CostEvaluation:
 
             return cost, plan
 
-    # todo(0822): newly added.
+    # (0822): newly added.
     def _request_plans(self, query, indexes):
         cost, plan = self._get_cost_plan(query)
 

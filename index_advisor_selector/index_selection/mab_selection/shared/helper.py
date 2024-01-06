@@ -68,7 +68,7 @@ def get_experiment_folder_path(experiment_id):
 
 
 def get_log_folder_path(experiment_id):
-    # todo(0816): newly added.
+    # (0816): newly added.
     log_folder_path = f"{constants.ROOT_DIR}/{constants.EXPERIMENT_FOLDER}/{experiment_id}/logdir"
     if not os.path.exists(log_folder_path):
         os.makedirs(log_folder_path)
@@ -322,7 +322,7 @@ def parse_column(work_data, schema_load, varying_frequencies=False):
 
     all_res = list()
     for no, sql in enumerate(work_data):
-        # todo(1016): newly modified.
+        # (1016): newly modified.
         if isinstance(sql, list):
             item_res = {"id": sql[0], "query_string": sql[1], "predicates": {}, "payload": {}, "group_by": {},
                         "order_by": {}}
@@ -340,7 +340,7 @@ def parse_column(work_data, schema_load, varying_frequencies=False):
         parsed_res = psqlparse.parse_dict(item_res["query_string"])[0]
         # parsed_res = psqlparse.parse_dict(item_res["query_string"])[0]["SelectStmt"]
 
-        # todo(1009): newly added.
+        # (1009): newly added.
         if "SelectStmt" in parsed_res.keys():
             parsed_res = parsed_res["SelectStmt"]
             item_res = parse(parsed_res, item_res, tbl_col)
@@ -446,7 +446,7 @@ def plot_exp_report(exp_id, exp_report_list, measurement_names, log_y=False):
         # sns_plot = sns.relplot(x=constants.DF_COL_BATCH, y=constants.DF_COL_MEASURE_VALUE, hue=constants.DF_COL_COMP_ID,
         #                        kind="line", ci="sd", data=final_df, err_style="band")
 
-        # todo(0814): newly modified.
+        # (0814): newly modified.
         sns_plot = sns.relplot(x=constants.DF_COL_BATCH, y=constants.DF_COL_MEASURE_VALUE, hue=constants.DF_COL_COMP_ID,
                                kind="line", errorbar="sd", data=final_df, err_style="band")
 
@@ -490,7 +490,7 @@ def create_comparison_tables(exp_id, exp_report_list):
     final_df.round(4).to_csv(get_experiment_folder_path(exp_id) + "comparison_table.csv")
 
 
-# todo - remove min and max
+#  - remove min and max
 def get_avg_measure_value(data, measure_name, reps):
     return (data[data[constants.DF_COL_MEASURE_NAME] == measure_name][constants.DF_COL_MEASURE_VALUE].sum()) / reps
 

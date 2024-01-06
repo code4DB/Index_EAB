@@ -44,21 +44,21 @@ def syntactically_relevant_indexes(query, max_index_width):
 
     logging.debug(f"Potential indexes: {len(possible_column_combinations)}")
 
-    # todo(0804): newly added. for reproduction.
+    # (0804): newly added. for reproduction.
     return sorted([Index(p) for p in possible_column_combinations])
 
 
-# todo(0917): newly added. index candidates generation rules by `DQN`.
+# (0917): newly added. index candidates generation rules by `DQN`.
 def syntactically_relevant_indexes_dqn_rule(db_conf, query_texts, columns, max_index_width):
     result_column_combinations = list()
 
     enc = en.encoding_schema(db_conf)
     parser = pi.Parser(enc["attr"])
 
-    # todo(0822): newly added.
+    # (0822): newly added.
     workload_ori = list()
     for texts in query_texts:
-        # todo(0917): newly modified.
+        # (0917): newly modified.
         if isinstance(texts, list):
             workload_ori.extend(texts)
         if isinstance(texts, str):
@@ -76,24 +76,24 @@ def syntactically_relevant_indexes_dqn_rule(db_conf, query_texts, columns, max_i
 
     column_dict = dict()
     for column in columns:
-        # todo(0822): newly modified.
+        # (0822): newly modified.
         column_dict[f"{column.table}.{column.name}"] = column
         # column_dict[column.name] = column
 
     prom_ind = dict()
     for cand in index_candidates:
-        # todo(0822): newly modified.
+        # (0822): newly modified.
         tbl = cand.split("#")[0]
         ind_cols = cand.split("#")[-1].split(",")
 
-        # todo(0917): newly added.
+        # (0917): newly added.
         if len(ind_cols) > max_index_width:
             continue
 
         if len(ind_cols) not in prom_ind.keys():
             prom_ind[len(ind_cols)] = list()
         try:
-            # todo(0822): newly modified.
+            # (0822): newly modified.
             prom_ind[len(ind_cols)].append([column_dict[f"{tbl}.{col}"] for col in ind_cols])
         except Exception as e:
             logging.info("Some columns in the indexes are not involved in the global column set.")
@@ -101,11 +101,11 @@ def syntactically_relevant_indexes_dqn_rule(db_conf, query_texts, columns, max_i
     for key in sorted(prom_ind.keys()):
         result_column_combinations.extend(prom_ind[key])
 
-    # todo(0917): newly modified.
+    # (0917): newly modified.
     return sorted([Index(col) for col in result_column_combinations])
 
 
-# todo(0917): newly added. index candidates generation by openGauss.
+# (0917): newly added. index candidates generation by openGauss.
 def syntactically_relevant_indexes_openGauss(db_conf, query_texts, columns, max_index_width):
     result_column_combinations = list()
 
@@ -113,10 +113,10 @@ def syntactically_relevant_indexes_openGauss(db_conf, query_texts, columns, max_
     for col in columns:
         col_dict[str(col)] = col
 
-    db_conf["postgresql"]["host"] = "10.26.42.166"
-    db_conf["postgresql"]["user"] = "postgres"
-    db_conf["postgresql"]["password"] = "dmai4db2021."
-    db_conf["postgresql"]["port"] = "5433"
+    db_conf["postgresql"]["host"] = "xx.xx.xx.xx"
+    db_conf["postgresql"]["user"] = "xxxx"
+    db_conf["postgresql"]["password"] = "xxxx"
+    db_conf["postgresql"]["port"] = "xxxx"
     connector = PostgresDatabaseConnector(db_conf, autocommit=True)
 
     api_query = "SELECT \"table\", \"column\" FROM gs_index_advise('{}')"

@@ -102,7 +102,7 @@ class Index:
             raise ValueError("Index needs at least 1 column")
         self.columns = tuple(columns)
 
-        # todo(1126): newly added.
+        # (1126): newly added.
         self.table = table
 
         self.estimated_size = estimated_size

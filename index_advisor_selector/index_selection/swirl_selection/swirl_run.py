@@ -14,10 +14,6 @@ import configparser
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # default: "0"
 
-import sys
-sys.path.append("..")
-sys.path.append("/data/wz/index/index_eab/eab_algo/swirl_selection")
-
 # from index_eab.eab_algo.swirl_selection.gym_db.common import EnvironmentType
 from index_advisor_selector.index_selection.swirl_selection.gym_db.common import EnvironmentType
 from index_advisor_selector.index_selection.swirl_selection.swirl_utils import swirl_com
@@ -32,12 +28,12 @@ from index_eab.eab_algo.swirl_selection.stable_baselines.common.vec_env import D
 
 
 def pre_infer_obj(exp_load, model_load, env_load, db_conf=None):
-    # todo: 1. Load the `experiment` object.
+    # : 1. Load the `experiment` object.
     # load the configuration, create the experiment folder?
     with open(exp_load, "rb") as rf:
         swirl_exp = pickle.load(rf)
 
-    # todo(0925): newly added.
+    # (0925): newly added.
     if db_conf is not None and db_conf["postgresql"]["database"] != swirl_exp.schema.db_config["postgresql"]["database"]:
         if swirl_exp.args.algo != "swirl" or "NonMasking" in swirl_exp.exp_config["action_manager"]:
             swirl_exp.action_storage_consumptions = swirl_com.predict_index_sizes(
@@ -58,7 +54,7 @@ def pre_infer_obj(exp_load, model_load, env_load, db_conf=None):
     if db_conf is not None:
         swirl_exp.schema.db_config = db_conf
 
-    # todo: 2. Prepare the `model` and `env` objects. env=
+    # : 2. Prepare the `model` and `env` objects. env=
     swirl_model = swirl_exp.model_type.load(model_load)
     swirl_model.training = False
 
@@ -88,10 +84,10 @@ def get_swirl_res(args, work_list, swirl_exp=None, swirl_model=None):
         swirl_exp, swirl_model = pre_infer_obj(args.rl_exp_load, args.rl_model_load,
                                                args.rl_env_load, db_conf=db_conf)
 
-    # todo: workload with only a single/multiple query.
+    # : workload with only a single/multiple query.
     # query_text = experiment.workload_generator._load_no_temp_workload(eval_load)
 
-    # todo: 3. Prepare the evaluated workload.
+    # : 3. Prepare the evaluated workload.
     if args.work_file is None:
         eval_workload = swirl_exp.workload_generator.wl_testing[0]
     elif args.work_file.endswith(".pickle"):
@@ -128,7 +124,7 @@ def get_swirl_res(args, work_list, swirl_exp=None, swirl_model=None):
     n_eval_episodes = len(eval_workload)
     # res = experiment.test_model(trained_model)[0]
 
-    # todo: 4. Do the evaluation.
+    # : 4. Do the evaluation.
     evaluation_env = swirl_exp.DummyVecEnv(
         [swirl_exp.make_env(0, EnvironmentType.TESTING,
                             workloads_in=eval_workload,
@@ -139,7 +135,7 @@ def get_swirl_res(args, work_list, swirl_exp=None, swirl_model=None):
     )
 
     training_env = swirl_model.get_vec_normalize_env()
-    # todo: Sync eval and train environments when using VecNormalize
+    # : Sync eval and train environments when using VecNormalize
     swirl_exp.sync_envs_normalization(training_env, evaluation_env)
 
     time_start = time.time()
@@ -161,7 +157,7 @@ def get_swirl_res(args, work_list, swirl_exp=None, swirl_model=None):
     no_cost, ind_cost = list(), list()
     total_no_cost, total_ind_cost = 0, 0
 
-    # todo(0926): newly modified.
+    # (0926): newly modified.
     # swirl_exp.schema.db_config → swirl_exp.workload_generator.db_config
     connector = PostgresDatabaseConnector(swirl_exp.schema.db_config, autocommit=True)
     connector.drop_indexes()

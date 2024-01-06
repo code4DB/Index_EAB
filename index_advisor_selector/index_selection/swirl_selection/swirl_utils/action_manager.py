@@ -79,7 +79,7 @@ class ActionManager(object):
 
         self.valid_actions[last_action] = self.FORBIDDEN_ACTION
 
-        # todo: newly added.
+        # : newly added.
         if last_action in self._remaining_valid_actions:
             self._remaining_valid_actions.remove(last_action)
 
@@ -119,7 +119,7 @@ class DRLindaActionManager(ActionManager):
     ):
         ActionManager.__init__(self, sb_version, max_index_width=max_index_width)
 
-        # todo(0820): newly added.
+        # (0820): newly added.
         self.constraint = constraint
 
         self.indexable_column_combinations = indexable_column_combinations
@@ -191,7 +191,7 @@ class DRLindaActionManagerMultiCol(ActionManager):
     ):
         ActionManager.__init__(self, sb_version, max_index_width=max_index_width)
 
-        # todo(0820): newly added.
+        # (0820): newly added.
         self.constraint = constraint
 
         self.indexable_column_combinations = indexable_column_combinations
@@ -263,7 +263,7 @@ class DRLindaActionManagerMultiColPos(ActionManager):
     ):
         ActionManager.__init__(self, sb_version, max_index_width=max_index_width)
 
-        # todo(0820): newly added.
+        # (0820): newly added.
         self.constraint = constraint
 
         self.indexable_column_combinations = indexable_column_combinations
@@ -342,7 +342,7 @@ class DQNActionManager(ActionManager):
     ):
         ActionManager.__init__(self, sb_version, max_index_width=max_index_width)
 
-        # todo(0820): newly added.
+        # (0820): newly added.
         self.constraint = constraint
 
         self.indexable_column_combinations = indexable_column_combinations
@@ -419,7 +419,7 @@ class DQNActionManagerNonPos(ActionManager):
     ):
         ActionManager.__init__(self, sb_version, max_index_width=max_index_width)
 
-        # todo(0820): newly added.
+        # (0820): newly added.
         self.constraint = constraint
 
         self.indexable_column_combinations = indexable_column_combinations
@@ -490,7 +490,7 @@ class MultiColumnIndexActionManager(ActionManager):
     ):
         ActionManager.__init__(self, sb_version, max_index_width=max_index_width)
 
-        # todo(0819): newly added.
+        # (0819): newly added.
         self.constraint = constraint
 
         self.indexable_column_combinations = indexable_column_combinations
@@ -502,7 +502,7 @@ class MultiColumnIndexActionManager(ActionManager):
         self.number_of_columns = len(self.indexable_column_combinations[0])
         self.action_storage_consumptions = action_storage_consumptions
 
-        # todo(0805): newly added. for number.
+        # (0805): newly added. for number.
         self.max_indexes = max_index_num
 
         self.indexable_columns = list(
@@ -600,7 +600,7 @@ class MultiColumnIndexActionManager(ActionManager):
             indexable_columns
         ), "Valid actions mismatch indexable columns"
 
-    # todo(0819): newly added. for number. override.
+    # (0819): newly added. for number. override.
     def _valid_actions_based_on_budget(self, budget, current_storage_consumption):
         if self.constraint == "storage":
             if budget is None:
@@ -630,7 +630,7 @@ class MultiColumnIndexActionManagerNonMasking(ActionManager):
     ):
         ActionManager.__init__(self, sb_version, max_index_width=max_index_width)
 
-        # todo(0819): newly added.
+        # (0819): newly added.
         self.constraint = constraint
 
         self.indexable_column_combinations = indexable_column_combinations
@@ -642,7 +642,7 @@ class MultiColumnIndexActionManagerNonMasking(ActionManager):
         self.number_of_columns = len(self.indexable_column_combinations[0])
         self.action_storage_consumptions = action_storage_consumptions
 
-        # todo(0805): newly added. for number.
+        # (0805): newly added. for number.
         self.max_indexes = max_index_num
 
         self.indexable_columns = list(
@@ -721,7 +721,7 @@ class MultiColumnIndexActionManagerNonMasking(ActionManager):
         #     self.valid_actions[action_idx] = self.ALLOWED_ACTION
 
 
-# todo: newly added. for number.
+# : newly added. for number.
 class MultiColumnIndexActionManagerNumber(ActionManager):
     def __init__(
             self, indexable_column_combinations, action_storage_consumptions,
@@ -738,7 +738,7 @@ class MultiColumnIndexActionManagerNumber(ActionManager):
         self.number_of_columns = len(self.indexable_column_combinations[0])
         self.action_storage_consumptions = action_storage_consumptions
 
-        # todo(0805): newly added. for number.
+        # (0805): newly added. for number.
         self.max_indexes = max_index_num
 
         self.indexable_columns = list(
@@ -834,7 +834,7 @@ class MultiColumnIndexActionManagerNumber(ActionManager):
             indexable_columns
         ), "Valid actions mismatch indexable columns"
 
-    # todo: newly added. for number. override.
+    # : newly added. for number. override.
     def _valid_actions_based_on_budget(self, budget, current_storage_consumption):
         # if budget is None:
         #     return

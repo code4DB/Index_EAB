@@ -24,7 +24,7 @@ class DropAlgorithm(SelectionAlgorithm):
         )
         self.max_indexes = self.parameters["max_indexes"]
 
-        # todo(0804): newly added. for storage budget/multi-column index.
+        # (0804): newly added. for storage budget/multi-column index.
         self.budget = mb_to_b(self.parameters["budget_MB"])
         self.constraint = self.parameters["constraint"]
         self.multi_column = self.parameters["multi_column"]
@@ -38,7 +38,7 @@ class DropAlgorithm(SelectionAlgorithm):
 
         # remaining_indexes is initialized as a set of all potential indexes
         if self.multi_column:
-            # todo(0917): newly added.
+            # (0917): newly added.
             if self.cand_gen is None or self.cand_gen == "permutation":
                 candidates_query = candidates_per_query(
                     workload,
@@ -75,17 +75,17 @@ class DropAlgorithm(SelectionAlgorithm):
                 # Obtain the utilized indexes considering every single query
                 candidates_query, _ = get_utilized_indexes(workload, [remaining_indexes], self.cost_evaluation)
 
-        # todo(0804): newly added. for storage budget.
+        # (0804): newly added. for storage budget.
         if self.constraint == "storage":
             cost = self.cost_evaluation.calculate_cost(
                 workload, remaining_indexes
                 , store_size=True  # newly added.
             )
 
-            # todo(0917): newly added.
+            # (0917): newly added.
             remaining_indexes = set([index for index in remaining_indexes if index.estimated_size < self.budget])
 
-        # todo(0918): newly modified.
+        # (0918): newly modified.
         # if self.is_utilized:
         #     # Obtain the utilized indexes considering every single query
         #     remaining_indexes, _ = get_utilized_indexes(workload, remaining_indexes, self.cost_evaluation)
@@ -104,21 +104,21 @@ class DropAlgorithm(SelectionAlgorithm):
         #             , store_size=True  # newly added.
         #         )
 
-        # todo: newly added. for process visualization.
+        # : newly added. for process visualization.
         if self.process:
             self.step["candidates"] = remaining_indexes
 
-        # todo: newly added for `swirl` comparison.
+        # : newly added for `swirl` comparison.
         # if len(remaining_indexes) < self.max_indexes:
         #     for index in remaining_indexes:
         #         self.cost_evaluation.what_if.simulate_index(index, store_size=True)
 
         # avoid recommendation of indexes with negative impact.
-        # todo(1215): or (lowest_cost > self.cost_evaluation.calculate_cost(workload, indexes=[])
+        # (1215): or (lowest_cost > self.cost_evaluation.calculate_cost(workload, indexes=[])
         #                 and len(remaining_indexes) > 0)
         # while len(remaining_indexes) > self.max_indexes:
 
-        # todo(0923): newly added.
+        # (0923): newly added.
         init_cost = self.cost_evaluation.calculate_cost(
             workload, remaining_indexes
             , store_size=True  # newly added.
@@ -128,19 +128,19 @@ class DropAlgorithm(SelectionAlgorithm):
             if self.constraint == "number":
                 if len(remaining_indexes) <= self.max_indexes:
                     break
-            # todo(0804): newly added. for storage budget.
+            # (0804): newly added. for storage budget.
             elif self.constraint == "storage":
                 total_size = sum(index.estimated_size for index in remaining_indexes)
                 if total_size <= self.budget:
                     break
 
-            # todo: newly added. for process visualization.
+            # : newly added. for process visualization.
             if self.process:
                 self.step[self.layer] = list()
 
             # Drop index that, when dropped, leads to lowest cost
-            lowest_cost = None  # todo: initialized by `self.cost_evaluation.calculate_cost(workload, indexes=[])`
-            index_to_drop = None  # todo: initialized by `[]`
+            lowest_cost = None  # : initialized by `self.cost_evaluation.calculate_cost(workload, indexes=[])`
+            index_to_drop = None  # : initialized by `[]`
             index_to_drop_no = None
             for no, index in enumerate(remaining_indexes):
                 if self.constraint == "number":
@@ -155,7 +155,7 @@ class DropAlgorithm(SelectionAlgorithm):
                         , store_size=True  # newly added.
                     )
 
-                # todo(0917): newly added.
+                # (0917): newly added.
                 if self.sel_oracle == "cost_per_sto":
                     cost = cost * b_to_mb(index.estimated_size)
                 elif self.sel_oracle == "benefit_per_sto":
@@ -168,14 +168,14 @@ class DropAlgorithm(SelectionAlgorithm):
                 if not lowest_cost or cost < lowest_cost:
                     lowest_cost, index_to_drop, index_to_drop_no = cost, index, no
 
-                # todo: newly added. for process visualization.
+                # : newly added. for process visualization.
                 if self.process:
                     self.step[self.layer].append({"combination": remaining_indexes - set([index]),
                                                   "candidate": index,
                                                   "oracle": cost})
             remaining_indexes.remove(index_to_drop)
 
-            # todo: newly added. for process visualization.
+            # : newly added. for process visualization.
             if self.process:
                 self.step["selected"].append(index_to_drop_no)
                 self.layer += 1

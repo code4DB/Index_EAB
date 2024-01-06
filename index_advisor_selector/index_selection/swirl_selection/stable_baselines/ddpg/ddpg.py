@@ -214,7 +214,7 @@ class DDPG(OffPolicyRLModel):
         self.gamma = gamma
         self.tau = tau
 
-        # TODO: remove this param in v3.x.x
+        # : remove this param in v3.x.x
         if memory_policy is not None:
             warnings.warn("memory_policy will be removed in a future version (v3.x.x) "
                           "it is now ignored and replaced with ReplayBuffer", DeprecationWarning)

@@ -40,7 +40,7 @@ class CoPhyAlgorithm(SelectionAlgorithm):
         self.max_indexes = self.parameters["max_indexes"]
         self.max_index_width = self.parameters["max_index_width"]
 
-        # todo(0804): newly added. for storage budget.
+        # (0804): newly added. for storage budget.
         self.budget = mb_to_b(self.parameters["budget_MB"])
         self.constraint = self.parameters["constraint"]
 

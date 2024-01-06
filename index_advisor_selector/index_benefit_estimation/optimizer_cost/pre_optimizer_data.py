@@ -24,14 +24,14 @@ def get_optimizer_cost(dbms="postgresql"):
         db_conf.read(db_conf_file)
 
         if dbms == "openGauss":
-            db_conf["openGauss"]["host"] = "10.26.42.166"
+            db_conf["openGauss"]["host"] = "xx.xx.xx.xx"
             if bench == "job":
                 db_conf["openGauss"]["database"] = f"imdb_load103"
             else:
                 db_conf["openGauss"]["database"] = f"{bench}_1gb103"
-            db_conf["openGauss"]["port"] = "5433"
-            db_conf["openGauss"]["user"] = "postgres"
-            db_conf["openGauss"]["password"] = "dmai4db2021."
+            db_conf["openGauss"]["port"] = "xxxx"
+            db_conf["openGauss"]["user"] = "xxxx"
+            db_conf["openGauss"]["password"] = "xxxx"
 
         for fid in ["src", "tgt"]:
             for did in ["train", "valid", "test"]:

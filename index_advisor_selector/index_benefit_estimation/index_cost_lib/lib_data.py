@@ -23,7 +23,7 @@ def collate_fn4lib(samples):
         point_mask = [0 for _ in range(0, max_l)]
 
         for j in range(0, len(data_point)):
-            # todo(1006): newly modified.
+            # (1006): newly modified.
             new_data.append(data_point[j])
             # new_data.append(data_point[j][:-1])  # ?[:-1]
             point_mask[j] = 1

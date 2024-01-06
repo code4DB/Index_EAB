@@ -219,7 +219,7 @@ class SAC(OffPolicyRLModel):
                     )
 
                     # Compute Q-Function loss
-                    # TODO: test with huber loss (it would avoid too high values)
+                    # : test with huber loss (it would avoid too high values)
                     qf1_loss = 0.5 * tf.reduce_mean((q_backup - qf1) ** 2)
                     qf2_loss = 0.5 * tf.reduce_mean((q_backup - qf2) ** 2)
 

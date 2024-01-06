@@ -3,7 +3,7 @@ import logging
 import numpy as np
 from gym import spaces
 
-# todo: the budget of the training workload is None for the generalization to various budgets?
+# : the budget of the training workload is None for the generalization to various budgets?
 VERY_HIGH_BUDGET = 100_000_000_000
 
 
@@ -106,7 +106,7 @@ class EmbeddingObservationManager(ObservationManager):
         return frequencies
 
 
-# todo: Rename. Single/Multi-column is not handled by the ObservationManager anymore.
+# : Rename. Single/Multi-column is not handled by the ObservationManager anymore.
 # All managers are capable of handling single and multi-attribute indexes now.
 class SingleColumnIndexWorkloadEmbeddingObservationManager(EmbeddingObservationManager):
     def __init__(self, number_of_columns, config):
@@ -120,7 +120,7 @@ class SingleColumnIndexWorkloadEmbeddingObservationManager(EmbeddingObservationM
         self.workload_embedding = np.array(self.workload_embedder.get_embeddings(state_fix_for_episode["workload"]))
 
 
-# todo: Rename. Single/Multi-column is not handled by the ObservationManager anymore.
+# : Rename. Single/Multi-column is not handled by the ObservationManager anymore.
 # All managers are capable of handling single and multi-attribute indexes now.
 class SingleColumnIndexPlanEmbeddingObservationManager(EmbeddingObservationManager):
     def __init__(self, number_of_columns, config):
@@ -132,7 +132,7 @@ class SingleColumnIndexPlanEmbeddingObservationManager(EmbeddingObservationManag
         super()._init_episode(state_fix_for_episode)
 
 
-# Todo: Rename. Single/multi-column is not handled by the ObservationManager anymore.
+# : Rename. Single/multi-column is not handled by the ObservationManager anymore.
 # All managers are capable of handling single and multi-attribute indexes now.
 class SingleColumnIndexPlanEmbeddingObservationManagerWithoutPlanUpdates(EmbeddingObservationManager):
     def __init__(self, number_of_columns, config):
@@ -146,8 +146,8 @@ class SingleColumnIndexPlanEmbeddingObservationManagerWithoutPlanUpdates(Embeddi
         self.workload_embedding = None
 
 
-# todo: By default.
-# todo: Rename. Single/multi-column is not handled by the ObservationManager anymore.
+# : By default.
+# : Rename. Single/multi-column is not handled by the ObservationManager anymore.
 # All managers are capable of handling single and multi-attribute indexes now.
 class SingleColumnIndexPlanEmbeddingObservationManagerWithCost(EmbeddingObservationManager):
     def __init__(self, number_of_columns, config):
@@ -207,7 +207,7 @@ class SingleColumnIndexColumnObservationManagerWithCost(ObservationManager):
         super().__init__(number_of_columns)
 
         self.UPDATE_EMBEDDING_PER_OBSERVATION = True
-        # todo(1213): number_of_query_classes -> workload_size
+        # (1213): number_of_query_classes -> workload_size
         self.number_of_query_classes = config["workload_size"]
         # self.number_of_query_classes = config["number_of_query_classes"]
         self.workload_size = config["workload_size"]
@@ -233,7 +233,7 @@ class SingleColumnIndexColumnObservationManagerWithCost(ObservationManager):
         self._workload_matrix = [
             [0 for m in range(self.number_of_columns)] for k in range(self.number_of_query_classes)
         ]
-        # todo: newly added, sort the workload according to their `qid`.
+        # : newly added, sort the workload according to their `qid`.
         # state_fix_for_episode["workload"].queries = sorted(state_fix_for_episode["workload"].queries, key=lambda q: q.nr)
         for query_id, query in enumerate(state_fix_for_episode["workload"].queries):
             # Account for zero indexing
@@ -272,7 +272,7 @@ class SingleColumnIndexColumnObservationManagerWithCost(ObservationManager):
         return frequencies
 
 
-# Todo: Rename. Single/multi-column is not handled by the ObservationManager anymore.
+# : Rename. Single/multi-column is not handled by the ObservationManager anymore.
 # All managers are capable of handling single and multi-attribute indexes now.
 class SingleColumnIndexObservationManager(ObservationManager):
     def __init__(self, number_of_columns, config):
@@ -344,7 +344,7 @@ class UnknownQueriesObservationManager(ObservationManager):
 class DRLindaObservationManager(ObservationManager):
     def __init__(self, number_of_columns, config):
         ObservationManager.__init__(self, number_of_columns)
-        # todo: number_of_query_classes -> workload_size?
+        # : number_of_query_classes -> workload_size?
         self.number_of_query_classes = config["workload_size"]
         # self.number_of_query_classes = config["number_of_query_classes"]
 
@@ -368,7 +368,7 @@ class DRLindaObservationManager(ObservationManager):
         ]
         self._access_vector = [0 for m in range(self.number_of_columns)]
 
-        # todo: newly added, sort the workload according to their `qid`.
+        # : newly added, sort the workload according to their `qid`.
         # state_fix_for_episode["workload"].queries = sorted(state_fix_for_episode["workload"].queries, key=lambda q: q.nr)
         for query_id, query in enumerate(state_fix_for_episode["workload"].queries):
             # Account for zero indexing
@@ -400,7 +400,7 @@ class DRLindaObservationManager(ObservationManager):
         observation = np.append(observation, self._access_vector)
         # observation = np.append(observation, np.zeros((1, len(self._access_vector))))
 
-        # todo: index selectivity vector.
+        # : index selectivity vector.
         # observation = np.append(observation, self._access_vector)
 
         return observation
@@ -409,7 +409,7 @@ class DRLindaObservationManager(ObservationManager):
 class DRLindaObservationManagerMultiCol(ObservationManager):
     def __init__(self, number_of_columns, config):
         ObservationManager.__init__(self, number_of_columns)
-        # todo: number_of_query_classes -> workload_size?
+        # : number_of_query_classes -> workload_size?
         self.number_of_query_classes = config["workload_size"]
         # self.number_of_query_classes = config["number_of_query_classes"]
 
@@ -433,7 +433,7 @@ class DRLindaObservationManagerMultiCol(ObservationManager):
         ]
         self._access_vector = [0 for _ in range(self.number_of_columns)]
 
-        # todo: newly added, sort the workload according to their `qid`.
+        # : newly added, sort the workload according to their `qid`.
         # state_fix_for_episode["workload"].queries = sorted(state_fix_for_episode["workload"].queries, key=lambda q: q.nr)
         for query_id, query in enumerate(state_fix_for_episode["workload"].queries):
             # Account for zero indexing
@@ -460,7 +460,7 @@ class DRLindaObservationManagerMultiCol(ObservationManager):
         observation = np.array(environment_state["action_status"])
         observation = np.append(observation, self._workload_matrix)
         observation = np.append(observation, self._access_vector)
-        # todo: index selectivity vector.
+        # : index selectivity vector.
         # observation = np.append(observation, self._access_vector)
 
         return observation

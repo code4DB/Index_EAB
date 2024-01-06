@@ -22,12 +22,6 @@ def gen_work_cands(workload, parser):
             b = psqlparse.parse_dict(query)
             parser.parse_stmt(b[0])
             parser.gain_candidates()
-            print(1)
-
-        # if no == 8:
-        #     added_cands.add("lineitem#l_shipmode")
-        #     added_cands.add("lineitem#l_orderkey,l_shipmode")
-        #     added_cands.add("lineitem#l_shipmode,l_orderkey")
 
     f_cands = parser.index_candidates | added_cands
     f_cands = list(f_cands)
@@ -52,7 +46,7 @@ def run_gen_cands(conf_load, data_load, data_save):
     elif data_load.endswith(".sql"):
         with open(data_load, "r") as rf:
             workload = rf.readlines()
-    # todo(0822): newly added.
+    # (0822): newly added.
     elif data_load.endswith(".json"):
         with open(data_load, "r") as rf:
             data = json.load(rf)
@@ -65,7 +59,7 @@ def run_gen_cands(conf_load, data_load, data_save):
                 elif "sql" in item.keys():
                     workload.append(item["sql"])
             elif isinstance(item, list):
-                # todo(0822): newly modified. data:[item:[info:[]]]
+                # (0822): newly modified. data:[item:[info:[]]]
                 if isinstance(item[0], list):
                     workload.extend([info[1] for info in item])
                 elif isinstance(item[0], str):
@@ -98,11 +92,6 @@ if __name__ == "__main__":
     config_raw = ConfigParser()
     config_raw.read(conf_load)
 
-    # config_raw["postgresql"]["host"] = "10.26.42.165"
-    # config_raw["postgresql"]["database"] = "tpcc"
-    # config_raw["postgresql"]["port"] = "5432"
-    # config_raw["postgresql"]["user"] = "postgres"
-    # config_raw["postgresql"]["password"] = "ai4db2021"
 
     data_load = "/data/wz/index/code_aidb/IndexAdvisor/Entry/workload.pickle"
     data_load = "/data/wz/index/attack/data_resource/bench_template/job_template_113.sql"

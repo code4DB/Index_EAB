@@ -21,7 +21,7 @@ from index_advisor_selector.index_benefit_estimation.query_former.model.database
 from index_advisor_selector.index_benefit_estimation.benefit_utils.benefit_const import alias2table_tpch, alias2table_job, alias2table_tpcds
 
 
-# todo(1007): to be removed.
+# (1007): to be removed.
 # parser = get_parser()
 # args = parser.parse_args()
 #
@@ -164,7 +164,7 @@ def eval_work(methods, device):
     y_pred, qerror, eval_score, corr = evaluate(methods["model"], ds, methods["bs"], methods["cost_norm"],
                                                 methods["device"], True)
 
-    # todo(1114): newly added.
+    # (1114): newly added.
     # for dat, pred, err in zip(test_data_copy, y_pred, qerror):
     #     dat["y_pred"] = float(pred)
     #     dat["qerror"] = float(err)

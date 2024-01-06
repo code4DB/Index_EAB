@@ -101,7 +101,7 @@ class TableNumRowsFilter(object):
 
             if table_num_rows > self.threshold:
                 output_columns.append(column)
-        # todo: newly added.
+        # : newly added.
         self.connector.close()
 
         logging.debug("call the `apply_filter` function in `TableNumRowsFilter` class.")

@@ -68,7 +68,7 @@ def cost_train(model, train_loader, valid_loader, args):
     # criterion = QError()
     # criterion = RatioLoss()
     optimizer = torch.optim.Adam(model.parameters(), args.lr)
-    # todo: newly added, learning rate decay.
+    # : newly added, learning rate decay.
     scheduler = ReduceLROnPlateau(optimizer, "min", factor=0.5,
                                   patience=20, min_lr=1e-5, verbose=True)
 
@@ -97,11 +97,11 @@ def cost_train(model, train_loader, valid_loader, args):
 
             optimizer.zero_grad()
             loss.backward()
-            # # todo: newly added, gradient clipping.
+            # # : newly added, gradient clipping.
             # torch.nn.utils.clip_grad_norm_(parameters=model.parameters(), max_norm=10, norm_type=2)
             optimizer.step()
 
-            # todo: newly added, scheduler.
+            # : newly added, scheduler.
             # scheduler.step(loss)
 
             total_loss += loss.item()
@@ -121,7 +121,7 @@ def cost_train(model, train_loader, valid_loader, args):
             feat, label = batch
             feat, label = feat.to(device), label.to(device)
 
-            # todo: whether apply `mask` (sql_tokens=None) to guarantee the validity.
+            # : whether apply `mask` (sql_tokens=None) to guarantee the validity.
             props = model(feat)
             loss = criterion(props, label.unsqueeze(-1))
 
@@ -133,14 +133,14 @@ def cost_train(model, train_loader, valid_loader, args):
             if tree_cost_com.tf_step % 100 == 0:
                 tree_cost_com.summary_writer.flush()
 
-        # todo: newly added, scheduler.
+        # : newly added, scheduler.
         scheduler.step(total_loss / (bi + 1))
         logging.info(f"The final valid loss of EP{epoch} is: {total_loss / (bi + 1)}.")
 
         model_state_dict = model.state_dict()
         model_source = {
             "settings": args,
-            # todo: together with args.
+            # : together with args.
             "input_dim": model.inp_dim,
             "hidden_dim": model.hid_dim,
             "model": model_state_dict

@@ -134,7 +134,7 @@ class PostgresDatabaseConnector(DatabaseConnector):
         logging.info("Postgres: Run `analyze`")
         self.commit()
         self._connection.autocommit = True
-        # todo: blocked?
+        # : blocked?
         # self.exec_only("analyze")
         self._connection.autocommit = self.autocommit
 
@@ -151,7 +151,7 @@ class PostgresDatabaseConnector(DatabaseConnector):
             f"({index.joined_column_names()})')"
         )
 
-        # todo(0415): newly added. for column_name = keyword
+        # (0415): newly added. for column_name = keyword
         if "group" in statement:
             statement = statement.replace("(group)", "(\"group\")")
             statement = statement.replace("(group,", "(\"group\",")
@@ -244,7 +244,7 @@ class PostgresDatabaseConnector(DatabaseConnector):
         indexes = self.exec_fetch(stmt, one=False)
         for index in indexes:
             index_name = index[0]
-            # todo(0408): newly added for real.
+            # (0408): newly added for real.
             if "_pkey" not in index_name and "primary" not in index_name:
                 drop_stmt = "drop index {}".format(index_name)
                 logging.debug("Dropping index {}".format(index_name))

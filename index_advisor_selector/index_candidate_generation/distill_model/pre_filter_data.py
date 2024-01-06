@@ -280,32 +280,6 @@ def gen_feat_batch():
             json.dump(feat_data, wf, indent=2)
 
 
-def split_feat_data(seed=666):
-    benchmarks = ["tpch", "tpcds", "job"]
-    for bench in tqdm(benchmarks):
-        data_load = f"/data1/wz/index/index_eab/eab_other/distill_model/distill_data/plan_raw_feat_{bench}.json"
-        with open(data_load, "r") as rf:
-            data = json.load(rf)
-
-        random.seed(seed)
-        random.shuffle(data)
-
-        train_num, valid_num = int(0.8 * len(data)), int(0.1 * len(data))
-
-        data_save = f"/data1/wz/index/index_eab/eab_other/distill_model/distill_data/plan_raw_feat_{bench}_train.json"
-        with open(data_save, "w") as wf:
-            json.dump(data[:train_num], wf, indent=2)
-
-        data_save = f"/data1/wz/index/index_eab/eab_other/distill_model/distill_data/plan_raw_feat_{bench}_valid.json"
-        with open(data_save, "w") as wf:
-            json.dump(data[train_num:train_num + valid_num], wf, indent=2)
-
-        data_save = f"/data1/wz/index/index_eab/eab_other/distill_model/distill_data/plan_raw_feat_{bench}_test.json"
-        with open(data_save, "w") as wf:
-            json.dump(data[train_num + valid_num:], wf, indent=2)
-
-
 if __name__ == "__main__":
     # gen_data_batch()
     gen_feat_batch()
-    # split_feat_data()

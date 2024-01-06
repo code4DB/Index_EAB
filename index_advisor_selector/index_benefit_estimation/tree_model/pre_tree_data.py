@@ -152,7 +152,7 @@ def tra_plan_post_rec(node, stack, plan):
             cnode = stack.pop()
             cid.append(cnode["id"])
         node[-1]["children"] = cid  # sorted(cid)
-        # todo: height -> the min/max-level of its children?
+        # : height -> the min/max-level of its children?
         node[-1]["height"] = max([node[cid]["height"] for cid in node[-1]["children"]]) + 1
     else:
         node[-1]["children"] = list()
@@ -193,7 +193,7 @@ def count_ops():
     return ops
 
 
-# todo: 1. Est Cost / Row (Weighted Sum).
+# : 1. Est Cost / Row (Weighted Sum).
 # Bailu Ding, Sudipto Das, Ryan Marcus, Wentao Wu, Surajit Chaudhuri, Vivek R. Narasayya:
 # AI Meets AI: Leveraging Query Executions to Improve Index Recommendations.
 # SIGMOD Conference 2019: 1241-1258.

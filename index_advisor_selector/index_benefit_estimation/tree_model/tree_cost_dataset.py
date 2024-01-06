@@ -70,7 +70,7 @@ class PlanPairDataset(Dataset):
             elif self.feat_conn == "pair_diff_ratio":
                 assert self.plan_num == 2 or self.plan_num == 4, \
                     "the value of `plan_num` should be 2 or 4 when `pair_diff_ratio`."
-                # todo: divided by zero, value clipping.
+                # : divided by zero, value clipping.
                 feat.extend((src_wo - src_hypo) / src_wo)
                 if self.plan_num == 4:
                     feat.extend((tgt_wo - tgt_hypo) / tgt_wo)
@@ -106,7 +106,7 @@ class PlanPairDataset(Dataset):
                 else:
                     after = 1 - item[3]["label"] / item[2]["label"]
                     label = 1 - after / label
-            # todo: min_ratio?
+            # : min_ratio?
             label = 1 if label > self.cla_min_ratio else 0
         elif self.label_type == "raw" or self.label_type == "log_raw":
             assert self.plan_num == 1, "the value of `plan_num` should be 1 when `raw`."

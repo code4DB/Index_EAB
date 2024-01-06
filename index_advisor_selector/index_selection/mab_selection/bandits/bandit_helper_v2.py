@@ -6,7 +6,7 @@ import constants as constants
 import database.sql_helper_v2 as sql_helper
 from bandits.bandit_arm import BanditArm
 
-# todo(0815): the universal set of all the arms generated
+# (0815): the universal set of all the arms generated
 bandit_arm_store = dict()
 
 
@@ -27,7 +27,7 @@ def gen_arms_from_predicates_v2(connection, query_obj):
 
     # arms based on the predicates, todo(0814): permutations
     for table_name, table_predicates in predicates.items():
-        # todo(0801): newly added.
+        # (0801): newly added.
         # print(tables.keys())
         table = tables[table_name.lower()]
         includes = list()
@@ -35,14 +35,14 @@ def gen_arms_from_predicates_v2(connection, query_obj):
             includes = list(set(payloads[table_name]) - set(table_predicates))
         # if table.table_row_count < constants.SMALL_TABLE_IGNORE or (
         #         query_obj.selectivity[table_name] > constants.TABLE_MIN_SELECTIVITY and len(includes) > 0):
-        # todo(0814): newly modified.
+        # (0814): newly modified.
         if table.table_row_count < constants.SMALL_TABLE_IGNORE:
             continue
 
         col_permutations = list()
         # if len(table_predicates) > constants.MAX_INDEX_WIDTH:
         #     table_predicates = table_predicates[:constants.MAX_INDEX_WIDTH]
-        # todo(0814): newly added.
+        # (0814): newly added.
         index_width = len(table_predicates)
         if index_width > constants.MAX_INDEX_WIDTH:
             index_width = constants.MAX_INDEX_WIDTH
@@ -51,7 +51,7 @@ def gen_arms_from_predicates_v2(connection, query_obj):
         for col_permutation in col_permutations:
             arm_id = BanditArm.get_arm_id(col_permutation, table_name)
             table_row_count = table.table_row_count
-            # todo(0815): for what?
+            # (0815): for what?
             arm_value = (1 - query_obj.selectivity[table_name]) * (
                     len(col_permutation) / len(table_predicates)) * table_row_count
             if arm_id in bandit_arm_store:
@@ -75,19 +75,19 @@ def gen_arms_from_predicates_v2(connection, query_obj):
                 bandit_arm.arm_value[query_id] = arm_value
                 bandit_arm_store[arm_id] = bandit_arm
 
-            # todo(1016): newly modified.
+            # (1016): newly modified.
             if bandit_arm.index_name not in bandit_arms:
                 bandit_arms[arm_id] = bandit_arm
 
     # arms based on the payloads
     for table_name, table_payloads in payloads.items():
-        # todo(1016): newly added.
+        # (1016): newly added.
         if table_name.lower() not in predicates:
             table = tables[table_name.lower()]
             if table.table_row_count < constants.SMALL_TABLE_IGNORE:
                 continue
 
-            # todo(0815): newly added.
+            # (0815): newly added.
             if len(table_payloads) > constants.MAX_INDEX_WIDTH:
                 continue
 
@@ -112,13 +112,13 @@ def gen_arms_from_predicates_v2(connection, query_obj):
                 bandit_arm.is_include = 1
                 bandit_arm.arm_value[query_id] = arm_value
                 bandit_arm_store[arm_id] = bandit_arm
-            # todo(1016): newly modified.
+            # (1016): newly modified.
             if bandit_arm.index_name not in bandit_arms:
                 bandit_arms[arm_id] = bandit_arm
 
     if constants.INDEX_INCLUDES:
         for table_name, table_predicates in predicates.items():
-            # todo(0801): newly added.
+            # (0801): newly added.
             table = tables[table_name.lower()]
             if table.table_row_count < constants.SMALL_TABLE_IGNORE:
                 continue
@@ -222,7 +222,7 @@ def get_predicate_position(arm, predicate, table_name):
     :return: float [0, 1]
     """
     for i in range(len(arm.index_cols)):
-        # todo(0814): newly modified.
+        # (0814): newly modified.
         if table_name.upper() == arm.table_name and predicate.upper() == arm.index_cols[i]:
             return i
     return -1
@@ -338,7 +338,7 @@ def get_query_context_v1(query_object, all_columns, context_size):
         i = 0
         for table_name in all_columns:
             for k in range(len(all_columns[table_name])):
-                # todo(0814): newly modified.
+                # (0814): newly modified.
                 context_vector[i] = 1 if table_name.upper() in query_object.predicates and \
                                          all_columns[table_name][k].upper() in \
                                          query_object.predicates[table_name.upper()] else 0

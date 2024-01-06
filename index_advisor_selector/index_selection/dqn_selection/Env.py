@@ -7,7 +7,7 @@ from dqn_utils import PostgreSQL as pg
 class Env:
     def __init__(self, args, workload, frequency, candidates, mode, a):
         self.args = args
-        # todo(0813): newly added.
+        # (0813): newly added.
         self.constraint = args.constraint
         self.max_count = 0
         self.max_storage = 0
@@ -35,7 +35,7 @@ class Env:
         self.init_cost = np.array(self.pg_client1.get_queries_cost(workload)) * self.frequencies
         self.init_cost_sum = self.init_cost.sum()
 
-        # todo(0808): to be modified.
+        # (0808): to be modified.
         # self.init_state = np.append(self.init_cost, np.zeros((len(candidates),), dtype=np.float))
         self.init_state = np.append(self.frequencies, np.zeros((len(candidates),), dtype=np.float))
 
@@ -54,7 +54,7 @@ class Env:
         # reward related: initial/last
         self.a = a
 
-        # todo(0816): newly added.
+        # (0816): newly added.
         self.measure = {"Workload Cost": list(),
                         "Reward": list(),
                         "Index Utility": list()}
@@ -69,18 +69,18 @@ class Env:
         while True:
             current_index = None
             current_max_x = 0
-            # todo(0813): newly added.
+            # (0813): newly added.
             current_storage_assumption = 0
             start_sum = (np.array(self.pg_client2.get_queries_cost(self.workload)) * self.frequencies).sum()
             for no, index in enumerate(self.candidates):
-                # todo(0813): newly added.
+                # (0813): newly added.
                 if index in pre_is:
                     continue
 
                 oid = self.pg_client2.execute_create_hypo(index)
                 size = self.pg_client2.get_storage_cost([oid])[0]
 
-                # todo(0813): newly added.
+                # (0813): newly added.
                 if self.constraint == "storage" and current_storage_assumption + size > self.max_storage:
                     continue
 
@@ -89,13 +89,13 @@ class Env:
                 if x > ratio and x > current_max_x:
                     current_max_x = x
                     current_index = index
-                    # todo(0813): newly added.
+                    # (0813): newly added.
                     current_no = no
                     current_size = size
 
                 self.pg_client2.execute_delete_hypo(oid)
 
-            # todo(0813): newly added.
+            # (0813): newly added.
             if self.constraint == "number" and len(pre_is) >= self.max_count:
                 break
 
@@ -105,7 +105,7 @@ class Env:
 
             pre_is.append(current_index)
 
-            # todo(0813): newly added.
+            # (0813): newly added.
             self.index_no.append(current_no)
             self.sizes.append(current_size)
             current_storage_assumption += current_size
@@ -125,11 +125,11 @@ class Env:
         self.last_cost = self.init_cost
         self.last_cost_sum = self.init_cost_sum
 
-        # todo(0813): unused.
+        # (0813): unused.
         self.performance_gain = np.zeros((len(self.candidates),), dtype=np.float)
 
         self.current_index_count = 0
-        # todo(0818): newly added.
+        # (0818): newly added.
         self.current_storage_sum = 0
         self.current_index = np.zeros((len(self.candidates),), dtype=np.float)
         self.pg_client1.delete_indexes()
@@ -154,7 +154,7 @@ class Env:
             # next_state, reward, done
             return self.last_state, 0, False
 
-        # todo(0813): newly modified/added.
+        # (0813): newly modified/added.
         oid = self.pg_client1.execute_create_hypo(self.candidates[action])
         storage_cost = self.pg_client1.get_storage_cost([oid])[0]
         if self.constraint == "storage" and \
@@ -182,7 +182,7 @@ class Env:
 
         # update
         self.last_cost = current_cost_info
-        # todo: to be modified.
+        # : to be modified.
         # state = (self.init_cost - current_cost_info) / self.init_cost
         self.last_state = np.append(self.frequencies, self.current_index)
         deltac0 = (self.init_cost_sum - current_cost_sum) / self.init_cost_sum
@@ -204,7 +204,7 @@ class Env:
         reward = math.log(deltac0,10)'''
 
         self.last_cost_sum = current_cost_sum
-        # todo(0813): newly added.
+        # (0813): newly added.
         if self.constraint == "number" and self.current_index_count >= self.max_count:
             self.cost_trace_overall.append(current_cost_sum)
             self.index_trace_overall.append(self.current_index)

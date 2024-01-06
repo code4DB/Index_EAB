@@ -16,7 +16,7 @@ class BanditArm:
         self.name_encoded_context = []
         self.index_usage_last_batch = 0
 
-        # todo(0814): LINEITEM_1_all? table_name + '_' + str(query_id) + '_all'?
+        # (0814): LINEITEM_1_all? table_name + '_' + str(query_id) + '_all'?
         self.cluster = None
         self.query_id = None
         self.query_ids = set()
@@ -25,7 +25,7 @@ class BanditArm:
         self.arm_value = {}
         self.clustered_index_time = 0
 
-        # todo(0813): newly added.
+        # (0813): newly added.
         self.oid = None
 
     def __eq__(self, other):
@@ -41,7 +41,7 @@ class BanditArm:
             for i in range(len(self.index_cols)):
                 if self.index_cols[i] != other.index_cols[i]:
                     return False
-            # todo(0814): consumed by other (prefix)
+            # (0814): consumed by other (prefix)
             return True
 
     def __str__(self):

@@ -38,7 +38,7 @@ class ExtendAlgorithm(SelectionAlgorithm):
         self.workload = None
         self.min_cost_improvement = self.parameters["min_cost_improvement"]
 
-        # todo(0804): newly added. for number.
+        # (0804): newly added. for number.
         self.max_indexes = self.parameters["max_indexes"]
         self.constraint = self.parameters["constraint"]
 
@@ -51,7 +51,7 @@ class ExtendAlgorithm(SelectionAlgorithm):
         """
         logging.info("Calculating best indexes Extend")
 
-        # todo(0804): newly added. for storage budget/number.
+        # (0804): newly added. for storage budget/number.
         if (self.constraint == "number" and self.max_indexes == 0) or \
                 (self.constraint == "storage" and self.budget == 0):
             return list()
@@ -62,7 +62,7 @@ class ExtendAlgorithm(SelectionAlgorithm):
         single_attribute_index_candidates = self.workload.potential_indexes()
         extension_attribute_candidates = single_attribute_index_candidates.copy()
 
-        # todo: newly added. for process visualization.
+        # : newly added. for process visualization.
         if self.process:
             self.step["candidates"] = single_attribute_index_candidates
 
@@ -79,15 +79,15 @@ class ExtendAlgorithm(SelectionAlgorithm):
         self.initial_cost = current_cost
 
         # Breaking when no cost improvement
-        # todo: newly added. for process visualization.
+        # : newly added. for process visualization.
         if self.process:
             self.layer = 0
         while True:
-            # todo: newly added. for process visualization.
+            # : newly added. for process visualization.
             if self.process:
                 self.step[self.layer] = list()
 
-            # todo(0804): newly added. for number.
+            # (0804): newly added. for number.
             if self.constraint == "number" and len(index_combination) >= self.max_indexes:
                 break
 
@@ -101,7 +101,7 @@ class ExtendAlgorithm(SelectionAlgorithm):
                     ratio = self._evaluate_combination(
                         index_combination + [candidate], best, current_cost
                     )
-                    # todo: newly added. for process visualization.
+                    # : newly added. for process visualization.
                     if self.process:
                         self.step[self.layer].append({"combination": index_combination + [candidate],
                                                       "candidate": candidate,
@@ -114,11 +114,11 @@ class ExtendAlgorithm(SelectionAlgorithm):
                 # attaching columns to existing indexes
                 self._attach_to_indexes(index_combination, attribute, best, current_cost)
 
-            # todo(1216): no useful index, no useful single-column index -> exit.
+            # (1216): no useful index, no useful single-column index -> exit.
             if best["benefit_to_size_ratio"] <= 0:
                 break
 
-            # todo: newly added. for process visualization.
+            # : newly added. for process visualization.
             if self.process:
                 self.step["selected"].append([item["combination"] for item in
                                               self.step[self.layer]].index(best["combination"]))
@@ -174,7 +174,7 @@ class ExtendAlgorithm(SelectionAlgorithm):
                 # except:
                 #     print(1)
 
-                # todo: newly added. for process visualization.
+                # : newly added. for process visualization.
                 if self.process:
                     self.step[self.layer].append({"combination": new_combination,
                                                   "candidate": new_index,
@@ -200,13 +200,13 @@ class ExtendAlgorithm(SelectionAlgorithm):
         # (current_cost / cost) <= self.min_cost_improvement -> return,
         # at least 0.003 (0.3%) / 0.997 cost improvement.
         if (cost * self.min_cost_improvement) >= current_cost:
-            # todo: newly modified. return -> return -1
+            # : newly modified. return -> return -1
             # return
             return -1
         benefit = current_cost - cost
         new_index = index_combination[-1]  # the candidate input.
 
-        # todo: newly added. HypoPG estimation error?
+        # : newly added. HypoPG estimation error?
         try:
             new_index_size_difference = new_index.estimated_size - old_index_size
         except:
@@ -222,7 +222,7 @@ class ExtendAlgorithm(SelectionAlgorithm):
             logging.error(f"Index `({new_index})` size difference should not be 0!")
         # assert new_index_size_difference != 0, "Index size difference should not be 0!"
 
-        # todo(0917): newly added.
+        # (0917): newly added.
         if self.sel_oracle is None:
             ratio = benefit / b_to_mb(new_index_size_difference)
         elif self.sel_oracle == "cost_per_sto":
@@ -241,5 +241,5 @@ class ExtendAlgorithm(SelectionAlgorithm):
             best["benefit_to_size_ratio"] = ratio
             best["cost"] = cost
 
-        # todo: newly added.
+        # : newly added.
         return ratio

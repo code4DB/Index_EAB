@@ -57,7 +57,7 @@ class BaseCallback(ABC):
         self.logger = logger.Logger.CURRENT
         self._init_callback()
 
-    # todo: newly complemented according to:
+    # : newly complemented according to:
     #  https://github.com/hill-a/stable-baselines/blob/master/stable_baselines/common/callbacks.py.
     def update_locals(self, locals_: Dict[str, Any]) -> None:
         """
@@ -645,7 +645,7 @@ class EvalCallbackWithTBRunningAverage(EventCallback):
                                  simple_value=mean_performance)])
             self.locals['writer'].add_summary(summary, self.num_timesteps)
 
-            # todo: newly added.
+            # : newly added.
             summary = tf.Summary(
                 value=[tf.Summary.Value(tag=f"episode_reward/validation_cost_reduction_{self.name}",
                                         simple_value=mean_reduction)])

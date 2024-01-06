@@ -84,7 +84,7 @@ def get_lib_est_res(model, indexes, plan):
                     elif typ in ops_group_dict:
                         vec[2] = 1
                     elif typ in ops_scan_dict:
-                        # todo(1005): to be improved. columns with the same name.
+                        # (1005): to be improved. columns with the same name.
                         if f"{col} =" in str(node["detail"]):
                             vec[3] = 1
                         else:
@@ -194,7 +194,7 @@ def infer(args):
 
     qerror = qerror.numpy()
 
-    # todo(1114): newly added.
+    # (1114): newly added.
     # for dat, pred, err in zip(test_data, y_pred, qerror):
     #     dat["y_pred"] = float(pred)
     #     dat["qerror"] = float(err)

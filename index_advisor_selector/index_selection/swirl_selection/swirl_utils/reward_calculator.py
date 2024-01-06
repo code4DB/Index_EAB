@@ -3,7 +3,7 @@ from index_advisor_selector.index_selection.swirl_selection.swirl_utils.swirl_co
 
 class RewardCalculator(object):
     def __init__(self, SCALER=1):
-        # todo(0919): newly added.
+        # (0919): newly added.
         self.SCALER = SCALER
         self.reset()
 
@@ -67,7 +67,7 @@ class RelativeDifferenceRelativeToStorageReward(RewardCalculator):
     def _calculate_reward(self, current_cost, previous_cost, initial_cost, new_index_size):
         assert new_index_size > 0
 
-        # todo: newly added.
+        # : newly added.
         if initial_cost == 0:
             reward = 0
         else:

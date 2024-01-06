@@ -20,7 +20,7 @@ MAX_PERMUTATION_LENGTH = 2
 SMALL_TABLE_IGNORE = 10000
 TABLE_MIN_SELECTIVITY = 0.2
 PREDICATE_MIN_SELECTIVITY = 0.01
-# todo(0814): newly added.
+# (0814): newly added.
 MAX_INDEX_WIDTH = 2
 
 # ===============================  Bandit Parameters  ===============================

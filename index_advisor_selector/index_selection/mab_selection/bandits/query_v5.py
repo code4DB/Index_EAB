@@ -8,10 +8,10 @@ class Query:
         self.payload = payloads
         self.group_by = {}
         self.order_by = {}
-        # todo(0814): ?
+        # (0814): ?
         self.selectivity = sql_helper.get_selectivity_v3(connection, query_string, self.predicates)
         self.query_string = query_string
-        # todo(1016): newly added.
+        # (1016): newly added.
         self.freq = freq
         self.frequency = 1
         self.last_seen = time_stamp

@@ -11,7 +11,7 @@ class BaseOracle:
         self.max_memory = max_memory
         self.max_count = max_count
 
-        # todo(0818): newly added.
+        # (0818): newly added.
         self.process = process
         self.step = {"selected": list()}
         self.layer = 0
@@ -46,7 +46,7 @@ class BaseOracle:
         """
         reduced_arm_ucb_dict = {}
         for arm_id in arm_ucb_dict:
-            # todo(0814): 1. consumed by certain chosen index (prefix); 2. exceed the storage budget.
+            # (0814): 1. consumed by certain chosen index (prefix); 2. exceed the storage budget.
             if not (bandit_arms[arm_id] <= bandit_arms[chosen_id] or bandit_arms[arm_id].memory > remaining_memory):
                 reduced_arm_ucb_dict[arm_id] = arm_ucb_dict[arm_id]
         return reduced_arm_ucb_dict
@@ -163,7 +163,7 @@ class OracleV7(BaseOracle):
         while len(arm_ucb_dict) > 0:
             max_ucb_arm_id = max(arm_ucb_dict.items(), key=operator.itemgetter(1))[0]
 
-            # todo(0818): newly added.
+            # (0818): newly added.
             if self.process and is_final:
                 self.step[self.layer] = list()
                 for cand, score in arm_ucb_dict.items():
@@ -177,7 +177,7 @@ class OracleV7(BaseOracle):
                     bandit_arms[max_ucb_arm_id].memory < self.max_memory - used_memory:
                 chosen_arms.append(max_ucb_arm_id)
 
-                # todo(0815): newly modified.
+                # (0815): newly modified.
                 arm_ucb_dict.pop(max_ucb_arm_id)
 
                 used_memory += bandit_arms[max_ucb_arm_id].memory
@@ -185,41 +185,41 @@ class OracleV7(BaseOracle):
                     table_count[bandit_arms[max_ucb_arm_id].table_name] += 1
                 else:
                     table_count[bandit_arms[max_ucb_arm_id].table_name] = 1
-                # todo(0814): violate `MAX_INDEXES_PER_TABLE` constraint.
+                # (0814): violate `MAX_INDEXES_PER_TABLE` constraint.
                 arm_ucb_dict = self.removed_covered_tables(arm_ucb_dict, max_ucb_arm_id, bandit_arms, table_count)
-                # todo(0814): cluster: table_name + '_' + str(query_id) + '_all'?
+                # (0814): cluster: table_name + '_' + str(query_id) + '_all'?
                 arm_ucb_dict = self.removed_covered_clusters(arm_ucb_dict, max_ucb_arm_id, bandit_arms)
-                # todo(0814): covering index is selected for a query.
+                # (0814): covering index is selected for a query.
                 arm_ucb_dict = self.removed_covered_queries_v2(arm_ucb_dict, max_ucb_arm_id, bandit_arms)
-                # todo(0814): violate the storage budget. to be modified. for `number`.
+                # (0814): violate the storage budget. to be modified. for `number`.
                 arm_ucb_dict = self.removed_covered_budget_v2(arm_ucb_dict, max_ucb_arm_id, bandit_arms,
                                                               self.max_memory - used_memory)
-                # todo(0814): One index for one query for table?
+                # (0814): One index for one query for table?
                 arm_ucb_dict = self.removed_same_prefix(arm_ucb_dict, max_ucb_arm_id,
                                                         bandit_arms, prefix_length=1)
-            # todo(0814): newly modified.
+            # (0814): newly modified.
             elif self.constraint == "number":
                 chosen_arms.append(max_ucb_arm_id)
 
-                # todo(0815): newly modified.
+                # (0815): newly modified.
                 arm_ucb_dict.pop(max_ucb_arm_id)
 
                 if bandit_arms[max_ucb_arm_id].table_name in table_count:
                     table_count[bandit_arms[max_ucb_arm_id].table_name] += 1
                 else:
                     table_count[bandit_arms[max_ucb_arm_id].table_name] = 1
-                # todo(0814): violate `MAX_INDEXES_PER_TABLE` constraint.
+                # (0814): violate `MAX_INDEXES_PER_TABLE` constraint.
                 arm_ucb_dict = self.removed_covered_tables(arm_ucb_dict, max_ucb_arm_id, bandit_arms, table_count)
-                # todo(0814): cluster: table_name + '_' + str(query_id) + '_all'?
+                # (0814): cluster: table_name + '_' + str(query_id) + '_all'?
                 arm_ucb_dict = self.removed_covered_clusters(arm_ucb_dict, max_ucb_arm_id, bandit_arms)
-                # todo(0814): covering index is selected for a query.
+                # (0814): covering index is selected for a query.
                 arm_ucb_dict = self.removed_covered_queries_v2(arm_ucb_dict, max_ucb_arm_id, bandit_arms)
-                # todo(0814): One index for one query for table?
+                # (0814): One index for one query for table?
                 arm_ucb_dict = self.removed_same_prefix(arm_ucb_dict, max_ucb_arm_id, bandit_arms, 1)
             else:
                 arm_ucb_dict.pop(max_ucb_arm_id)
 
-            # todo(0814): newly added. for `number`.
+            # (0814): newly added. for `number`.
             if self.constraint == "number" and len(chosen_arms) >= self.max_count:
                 break
 

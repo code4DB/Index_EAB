@@ -86,17 +86,17 @@ def get_tree_est_res(model, plan):
 
 
 def eval_model():
-    # todo: 1. get the params.
+    # : 1. get the params.
     parser = tree_cost_com.get_parser()
     args = parser.parse_args()
 
-    # todo: 4. set the torch random_seed (consistent with args!!!).
+    # : 4. set the torch random_seed (consistent with args!!!).
     seed = 666
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
 
-    # todo: 1. Data preparation (unnormalized).
+    # : 1. Data preparation (unnormalized).
     # args.test_data_load = "/data/wz/index/index_eab/eab_benefit/tree_model/data/tpch/tree_tpch_cost_data_tgt_test.json"
     with open(args.test_data_load, "r") as rf:
         data = json.load(rf)
@@ -136,7 +136,7 @@ def eval_model():
                       out="raw", min_val=None, max_val=None)
     qerror = qerror.numpy()
 
-    # todo(1114): newly added.
+    # (1114): newly added.
     # for dat, pred, err in zip(data, y_pred, qerror):
     #     dat["y_pred"] = float(pred)
     #     dat["qerror"] = float(err)

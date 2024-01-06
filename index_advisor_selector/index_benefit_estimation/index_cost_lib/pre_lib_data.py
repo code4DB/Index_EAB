@@ -51,7 +51,7 @@ def pre_lib_plan():
                                     elif typ in ops_group_dict:
                                         vec[2] = 1
                                     elif typ in ops_scan_dict:
-                                        # todo(1005): to be improved. columns with the same name.
+                                        # (1005): to be improved. columns with the same name.
                                         if f"{col} =" in str(node["detail"]):
                                             vec[3] = 1
                                         else:

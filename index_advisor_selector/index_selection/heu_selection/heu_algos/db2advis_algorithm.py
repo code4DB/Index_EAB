@@ -43,7 +43,7 @@ class DB2AdvisAlgorithm(SelectionAlgorithm):
         self.try_variations_seconds = self.parameters["try_variations_seconds"]
         self.try_variations_max_removals = self.parameters["try_variations_max_removals"]
 
-        # todo(0804): newly added. for number.
+        # (0804): newly added. for number.
         self.max_indexes = self.parameters["max_indexes"]
         self.constraint = self.parameters["constraint"]
 
@@ -79,7 +79,7 @@ class DB2AdvisAlgorithm(SelectionAlgorithm):
                                                                    self.parameters["max_index_width"]) for query in
                           workload.queries]
 
-        # todo(1215): workload, indexes_per_query, cost_evaluation, detailed_query_information
+        # (1215): workload, indexes_per_query, cost_evaluation, detailed_query_information
         #  `utilized_indexes`: all hypothetical indexes utilized for the workload;
         #  `query_details`: {cost_without_indexes, cost_with_indexes, utilized_indexes}.
         utilized_indexes, query_details = get_utilized_indexes(
@@ -89,11 +89,11 @@ class DB2AdvisAlgorithm(SelectionAlgorithm):
         index_benefits = self._calculate_index_benefits(utilized_indexes, query_details)
         index_benefits_subsumed = self._combine_subsumed(index_benefits)
 
-        # todo: newly added. for process visualization.
+        # : newly added. for process visualization.
         if self.process:
             self.step["candidates"] = index_benefits_subsumed
 
-        # # todo: newly added. for process visualization.
+        # # : newly added. for process visualization.
         # if self.process:
         #     self.step[self.layer] = list()
         #     for item in index_benefits_subsumed:
@@ -105,7 +105,7 @@ class DB2AdvisAlgorithm(SelectionAlgorithm):
         selected_index_benefits = []
         disk_usage = 0
         for no, index_benefit in enumerate(index_benefits_subsumed):
-            # todo: newly added. for process visualization.
+            # : newly added. for process visualization.
             if self.process:
                 self.step[self.layer] = [
                     {"combination": [item.index for item in selected_index_benefits] + [index_benefit.index],
@@ -117,7 +117,7 @@ class DB2AdvisAlgorithm(SelectionAlgorithm):
                     selected_index_benefits.append(index_benefit)
                     disk_usage += index_benefit.size()
 
-                    # todo: newly added. for process visualization.
+                    # : newly added. for process visualization.
                     if self.process:
                         for remain in index_benefits_subsumed[no + 1:]:
                             self.step[self.layer] = [
@@ -130,7 +130,7 @@ class DB2AdvisAlgorithm(SelectionAlgorithm):
                 if len(selected_index_benefits) + 1 <= self.max_indexes:
                     selected_index_benefits.append(index_benefit)
 
-                    # todo: newly added. for process visualization.
+                    # : newly added. for process visualization.
                     if self.process:
                         for remain in index_benefits_subsumed[no + 1:]:
                             self.step[self.layer] = [
@@ -140,7 +140,7 @@ class DB2AdvisAlgorithm(SelectionAlgorithm):
                         self.step["selected"].append(no)
                         self.layer += 1
 
-        # todo: to be explored.
+        # : to be explored.
         if self.try_variations_seconds > 0:
             selected_index_benefits = self._try_variations(
                 selected_index_benefits, index_benefits_subsumed, workload
@@ -163,8 +163,8 @@ class DB2AdvisAlgorithm(SelectionAlgorithm):
             for query, value in query_results.items():
                 if index_candidate not in value["utilized_indexes"]:
                     continue
-                # TODO adjust when having weights for queries
-                # todo(0917): newly modified.
+                #  adjust when having weights for queries
+                # (0917): newly modified.
                 benefit += value["cost_without_indexes"] - value["cost_with_indexes"]
 
                 # if self.sel_oracle is None:
@@ -319,7 +319,7 @@ class DB2AdvisAlgorithm(SelectionAlgorithm):
 
 class IndexBenefit:
     def __init__(self, index, benefit, sel_oracle):
-        # todo(1125): newly added.
+        # (1125): newly added.
         self.sel_oracle = sel_oracle
 
         self.index = index
@@ -332,7 +332,7 @@ class IndexBenefit:
         return other.index == self.index and self.benefit == other.benefit
 
     def __lt__(self, other):
-        # todo(1125): newly modified.
+        # (1125): newly modified.
         if self.sel_oracle is None:
             self_ratio = self.benefit_size_ratio()
             other_ratio = other.benefit_size_ratio()

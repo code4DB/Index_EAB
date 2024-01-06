@@ -17,14 +17,14 @@ from index_advisor_selector.index_benefit_estimation.optimizer_cost.optimizer_ut
 from index_advisor_selector.index_benefit_estimation.optimizer_cost.optimizer_utils.optimizer_loss import cal_mape, QError
 from index_advisor_selector.index_benefit_estimation.optimizer_cost.optimizer_model import Optimizer
 
-# todo: 1. get the params.
+# : 1. get the params.
 parser = optimizer_com.get_parser()
 args = parser.parse_args()
 
 import torch
 from torch.utils.tensorboard import SummaryWriter
 
-# todo: 3. create the directory to store the `exp_res`.
+# : 3. create the directory to store the `exp_res`.
 # assert not os.path.exists(os.path.dirname(args.logdir.format(args.exp_id))), \
 #     f"`{os.path.dirname(args.logdir.format(args.exp_id))}` dir existed!"
 # os.makedirs(os.path.dirname(args.logdir.format(args.exp_id)))
@@ -45,7 +45,7 @@ optimizer_com.summary_writer.add_text(
 )
 logging.info(f"Set the tensorboard logdir = `{args.logdir.format(args.exp_id)}`.")
 
-# todo: 4. set the torch random_seed.
+# : 4. set the torch random_seed.
 # Sets the seed for generating random numbers.
 # Returns a `torch.Generator` object.
 random.seed(args.seed)
@@ -53,7 +53,7 @@ np.random.seed(args.seed)
 torch.manual_seed(args.seed)
 logging.info(f"Set the random seed = `{args.seed}`.")
 
-# todo: 5. load the training data.
+# : 5. load the training data.
 for bench in ["tpch"]:  # "tpch", "tpcds", "job"
     # args.train_data_load = f"/data/wz/index/index_eab/eab_benefit/cost_data/{bench}/{bench}_cost_data_tgt_train.json"
     args.train_data_load = f"/data1/wz/index/index_eab/eab_benefit/optimizer_cost/data/{bench}/openGauss_{bench}_cost_data_tgt_train.json"

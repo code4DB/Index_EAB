@@ -31,7 +31,7 @@ import traceback
 from . import perturb_const
 
 
-# todo: GROUP BY / ORDER BY / WHERE
+# : GROUP BY / ORDER BY / WHERE
 # WHERE: repetitive columns
 # GROUP BY + HAVING -> SELECT ()
 # HAVING -> GROUP BY ()
@@ -55,15 +55,15 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
     :param max_diff:
     :return:
     """
-    # todo: time-step exceed the max_len.
+    # : time-step exceed the max_len.
     if step >= len(token["pre_types"]):
         return [perturb_const.PAD]
 
-    # todo: newly added
+    # : newly added
     if token["pno_tokens"][step] == perturb_const.SEP:
         return [perturb_const.SEP]
 
-    # todo(might not executable): perturbation step constraint, forcibly truncated.
+    # (might not executable): perturbation step constraint, forcibly truncated.
     # if np.sum(np.array(src_vec[:step]) != np.array(ptok_nos)) >= max_diff \
     #         and src_vec[step] in cand:
     #     return [src_vec[step]]
@@ -79,7 +79,7 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
         cand = [word2idx[token["pre_tokens"][step].lower()]]
     elif "wildcard" in token["pre_types"][step]:
         # cand = [word2idx[token["pre_tokens"][step]]]
-        # todo(0413): newly added.
+        # (0413): newly added.
         cand = [perturb_const.UNK]
     elif token["pre_types"][step] in perturb_const.parenthesis:
         cand = [word2idx[token["pre_tokens"][step]]]
@@ -87,7 +87,7 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
     # 2) tables
     elif "#join_table" in token["pre_types"][step]:
         cand = [word2idx[token["pre_tokens"][step].lower()]]
-    # todo: join order
+    # : join order
     elif "#table" in token["pre_types"][step]:
         cand = [word2idx[token["pre_tokens"][step].lower()]]
         # cand = [word2idx[tbl] for tbl in table if word2idx[tbl] not in ptok_nos]
@@ -98,9 +98,9 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
         cand = [word2idx.get(token["pre_tokens"][step].split(".")[-1], 1)]
         if cand[0] == 1:
             cand = [word2idx[token["pre_tokens"][step].lower()]]
-    # todo: special column (aggregate)
+    # : special column (aggregate)
     elif token["pre_types"][step] == "select#aggregate_column":
-        # todo(0412): newly added. for `(`, `)`
+        # (0412): newly added. for `(`, `)`
         if "(" in idx2word.values() and ")" in idx2word.values():
             aggregator = idx2word[str(ptok_nos[-2])]
         else:
@@ -113,7 +113,7 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
             if aggregator in perturb_const.aggregator[:2]:
                 # if aggregator in perturb_const.aggregator[:3]:
                 cand.extend(tbl_col)
-            # todo: count()
+            # : count()
             # elif ptoken[-1] == perturb_const.aggregator[2]:
             #     cand.extend([col for col in tbl_col
             #                  if col_info[idx2word[str(col)]]["type"] != "date"])
@@ -123,7 +123,7 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
                 cand.extend([col for col in tbl_col
                              if col_info[idx2word[str(col)]]["type"]
                              in ["smallint", "integer", "bigint", "numeric"]])
-        # todo: numeric aggregate column can be the same, filter columns applied under the same aggregator selected already.
+        # : numeric aggregate column can be the same, filter columns applied under the same aggregator selected already.
         cand_bak = copy.deepcopy(cand)
         cand = list(set(cand) - set([no for i, no in enumerate(ptok_nos)
                                      if token["pre_types"][i] == token["pre_types"][step]]))
@@ -132,15 +132,15 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
             if aggregator in perturb_const.aggregator[-3:]:
                 cand = list(set(cand_bak) - set([no for i, no in enumerate(ptok_nos)
                                                  if token["pno_tokens"][i - 1] == token["pno_tokens"][step - 1]]))
-            else:  # todo: newly added, to be removed.?
+            else:  # : newly added, to be removed.?
                 cand = list(set(cand_bak) - set([no for i, no in enumerate(ptok_nos)
                                                  if token["pre_types"][i] == "select#aggregate_column"
                                                  and ptok_nos[i - 1] == ptok_nos[step - 1]]))
-    # todo: special column (group by)
+    # : special column (group by)
     elif token["pre_types"][step] == "group by#column":
         cand = list(set([no for i, no in enumerate(ptok_nos) if token["pre_types"][i] == "select#column"])
                     - set([no for i, no in enumerate(ptok_nos) if token["pre_types"][i] == "group by#column"]))
-    # todo: special column (having)
+    # : special column (having)
     elif token["pre_types"][step] == "having#aggregate_column":
         cand = list(set([tok_no for i, tok_no in enumerate(ptok_nos) if
                          i >= 1 and token["pre_types"][i - 1] == "select#aggregator" and
@@ -150,7 +150,7 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
                     - set([no for i, no in enumerate(ptok_nos) if
                            token["pre_types"][i] == "having#aggregate_column" and
                            ptok_nos[i - 1] == ptok_nos[step - 1]]))
-    # todo: special column (order by)
+    # : special column (order by)
     elif token["pre_types"][step] == "order by#column":
         cand = list(set([no for i, no in enumerate(ptok_nos) if token["pre_types"][i] == "select#column"])
                     - set([no for i, no in enumerate(ptok_nos) if token["pre_types"][i] == "order by#column"]))
@@ -163,21 +163,21 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
                     - set([no for i, no in enumerate(ptok_nos) if
                            token["pre_types"][i] == "order by#aggregate_column" and
                            ptok_nos[i - 1] == ptok_nos[step - 1]]))
-    # todo: repeated column
+    # : repeated column
     elif "#column" in token["pre_types"][step]:  # select/where
         for tbl in table:
             cand.extend(list(range(word_info[f"{tbl}#column name"]["start_id"],
                                    word_info[f"{tbl}#column name"]["end_id"] + 1)))
         # cand = list(set(cand) - set([no for i, no in enumerate(ptok_nos)
         #                              if token["pre_types"][i] == token["pre_types"][step]]))
-        # todo(0413): newly modified. repeated column allowed in `WHERE` clause.
+        # (0413): newly modified. repeated column allowed in `WHERE` clause.
         if token["pre_types"][step] != "where#column":
             cand = list(set(cand) - set([no for i, no in enumerate(ptok_nos)
                                          if token["pre_types"][i] == token["pre_types"][step]]))
         else:
             cand = list(set(cand))
 
-        # todo: to be removed.
+        # : to be removed.
         # try:
         #     cand = list(set(cand) - set([no for i, no in enumerate(ptok_nos)
         #                                  if token["pre_types"][i] == token["pre_types"][step]]))
@@ -190,7 +190,7 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
         cand = list(range(word_info[f"{idx2word[str(ptok_nos[-2])]}#column values"]["start_id"],
                           word_info[f"{idx2word[str(ptok_nos[-2])]}#column values"]["end_id"] + 1))
     elif "#aggregate_value" in token["pre_types"][step]:
-        # todo(0412): newly added. for `(`, `)`
+        # (0412): newly added. for `(`, `)`
         if "(" in idx2word.values() and ")" in idx2word.values():
             aggregator = idx2word[str(ptok_nos[-3])]
         else:
@@ -231,7 +231,7 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
         cand = [perturb_const.UNK]  # UNK
     # more than one. ?
     elif "#numeric_aggregate_value" in token["pre_types"][step]:
-        # todo(0412): newly added. for `(`, `)`
+        # (0412): newly added. for `(`, `)`
         if "(" in idx2word.values() and ")" in idx2word.values():
             aggregator = idx2word[str(ptok_nos[-3])]
         else:
@@ -254,9 +254,9 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
 
     # elif "#numeric_aggregate_value" in token["pre_types"][step]:
     #     cand = [perturb_const.UNK]  # UNK
-    # todo(0412): newly added.
+    # (0412): newly added.
     elif "#like_value" in token["pre_types"][step]:
-        # todo(0414): newly added. for like value.
+        # (0414): newly added. for like value.
         if idx2word[str(ptok_nos[-1])] in perturb_const.like_predicate:
             cand = [perturb_const.UNK]
         else:
@@ -270,7 +270,7 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
         cand = list(range(word_info["operator"]["start_id"],
                           word_info["operator"]["end_id"] + 1))
 
-    # todo: numeric_aggregate_value? min/max
+    # : numeric_aggregate_value? min/max
     # elif "select#aggregator" in token["pre_types"][step]:
     #     cand = list(range(word_info["aggregator"]["start_id"],
     #                       word_info["aggregator"]["end_id"] + 1))
@@ -279,7 +279,7 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
             token["pre_tokens"][step].lower() in perturb_const.aggregator[:2]:
         cand = list(range(word_info["aggregator"]["start_id"],
                           word_info["aggregator"]["start_id"] + 2))
-    # todo: count/avg/sum, static?
+    # : count/avg/sum, static?
     elif token["pre_types"][step] == "select#aggregator" and \
             token["pre_tokens"][step].lower() in perturb_const.aggregator[-3:]:
         cand = [word2idx[token["pre_tokens"][step].lower()]]
@@ -326,7 +326,7 @@ def valid_cand(token, table, step, ptok_nos, word2idx,
             cand.extend(list(range(word_info["like"]["start_id"],
                                    word_info["like"]["end_id"] + 1)))
 
-    # todo: perturbation step constraint, already decoded words difference (not forcibly).
+    # : perturbation step constraint, already decoded words difference (not forcibly).
     #  group by / order by / having clause.
     if np.sum(np.array(token["pno_tokens"][:step]) != np.array(ptok_nos)) >= max_diff \
             and token["pno_tokens"][step] in cand:
@@ -397,16 +397,16 @@ def valid_cand_col(token, table, step, ptok_nos, column_left, word2idx,
     :param max_diff:
     :return:
     """
-    # todo: newly added.
+    # : newly added.
     # if step == len(token["pno_tokens"]):
     #     return [perturb_const.SEP]
 
-    # todo: time-step exceed the max_len.
-    # todo: newly added. "pre_types" -> "pno_tokens"
+    # : time-step exceed the max_len.
+    # : newly added. "pre_types" -> "pno_tokens"
     if step >= len(token["pno_tokens"]):
         return [perturb_const.PAD]
 
-    # todo(might not executable): perturbation step constraint, forcibly truncated.
+    # (might not executable): perturbation step constraint, forcibly truncated.
     # if np.sum(np.array(src_vec[:step]) != np.array(ptok_nos)) >= max_diff \
     #         and src_vec[step] in cand:
     #     return [src_vec[step]]
@@ -422,10 +422,10 @@ def valid_cand_col(token, table, step, ptok_nos, column_left, word2idx,
 
     cand = list()
     # 3) columns
-    # todo: special column (aggregate)
+    # : special column (aggregate)
     #  type for min()/avg()/count()
     if token["pre_types"][step] == "select#aggregate_column":
-        # todo(0412): newly added. for `(`, `)`
+        # (0412): newly added. for `(`, `)`
         if "(" in idx2word.values() and ")" in idx2word.values():
             aggregator = idx2word[str(ptok_nos[-2])]
         else:
@@ -435,7 +435,7 @@ def valid_cand_col(token, table, step, ptok_nos, column_left, word2idx,
         if aggregator in perturb_const.aggregator[:2]:
             # if aggregator in perturb_const.aggregator[:3]:
             cand.extend(column_left)
-        # todo: count()
+        # : count()
         # elif ptoken[-1] == perturb_const.aggregator[2]:
         #     cand.extend([col for col in tbl_col
         #                  if col_info[idx2word[str(col)]]["type"] != "date"])
@@ -455,11 +455,11 @@ def valid_cand_col(token, table, step, ptok_nos, column_left, word2idx,
                         - set([no for i, no in enumerate(ptok_nos)
                                if ptok_nos[i - 1] == ptok_nos[step - 1]]))
             # cand.append(token["pno_tokens"][step])
-    # todo: special column (group by)
+    # : special column (group by)
     elif token["pre_types"][step] == "group by#column":
         cand = list(set([no for i, no in enumerate(ptok_nos) if token["pre_types"][i] == "select#column"])
                     - set([no for i, no in enumerate(ptok_nos) if token["pre_types"][i] == "group by#column"]))
-    # todo: special column (having)
+    # : special column (having)
     elif token["pre_types"][step] == "having#aggregate_column":
         cand = list(set([tok_no for i, tok_no in enumerate(ptok_nos) if
                          i >= 1 and token["pre_types"][i - 1] == "select#aggregator" and
@@ -467,7 +467,7 @@ def valid_cand_col(token, table, step, ptok_nos, column_left, word2idx,
                     - set([no for i, no in enumerate(ptok_nos) if
                            token["pre_types"][i] == "having#aggregate_column" and
                            ptok_nos[i - 1] == ptok_nos[step - 1]]))
-    # todo: special column (order by)
+    # : special column (order by)
     elif token["pre_types"][step] == "order by#column":
         cand = list(set([no for i, no in enumerate(ptok_nos) if token["pre_types"][i] == "select#column"])
                     - set([no for i, no in enumerate(ptok_nos) if token["pre_types"][i] == "order by#column"]))
@@ -478,13 +478,13 @@ def valid_cand_col(token, table, step, ptok_nos, column_left, word2idx,
                     - set([no for i, no in enumerate(ptok_nos) if
                            token["pre_types"][i] == "order by#aggregate_column" and
                            ptok_nos[i - 1] == ptok_nos[step - 1]]))
-    # todo: repeated column
+    # : repeated column
     elif "#column" in token["pre_types"][step]:  # select/from/where
         # cand = list(set(column_left) - set([no for i, no in enumerate(ptok_nos)
         #                                     if token["pre_types"][i] == token["pre_types"][step]]))
-        # todo(0413): newly modified. repeated column allowed in `WHERE` clause.
+        # (0413): newly modified. repeated column allowed in `WHERE` clause.
         if token["pre_types"][step] != "where#column":  # "from#column"
-            # todo(0417): newly added. for `like_predicate`.
+            # (0417): newly added. for `like_predicate`.
             if len(token["pre_types"]) > step + 1 and token["pre_types"][step + 1] == "like_predicate":
                 # cand = list(set(column_left) - set([no for i, no in enumerate(ptok_nos)
                 #                                     if token["pre_types"][i] == token["pre_types"][step] and
@@ -498,7 +498,7 @@ def valid_cand_col(token, table, step, ptok_nos, column_left, word2idx,
                 cand = list(set(column_left) - set([no for i, no in enumerate(ptok_nos)
                                                     if token["pre_types"][i] == token["pre_types"][step]]))
         else:
-            # todo(0417): newly added. for `like_predicate`.
+            # (0417): newly added. for `like_predicate`.
             if len(token["pre_types"]) > step + 1 and token["pre_types"][step + 1] == "like_predicate":
                 cand = [no for no in list(set(column_left)) if
                         col_info[idx2word[str(no)]]["type"] in ["character", "character varying"]]
@@ -506,7 +506,7 @@ def valid_cand_col(token, table, step, ptok_nos, column_left, word2idx,
                 cand = list(set(column_left))
         if len(cand) == 0 and (token["pre_types"][step] == "from#column"
                                or token["pre_types"][step] == "where#column"):  # "from#column"
-            # todo(0417): newly added. for `like_predicate`.
+            # (0417): newly added. for `like_predicate`.
             if len(token["pre_types"]) > step + 1 and token["pre_types"][step + 1] == "like_predicate":
                 cand = list(set([no for i, no in enumerate(ptok_nos)
                                  if (token["pre_types"][i] == "select#column"
@@ -520,7 +520,7 @@ def valid_cand_col(token, table, step, ptok_nos, column_left, word2idx,
                                  or token["pre_types"][i] == "select#aggregate_column"])
                             - set([no for i, no in enumerate(ptok_nos)
                                    if token["pre_types"][i] == token["pre_types"][step]]))
-        # cand = column_left  # todo: to be removed, for repeated columns.
+        # cand = column_left  # : to be removed, for repeated columns.
 
     # 4) values
     # 4.1) common values: column values and min()/max() aggregate values.
@@ -528,7 +528,7 @@ def valid_cand_col(token, table, step, ptok_nos, column_left, word2idx,
         cand = list(range(word_info[f"{idx2word[str(ptok_nos[-2])]}#column values"]["start_id"],
                           word_info[f"{idx2word[str(ptok_nos[-2])]}#column values"]["end_id"] + 1))
     elif "#aggregate_value" in token["pre_types"][step]:
-        # todo(0412): newly added. for `(`, `)`
+        # (0412): newly added. for `(`, `)`
         if "(" in idx2word.values() and ")" in idx2word.values():
             aggregator = idx2word[str(ptok_nos[-3])]
         else:
@@ -562,7 +562,7 @@ def valid_cand_col(token, table, step, ptok_nos, column_left, word2idx,
         cand = [perturb_const.UNK]  # UNK
     # more than one.
     elif "#numeric_aggregate_value" in token["pre_types"][step]:
-        # todo(0412): newly added. for `(`, `)`
+        # (0412): newly added. for `(`, `)`
         if "(" in idx2word.values() and ")" in idx2word.values():
             aggregator = idx2word[str(ptok_nos[-3])]
         else:
@@ -582,9 +582,9 @@ def valid_cand_col(token, table, step, ptok_nos, column_left, word2idx,
             sql_res["pre_tokens"] = token
             with open("./except.json", "w") as wf:
                 json.dump(sql_res, wf, indent=2)
-    # todo(0412): newly added.
+    # (0412): newly added.
     elif "#like_value" in token["pre_types"][step]:
-        # todo(0414): newly added. for like value.
+        # (0414): newly added. for like value.
         if idx2word[str(ptok_nos[-1])] in perturb_const.like_predicate:
             cand = [perturb_const.UNK]
         else:
@@ -607,7 +607,7 @@ def valid_cand_col(token, table, step, ptok_nos, column_left, word2idx,
         with open("./col_cand_except.json", "w") as wf:
             json.dump(sql_res, wf, indent=2)
 
-    # todo: perturbation step constraint, already decoded words difference (not forcibly).
+    # : perturbation step constraint, already decoded words difference (not forcibly).
     #  group by / order by / having clause.
     if np.sum(np.array(token["pno_tokens"][:step]) != np.array(ptok_nos)) >= max_diff \
             and token["pno_tokens"][step] in cand:
@@ -631,15 +631,15 @@ def valid_cand_val(token, table, step, ptok_nos, word2idx,
     :param max_diff:
     :return:
     """
-    # todo: time-step exceed the max_len.
+    # : time-step exceed the max_len.
     if step >= len(token["pre_types"]):
         return [perturb_const.PAD]
 
-    # todo: newly added
+    # : newly added
     if token["pno_tokens"][step] == perturb_const.SEP:
         return [perturb_const.SEP]
 
-    # todo(might not executable): perturbation step constraint, forcibly.
+    # (might not executable): perturbation step constraint, forcibly.
     # if np.sum(np.array(src_vec[:step]) != np.array(ptok_nos)) >= max_diff \
     #         and src_vec[step] in cand:
     #     return [src_vec[step]]
@@ -656,7 +656,7 @@ def valid_cand_val(token, table, step, ptok_nos, word2idx,
         cand = list(range(word_info[f"{idx2word[str(ptok_nos[-2])]}#column values"]["start_id"],
                           word_info[f"{idx2word[str(ptok_nos[-2])]}#column values"]["end_id"] + 1))
     elif "#aggregate_value" in token["pre_types"][step]:
-        # todo(0412): newly added. for `(`, `)`
+        # (0412): newly added. for `(`, `)`
         if "(" in idx2word.values() and ")" in idx2word.values():
             aggregator = idx2word[str(ptok_nos[-3])]
         else:
@@ -688,7 +688,7 @@ def valid_cand_val(token, table, step, ptok_nos, word2idx,
         cand = [perturb_const.UNK]  # UNK
     # more than one.
     elif "#numeric_aggregate_value" in token["pre_types"][step]:
-        # todo(0412): newly added. for `(`, `)`
+        # (0412): newly added. for `(`, `)`
         if "(" in idx2word.values() and ")" in idx2word.values():
             aggregator = idx2word[str(ptok_nos[-3])]
         else:
@@ -708,16 +708,16 @@ def valid_cand_val(token, table, step, ptok_nos, word2idx,
             sql_res["ptok_nos"] = ptok_nos.tolist()
             with open("./except.json", "w") as wf:
                 json.dump(sql_res, wf, indent=2)
-    # todo(0412): newly added.
+    # (0412): newly added.
     elif "#like_value" in token["pre_types"][step]:
-        # todo(0414): newly added. for like value.
+        # (0414): newly added. for like value.
         if idx2word[str(ptok_nos[-1])] in perturb_const.like_predicate:
             cand = [perturb_const.UNK]
         else:
             cand = list(range(word_info[f"{idx2word[str(ptok_nos[-2])]}#column values"]["start_id"],
                               word_info[f"{idx2word[str(ptok_nos[-2])]}#column values"]["end_id"] + 1))
 
-    # todo: perturbation step constraint, already decoded words difference (not forcibly).
+    # : perturbation step constraint, already decoded words difference (not forcibly).
     #  group by / order by / having clause.
     if np.sum(np.array(token["pno_tokens"][:step]) != np.array(ptok_nos)) >= max_diff \
             and token["pno_tokens"][step] in cand:
@@ -748,16 +748,16 @@ def sql2vec(sql_tokens, word2idx):
             elif "aggregator" in item["pre_types"][i]:
                 key = key.lower()
             elif "column" in item["pre_types"][i]:
-                # todo: `table`.`column`. add for `JOB`, lower()
+                # : `table`.`column`. add for `JOB`, lower()
                 key = key.lower()
                 if word2idx.get(key, 1) == 1:
                     key = key.split(".")[-1]
-            # todo: newly added for `<unk>`.
+            # : newly added for `<unk>`.
             elif "#numeric_aggregate_value" in item["pre_types"][i]:
                 key = "<unk>"
             elif "value" in item["pre_types"][i]:
                 key = f"{item['pre_types'][i].split('#')[0]}#_#{key}"
-            # todo(0417): newly added.
+            # (0417): newly added.
             elif "null_predicate" in item["pre_types"][i]:
                 key = key.lower()
             elif "in_predicate" in item["pre_types"][i]:
@@ -816,13 +816,13 @@ def vec2sql(sql_tokens, sql_vectors, idx2word, col_info, mode="without_table"):
 
             cur = idx2word[str(no)]
 
-            # todo(1003): newly added.
+            # (1003): newly added.
             if cur == "OR":
                 cur = "AND"
             if cur == "!=":
                 cur = "="
 
-            # todo: newly added. for "\n"
+            # : newly added. for "\n"
             if isinstance(cur, str):
                 cur = cur.replace("\n", " ")
             # for 1) numeric aggregate value, 2) like predicate value, 3) wildcard
@@ -834,22 +834,22 @@ def vec2sql(sql_tokens, sql_vectors, idx2word, col_info, mode="without_table"):
                     cur = to
             res["sql_token"].append(cur)
 
-            # todo(0413): newly modified for wildcard('*').
+            # (0413): newly modified for wildcard('*').
             # if pre1 in perturb_const.aggregator and cur in columns:
             if pre1 in perturb_const.aggregator and (cur in columns or "*" in str(cur)):
                 if mode == "with_table":
-                    # todo(0412): newly added. for parenthesis: `(`, `)`
+                    # (0412): newly added. for parenthesis: `(`, `)`
                     if "(" in idx2word.values() and ")" in idx2word.values():
                         cur = f"{col_info[cur]['table']}.{cur}"
                     else:
                         cur = f"({col_info[cur]['table']}.{cur})"
                 else:
-                    # todo(0412): newly added. for parenthesis: `(`, `)`
+                    # (0412): newly added. for parenthesis: `(`, `)`
                     if "(" in idx2word.values() and ")" in idx2word.values():
                         cur = f"{cur}"
                     else:
                         cur = f"({cur})"
-            # todo(0417): newly modified. MIN()/MAX() aggregator,
+            # (0417): newly modified. MIN()/MAX() aggregator,
             #  perturb_const.operator[:2] -> perturb_const.aggregator[:2], agg col op val
             # cur in col_info[pre2]["value"] and \
             elif ((pre3 in perturb_const.aggregator[:2] and
@@ -862,7 +862,7 @@ def vec2sql(sql_tokens, sql_vectors, idx2word, col_info, mode="without_table"):
                     col_info[pre2]["type"] not in ["smallint", "integer", "bigint", "numeric"]:
                 if not cur.startswith("'"):
                     cur = f"'{cur}'"
-            # todo(0417): newly modified. predicate: string value, (agg) col op val
+            # (0417): newly modified. predicate: string value, (agg) col op val
             elif ((pre3 not in perturb_const.aggregator and
                    "(" not in idx2word.values() and ")" not in idx2word.values()) or
                   (pre5 not in perturb_const.aggregator and
@@ -874,7 +874,7 @@ def vec2sql(sql_tokens, sql_vectors, idx2word, col_info, mode="without_table"):
                 if not cur.startswith("'"):
                     cur = f"'{cur}'"
 
-            # todo(0413): newly modified for wildcard('*').
+            # (0413): newly modified for wildcard('*').
             if (pre1 in columns or pre1 in tables or "*" in str(pre1)) and \
                     (cur in columns or cur in tables or "*" in str(cur)):
                 if cur in columns and mode == "with_table":
@@ -985,7 +985,7 @@ def random_gen(sql_token, word2idx, idx2word, word_info, col_info,
                     selected = vec[step]
                 else:
                     selected = random.choice(cand)
-                    # todo: further ensure current perturbation won't
+                    # : further ensure current perturbation won't
                     #       exceed the maximum edit distance allowed.
                     if is_check and selected != vec[step] and vec[step] in cand:
                         temp_sql_tok = copy.deepcopy(sql_tok)
@@ -1027,36 +1027,3 @@ def random_gen(sql_token, word2idx, idx2word, word_info, col_info,
             except_tokens.append((ino, token, str(e)))
 
     return valid_tokens, except_tokens, sql_vectors
-
-
-if __name__ == "__main__":
-    # sql_token_json = "/data/wz/index/attack/visual_" \
-    #                  "rewrite/data/small_sample.json"
-
-    sql_token_json = "/data/wz/index/attack/visual_rewrite/data/" \
-                     "val_swap_cost_value_filter_format_tpch_queries_all.json"
-
-    # sql_cand = get_candidate(sql_token_json)
-    # sql_vec = random_gen(sql_cand)
-    sql_token_json = "/data/wz/index/attack/resource/visrew_queries/" \
-                     "perturb_rcost_value_filter_format_all.json"
-
-    # 666 -> p_name (repeated)
-    sql_token_json = "/data/wz/index/attack/resource/visrew_queries/" \
-                     "valswap_index_perturb_rcost_value_filter_format_all.json"
-    with open(sql_token_json, "r") as rf:
-        sql_token = json.load(rf)
-
-    valid_token, except_token, sql_vec = random_gen(sql_token, max_diff=5)
-    sql_res = vec2sql(valid_token, sql_vec)
-
-    # print(sql_res[3666]['sql_text'] + ";" + pre_data.vec2sql([valid_token[3666]], sql2vec([valid_token[3666]]))[0]['sql_text'] + ";")
-    print(1)
-
-    with open("src.sql", "w") as wf:
-        for token in valid_token:
-            wf.writelines(token["sql"] + "\n")
-
-    with open("tgt.sql", "w") as wf:
-        for sql in sql_res:
-            wf.writelines(sql["sql_text"] + "\n")

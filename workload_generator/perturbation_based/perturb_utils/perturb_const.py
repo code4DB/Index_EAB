@@ -4,7 +4,7 @@
 # @Author: Wei Zhou
 # @Time: 2022/6/23 14:32
 
-# todo: sepecified `tpch` or `tpcds` benchmark.
+# : sepecified `tpch` or `tpcds` benchmark.
 # TPC-H schema
 tpch_tables = ["region", "nation", "supplier", "part", "customer", "orders", "partsupp", "lineitem"]
 tpch_cols = ["r_regionkey", "r_name", "r_comment",
@@ -246,7 +246,7 @@ job_table_alias = {"aka_title": "at",
                    "movie_info_idx": "mi_idx",
                    "info_type": "it"}
 
-# todo: cols selected!!!
+# : cols selected!!!
 tpch_tables = tpcds_tables
 tpch_cols = tpcds_cols
 tpch_tbl_col = tpcds_tbl_col
@@ -285,7 +285,7 @@ aggregator = ["max", "min", "count", "avg", "sum"]
 order_by_key = ["DESC", "ASC"]
 conjunction = ["AND", "OR"]
 
-# todo(0411): newly added.
+# (0411): newly added.
 # wildcard = ["*"]
 wildcard = "*"
 parenthesis = ["(", ")"]
@@ -297,15 +297,15 @@ exists_predicate = ["exists", "not exists"]
 like_predicate = ["like", "not like"]
 
 # reserved
-# todo(0411): newly added. "LEFT JOIN", "RIGHT JOIN", "INNER JOIN"
+# (0411): newly added. "LEFT JOIN", "RIGHT JOIN", "INNER JOIN"
 join = ["JOIN", "ON", "LEFT JOIN", "RIGHT JOIN", "INNER JOIN"]
 # punctuation = ["(", ")", ",", " ", ";"]
 punctuation = [",", " ", ";"]
 
-# todo: "aggregate"?
+# : "aggregate"?
 keyword = ["select", "from", "aggregate", "where", "group by", "having", "order by"]
 
-# todo: to be classified.
+# : to be classified.
 # join = ["join", "cartesian", | "left join", "right join", "inner join"]
 # predicate_type = ["between", "is null", "is not null", "in", "is not in", "exists", "not exists", "like", "not like"]
 

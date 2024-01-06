@@ -996,7 +996,7 @@ class OffPolicyRLModel(BaseRLModel):
 
         self.replay_buffer = replay_buffer
 
-    # todo: newly complemented according to:
+    # : newly complemented according to:
     #  https://github.com/hill-a/stable-baselines/blob/14630fbac70aaa633f8a331c8efac253d3ed6115/stable_baselines/common/base_class.py.
     def is_using_her(self) -> bool:
         """
@@ -1007,7 +1007,7 @@ class OffPolicyRLModel(BaseRLModel):
         from stable_baselines.her.replay_buffer import HindsightExperienceReplayWrapper
         return isinstance(self.replay_buffer, HindsightExperienceReplayWrapper)
 
-    # todo: newly complemented according to:
+    # : newly complemented according to:
     #  https://github.com/hill-a/stable-baselines/blob/14630fbac70aaa633f8a331c8efac253d3ed6115/stable_baselines/common/base_class.py.
     def replay_buffer_add(self, obs_t, action, reward, obs_tp1, done, info):
         """

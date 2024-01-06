@@ -21,17 +21,17 @@ from index_advisor_selector.index_candidate_generation.distill_model.distill_dat
 
 
 def eval_model():
-    # todo: 1. get the params.
+    # : 1. get the params.
     parser = distill_com.get_parser()
     args = parser.parse_args()
 
-    # todo: 4. set the torch random_seed (consistent with args!!!).
+    # : 4. set the torch random_seed (consistent with args!!!).
     seed = 666
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
 
-    # todo: 1. Data preparation (unnormalized).
+    # : 1. Data preparation (unnormalized).
     # args.test_data_load = "/data1/wz/index/index_eab/eab_other/distill_model/data/tpch/tree_tpch_cost_data_tgt_test.json"
 
     # args.test_data_load = "/data1/wz/index/index_eab/eab_other/distill_model/distill_data/plan_raw_feat_tpch_test.json"
@@ -108,7 +108,7 @@ def eval_model():
         f1 = f1_score(y_pred_f1, y_test_f1)
         print(np.round(f1, 2))
 
-    # todo(1114): newly added.
+    # (1114): newly added.
     # for dat, pred, err in zip(data, y_pred, qerror):
     #     dat["y_pred"] = float(pred)
     #     dat["qerror"] = float(err)

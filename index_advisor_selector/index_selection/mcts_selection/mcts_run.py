@@ -37,19 +37,19 @@ def get_mcts_res(args, work_list):
     if not os.path.exists(os.path.dirname(args.log_file.format(args.exp_id))):
         os.makedirs(os.path.dirname(args.log_file.format(args.exp_id)))
 
-    # todo(1018): to be removed. (uncommented)
+    # (1018): to be removed. (uncommented)
     # set_logger(args.log_file.format(args.exp_id))
 
     db_conf = configparser.ConfigParser()
     db_conf.read(args.db_file)
 
-    # todo(1030): newly added.
+    # (1030): newly added.
     if args.db_name is not None:
         db_conf["postgresql"]["database"] = args.db_name
 
     database_connector = PostgresDatabaseConnector(db_conf, autocommit=True)
 
-    # todo(0818): newly added.
+    # (0818): newly added.
     if os.path.exists(args.model_load):
         with open(args.model_load, "rb") as rf:
             advisor = pickle.load(rf)

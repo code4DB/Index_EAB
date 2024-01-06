@@ -42,7 +42,7 @@ class AnytimeAlgorithm(SelectionAlgorithm):
         self.max_index_width = self.parameters["max_index_width"]
         self.max_runtime_minutes = self.parameters["max_runtime_minutes"]
 
-        # todo(0804): newly added. for number.
+        # (0804): newly added. for number.
         self.max_indexes = self.parameters["max_indexes"]
         self.constraint = self.parameters["constraint"]
 
@@ -57,14 +57,14 @@ class AnytimeAlgorithm(SelectionAlgorithm):
         """
         logging.info("Calculating best indexes Anytime")
 
-        # todo(0804): newly added. for storage budget/number.
+        # (0804): newly added. for storage budget/number.
         if (self.constraint == "number" and self.max_indexes == 0) or \
                 (self.constraint == "storage" and self.disk_constraint == 0):
             return list()
 
         # Generate syntactically relevant candidates
         # Multi-column indexes are considered from the start.
-        # todo(0917): newly modified.
+        # (0917): newly modified.
         if self.cand_gen is None or self.cand_gen == "permutation":
             candidates = candidates_per_query(
                 workload,
@@ -82,7 +82,7 @@ class AnytimeAlgorithm(SelectionAlgorithm):
                                                                    self.parameters["max_index_width"]) for query in
                           workload.queries]
 
-        # todo(0918): newly modified.
+        # (0918): newly modified.
         if self.cand_gen is None or self.is_utilized:
             # Obtain best (utilized) indexes per query
             candidates, _ = get_utilized_indexes(workload, candidates, self.cost_evaluation)
@@ -104,9 +104,9 @@ class AnytimeAlgorithm(SelectionAlgorithm):
         # Remove candidates that cannot meet budget requirements
         seeds = list()
         filtered_candidates = set()
-        # todo(0804): newly added. for reproduction.
+        # (0804): newly added. for reproduction.
         for candidate in sorted(list(candidates)):
-            # todo(0804): newly added. for number.
+            # (0804): newly added. for number.
             if self.constraint == "storage":
                 if candidate.estimated_size > self.disk_constraint:
                     continue
@@ -122,7 +122,7 @@ class AnytimeAlgorithm(SelectionAlgorithm):
         seeds.append(set())
         candidates = filtered_candidates
 
-        # todo: newly added. for process visualization.
+        # : newly added. for process visualization.
         if self.process:
             self.step["candidates"] = candidates
 
@@ -130,9 +130,9 @@ class AnytimeAlgorithm(SelectionAlgorithm):
         # (index, cost)
         best_configuration = (None, None)
 
-        # todo(0804): newly added. for reproduction.
+        # (0804): newly added. for reproduction.
         for i, seed in enumerate(sorted(list(seeds))):
-            # todo: newly added. for process visualization.
+            # : newly added. for process visualization.
             if self.process:
                 self.step[i] = dict()
                 self.layer = 0
@@ -186,14 +186,14 @@ class AnytimeAlgorithm(SelectionAlgorithm):
 
         logging.debug(f"Searching in {len(candidate_indexes)} indexes")
 
-        # todo: newly added. for process visualization.
+        # : newly added. for process visualization.
         if self.process:
             self.step[seed_no][self.layer] = list()
             self.step["selected"].append(list())
 
-        # todo(0804): newly added. for reproduction.
+        # (0804): newly added. for reproduction.
         for index in sorted(list(candidate_indexes)):
-            # todo(0804): newly added. for number.
+            # (0804): newly added. for number.
             if self.constraint == "number":
                 if len(current_indexes | {index}) > self.max_indexes:
                     continue
@@ -204,7 +204,7 @@ class AnytimeAlgorithm(SelectionAlgorithm):
 
             if self.sel_oracle is None:
                 cost = self._simulate_and_evaluate_cost(workload, current_indexes | {index})
-            # todo(0917): newly added.
+            # (0917): newly added.
             elif self.sel_oracle == "cost_per_sto":
                 cost = self._simulate_and_evaluate_cost(workload, current_indexes | {index})
                 cost = cost * b_to_mb(index.estimated_size)
@@ -219,7 +219,7 @@ class AnytimeAlgorithm(SelectionAlgorithm):
                 cost = self._simulate_and_evaluate_cost(workload, current_indexes | {index})
                 cost = -1 * (current_cost - cost)
 
-            # todo: newly added. for process visualization.
+            # : newly added. for process visualization.
             if self.process:
                 self.step[seed_no][self.layer].append({"combination": current_indexes | {index},
                                                        "candidate": index,
@@ -238,7 +238,7 @@ class AnytimeAlgorithm(SelectionAlgorithm):
 
             logging.debug(f"Additional best index found: {best_index}")
 
-            # todo: newly added. for process visualization.
+            # : newly added. for process visualization.
             if self.process:
                 self.step["selected"][seed_no].append([item["candidate"] for item in
                                                        self.step[seed_no][self.layer]].index(best_index[0]))

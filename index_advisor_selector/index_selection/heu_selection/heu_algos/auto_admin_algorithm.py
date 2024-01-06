@@ -38,7 +38,7 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
         )
         self.max_index_width = self.parameters["max_index_width"]
 
-        # todo(0804): newly added. for storage budget.
+        # (0804): newly added. for storage budget.
         self.budget = mb_to_b(self.parameters["budget_MB"])
         self.constraint = self.parameters["constraint"]
 
@@ -55,12 +55,12 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
         """
         logging.info("Calculating best indexes AutoAdmin")
 
-        # todo(0804): newly added. for storage budget/number.
+        # (0804): newly added. for storage budget/number.
         if (self.constraint == "number" and self.max_indexes == 0) or \
                 (self.constraint == "storage" and self.budget == 0):
             return list()
 
-        # todo: newly added. for process visualization.
+        # : newly added. for process visualization.
         if self.process:
             self.step["candidates"] = dict()
 
@@ -68,7 +68,7 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
         potential_indexes = workload.potential_indexes()
         for current_max_index_width in range(1, self.max_index_width + 1):
             candidates = self.select_index_candidates(workload, potential_indexes)
-            # todo: newly added. for process visualization.
+            # : newly added. for process visualization.
             if self.process:
                 self.layer = 0
                 self.step[current_max_index_width - 1] = dict()
@@ -92,10 +92,10 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
             # Create a workload consisting of one query
             query_workload = Workload([query])
             indexes = self._potential_indexes_for_query(query, potential_indexes)
-            # todo: newly added. for process visualization.
+            # : newly added. for process visualization.
             candidates |= self.enumerate_combinations(query_workload, indexes, is_seed=True)
 
-        # todo(0804): newly added. for reproduction.
+        # (0804): newly added. for reproduction.
         candidates = set(sorted(list(candidates)))
         logging.info(
             f"Number of candidates: {len(candidates)}\n" f"Candidates: {candidates}"
@@ -104,7 +104,7 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
 
     def _potential_indexes_for_query(self, query, potential_indexes):
         indexes = set()
-        # todo(0804): newly added. for reproduction.
+        # (0804): newly added. for reproduction.
         for index in sorted(list(potential_indexes)):
             # The leading index column must be referenced by the query
             if index.columns[0] in query.columns:
@@ -132,13 +132,13 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
         )
         logging.debug(log_out)
 
-        # todo: len(candidate_indexes)? current indexes all chosen from the candidate indexes.
+        # : len(candidate_indexes)? current indexes all chosen from the candidate indexes.
         number_indexes = min(self.max_indexes, len(candidate_indexes))
         indexes, costs = self.enumerate_greedy(
             workload,
             current_indexes,
             costs,
-            # todo(0804): len(current_indexes) > min(self.max_indexes, len(candidate_indexes))?
+            # (0804): len(current_indexes) > min(self.max_indexes, len(candidate_indexes))?
             candidate_indexes - current_indexes,
             number_indexes,
             is_seed,
@@ -163,16 +163,16 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
         :return:
         """
         lowest_cost_indexes = set()
-        # todo: initialized by `self.cost_evaluation.calculate_cost(self.workload, indexes=lowest_cost_indexes)`
+        # : initialized by `self.cost_evaluation.calculate_cost(self.workload, indexes=lowest_cost_indexes)`
         lowest_cost = None
 
-        # todo: newly added. for process visualization.
+        # : newly added. for process visualization.
         if self.process and not is_seed:
             self.step[iter][self.layer] = list()
             self.step["selected"].append(list())
 
         for number_of_indexes in range(1, number_indexes_naive + 1):
-            # todo(0804): newly added. for reproduction.
+            # (0804): newly added. for reproduction.
             for index_combination in sorted(list(itertools.combinations(
                     candidate_indexes, number_of_indexes))):
 
@@ -197,7 +197,7 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
                     if total_size > self.budget:
                         continue
 
-                # todo: newly added. for process visualization.
+                # : newly added. for process visualization.
                 if self.process and not is_seed:
                     self.step[iter][self.layer].append({"combination": index_combination,
                                                         "candidate": index_combination,
@@ -207,8 +207,8 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
                     lowest_cost_indexes = index_combination
                     lowest_cost = cost
 
-        # todo: newly added. for process visualization.
-        # todo(0416): newly added. `lowest_cost is not None`,
+        # : newly added. for process visualization.
+        # (0416): newly added. `lowest_cost is not None`,
         #  `ValueError: None is not in list`.
         if self.process and not is_seed and lowest_cost is not None:
             # self.step["selected"][iter].append(np.argmin([item["oracle"] for item in self.step[iter][self.layer]]))
@@ -239,10 +239,10 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
                 current_indexes & candidate_indexes == set()
         ), "Intersection of current and candidate indexes must be empty"
         if self.constraint == "number":
-            # todo: ? current indexes all chosen from the candidate indexes.
+            # : ? current indexes all chosen from the candidate indexes.
             if len(current_indexes) >= number_indexes:
                 return current_indexes, current_costs
-        # todo(0804): newly added. for storage budget.
+        # (0804): newly added. for storage budget.
         elif self.constraint == "storage":
             total_size = sum(index.estimated_size for index in current_indexes)
             if total_size > self.budget:
@@ -253,15 +253,15 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
 
         logging.debug(f"Searching in {len(candidate_indexes)} indexes")
 
-        # todo: newly added. for process visualization.
+        # : newly added. for process visualization.
         if self.process and not is_seed:
             self.step[iter][self.layer] = list()
 
-        # todo(0804): newly added. for reproduction.
+        # (0804): newly added. for reproduction.
         for index in sorted(list(candidate_indexes)):
             if self.sel_oracle is None:
                 cost = self._simulate_and_evaluate_cost(workload, current_indexes | {index})
-            # todo(0917): newly added.
+            # (0917): newly added.
             elif self.sel_oracle == "cost_per_sto":
                 cost = self._simulate_and_evaluate_cost(workload, current_indexes | {index})
                 cost = cost * b_to_mb(index.estimated_size)
@@ -282,7 +282,7 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
                 if total_size > self.budget:
                     continue
 
-            # todo: newly added. for process visualization.
+            # : newly added. for process visualization.
             if self.process and not is_seed:
                 self.step[iter][self.layer].append({"combination": current_indexes | {index},
                                                     "candidate": index,
@@ -298,7 +298,7 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
 
             logging.debug(f"Additional best index found: {best_index}")
 
-            # todo: newly added. for process visualization.
+            # : newly added. for process visualization.
             if self.process and not is_seed:
                 self.step["selected"][iter].append(
                     [item["candidate"] for item in self.step[iter][self.layer]].index(best_index[0]))
@@ -314,7 +314,7 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
                 iter
             )
 
-        # todo(0804): newly added. for reproduction.
+        # (0804): newly added. for reproduction.
         current_indexes = set(sorted(list(current_indexes)))
         return current_indexes, current_costs
 
