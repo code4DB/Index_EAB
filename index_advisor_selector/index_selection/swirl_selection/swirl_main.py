@@ -28,49 +28,49 @@ from swirl_utils.configuration_parser import ConfigurationParser
 
 def train_swirl(args):
     logging.info(f"The training mode is `{args.train_mode}`.")
-        with open(args.rl_exp_load, "rb") as rf:
-            experiment = pickle.load(rf)
-        parallel_environments = experiment.exp_config["parallel_environments"]
+    with open(args.rl_exp_load, "rb") as rf:
+        experiment = pickle.load(rf)
+    parallel_environments = experiment.exp_config["parallel_environments"]
 
-        experiment.id = args.exp_id
-        cp = ConfigurationParser(args.exp_conf_file)
-        experiment.exp_config = cp.config
-        experiment.exp_config["parallel_environments"] = parallel_environments
-        logging.info(f"The value of `parallel_environments` is `{experiment.exp_config['parallel_environments']}`.")
+    experiment.id = args.exp_id
+    cp = ConfigurationParser(args.exp_conf_file)
+    experiment.exp_config = cp.config
+    experiment.exp_config["parallel_environments"] = parallel_environments
+    logging.info(f"The value of `parallel_environments` is `{experiment.exp_config['parallel_environments']}`.")
 
-        experiment._create_experiment_folder()
+    experiment._create_experiment_folder()
 
-        log_file = args.log_file.format(args.exp_id)
-        set_logger(log_file)
+    log_file = args.log_file.format(args.exp_id)
+    set_logger(log_file)
 
-        experiment.comparison_performances = {
-            "test": {"Extend": [], "DB2Adv": []},
-            "validation": {"Extend": [], "DB2Adv": []}
-        }
-        experiment.comparison_indexes = {"Extend": set(), "DB2Adv": set()}
+    experiment.comparison_performances = {
+        "test": {"Extend": [], "DB2Adv": []},
+        "validation": {"Extend": [], "DB2Adv": []}
+    }
+    experiment.comparison_indexes = {"Extend": set(), "DB2Adv": set()}
 
-        with open(args.work_file, "r") as rf:
-            query_text = rf.readlines()
+    with open(args.work_file, "r") as rf:
+        query_text = rf.readlines()
 
-        eval_workload = list()
-        for qid, sql in enumerate(query_text):
-            query = Query(qid, sql, frequency=1)
-            # assign column value to `query` object.
-            experiment.workload_generator._store_indexable_columns(query)
-            workload = Workload([query], description="the adversarial training")
-            eval_workload.append(workload)
+    eval_workload = list()
+    for qid, sql in enumerate(query_text):
+        query = Query(qid, sql, frequency=1)
+        # assign column value to `query` object.
+        experiment.workload_generator._store_indexable_columns(query)
+        workload = Workload([query], description="the adversarial training")
+        eval_workload.append(workload)
 
-        experiment.workload_generator.wl_training = eval_workload
-        experiment.workload_generator.wl_validation = [eval_workload]
-        experiment.workload_generator.wl_testing = [eval_workload]
+    experiment.workload_generator.wl_training = eval_workload
+    experiment.workload_generator.wl_validation = [eval_workload]
+    experiment.workload_generator.wl_testing = [eval_workload]
 
-        experiment.exp_config["workload"]["validation_testing"]["number_of_workloads"] = len(eval_workload)
+    experiment.exp_config["workload"]["validation_testing"]["number_of_workloads"] = len(eval_workload)
 
-        # randomly assign budget to each workload.
-        experiment._assign_budgets_to_workloads()
+    # randomly assign budget to each workload.
+    experiment._assign_budgets_to_workloads()
 
-        # Save the workloads into `.pickle` file.
-        experiment._pickle_workloads()
+    # Save the workloads into `.pickle` file.
+    experiment._pickle_workloads()
     if True:
         # 1) Record the experiment time; 2) Load the configuration;
         # 3) Specify the stable_baselines version; 4) Create the experiment folder.
