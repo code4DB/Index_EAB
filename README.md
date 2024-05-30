@@ -1,5 +1,11 @@
 # Index Advisor [Experiment, Analysis & Benchmark]
 
+**Note that the link of the new actively maintained repository is:**
+
+https://github.com/Beliefuture/Index_EAB/
+
+**Please *"STAR"* the new repository if you find this project useful!**
+
 This is the code respository of the testbed proposed in the **Index Advisor (EA&B)** paper, which conducts a comprehensive assessment of the heuristic-based and the learning-based index advisors.
 
 ***Note that we have released a python package about this testbed at the official open-source website: *[index-eab · PyPI](https://pypi.org/project/index-eab/0.1.0/)*. Therefore, you can use the follwoing command to download it with little effort!**
