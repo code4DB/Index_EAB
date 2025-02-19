@@ -1,14 +1,12 @@
 # Index Advisor [Experiment, Analysis & Benchmark]
 
-**Note that the link of the new actively maintained repository is:**
+This is the official code respository of our **VLDB 2024 paper** **[[pdf]](https://www.vldb.org/pvldb/vol17/p2405-li.pdf)**:
 
-https://github.com/Beliefuture/Index_EAB/
+`Breaking It Down: An In-depth Study of Index Advisors. Wei Zhou, Chen Lin, Xuanhe Zhou, Guoliang Li.` 
 
-**Please *"STAR"* the new repository if you find this project useful!**
+**We have also released a python package about this testbed at the official open-source website: *[index-eab · PyPI](https://pypi.org/project/index-eab/0.1.0/)*. Therefore, you can use the follwoing command to download it with little effort!**
 
-This is the code respository of the testbed proposed in the **Index Advisor (EA&B)** paper, which conducts a comprehensive assessment of the heuristic-based and the learning-based index advisors.
-
-***Note that we have released a python package about this testbed at the official open-source website: *[index-eab · PyPI](https://pypi.org/project/index-eab/0.1.0/)*. Therefore, you can use the follwoing command to download it with little effort!**
+**Please *"STAR"* the repository if you find this project useful!**
 
 ```shell
 pip install index-eab==0.1.0
