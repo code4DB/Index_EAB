@@ -4,6 +4,22 @@ This is the official code respository of our **VLDB 2024 paper** **[[pdf]](https
 
 `Breaking It Down: An In-depth Study of Index Advisors. Wei Zhou, Chen Lin, Xuanhe Zhou, Guoliang Li.` 
 
+If you like this project, please cite our paper:
+```
+@article{zhouVLDB24,
+  author       = {Wei Zhou and
+                  Chen Lin and
+                  Xuanhe Zhou and
+                  Guoliang Li},
+  title        = {Breaking It Down: An In-depth Study of Index Advisors},
+  journal      = {Proc. {VLDB} Endow.},
+  volume       = {17},
+  number       = {10},
+  pages        = {2405--2418},
+  year         = {2024}
+}
+```
+
 **We have also released a python package about this testbed at the official open-source website: *[index-eab · PyPI](https://pypi.org/project/index-eab/0.1.0/)*. Therefore, you can use the follwoing command to download it with little effort!**
 
 **Please *"STAR"* the repository if you find this project useful!**
@@ -29,7 +45,7 @@ The overall code structure of our **Index Advisor (EA&B)** project, where the cr
 ```
 Index_EAB/
 ├── configuration_loader			 											# Module 1: the evaluation settings                 
-│   ├── becnhmark
+│   ├── benchmark
 │   ├── index_advisor
 │   │   ├── heu_run_conf
 │   │   │   ├──xxxx_config.json  # configurations of heuristic-based index advisors
@@ -77,7 +93,7 @@ Index_EAB/
 │   │   │   └── ...
 │   │   ├── mab_selection
 │   │   │   ├── bandits
-│   │   │   ├── simualtion
+│   │   │   ├── simulation
 │   │   │   ├── shared
 │   │   │   │   ├── mab_com.py  # parameters of learning-based index advisors
 │   │   │   │   └── ...
